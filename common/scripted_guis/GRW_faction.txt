@@ -1,0 +1,245 @@
+scripted_gui = {
+	#决议内gui
+	GRW_faction_decision_ui = {
+		context_type = decision_category
+		window_name = "GRW_faction_decision_ui_window"
+
+		ai_enabled = {
+			always = no
+		}
+
+		properties = {
+			GRW_revolutionary_radicalisation_progress_meter = {
+				frame = GRW_var_revolutionary_radicalisation_meter
+			}
+			GRW_revolutionary_radicalisation_progress_needle = {
+				frame = GRW_var_revolutionary_radicalisation_meter
+			}
+		}
+
+		effects = {
+			GRW_open_faction_button_click = {
+				if = {
+					limit = {
+						has_country_flag = GRW_faction_window_visible
+					}
+					clr_country_flag = GRW_faction_window_visible
+				}
+				else = {
+					set_country_flag = GRW_faction_window_visible
+				}
+			}
+		}
+	}
+
+	#详情窗口
+	GRW_faction_window = {
+		window_name = "GRW_faction_window"
+		
+		visible = {
+			original_tag = GRW
+			has_country_flag = GRW_faction_window_visible
+		}
+
+		properties = {
+			GRW_central_peoples_government_issue = {
+				frame = GRW_faction_tab_issue^0
+			}
+			GRW_revolutionary_military_council_issue = {
+				frame = GRW_faction_tab_issue^1
+			}
+		}
+
+		triggers = {
+			GRW_central_peoples_government_issue_visible = {
+				always = no
+			}
+			GRW_central_peoples_government_issue_title_visible = {
+				always = no
+			}
+			GRW_revolutionary_military_council_issue_visible = {
+				always = no
+			}
+			GRW_revolutionary_military_council_issue_title_visible = {
+				always = no
+			}
+		}
+
+		effects = {
+			GRW_central_peoples_government_issue_click = {
+				set_variable = { GRW_faction_tab_issue^0 = 1 }
+				set_variable = { GRW_faction_tab_issue^1 = 2 }
+				set_variable = { GRW_faction_tab_issue^2 = 2 }
+			}
+			GRW_revolutionary_military_council_issue_click = {
+				set_variable = { GRW_faction_tab_issue^0 = 2 }
+				set_variable = { GRW_faction_tab_issue^1 = 1 }
+				set_variable = { GRW_faction_tab_issue^2 = 2 }
+			}
+		}
+	}
+
+	#中央鹫民政府
+	GRW_faction_window_CPGC = {
+		window_name = "GRW_faction_window_CPGC"
+		parent_window_name = "GRW_faction_window"
+		visible = {
+			check_variable = {
+				GRW_faction_tab_issue^0 = 1
+			}
+		}
+
+		properties = {
+			GRW_rozenkampism_pie = {
+				frame = GRW_var_rozenkampism_influence
+			}
+			GRW_primitive_communism_pie = {
+				frame = GRW_primitive_communism_frame
+			}
+			GRW_democratic_socialism_pie = {
+				frame = GRW_democratic_socialism_frame
+			}
+
+			GRW_president_portrait = {
+				image = "[get_head_of_president_gfx]"
+			}
+			GRW_premier_portrait = {
+				image = "[get_head_of_premier_gfx]"
+			}
+
+			GRW_faction_window_CPGC_solidarity_progress_bar = {
+				frame = GRW_var_united_front_solidarity
+			}
+		}
+
+		triggers = {
+			GRW_faction_window_CPGC_policy_ag_button_click_enabled = {
+				NOT = {
+					has_country_flag = GRW_support_faction_flag
+				}
+				has_political_power > 29
+			}
+			GRW_faction_window_CPGC_policy_int_button_click_enabled = {
+				NOT = {
+					has_country_flag = GRW_support_faction_flag
+				}
+				has_political_power > 29
+			}
+			GRW_faction_window_CPGC_policy_ind_button_click_enabled = {
+				NOT = {
+					has_country_flag = GRW_support_faction_flag
+				}
+				has_political_power > 29
+			}
+			GRW_faction_window_CPGC_policy_sci_button_click_enabled = {
+				NOT = {
+					has_country_flag = GRW_support_faction_flag
+				}
+				has_political_power > 29
+			}
+
+			GRW_faction_window_CPGC_focus_sci_button_click_enabled = {
+				NOT = {
+					has_country_flag = GRW_CPGC_focus_flag
+				}
+			}
+			GRW_faction_window_CPGC_focus_ind_button_click_enabled = {
+				NOT = {
+					has_country_flag = GRW_CPGC_focus_flag
+				}
+			}
+			GRW_faction_window_CPGC_focus_ag_button_click_enabled = {
+				NOT = {
+					has_country_flag = GRW_CPGC_focus_flag
+				}
+			}
+		}
+
+		effects = {
+			GRW_faction_window_CPGC_close_button_click = {
+				clr_country_flag = GRW_faction_window_visible
+			}
+
+			GRW_faction_window_CPGC_policy_ag_button_click = {
+				set_country_flag = GRW_support_faction_flag
+				add_political_power = -30
+				add_timed_idea = {
+					idea = GRW_support_primitive_communism
+					days = 90
+				}
+				GRW_primitive_communism_influence_slightincrease = yes
+				GRW_primitive_communism_loyalty_slightincrease = yes
+			}
+			GRW_faction_window_CPGC_policy_int_button_click = {
+				set_country_flag = GRW_support_faction_flag
+				add_political_power = -30
+				add_timed_idea = {
+					idea = GRW_support_rozenkampism
+					days = 90
+				}
+				GRW_rozenkampism_influence_slightincrease = yes
+				GRW_rozenkampism_loyalty_slightincrease = yes
+			}
+			GRW_faction_window_CPGC_policy_ind_button_click = {
+				set_country_flag = GRW_support_faction_flag
+				add_political_power = -30
+				add_timed_idea = {
+					idea = GRW_support_syndicalism
+					days = 90
+				}
+				GRW_syndicalism_influence_slightincrease = yes
+				GRW_syndicalism_loyalty_slightincrease = yes
+			}
+			GRW_faction_window_CPGC_policy_sci_button_click = {
+				set_country_flag = GRW_support_faction_flag
+				add_political_power = -30
+				add_timed_idea = {
+					idea = GRW_support_democratic_socialism
+					days = 90
+				}
+				GRW_democratic_socialism_influence_slightincrease = yes
+				GRW_democratic_socialism_loyalty_slightincrease = yes
+			}
+
+			GRW_faction_window_CPGC_focus_sci_button_click = {
+				set_country_flag = {
+					flag = GRW_CPGC_focus_flag
+					days = 365
+					value = 1
+				}
+				set_variable = {
+					GRW_faction_focus_issue = 2
+				}
+				add_ideas = GRW_focus_sci_idea
+				remove_ideas = GRW_focus_ind_idea
+				remove_ideas = GRW_focus_ag_idea
+			}
+			GRW_faction_window_CPGC_focus_ind_button_click = {
+				set_country_flag = {
+					flag = GRW_CPGC_focus_flag
+					days = 365
+					value = 1
+				}
+				set_variable = {
+					GRW_faction_focus_issue = 3
+				}
+				remove_ideas = GRW_focus_sci_idea
+				add_ideas = GRW_focus_ind_idea
+				remove_ideas = GRW_focus_ag_idea
+			}
+			GRW_faction_window_CPGC_focus_ag_button_click = {
+				set_country_flag = {
+					flag = GRW_CPGC_focus_flag
+					days = 365
+					value = 1
+				}
+				set_variable = {
+					GRW_faction_focus_issue = 4
+				}
+				remove_ideas = GRW_focus_sci_idea
+				remove_ideas = GRW_focus_ind_idea
+				add_ideas = GRW_focus_ag_idea
+			}
+		}
+	}
+}

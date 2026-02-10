@@ -1,0 +1,338 @@
+####################################################
+####################### 政治 #######################
+####################################################
+
+capital = 414
+set_research_slots = 2
+set_stability = 0.4
+set_war_support = 0.8
+
+set_politics = {
+	ruling_party = communism
+	last_election = "1000.10.10"
+	election_frequency = 36
+	elections_allowed = no
+}
+set_popularities = {
+	democratic = 20
+	fascism = 10
+	communism = 55
+	neutrality = 15
+}
+
+declare_war_on = {
+	target = BRF
+	type = annex_everything
+}
+
+set_rule = {
+	can_generate_female_aces = yes
+	can_generate_female_unit_leaders  = yes
+	can_generate_female_country_leaders = yes
+}
+
+####################################################
+####################### 科技 #######################
+####################################################
+
+set_technology = {
+	tech_irregulars = 1
+	militia_tech = 1
+	griffon_race = 1
+	tech_griffon_army = 1
+	tech_knights = 1
+	melee_weapons = 1
+	melee_weapons1 = 1
+	pre_gw_artillery = 1
+	tech_support = 1
+	tech_mountaineers = 1
+	tech_recon = 1
+	basic_train = 1
+}
+actually_fix_weapon_techs = yes
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		early_ship_hull_light = 1
+		basic_battery = 1
+		mtg_transport = 1
+	}
+}
+else = {
+	set_technology = {
+		early_destroyer = 1
+		transport = 1
+	}
+}
+
+####################################################
+################## 民族精神与flag ##################
+####################################################
+
+add_ideas = {
+	GRW_unfulfilled_promises_1
+	GRW_chaotic_monetary_policy_1
+	GRW_current_status_of_agriculture_3
+	GRW_threat_of_banditry_3
+	GRW_allied_force_reorganization_chaos
+
+	extensive_conscription
+	limited_exports
+	war_economy
+
+	poor_science_base
+	agrarian_society
+	lack_of_scientists1
+	poverty4
+}
+
+add_dynamic_modifier = {
+	modifier = GRW_GLA
+}
+
+414 = {
+	add_dynamic_modifier = {
+		modifier = GRW_temporary_party_central_headquarters
+		scope = GRW
+	}
+}
+508 = {
+	damage_building = {
+		type = industrial_complex
+		damage = 1
+	}
+	damage_building = {
+		type = industrial_complex
+		damage = 1
+	}
+	damage_building = {
+		type = arms_factory
+		damage = 1
+	}
+	damage_building = {
+		type = arms_factory
+		damage = 1
+	}
+	add_dynamic_modifier = {
+		modifier = GRW_postwar_recovery_Kivessin
+		scope = GRW
+	}
+}
+385 = {
+	damage_building = {
+		type = industrial_complex
+		damage = 0.3
+	}
+	damage_building = {
+		type = arms_factory
+		damage = 0.4
+	}
+	add_dynamic_modifier = {
+		modifier = GRW_postwar_recovery_Sydia
+		scope = GRW
+	}
+}
+663 = {
+	start_resistance = yes
+	set_resistance = 70
+	set_compliance = 0
+	add_dynamic_modifier = {
+		modifier = GRW_kingdom_remnant_holdout
+		scope = GRW
+	}
+}
+
+set_cosmetic_tag = GRW_democratic_united_forces
+set_country_flag = have_regular_puppets
+set_country_flag = has_custom_advisors
+set_country_flag = has_custom_spymaster
+set_country_flag = CTH_strikes_outlawed
+
+country_event = {
+	id = GRW_flavor.4
+	days = 3
+}
+news_event = {
+	id = GRW_flavor_news.2
+	days = 730
+	random_days = 730
+}
+
+#匪患倒计时时间
+set_variable = {
+	var = GRW_bandit_sabotage_days_timeout
+	value = 90
+}
+#狮鹫解放军
+set_variable = {
+	var = GRW_var_GLA_army_speed_factor
+	value = 0.05
+}
+set_variable = {
+	var = GRW_var_GLA_army_org_factor
+	value = -0.05
+}
+set_variable = {
+	var = GRW_var_GLA_army_morale_factor
+	value = 0.05
+}
+set_variable = {
+	var = GRW_var_GLA_supply_consumption_factor
+	value = -0.05
+}
+set_variable = {
+	var = GRW_var_GLA_planning_speed
+	value = -0.3
+}
+set_variable = {
+	var = GRW_var_GLA_max_planning
+	value = -0.3
+}
+set_variable = {
+	var = GRW_var_GLA_army_attack_factor
+	value = -0.1
+}
+set_variable = {
+	var = GRW_var_GLA_army_defence_factor
+	value = -0.1
+}
+set_variable = {
+	var = GRW_var_GLA_army_core_attack_factor
+	value = 0.1
+}
+set_variable = {
+	var = GRW_var_GLA_army_core_defence_factor
+	value = 0.1
+}
+set_variable = {
+	var = GRW_var_GLA_modifier_army_sub_unit_militia_attack_factor
+	value = 0.1
+}
+set_variable = {
+	var = GRW_var_GLA_modifier_army_sub_unit_militia_defence_factor
+	value = 0.1
+}
+set_variable = {
+	var = GRW_var_GLA_modifier_army_sub_unit_militia_max_org_factor
+	value = 0.05
+}
+#工业决议相关变量
+set_variable = {
+	var = GRW_var_construction_materials
+	value = 100
+}
+set_variable = {
+	var = GRW_var_construction_materials_growth
+	value = 10
+}
+set_variable = {
+	var = GRW_reconstruction_progress
+	value = 0
+}
+set_variable = {
+	var = GRW_var_reconstruction_cost_low
+	value = 30
+}
+set_variable = {
+	var = GRW_var_reconstruction_cost_low_negative
+	value = -30
+}
+set_variable = {
+	var = GRW_var_reconstruction_cost
+	value = 50
+}
+set_variable = {
+	var = GRW_var_reconstruction_cost_negative
+	value = -50
+}
+set_variable = {
+	var = GRW_var_reconstruction_cost_high
+	value = 75
+}
+set_variable = {
+	var = GRW_var_reconstruction_cost_high_negative
+	value = -75
+}
+#农业决议相关变量
+set_variable = {
+	var = GRW_var_land_reform_cost_low
+	value = 30
+}
+set_variable = {
+	var = GRW_var_land_reform_cost_low_negative
+	value = -30
+}
+set_variable = {
+	var = GRW_var_land_reform_cost
+	value = 45
+}
+set_variable = {
+	var = GRW_var_land_reform_cost_negative
+	value = -45
+}
+set_variable = {
+	var = GRW_var_land_reform_cost_high
+	value = 60
+}
+
+####################################################
+####################### 军事 #######################
+####################################################
+
+oob = "GRW_1007"
+country_lock_all_division_template = yes
+add_manpower = 10000
+army_experience = 10
+set_convoys = 70
+
+####################################################
+####################### 角色 #######################
+####################################################
+
+recruit_character = GRW_comradegeneral_filip_redglad
+recruit_character = GRW_Sonia_Cialaina
+recruit_character = GRW_princip_meyer_brantbeak
+recruit_character = GRW_princip_meyer_brantbeak
+recruit_character = GRW_Lucian_Goldwing
+recruit_character = GRW_Ionel_Shortfeather
+recruit_character = GRW_Bashir_Mistwing
+recruit_character = GRW_Dumitru_Startail
+recruit_character = GRW_George_Flamefeather
+recruit_character = GRW_Calin_Thunderfeather
+recruit_character = GRW_Liviu_Moonbeak
+recruit_character = GRW_Trifan_Sidioveanu
+recruit_character = GRW_Ianos_Amberpaw
+recruit_character = GRW_Marin_Dascalu
+recruit_character = GRW_Anatol_Vilan
+recruit_character = GRW_XiaoZi
+recruit_character = GRW_RainyBlaze
+recruit_character = GRW_Cristian_Ghostwing
+recruit_character = GRW_Codrin_Popescu
+recruit_character = GRW_Vasile_Bila
+recruit_character = GRW_golden_sands
+recruit_character = GRW_Helios_Longov
+recruit_character = GRW_Linas_Bielu
+recruit_character = GRW_Constantin_Caishen
+recruit_character = GRW_Florian_von_Quixote
+recruit_character = GRW_Marino_Aquario
+recruit_character = GRW_Enache_Pescrush
+recruit_character = GRW_Constantin_Canden
+recruit_character = GRW_Luca_Lipini
+recruit_character = GRW_Sorin_Yuru
+recruit_character = GRW_Victor_Ignatescu
+recruit_character = GRW_Cornel_Gherna
+recruit_character = GRW_Constantin_Cornel
+recruit_character = GRW_Rainbow_Sword
+recruit_character = GRW_rain_twister
+recruit_character = GRW_Valentin_Rosescu
+recruit_character = GRW_HXFS
+recruit_character = GRW_Custer
+recruit_character = GRW_rory_laurel
+recruit_character = GRW_Snowbunny
+recruit_character = GRW_Cenar_Tidau
+recruit_character = GRW_Vlad_Gancan
+recruit_character = BAN_reeve_blyeddin
+

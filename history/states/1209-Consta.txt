@@ -1,0 +1,25 @@
+state = {
+	id = 1209
+	name = "STATE_1209"
+
+	provinces={
+		1348 3475 4341 4367 4405 7633 10207 10250 12109
+	}
+
+	manpower = 345062
+	state_category = rural
+	buildings_max_level_factor = 1.00
+
+	history = {
+		owner = GRW
+		add_core_of = GRW
+		add_core_of = BRF
+
+		victory_points = { 4367 3 }
+
+		buildings = {
+			industrial_complex = 1
+			infrastructure = 1
+		}
+	}
+}

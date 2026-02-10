@@ -1,0 +1,2088 @@
+#军事委员会
+defined_text = {
+	name = GetRevolutionaryMilitaryCouncil
+	text = {
+		trigger = {
+			has_idea = GRW_allied_force_reorganization_chaos
+		}
+		localization_key = idea_desc|GRW_allied_force_reorganization_chaos
+	}
+	
+}
+
+#事件文本
+defined_text = {
+	name = GETGRWEarlygame54TT
+	text = {
+		trigger = {
+			CYA = {
+				exists = yes
+				is_subject = no
+				NOT = {
+					has_war_with = MIT
+				}
+			}
+		}
+		localization_key = GRW_earlygame_54_tt
+	}
+}
+defined_text = {
+	name = GETGRWEarlygame84TT
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_dispatch_envoy_to_Asterion_var > -1
+			}
+		}
+		localization_key = GRW_earlygame_84_tt
+	}
+}
+
+#共和国主席
+defined_text = {#肖像
+	name = get_head_of_president_gfx
+	text = {
+		trigger = {
+			has_country_leader = {
+				character = GRW_comradegeneral_filip_redglad
+				ruling_only = yes
+			}
+		}
+		localization_key = "GFX_filip_redglad_portrait"
+	}
+	text = {
+		trigger = {
+			has_country_leader = {
+				character = GRW_Lucian_Goldwing
+				ruling_only = yes
+			}
+		}
+		localization_key = "GFX_Lucian_Goldwing_portrait"
+	}
+}
+defined_text = {#名字
+	name = GetGRWPresident
+	text = {
+		trigger = {
+			has_country_leader = {
+				character = GRW_comradegeneral_filip_redglad
+				ruling_only = yes
+			}
+		}
+		localization_key = GRW_comradegeneral_filip_redglad
+	}
+	text = {
+		trigger = {
+			has_country_leader = {
+				character = GRW_Lucian_Goldwing
+				ruling_only = yes
+			}
+		}
+		localization_key = GRW_Lucian_Goldwing
+	}
+}
+#国务院总理
+defined_text = {#肖像
+	name = get_head_of_premier_gfx
+	text = {
+		trigger = {
+			has_country_flag = GRW_midgame_20_flag
+		}
+		localization_key = "GFX_Liviu_Moonbeak_portrait"
+	}
+	text = {
+		localization_key = "GFX_Ionel_Shortfeather_portrait"
+	}
+}
+defined_text = {#国务院名字
+	name = GetGRWStateCouncilName
+	text = {
+		trigger = {
+			NOT = {
+				has_country_flag = GRW_chairman_filip_redglad
+			}
+		}
+		localization_key = GRW_government_administration_council
+	}
+	text = {
+		localization_key = GRW_state_council
+	}
+}
+
+defined_text = {
+	name = GRW_support_faction_msg
+	text = {
+		trigger = {
+			NOT = {
+				has_country_flag = GRW_support_faction_flag
+			}
+		}
+		localization_key = GRW_support_faction_cooldown_inactive
+	}
+	text = {
+		localization_key = GRW_support_faction_cooldown_active
+	}
+}
+defined_text = {
+	name = GRW_CPGC_focus_msg_1
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_faction_focus_issue = 2
+			}
+		}
+		localization_key = GRW_CPGC_focus_cooldown_chosen
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_country_flag = GRW_CPGC_focus_flag
+			}
+		}
+		localization_key = GRW_CPGC_focus_cooldown_inactive
+	}
+	text = {
+		localization_key = GRW_CPGC_focus_cooldown_active
+	}
+}
+defined_text = {
+	name = GRW_CPGC_focus_msg_2
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_faction_focus_issue = 3
+			}
+		}
+		localization_key = GRW_CPGC_focus_cooldown_chosen
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_country_flag = GRW_CPGC_focus_flag
+			}
+		}
+		localization_key = GRW_CPGC_focus_cooldown_inactive
+	}
+	text = {
+		localization_key = GRW_CPGC_focus_cooldown_active
+	}
+}
+defined_text = {
+	name = GRW_CPGC_focus_msg_3
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_faction_focus_issue = 4
+			}
+		}
+		localization_key = GRW_CPGC_focus_cooldown_chosen
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_country_flag = GRW_CPGC_focus_flag
+			}
+		}
+		localization_key = GRW_CPGC_focus_cooldown_inactive
+	}
+	text = {
+		localization_key = GRW_CPGC_focus_cooldown_active
+	}
+}
+
+#政治派系
+defined_text = {#按钮
+	name = GetGRWFactionName
+	text = {
+		trigger = {
+			OR = {
+				has_country_leader = {
+					character = GRW_comradegeneral_filip_redglad
+					ruling_only = yes
+				}
+				has_country_leader = {
+					character = GRW_Lucian_Goldwing
+					ruling_only = yes
+				}
+			}
+		}
+		localization_key = GRW_open_faction_united_front_tt
+	}
+}
+defined_text = {#标题
+	name = GetGRWFactionText
+	text = {
+		trigger = {
+			OR = {
+				has_country_leader = {
+					character = GRW_comradegeneral_filip_redglad
+					ruling_only = yes
+				}
+				has_country_leader = {
+					character = GRW_Lucian_Goldwing
+					ruling_only = yes
+				}
+			}
+		}
+		localization_key = GRW_faction_united_front_tt
+	}
+}
+defined_text = {#正统派领导人肖像
+	name = get_head_of_primitive_communism_leader_gfx
+	text = {
+		trigger = {
+			has_country_leader = {
+				character = GRW_comradegeneral_filip_redglad
+				ruling_only = yes
+			}
+		}
+		localization_key = "GFX_filip_redglad_portrait"
+	}
+	text = {
+		trigger = {
+			has_country_leader = {
+				character = GRW_Lucian_Goldwing
+				ruling_only = yes
+			}
+		}
+		localization_key = "GFX_Lucian_Goldwing_portrait"
+	}
+}
+defined_text = {#正统派领导人名字
+	name = GetGRWPrimitiveCommunismLeader
+	text = {
+		trigger = {
+			has_country_leader = {
+				character = GRW_comradegeneral_filip_redglad
+				ruling_only = yes
+			}
+		}
+		localization_key = GRW_comradegeneral_filip_redglad
+	}
+	text = {
+		trigger = {
+			has_country_leader = {
+				character = GRW_Lucian_Goldwing
+				ruling_only = yes
+			}
+		}
+		localization_key = GRW_Lucian_Goldwing
+	}
+}
+defined_text = {#国际派领导人肖像
+	name = get_head_of_rozenkampism_leader_gfx
+	text = {
+		trigger = {
+		}
+		localization_key = "GFX_Calin_Thunderfeather_portrait"
+	}
+}
+defined_text = {#国际派领导人名字
+	name = GetGRWRozenkampismLeader
+	text = {
+		trigger = {
+		}
+		localization_key = GRW_Calin_Thunderfeather
+	}
+}
+defined_text = {#劳工派领导人肖像
+	name = get_head_of_syndicalism_leader_gfx
+	text = {
+		trigger = {
+			has_country_flag = GRW_Trifan_Sidioveanu_dead
+		}
+		localization_key = "GFX_Liviu_Moonbeak_portrait"
+	}
+	text = {
+		trigger = {
+		}
+		localization_key = "GFX_Trifan_Sidioveanu_portrait"
+	}
+}
+defined_text = {#劳工派领导人名字
+	name = GetGRWAntiSyndicalismLeader
+	text = {
+		trigger = {
+			has_country_flag = GRW_Trifan_Sidioveanu_dead
+		}
+		localization_key = GRW_Liviu_Moonbeak
+	}
+	text = {
+		trigger = {
+		}
+		localization_key = GRW_Trifan_Sidioveanu
+	}
+}
+defined_text = {#民主党派
+	name = get_head_of_democratic_socialism_leader_gfx
+	text = {
+		trigger = {
+		}
+		localization_key = "GFX_democratic_parties_portrait"
+	}
+}
+#派系代表机构
+defined_text = {#正统派
+	name = GetGRWPrimitiveCommunismBureau
+	text = {#农村工作部
+		trigger = {
+			has_country_flag = GRW_ministry_of_agriculture_flag
+		}
+		localization_key = GRW_ministry_of_agriculture
+	}
+	text = {#土改委员会
+		localization_key = GRW_land_reform_commission
+	}
+}
+defined_text = {#劳工派
+name = GetGRWSyndicalismBureau
+text = {#国家计划委员会
+	trigger = {
+		has_country_flag = GRW_national_planning_commission_flag
+	}
+	localization_key = GRW_national_planning_commission
+}
+text = {#国家重建委员会
+	localization_key = GRW_industrial_reconstruction_commission
+}
+}
+#统一战线buff
+defined_text = {#政治点数获得
+	name = GetGRWPoliticalPowerFactor
+	text = {
+		trigger = {
+			check_variable = {GRW_var_show_political_power_factor < 0}
+		}
+		localization_key = GRW_show_political_power_factor_bad
+	}
+	text = {
+		localization_key = GRW_show_political_power_factor_good
+	}
+}
+defined_text = {#战略资源获取率
+	name = GetGRWLocalResourcesFactor
+	text = {
+		trigger = {
+			check_variable = {GRW_var_show_local_resources_factor < 0}
+		}
+		localization_key = GRW_show_local_resources_factor_bad
+	}
+	text = {
+		localization_key = GRW_show_local_resources_factor_good
+	}
+}
+defined_text = {#征兵法案花费
+	name = GetGRWMobilizationLawsCostFactor
+	text = {
+		trigger = {
+			check_variable = {GRW_var_show_mobilization_laws_cost_factor > 0}
+		}
+		localization_key = GRW_show_mobilization_laws_cost_factor_bad
+	}
+	text = {
+		localization_key = GRW_show_mobilization_laws_cost_factor_good
+	}
+}
+defined_text = {#适役人口修正
+	name = GetGRWConscriptionTotalFactor
+	text = {
+		trigger = {
+			check_variable = {GRW_var_show_conscription_total_factor < 0}
+		}
+		localization_key = GRW_show_conscription_total_factor_bad
+	}
+	text = {
+		localization_key = GRW_show_conscription_total_factor_good
+	}
+}
+defined_text = {#建造速度
+	name = GetGRWProductionSpeedBuildingsFactor
+	text = {
+		trigger = {
+			check_variable = {GRW_var_show_production_speed_buildings_factor < 0}
+		}
+		localization_key = GRW_show_production_speed_buildings_factor_bad
+	}
+	text = {
+		localization_key = GRW_show_production_speed_buildings_factor_good
+	}
+}
+defined_text = {#生产效率上限
+	name = GetGRWProductionFactoryMaxEfficiencyFactor
+	text = {
+		trigger = {
+			check_variable = {GRW_var_show_production_factory_max_efficiency_factor < 0}
+		}
+		localization_key = GRW_show_production_factory_max_efficiency_factor_bad
+	}
+	text = {
+		localization_key = GRW_show_production_factory_max_efficiency_factor_good
+	}
+}
+defined_text = {#科研速度
+	name = GetGRWResearchSpeedFactor
+	text = {
+		trigger = {
+			check_variable = {GRW_var_show_research_speed_factor < 0}
+		}
+		localization_key = GRW_show_research_speed_factor_bad
+	}
+	text = {
+		localization_key = GRW_show_research_speed_factor_good
+	}
+}
+defined_text = {#贸易法案花费
+	name = GetGRWTradeLawsCostFactor
+	text = {
+		trigger = {
+			check_variable = {GRW_var_show_trade_laws_cost_factor > 0}
+		}
+		localization_key = GRW_show_trade_laws_cost_factorr_bad
+	}
+	text = {
+		localization_key = GRW_show_trade_laws_cost_factor_good
+	}
+}
+defined_text = {#经济法案花费
+	name = GetGRWEconomyCostFactor
+	text = {
+		trigger = {
+			check_variable = {GRW_var_show_economy_cost_factor > 0}
+		}
+		localization_key = GRW_show_economy_cost_factorr_bad
+	}
+	text = {
+		localization_key = GRW_show_economy_cost_factor_good
+	}
+}
+
+#地图gui
+defined_text = {
+	name = GetGRWEviMap
+	text = {
+		trigger = {
+			exists = yes
+			OR = {
+				has_country_flag = GRW_Evi_friendly_flag
+				has_government = communism
+			}
+		}
+		localization_key = GRW_Evi_map_friendly
+	}
+	text = {
+		trigger = {
+			exists = yes
+			has_country_flag = GRW_Evi_hostile_flag
+		}
+		localization_key = GRW_Evi_map_hostile
+	}
+	text = {
+		trigger = {
+			exists = yes
+			has_country_flag = GRW_Evi_neutral_flag
+		}
+		localization_key = GRW_Evi_map_neutral
+	}
+	text = {
+		localization_key = GRW_Evi_map_Prywhen
+	}
+}
+
+defined_text = {
+	name = GetGRWEviMapName
+	text = {
+		trigger = {
+			has_country_flag = GRW_Evi_map_button_BAN_flag
+		}
+		localization_key = GRW_Evi_map_BAN_text_title
+	}
+	text = {
+		trigger = {
+			has_country_flag = GRW_Evi_map_button_GRU_flag
+		}
+		localization_key = GRW_Evi_map_GRU_text_title
+	}
+	text = {
+		trigger = {
+			has_country_flag = GRW_Evi_map_button_GRY_flag
+		}
+		localization_key = GRW_Evi_map_GRY_text_title
+	}
+	text = {
+		trigger = {
+			has_country_flag = GRW_Evi_map_button_LUS_flag
+		}
+		localization_key = GRW_Evi_map_LUS_text_title
+	}
+	text = {
+		localization_key = GRW_Evi_map_GRW_text_title
+	}
+}
+
+defined_text = {
+	name = GetGRWDiplomaticPreference
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_diplomatic_preference > 0
+			}
+		}
+		localization_key = GRW_Evi_map_diplomatic_International_Bureau
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_diplomatic_preference < 0
+			}
+		}
+		localization_key = GRW_Evi_map_diplomatic_Foreign_Ministry
+	}
+	text = {
+		localization_key = GRW_Evi_map_diplomatic
+	}
+}
+
+defined_text = {
+	name = GetGRWEviMapText
+	text = {
+		trigger = {
+			has_country_flag = GRW_Evi_map_button_BAN_flag
+		}
+		localization_key = GRW_Evi_map_BAN_text
+	}
+	text = {
+		trigger = {
+			has_country_flag = GRW_Evi_map_button_GRU_flag
+		}
+		localization_key = GRW_Evi_map_GRU_text
+	}
+	text = {
+		trigger = {
+			has_country_flag = GRW_Evi_map_button_GRY_flag
+		}
+		localization_key = GRW_Evi_map_GRY_text
+	}
+	text = {
+		trigger = {
+			has_country_flag = GRW_Evi_map_button_LUS_flag
+		}
+		localization_key = GRW_Evi_map_LUS_text
+	}
+}
+
+defined_text = {
+	name = GetGRWEviMapTextBAN
+	text = {
+		trigger = {
+			exists = yes
+			has_government = fascism
+		}
+		localization_key = GRW_Evi_map_text_BAN_fascism
+	}
+	text = {
+		trigger = {
+			exists = yes
+			has_government = neutrality
+		}
+		localization_key = GRW_Evi_map_text_BAN_neutrality
+	}
+	text = {
+		trigger = {
+			exists = yes
+			has_government = democratic
+		}
+		localization_key = GRW_Evi_map_text_BAN_democratic
+	}
+	text = {
+		localization_key = GRW_Evi_map_text_communism
+	}
+}
+defined_text = {
+	name = GetGRWEviMapTextGRU
+	text = {
+		trigger = {
+			exists = yes
+			has_government = fascism
+		}
+		localization_key = GRW_Evi_map_text_GRU_fascism
+	}
+	text = {
+		trigger = {
+			exists = yes
+			has_government = neutrality
+		}
+		localization_key = GRW_Evi_map_text_GRU_neutrality
+	}
+	text = {
+		trigger = {
+			exists = yes
+			has_government = democratic
+		}
+		localization_key = GRW_Evi_map_text_GRU_democratic
+	}
+	text = {
+		localization_key = GRW_Evi_map_text_communism
+	}
+}
+defined_text = {
+	name = GetGRWEviMapTextGRY
+	text = {
+		trigger = {
+			exists = yes
+			has_government = fascism
+		}
+		localization_key = GRW_Evi_map_text_GRY_fascism
+	}
+	text = {
+		trigger = {
+			exists = yes
+			has_government = neutrality
+		}
+		localization_key = GRW_Evi_map_text_GRY_neutrality
+	}
+	text = {
+		trigger = {
+			exists = yes
+			has_government = democratic
+		}
+		localization_key = GRW_Evi_map_text_GRY_democratic
+	}
+	text = {
+		localization_key = GRW_Evi_map_text_communism
+	}
+}
+defined_text = {
+	name = GetGRWEviMapTextLUS
+	text = {
+		trigger = {
+			exists = yes
+			has_government = fascism
+		}
+		localization_key = GRW_Evi_map_text_LUS_fascism
+	}
+	text = {
+		trigger = {
+			exists = yes
+			has_government = neutrality
+		}
+		localization_key = GRW_Evi_map_text_LUS_neutrality
+	}
+	text = {
+		trigger = {
+			exists = yes
+			has_government = democratic
+		}
+		localization_key = GRW_Evi_map_text_LUS_democratic
+	}
+	text = {
+		localization_key = GRW_Evi_map_text_communism
+	}
+}
+defined_text = {
+	name = GetEviCommunistParty
+	text = {
+		trigger = {
+			original_tag = BAN
+		}
+		localization_key = BAN_communism_party
+	}
+	text = {
+		trigger = {
+			original_tag = LUS
+		}
+		localization_key = LUS_communism_party
+	}
+	text = {
+		trigger = {
+			original_tag = GRY
+		}
+		localization_key = GRY_communism_party
+	}
+	text = {
+		trigger = {
+			original_tag = GRU
+		}
+		localization_key = GRU_communism_party
+	}
+}
+
+defined_text = {
+	name = GetGRWAreaIntroduction
+	text = {
+		trigger = {
+			has_country_flag = GRW_Evi_map_button_GRW_flag
+			has_country_flag = GRW_Evi_map_Whiteflower_flag
+		}
+		localization_key = GRW_Evi_area_introduction_Whiteflower
+	}
+	text = {
+		trigger = {
+			has_country_flag = GRW_Evi_map_button_GRW_flag
+			has_country_flag = GRW_Evi_map_Acute_Forest_flag
+		}
+		localization_key = GRW_Evi_area_introduction_Acute_Forest
+	}
+	text = {
+		trigger = {
+			has_country_flag = GRW_Evi_map_button_GRW_flag
+			has_country_flag = GRW_Evi_map_Griffonwill_flag
+		}
+		localization_key = GRW_Evi_area_introduction_Griffonwill
+	}
+	text = {
+		trigger = {
+			has_country_flag = GRW_Evi_map_button_GRW_flag
+			has_country_flag = GRW_Evi_map_Brodfeld_flag
+		}
+		localization_key = GRW_Evi_area_introduction_Brodfeld
+	}
+	text = {
+		trigger = {
+			has_country_flag = GRW_Evi_map_button_GRW_flag
+			has_country_flag = GRW_Evi_map_Terrible_Marsh_flag
+		}
+		localization_key = GRW_Evi_area_introduction_Terrible_Marsh
+	}
+	text = {
+		trigger = {
+			has_country_flag = GRW_Evi_map_button_GRW_flag
+			has_country_flag = GRW_Evi_map_Kivessin_flag
+		}
+		localization_key = GRW_Evi_area_introduction_Kivessin
+	}
+	text = {
+		trigger = {
+			has_country_flag = GRW_Evi_map_button_GRW_flag
+			has_country_flag = GRW_Evi_map_Lifov_flag
+		}
+		localization_key = GRW_Evi_area_introduction_Lifov
+	}
+	text = {
+		trigger = {
+			has_country_flag = GRW_Evi_map_button_GRW_flag
+			has_country_flag = GRW_Evi_map_Consta_flag
+		}
+		localization_key = GRW_Evi_area_introduction_Consta
+	}
+	text = {
+		trigger = {
+			has_country_flag = GRW_Evi_map_button_GRW_flag
+			has_country_flag = GRW_Evi_map_Sydia_flag
+		}
+		localization_key = GRW_Evi_area_introduction_Sydia
+	}
+	text = {
+		trigger = {
+			has_country_flag = GRW_Evi_map_button_GRW_flag
+			has_country_flag = GRW_Evi_map_Salt_Island_flag
+		}
+		localization_key = GRW_Evi_area_introduction_Salt_Island
+	}
+	text = {
+		trigger = {
+			has_country_flag = GRW_Evi_map_button_LUS_flag
+		}
+		localization_key = GRW_Evi_area_introduction_LUS
+	}
+	text = {
+		trigger = {
+			has_country_flag = GRW_Evi_map_button_GRY_flag
+		}
+		localization_key = GRW_Evi_area_introduction_GRY
+	}
+	text = {
+		trigger = {
+			has_country_flag = GRW_Evi_map_button_BAN_flag
+		}
+		localization_key = GRW_Evi_area_introduction_BAN
+	}
+	text = {
+		trigger = {
+			has_country_flag = GRW_Evi_map_button_GRU_flag
+		}
+		localization_key = GRW_Evi_area_introduction_GRU
+	}
+}
+
+#国际局报告
+defined_text = {#标题
+	name = GRWPRGetEventTitle
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_international_bureau_variable = 1
+			}
+		}
+		localization_key = GRW_international_bureau_event_title_1
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_international_bureau_variable = 2
+			}
+		}
+		localization_key = GRW_international_bureau_event_title_2
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_international_bureau_variable = 3
+			}
+		}
+		localization_key = GRW_international_bureau_event_title_3
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_international_bureau_variable = 4
+			}
+		}
+		localization_key = GRW_international_bureau_event_title_4
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_international_bureau_variable = 5
+			}
+		}
+		localization_key = GRW_international_bureau_event_title_5
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_international_bureau_variable = 6
+			}
+		}
+		localization_key = GRW_international_bureau_event_title_6
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_international_bureau_variable = 7
+			}
+		}
+		localization_key = GRW_international_bureau_event_title_7
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_international_bureau_variable = 8
+			}
+		}
+		localization_key = GRW_international_bureau_event_title_8
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_international_bureau_variable = 9
+			}
+		}
+		localization_key = GRW_international_bureau_event_title_9
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_international_bureau_variable = 10
+			}
+		}
+		localization_key = GRW_international_bureau_event_title_10
+	}
+}
+defined_text = {#正文
+	name = GRWPRGetEventDescription
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_international_bureau_variable = 1
+			}
+		}
+		localization_key = GRW_international_bureau_event_description_1
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_international_bureau_variable = 2
+			}
+		}
+		localization_key = GRW_international_bureau_event_description_2
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_international_bureau_variable = 3
+			}
+		}
+		localization_key = GRW_international_bureau_event_description_3
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_international_bureau_variable = 4
+			}
+		}
+		localization_key = GRW_international_bureau_event_description_4
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_international_bureau_variable = 5
+			}
+		}
+		localization_key = GRW_international_bureau_event_description_5
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_international_bureau_variable = 6
+			}
+		}
+		localization_key = GRW_international_bureau_event_description_6
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_international_bureau_variable = 7
+			}
+		}
+		localization_key = GRW_international_bureau_event_description_7
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_international_bureau_variable = 8
+			}
+		}
+		localization_key = GRW_international_bureau_event_description_8
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_international_bureau_variable = 9
+			}
+		}
+		localization_key = GRW_international_bureau_event_description_9
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_international_bureau_variable = 10
+			}
+		}
+		localization_key = GRW_international_bureau_event_description_10
+	}
+}
+defined_text = {#效果
+	name = GRWPRGetEventEffect
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_international_bureau_variable = 1
+			}
+		}
+		localization_key = GRW_international_bureau_event_effect_1
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_international_bureau_variable = 2
+			}
+		}
+		localization_key = GRW_international_bureau_event_effect_2
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_international_bureau_variable = 3
+			}
+		}
+		localization_key = GRW_international_bureau_event_effect_3
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_international_bureau_variable = 4
+			}
+		}
+		localization_key = GRW_international_bureau_event_effect_4
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_international_bureau_variable = 5
+			}
+		}
+		localization_key = GRW_international_bureau_event_effect_5
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_international_bureau_variable = 6
+			}
+		}
+		localization_key = GRW_international_bureau_event_effect_6
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_international_bureau_variable = 7
+			}
+		}
+		localization_key = GRW_international_bureau_event_effect_7
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_international_bureau_variable = 8
+			}
+		}
+		localization_key = GRW_international_bureau_event_effect_8
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_international_bureau_variable = 9
+			}
+		}
+		localization_key = GRW_international_bureau_event_effect_9
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_international_bureau_variable = 10
+			}
+		}
+		localization_key = GRW_international_bureau_event_effect_10
+	}
+}
+
+#类核心圈子gui
+defined_text = {
+	name = GetGRWCPGAdvisorName1
+	text = {
+		trigger = {
+			NOT = {
+				has_country_flag = GRW_midgame_20_flag
+			}
+		}
+		localization_key = GRW_Lucian_Goldwing
+	}
+	text = {
+		trigger = {
+			has_country_flag = GRW_midgame_20_flag
+		}
+		localization_key = GRW_Ionel_Shortfeather
+	}
+}
+defined_text = {
+	name = GRWGetCPPCCAdvisorDesc1
+	text = {
+		trigger = {
+			has_idea = GRW_vice_chairman
+		}
+		localization_key = idea_desc|GRW_vice_chairman
+	}
+	text = {
+		trigger = {
+			has_idea = GRW_vice_chairman_1
+		}
+		localization_key = idea_desc|GRW_vice_chairman_1
+	}
+}
+defined_text = {
+	name = GetGRWCPGAdvisorName2
+	text = {
+		trigger = {
+			NOT = {
+				has_country_flag = GRW_midgame_20_flag
+			}
+		}
+		localization_key = GRW_Ionel_Shortfeather
+	}
+	text = {
+		trigger = {
+			has_country_flag = GRW_midgame_20_flag
+		}
+		localization_key = GRW_Liviu_Moonbeak
+	}
+}
+defined_text = {
+	name = GRWGetCPPCCAdvisorDesc2
+	text = {
+		trigger = {
+			has_idea = GRW_state_council_premier
+		}
+		localization_key = idea_desc|GRW_state_council_premier
+	}
+	text = {
+		trigger = {
+			has_idea = GRW_state_council_premier_1
+		}
+		localization_key = idea_desc|GRW_state_council_premier_1
+	}
+	text = {
+		trigger = {
+			has_idea = GRW_state_council_premier_no_aat
+		}
+		localization_key = idea_desc|GRW_state_council_premier_no_aat
+	}
+	text = {
+		trigger = {
+			has_idea = GRW_state_council_premier_no_aat_1
+		}
+		localization_key = idea_desc|GRW_state_council_premier_no_aat_1
+	}
+}
+defined_text = {
+	name = GRWGetCPPCCAdvisorDesc3
+	text = {
+		localization_key = idea_desc|GRW_NPC_standing_committee_chairman
+	}
+}
+
+defined_text = {
+	name = GetGRWMARCAdvisorName1
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_1 = 0
+			}
+		}
+		localization_key = empty_key
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_1 = 1
+			}
+		}
+		localization_key = WNG_antonino_proletarino
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_1 = 2
+			}
+		}
+		localization_key = WNG_giovanni_gacci
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_1 = 3
+			}
+		}
+		localization_key = FEA_bernhardt_stappenbeld
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_1 = 4
+			}
+		}
+		localization_key = HLQ_ernst_fischer
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_1 = 5
+			}
+		}
+		localization_key = LSC_starry_night
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_1 = 6
+			}
+		}
+		localization_key = JER_char_cru
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_1 = 7
+			}
+		}
+		localization_key = FAT_moe_sparrowsbane
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_1 = 8
+			}
+		}
+		localization_key = FAT_rikard_astler
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_1 = 9
+			}
+		}
+		localization_key = GRF_heinrich_redtail
+	}
+}
+defined_text = {
+	name = GetGRWMARCAdvisorTraitName1
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_1 = 0
+			}
+		}
+		localization_key = empty_key
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = {
+					GRW_MARC_advisor_1 = 1
+				}
+				check_variable = {
+					GRW_MARC_advisor_1 = 2
+				}
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_1_trait_text
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_1 = 3
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_2_trait_text
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = {
+					GRW_MARC_advisor_1 = 4
+				}
+				check_variable = {
+					GRW_MARC_advisor_1 = 5
+				}
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_3_trait_text
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_1 = 6
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_4_trait_text
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = {
+					GRW_MARC_advisor_1 = 7
+				}
+				check_variable = {
+					GRW_MARC_advisor_1 = 8
+				}
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_5_trait_text
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_1 = 9
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_6_trait_text
+	}
+}
+
+defined_text = {
+	name = GetGRWMARCAdvisorName2
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_2 = 0
+			}
+		}
+		localization_key = empty_key
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_2 = 1
+			}
+		}
+		localization_key = WNG_antonino_proletarino
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_2 = 2
+			}
+		}
+		localization_key = WNG_giovanni_gacci
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_2 = 3
+			}
+		}
+		localization_key = FEA_bernhardt_stappenbeld
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_2 = 4
+			}
+		}
+		localization_key = HLQ_ernst_fischer
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_2 = 5
+			}
+		}
+		localization_key = LSC_starry_night
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_2 = 6
+			}
+		}
+		localization_key = JER_char_cru
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_2 = 7
+			}
+		}
+		localization_key = FAT_moe_sparrowsbane
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_2 = 8
+			}
+		}
+		localization_key = FAT_rikard_astler
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_2 = 9
+			}
+		}
+		localization_key = GRF_heinrich_redtail
+	}
+}
+defined_text = {
+	name = GetGRWMARCAdvisorTraitName2
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_2 = 0
+			}
+		}
+		localization_key = empty_key
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = {
+					GRW_MARC_advisor_2 = 1
+				}
+				check_variable = {
+					GRW_MARC_advisor_2 = 2
+				}
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_1_trait_text
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_2 = 3
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_2_trait_text
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = {
+					GRW_MARC_advisor_2 = 4
+				}
+				check_variable = {
+					GRW_MARC_advisor_2 = 5
+				}
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_3_trait_text
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_2 = 6
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_4_trait_text
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = {
+					GRW_MARC_advisor_2 = 7
+				}
+				check_variable = {
+					GRW_MARC_advisor_2 = 8
+				}
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_5_trait_text
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_2 = 9
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_6_trait_text
+	}
+}
+
+defined_text = {
+	name = GetGRWMARCAdvisorName3
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_3 = 0
+			}
+		}
+		localization_key = empty_key
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_3 = 1
+			}
+		}
+		localization_key = WNG_antonino_proletarino
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_3 = 2
+			}
+		}
+		localization_key = WNG_giovanni_gacci
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_3 = 3
+			}
+		}
+		localization_key = FEA_bernhardt_stappenbeld
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_3 = 4
+			}
+		}
+		localization_key = HLQ_ernst_fischer
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_3 = 5
+			}
+		}
+		localization_key = LSC_starry_night
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_3 = 6
+			}
+		}
+		localization_key = JER_char_cru
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_3 = 7
+			}
+		}
+		localization_key = FAT_moe_sparrowsbane
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_3 = 8
+			}
+		}
+		localization_key = FAT_rikard_astler
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_3 = 9
+			}
+		}
+		localization_key = GRF_heinrich_redtail
+	}
+}
+defined_text = {
+	name = GetGRWMARCAdvisorTraitName3
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_3 = 0
+			}
+		}
+		localization_key = empty_key
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = {
+					GRW_MARC_advisor_3 = 1
+				}
+				check_variable = {
+					GRW_MARC_advisor_3 = 2
+				}
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_1_trait_text
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_3 = 3
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_2_trait_text
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = {
+					GRW_MARC_advisor_3 = 4
+				}
+				check_variable = {
+					GRW_MARC_advisor_3 = 5
+				}
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_3_trait_text
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_3 = 6
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_4_trait_text
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = {
+					GRW_MARC_advisor_3 = 7
+				}
+				check_variable = {
+					GRW_MARC_advisor_3 = 8
+				}
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_5_trait_text
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_3 = 9
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_6_trait_text
+	}
+}
+
+defined_text = {
+	name = GetGRWMARCAdvisorName4
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_4 = 0
+			}
+		}
+		localization_key = empty_key
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_4 = 1
+			}
+		}
+		localization_key = WNG_antonino_proletarino
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_4 = 2
+			}
+		}
+		localization_key = WNG_giovanni_gacci
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_4 = 3
+			}
+		}
+		localization_key = FEA_bernhardt_stappenbeld
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_4 = 4
+			}
+		}
+		localization_key = HLQ_ernst_fischer
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_4 = 5
+			}
+		}
+		localization_key = LSC_starry_night
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_4 = 6
+			}
+		}
+		localization_key = JER_char_cru
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_4 = 7
+			}
+		}
+		localization_key = FAT_moe_sparrowsbane
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_4 = 8
+			}
+		}
+		localization_key = FAT_rikard_astler
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_4 = 9
+			}
+		}
+		localization_key = GRF_heinrich_redtail
+	}
+}
+defined_text = {
+	name = GetGRWMARCAdvisorTraitName4
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_4 = 0
+			}
+		}
+		localization_key = empty_key
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = {
+					GRW_MARC_advisor_4 = 1
+				}
+				check_variable = {
+					GRW_MARC_advisor_4 = 2
+				}
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_1_trait_text
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_4 = 3
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_2_trait_text
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = {
+					GRW_MARC_advisor_4 = 4
+				}
+				check_variable = {
+					GRW_MARC_advisor_4 = 5
+				}
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_3_trait_text
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_4 = 6
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_4_trait_text
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = {
+					GRW_MARC_advisor_4 = 7
+				}
+				check_variable = {
+					GRW_MARC_advisor_4 = 8
+				}
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_5_trait_text
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_4 = 9
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_6_trait_text
+	}
+}
+
+defined_text = {
+	name = GetGRWMARCAdvisorName5
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_5 = 0
+			}
+		}
+		localization_key = empty_key
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_5 = 1
+			}
+		}
+		localization_key = WNG_antonino_proletarino
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_5 = 2
+			}
+		}
+		localization_key = WNG_giovanni_gacci
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_5 = 3
+			}
+		}
+		localization_key = FEA_bernhardt_stappenbeld
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_5 = 4
+			}
+		}
+		localization_key = HLQ_ernst_fischer
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_5 = 5
+			}
+		}
+		localization_key = LSC_starry_night
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_5 = 6
+			}
+		}
+		localization_key = JER_char_cru
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_5 = 7
+			}
+		}
+		localization_key = FAT_moe_sparrowsbane
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_5 = 8
+			}
+		}
+		localization_key = FAT_rikard_astler
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_5 = 9
+			}
+		}
+		localization_key = GRF_heinrich_redtail
+	}
+}
+defined_text = {
+	name = GetGRWMARCAdvisorTraitName5
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_5 = 0
+			}
+		}
+		localization_key = empty_key
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = {
+					GRW_MARC_advisor_5 = 1
+				}
+				check_variable = {
+					GRW_MARC_advisor_5 = 2
+				}
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_1_trait_text
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_5 = 3
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_2_trait_text
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = {
+					GRW_MARC_advisor_5 = 4
+				}
+				check_variable = {
+					GRW_MARC_advisor_5 = 5
+				}
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_3_trait_text
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_5 = 6
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_4_trait_text
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = {
+					GRW_MARC_advisor_5 = 7
+				}
+				check_variable = {
+					GRW_MARC_advisor_5 = 8
+				}
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_5_trait_text
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_5 = 9
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_6_trait_text
+	}
+}
+
+defined_text = {
+	name = GetGRWMARCAdvisorName6
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_6 = 0
+			}
+		}
+		localization_key = empty_key
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_6 = 1
+			}
+		}
+		localization_key = WNG_antonino_proletarino
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_6 = 2
+			}
+		}
+		localization_key = WNG_giovanni_gacci
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_6 = 3
+			}
+		}
+		localization_key = FEA_bernhardt_stappenbeld
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_6 = 4
+			}
+		}
+		localization_key = HLQ_ernst_fischer
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_6 = 5
+			}
+		}
+		localization_key = LSC_starry_night
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_6 = 6
+			}
+		}
+		localization_key = JER_char_cru
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_6 = 7
+			}
+		}
+		localization_key = FAT_moe_sparrowsbane
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_6 = 8
+			}
+		}
+		localization_key = FAT_rikard_astler
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_6 = 9
+			}
+		}
+		localization_key = GRF_heinrich_redtail
+	}
+}
+defined_text = {
+	name = GetGRWMARCAdvisorTraitName6
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_6 = 0
+			}
+		}
+		localization_key = empty_key
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = {
+					GRW_MARC_advisor_6 = 1
+				}
+				check_variable = {
+					GRW_MARC_advisor_6 = 2
+				}
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_1_trait_text
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_6 = 3
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_2_trait_text
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = {
+					GRW_MARC_advisor_6 = 4
+				}
+				check_variable = {
+					GRW_MARC_advisor_6 = 5
+				}
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_3_trait_text
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_6 = 6
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_4_trait_text
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = {
+					GRW_MARC_advisor_6 = 7
+				}
+				check_variable = {
+					GRW_MARC_advisor_6 = 8
+				}
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_5_trait_text
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GRW_MARC_advisor_6 = 9
+			}
+		}
+		localization_key = GRW_major_administrative_region_committee_advisor_6_trait_text
+	}
+}

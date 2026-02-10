@@ -1,0 +1,2021 @@
+﻿add_namespace = GRW_inner_circle_proletarino
+add_namespace = GRW_inner_circle_gacci
+add_namespace = GRW_inner_circle_fischer
+add_namespace = GRW_inner_circle_starry_night
+add_namespace = GRW_inner_circle_stappenbeld
+add_namespace = GRW_inner_circle_sparrowsbane
+add_namespace = GRW_inner_circle_astler
+add_namespace = GRW_inner_circle_cru
+add_namespace = GRW_inner_circle_redtail
+
+#################################################################
+###核心圈子
+#普罗莱塔里诺主席
+country_event = {
+	id = GRW_inner_circle_proletarino.1
+	hidden = yes
+	is_triggered_only = yes
+
+	option = {
+		if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_WNG_unite_the_FAL
+				}
+			}
+			activate_shine_on_focus = GRW_WNG_unite_the_FAL
+			set_country_flag = {
+				flag = GRW_WNG_unite_the_FAL_in_progress_flag
+				days = 71
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_proletarino.2
+				days = 70
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_SIC_abolish_autonomous_parishes
+				}
+			}
+			activate_shine_on_focus = GRW_SIC_abolish_autonomous_parishes
+			set_country_flag = {
+				flag = GRW_SIC_abolish_autonomous_parishes_in_progress_flag
+				days = 71
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_proletarino.2
+				days = 70
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Southern_Griffonia_central_direct_control
+				}
+			}
+			activate_shine_on_focus = GRW_Southern_Griffonia_central_direct_control
+			set_country_flag = {
+				flag = GRW_Southern_Griffonia_central_direct_control_in_progress_flag
+				days = 71
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_proletarino.2
+				days = 70
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Southern_Griffonia_infrastructure_nationalization
+				}
+			}
+			activate_shine_on_focus = GRW_Southern_Griffonia_infrastructure_nationalization
+			set_country_flag = {
+				flag = GRW_Southern_Griffonia_infrastructure_nationalization_in_progress_flag
+				days = 141
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_proletarino.2
+				days = 140
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Southern_Griffonia_land_collectivization
+				}
+			}
+			activate_shine_on_focus = GRW_Southern_Griffonia_land_collectivization
+			set_country_flag = {
+				flag = GRW_Southern_Griffonia_land_collectivization_in_progress_flag
+				days = 106
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_proletarino.2
+				days = 105
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Southern_Griffonia_mineral_geological_exploration_bureau
+				}
+			}
+			activate_shine_on_focus = GRW_Southern_Griffonia_mineral_geological_exploration_bureau
+			set_country_flag = {
+				flag = GRW_Southern_Griffonia_mineral_geological_exploration_bureau_in_progress_flag
+				days = 141
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_proletarino.2
+				days = 140
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Southern_Griffonia_control_means_production
+				}
+			}
+			activate_shine_on_focus = GRW_Southern_Griffonia_control_means_production
+			set_country_flag = {
+				flag = GRW_Southern_Griffonia_control_means_production_in_progress_flag
+				days = 141
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_proletarino.2
+				days = 140
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Southern_Griffonia_engineer_exchange_program
+				}
+			}
+			activate_shine_on_focus = GRW_Southern_Griffonia_engineer_exchange_program
+			set_country_flag = {
+				flag = GRW_Southern_Griffonia_engineer_exchange_program_in_progress_flag
+				days = 141
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_proletarino.2
+				days = 140
+			}
+		}
+	}
+}
+country_event = {
+	id = GRW_inner_circle_proletarino.2
+	hidden = yes
+	is_triggered_only = yes
+
+	option = {
+		if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_WNG_unite_the_FAL
+			}
+			complete_national_focus = {
+				focus = GRW_WNG_unite_the_FAL
+				use_side_message = yes
+				originator_name = WNG_antonino_proletarino
+			}
+			clr_country_flag = GRW_WNG_unite_the_FAL_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_proletarino.1
+				days = 28
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_SIC_abolish_autonomous_parishes
+			}
+			complete_national_focus = {
+				focus = GRW_SIC_abolish_autonomous_parishes
+				use_side_message = yes
+				originator_name = WNG_antonino_proletarino
+			}
+			clr_country_flag = GRW_SIC_abolish_autonomous_parishes_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_proletarino.1
+				days = 28
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Southern_Griffonia_central_direct_control
+			}
+			complete_national_focus = {
+				focus = GRW_Southern_Griffonia_central_direct_control
+				use_side_message = yes
+				originator_name = WNG_antonino_proletarino
+			}
+			clr_country_flag = GRW_Southern_Griffonia_central_direct_control_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_proletarino.1
+				days = 42
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Southern_Griffonia_infrastructure_nationalization
+			}
+			complete_national_focus = {
+				focus = GRW_Southern_Griffonia_infrastructure_nationalization
+				use_side_message = yes
+				originator_name = WNG_antonino_proletarino
+			}
+			clr_country_flag = GRW_Southern_Griffonia_infrastructure_nationalization_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_proletarino.1
+				days = 35
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Southern_Griffonia_land_collectivization
+			}
+			complete_national_focus = {
+				focus = GRW_Southern_Griffonia_land_collectivization
+				use_side_message = yes
+				originator_name = WNG_antonino_proletarino
+			}
+			clr_country_flag = GRW_Southern_Griffonia_land_collectivization_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_proletarino.1
+				days = 42
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Southern_Griffonia_mineral_geological_exploration_bureau
+			}
+			complete_national_focus = {
+				focus = GRW_Southern_Griffonia_mineral_geological_exploration_bureau
+				use_side_message = yes
+				originator_name = WNG_antonino_proletarino
+			}
+			clr_country_flag = GRW_Southern_Griffonia_mineral_geological_exploration_bureau_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_proletarino.1
+				days = 42
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Southern_Griffonia_control_means_production
+			}
+			complete_national_focus = {
+				focus = GRW_Southern_Griffonia_control_means_production
+				use_side_message = yes
+				originator_name = WNG_antonino_proletarino
+			}
+			clr_country_flag = GRW_Southern_Griffonia_control_means_production_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_proletarino.1
+				days = 42
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Southern_Griffonia_engineer_exchange_program
+			}
+			complete_national_focus = {
+				focus = GRW_Southern_Griffonia_engineer_exchange_program
+				use_side_message = yes
+				originator_name = WNG_antonino_proletarino
+			}
+			clr_country_flag = GRW_Southern_Griffonia_engineer_exchange_program_in_progress_flag
+		}
+	}
+}
+#加奇主席
+country_event = {
+	id = GRW_inner_circle_gacci.1
+	hidden = yes
+	is_triggered_only = yes
+
+	option = {
+		if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_WNG_releas_the_FAL
+				}
+			}
+			activate_shine_on_focus = GRW_WNG_releas_the_FAL
+			set_country_flag = {
+				flag = GRW_WNG_releas_the_FAL_in_progress_flag
+				days = 71
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_gacci.2
+				days = 70
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_SIC_sycaecia_vanguard
+				}
+			}
+			activate_shine_on_focus = GRW_SIC_sycaecia_vanguard
+			set_country_flag = {
+				flag = GRW_SIC_sycaecia_vanguard_in_progress_flag
+				days = 71
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_gacci.2
+				days = 70
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Southern_Griffonia_local_socialist_cooperation
+				}
+			}
+			activate_shine_on_focus = GRW_Southern_Griffonia_local_socialist_cooperation
+			set_country_flag = {
+				flag = GRW_Southern_Griffonia_local_socialist_cooperation_in_progress_flag
+				days = 71
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_gacci.2
+				days = 70
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Southern_Griffonia_infrastructure_nationalization
+				}
+			}
+			activate_shine_on_focus = GRW_Southern_Griffonia_infrastructure_nationalization
+			set_country_flag = {
+				flag = GRW_Southern_Griffonia_infrastructure_nationalization_in_progress_flag
+				days = 141
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_gacci.2
+				days = 140
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Southern_Griffonia_subsidize_small_farmers
+				}
+			}
+			activate_shine_on_focus = GRW_Southern_Griffonia_subsidize_small_farmers
+			set_country_flag = {
+				flag = GRW_Southern_Griffonia_subsidize_small_farmers_in_progress_flag
+				days = 106
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_gacci.2
+				days = 105
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Southern_Griffonia_mineral_geological_exploration_bureau
+				}
+			}
+			activate_shine_on_focus = GRW_Southern_Griffonia_mineral_geological_exploration_bureau
+			set_country_flag = {
+				flag = GRW_Southern_Griffonia_mineral_geological_exploration_bureau_in_progress_flag
+				days = 141
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_gacci.2
+				days = 140
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Southern_Griffonia_break_up_large_enterprises
+				}
+			}
+			activate_shine_on_focus = GRW_Southern_Griffonia_break_up_large_enterprises
+			set_country_flag = {
+				flag = GRW_Southern_Griffonia_break_up_large_enterprises_in_progress_flag
+				days = 141
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_gacci.2
+				days = 140
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Southern_Griffonia_engineer_exchange_program
+				}
+			}
+			activate_shine_on_focus = GRW_Southern_Griffonia_engineer_exchange_program
+			set_country_flag = {
+				flag = GRW_Southern_Griffonia_engineer_exchange_program_in_progress_flag
+				days = 141
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_gacci.2
+				days = 140
+			}
+		}
+	}
+}
+country_event = {
+	id = GRW_inner_circle_gacci.2
+	hidden = yes
+	is_triggered_only = yes
+
+	option = {
+		if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_WNG_releas_the_FAL
+			}
+			complete_national_focus = {
+				focus = GRW_WNG_releas_the_FAL
+				use_side_message = yes
+				originator_name = WNG_giovanni_gacci
+			}
+			clr_country_flag = GRW_WNG_releas_the_FAL_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_gacci.1
+				days = 28
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_SIC_sycaecia_vanguard
+			}
+			complete_national_focus = {
+				focus = GRW_SIC_sycaecia_vanguard
+				use_side_message = yes
+				originator_name = WNG_giovanni_gacci
+			}
+			clr_country_flag = GRW_SIC_sycaecia_vanguard_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_gacci.1
+				days = 28
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Southern_Griffonia_local_socialist_cooperation
+			}
+			complete_national_focus = {
+				focus = GRW_Southern_Griffonia_local_socialist_cooperation
+				use_side_message = yes
+				originator_name = WNG_giovanni_gacci
+			}
+			clr_country_flag = GRW_Southern_Griffonia_local_socialist_cooperation_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_gacci.1
+				days = 42
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Southern_Griffonia_infrastructure_nationalization
+			}
+			complete_national_focus = {
+				focus = GRW_Southern_Griffonia_infrastructure_nationalization
+				use_side_message = yes
+				originator_name = WNG_giovanni_gacci
+			}
+			clr_country_flag = GRW_Southern_Griffonia_infrastructure_nationalization_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_gacci.1
+				days = 35
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Southern_Griffonia_subsidize_small_farmers
+			}
+			complete_national_focus = {
+				focus = GRW_Southern_Griffonia_subsidize_small_farmers
+				use_side_message = yes
+				originator_name = WNG_giovanni_gacci
+			}
+			clr_country_flag = GRW_Southern_Griffonia_subsidize_small_farmers_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_gacci.1
+				days = 42
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Southern_Griffonia_mineral_geological_exploration_bureau
+			}
+			complete_national_focus = {
+				focus = GRW_Southern_Griffonia_mineral_geological_exploration_bureau
+				use_side_message = yes
+				originator_name = WNG_giovanni_gacci
+			}
+			clr_country_flag = GRW_Southern_Griffonia_mineral_geological_exploration_bureau_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_gacci.1
+				days = 42
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Southern_Griffonia_break_up_large_enterprises
+			}
+			complete_national_focus = {
+				focus = GRW_Southern_Griffonia_break_up_large_enterprises
+				use_side_message = yes
+				originator_name = WNG_giovanni_gacci
+			}
+			clr_country_flag = GRW_Southern_Griffonia_break_up_large_enterprises_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_gacci.1
+				days = 42
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Southern_Griffonia_engineer_exchange_program
+			}
+			complete_national_focus = {
+				focus = GRW_Southern_Griffonia_engineer_exchange_program
+				use_side_message = yes
+				originator_name = WNG_giovanni_gacci
+			}
+			clr_country_flag = GRW_Southern_Griffonia_engineer_exchange_program_in_progress_flag
+		}
+	}
+}
+#费舍尔主席
+country_event = {
+	id = GRW_inner_circle_fischer.1
+	hidden = yes
+	is_triggered_only = yes
+
+	option = {
+		if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_vartai_support_posniaks
+				}
+			}
+			activate_shine_on_focus = GRW_vartai_support_posniaks
+			set_country_flag = {
+				flag = GRW_vartai_support_posniaks_in_progress_flag
+				days = 71
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_fischer.2
+				days = 70
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_vartai_establish_revolutionary_tribunal
+				}
+			}
+			activate_shine_on_focus = GRW_vartai_establish_revolutionary_tribunal
+			set_country_flag = {
+				flag = GRW_vartai_establish_revolutionary_tribunal_in_progress_flag
+				days = 71
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_fischer.2
+				days = 70
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_vartai_consolidate_two_knightly_orders
+				}
+			}
+			activate_shine_on_focus = GRW_vartai_consolidate_two_knightly_orders
+			set_country_flag = {
+				flag = GRW_vartai_consolidate_two_knightly_orders_in_progress_flag
+				days = 106
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_fischer.2
+				days = 105
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_vartai_railway_modernization
+				}
+			}
+			activate_shine_on_focus = GRW_vartai_railway_modernization
+			set_country_flag = {
+				flag = GRW_vartai_railway_modernization_in_progress_flag
+				days = 141
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_fischer.2
+				days = 140
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_vartai_new_arms_industries
+				}
+			}
+			activate_shine_on_focus = GRW_vartai_new_arms_industries
+			set_country_flag = {
+				flag = GRW_vartai_new_arms_industries_in_progress_flag
+				days = 141
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_fischer.2
+				days = 140
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_vartai_resource_prospects
+				}
+			}
+			activate_shine_on_focus = GRW_vartai_resource_prospects
+			set_country_flag = {
+				flag = GRW_vartai_resource_prospects_in_progress_flag
+				days = 141
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_fischer.2
+				days = 140
+			}
+		}
+	}
+}
+country_event = {
+	id = GRW_inner_circle_fischer.2
+	hidden = yes
+	is_triggered_only = yes
+
+	option = {
+		if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_vartai_support_posniaks
+			}
+			complete_national_focus = {
+				focus = GRW_vartai_support_posniaks
+				use_side_message = yes
+				originator_name = HLQ_ernst_fischer
+			}
+			clr_country_flag = GRW_vartai_support_posniaks_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_fischer.1
+				days = 28
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_vartai_establish_revolutionary_tribunal
+			}
+			complete_national_focus = {
+				focus = GRW_vartai_establish_revolutionary_tribunal
+				use_side_message = yes
+				originator_name = HLQ_ernst_fischer
+			}
+			clr_country_flag = GRW_vartai_establish_revolutionary_tribunal_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_fischer.1
+				days = 35
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_vartai_consolidate_two_knightly_orders
+			}
+			complete_national_focus = {
+				focus = GRW_vartai_consolidate_two_knightly_orders
+				use_side_message = yes
+				originator_name = HLQ_ernst_fischer
+			}
+			clr_country_flag = GRW_vartai_consolidate_two_knightly_orders_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_fischer.1
+				days = 42
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_vartai_railway_modernization
+			}
+			complete_national_focus = {
+				focus = GRW_vartai_railway_modernization
+				use_side_message = yes
+				originator_name = HLQ_ernst_fischer
+			}
+			clr_country_flag = GRW_vartai_railway_modernization_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_fischer.1
+				days = 42
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_vartai_new_arms_industries
+			}
+			complete_national_focus = {
+				focus = GRW_vartai_new_arms_industries
+				use_side_message = yes
+				originator_name = HLQ_ernst_fischer
+			}
+			clr_country_flag = GRW_vartai_new_arms_industries_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_fischer.1
+				days = 42
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_vartai_resource_prospects
+			}
+			complete_national_focus = {
+				focus = GRW_vartai_resource_prospects
+				use_side_message = yes
+				originator_name = HLQ_ernst_fischer
+			}
+			clr_country_flag = GRW_vartai_resource_prospects_in_progress_flag
+		}
+	}
+}
+#繁星皎皎主席
+country_event = {
+	id = GRW_inner_circle_starry_night.1
+	hidden = yes
+	is_triggered_only = yes
+
+	option = {
+		if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_vartai_ensure_two_races_equal_rights
+				}
+			}
+			activate_shine_on_focus = GRW_vartai_ensure_two_races_equal_rights
+			set_country_flag = {
+				flag = GRW_vartai_ensure_two_races_equal_rights_in_progress_flag
+				days = 71
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_starry_night.2
+				days = 70
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_vartai_establish_revolutionary_tribunal
+				}
+			}
+			activate_shine_on_focus = GRW_vartai_establish_revolutionary_tribunal
+			set_country_flag = {
+				flag = GRW_vartai_establish_revolutionary_tribunal_in_progress_flag
+				days = 71
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_starry_night.2
+				days = 70
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_vartai_nationalize_knightly_property
+				}
+			}
+			activate_shine_on_focus = GRW_vartai_nationalize_knightly_property
+			set_country_flag = {
+				flag = GRW_vartai_nationalize_knightly_property_in_progress_flag
+				days = 106
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_starry_night.2
+				days = 105
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_vartai_railway_modernization
+				}
+			}
+			activate_shine_on_focus = GRW_vartai_railway_modernization
+			set_country_flag = {
+				flag = GRW_vartai_railway_modernization_in_progress_flag
+				days = 141
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_starry_night.2
+				days = 140
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_vartai_rural_reconstruction
+				}
+			}
+			activate_shine_on_focus = GRW_vartai_rural_reconstruction
+			set_country_flag = {
+				flag = GRW_vartai_rural_reconstruction_in_progress_flag
+				days = 141
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_starry_night.2
+				days = 140
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_vartai_resource_prospects
+				}
+			}
+			activate_shine_on_focus = GRW_vartai_resource_prospects
+			set_country_flag = {
+				flag = GRW_vartai_resource_prospects_in_progress_flag
+				days = 141
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_starry_night.2
+				days = 140
+			}
+		}
+	}
+}
+country_event = {
+	id = GRW_inner_circle_starry_night.2
+	hidden = yes
+	is_triggered_only = yes
+
+	option = {
+		if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_vartai_ensure_two_races_equal_rights
+			}
+			complete_national_focus = {
+				focus = GRW_vartai_ensure_two_races_equal_rights
+				use_side_message = yes
+				originator_name = LSC_starry_night
+			}
+			clr_country_flag = GRW_vartai_ensure_two_races_equal_rights_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_starry_night.1
+				days = 28
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_vartai_establish_revolutionary_tribunal
+			}
+			complete_national_focus = {
+				focus = GRW_vartai_establish_revolutionary_tribunal
+				use_side_message = yes
+				originator_name = LSC_starry_night
+			}
+			clr_country_flag = GRW_vartai_establish_revolutionary_tribunal_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_starry_night.1
+				days = 35
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_vartai_nationalize_knightly_property
+			}
+			complete_national_focus = {
+				focus = GRW_vartai_nationalize_knightly_property
+				use_side_message = yes
+				originator_name = LSC_starry_night
+			}
+			clr_country_flag = GRW_vartai_nationalize_knightly_property_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_starry_night.1
+				days = 42
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_vartai_railway_modernization
+			}
+			complete_national_focus = {
+				focus = GRW_vartai_railway_modernization
+				use_side_message = yes
+				originator_name = LSC_starry_night
+			}
+			clr_country_flag = GRW_vartai_railway_modernization_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_starry_night.1
+				days = 42
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_vartai_rural_reconstruction
+			}
+			complete_national_focus = {
+				focus = GRW_vartai_rural_reconstruction
+				use_side_message = yes
+				originator_name = LSC_starry_night
+			}
+			clr_country_flag = GRW_vartai_rural_reconstruction_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_starry_night.1
+				days = 42
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_vartai_resource_prospects
+			}
+			complete_national_focus = {
+				focus = GRW_vartai_resource_prospects
+				use_side_message = yes
+				originator_name = LSC_starry_night
+			}
+			clr_country_flag = GRW_vartai_resource_prospects_in_progress_flag
+		}
+	}
+}
+#稳步主席
+country_event = {
+	id = GRW_inner_circle_stappenbeld.1
+	hidden = yes
+	is_triggered_only = yes
+
+	option = {
+		if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Herzland_direct_rule_plan
+				}
+			}
+			activate_shine_on_focus = GRW_Herzland_direct_rule_plan
+			set_country_flag = {
+				flag = GRW_Herzland_direct_rule_plan_in_progress_flag
+				days = 71
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_stappenbeld.2
+				days = 70
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Central_Griffonia_anti_clericalism
+				}
+				NOT = {
+					has_country_flag = GRW_free_unions_flag
+				}
+			}
+			activate_shine_on_focus = GRW_Central_Griffonia_anti_clericalism
+			set_country_flag = {
+				flag = GRW_Central_Griffonia_anti_clericalism_in_progress_flag
+				days = 106
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_stappenbeld.2
+				days = 105
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Central_Griffonia_red_archons
+				}
+				has_country_flag = GRW_free_unions_flag
+			}
+			activate_shine_on_focus = GRW_Central_Griffonia_red_archons
+			set_country_flag = {
+				flag = GRW_Central_Griffonia_red_archons_in_progress_flag
+				days = 106
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_stappenbeld.2
+				days = 105
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Central_Griffonia_reopen_universities
+				}
+			}
+			activate_shine_on_focus = GRW_Central_Griffonia_reopen_universities
+			set_country_flag = {
+				flag = GRW_Central_Griffonia_reopen_universities_in_progress_flag
+				days = 106
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_stappenbeld.2
+				days = 105
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Central_Griffonia_mass_land_reform_plan
+				}
+			}
+			activate_shine_on_focus = GRW_Central_Griffonia_mass_land_reform_plan
+			set_country_flag = {
+				flag = GRW_Central_Griffonia_mass_land_reform_plan_in_progress_flag
+				days = 106
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_stappenbeld.2
+				days = 105
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Central_Griffonia_connect_the_heartlands
+				}
+			}
+			activate_shine_on_focus = GRW_Central_Griffonia_connect_the_heartlands
+			set_country_flag = {
+				flag = GRW_Central_Griffonia_connect_the_heartlands_in_progress_flag
+				days = 141
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_stappenbeld.2
+				days = 140
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Central_Griffonia_public_works
+				}
+			}
+			activate_shine_on_focus = GRW_Central_Griffonia_public_works
+			set_country_flag = {
+				flag = GRW_Central_Griffonia_public_works_in_progress_flag
+				days = 141
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_stappenbeld.2
+				days = 140
+			}
+		}
+	}
+}
+country_event = {
+	id = GRW_inner_circle_stappenbeld.2
+	hidden = yes
+	is_triggered_only = yes
+
+	option = {
+		if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Herzland_direct_rule_plan
+			}
+			complete_national_focus = {
+				focus = GRW_Herzland_direct_rule_plan
+				use_side_message = yes
+				originator_name = FEA_bernhardt_stappenbeld
+			}
+			clr_country_flag = GRW_Herzland_direct_rule_plan_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_stappenbeld.1
+				days = 35
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Central_Griffonia_anti_clericalism
+			}
+			complete_national_focus = {
+				focus = GRW_Central_Griffonia_anti_clericalism
+				use_side_message = yes
+				originator_name = FEA_bernhardt_stappenbeld
+			}
+			clr_country_flag = GRW_Central_Griffonia_anti_clericalism_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_stappenbeld.1
+				days = 35
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Central_Griffonia_red_archons
+			}
+			complete_national_focus = {
+				focus = GRW_Central_Griffonia_red_archons
+				use_side_message = yes
+				originator_name = FEA_bernhardt_stappenbeld
+			}
+			clr_country_flag = GRW_Central_Griffonia_red_archons_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_stappenbeld.1
+				days = 35
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Central_Griffonia_reopen_universities
+			}
+			complete_national_focus = {
+				focus = GRW_Central_Griffonia_reopen_universities
+				use_side_message = yes
+				originator_name = FEA_bernhardt_stappenbeld
+			}
+			clr_country_flag = GRW_Central_Griffonia_reopen_universities_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_stappenbeld.1
+				days = 35
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Central_Griffonia_mass_land_reform_plan
+			}
+			complete_national_focus = {
+				focus = GRW_Central_Griffonia_mass_land_reform_plan
+				use_side_message = yes
+				originator_name = FEA_bernhardt_stappenbeld
+			}
+			clr_country_flag = GRW_Central_Griffonia_mass_land_reform_plan_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_stappenbeld.1
+				days = 42
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Central_Griffonia_connect_the_heartlands
+			}
+			complete_national_focus = {
+				focus = GRW_Central_Griffonia_connect_the_heartlands
+				use_side_message = yes
+				originator_name = FEA_bernhardt_stappenbeld
+			}
+			clr_country_flag = GRW_Central_Griffonia_connect_the_heartlands_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_stappenbeld.1
+				days = 42
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Central_Griffonia_public_works
+			}
+			complete_national_focus = {
+				focus = GRW_Central_Griffonia_public_works
+				use_side_message = yes
+				originator_name = FEA_bernhardt_stappenbeld
+			}
+			clr_country_flag = GRW_Central_Griffonia_public_works_in_progress_flag
+		}
+	}
+}
+#燕祸主席
+country_event = {
+	id = GRW_inner_circle_sparrowsbane.1
+	hidden = yes
+	is_triggered_only = yes
+
+	option = {
+		if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Northern_Griffonia_internationalist_policies
+				}
+			}
+			activate_shine_on_focus = GRW_Northern_Griffonia_internationalist_policies
+			set_country_flag = {
+				flag = GRW_Northern_Griffonia_internationalist_policies_in_progress_flag
+				days = 71
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_sparrowsbane.2
+				days = 70
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Northern_Griffonia_revise_the_principles
+				}
+			}
+			activate_shine_on_focus = GRW_Northern_Griffonia_revise_the_principles
+			set_country_flag = {
+				flag = GRW_Northern_Griffonia_revise_the_principles_in_progress_flag
+				days = 71
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_sparrowsbane.2
+				days = 70
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Northern_Griffonia_new_identity
+				}
+			}
+			activate_shine_on_focus = GRW_Northern_Griffonia_new_identity
+			set_country_flag = {
+				flag = GRW_Northern_Griffonia_new_identity_in_progress_flag
+				days = 71
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_sparrowsbane.2
+				days = 70
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Northern_Griffonia_collectivization
+				}
+			}
+			activate_shine_on_focus = GRW_Northern_Griffonia_collectivization
+			set_country_flag = {
+				flag = GRW_Northern_Griffonia_collectivization_in_progress_flag
+				days = 106
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_sparrowsbane.2
+				days = 105
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Northern_Griffonia_improve_infrastructure_development
+				}
+			}
+			activate_shine_on_focus = GRW_Northern_Griffonia_improve_infrastructure_development
+			set_country_flag = {
+				flag = GRW_Northern_Griffonia_improve_infrastructure_development_in_progress_flag
+				days = 141
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_sparrowsbane.2
+				days = 140
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Northern_Griffonia_expand_industrial_unions
+				}
+			}
+			activate_shine_on_focus = GRW_Northern_Griffonia_expand_industrial_unions
+			set_country_flag = {
+				flag = GRW_Northern_Griffonia_expand_industrial_unions_in_progress_flag
+				days = 141
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_sparrowsbane.2
+				days = 140
+			}
+		}
+	}
+}
+country_event = {
+	id = GRW_inner_circle_sparrowsbane.2
+	hidden = yes
+	is_triggered_only = yes
+
+	option = {
+		if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Northern_Griffonia_internationalist_policies
+			}
+			complete_national_focus = {
+				focus = GRW_Northern_Griffonia_internationalist_policies
+				use_side_message = yes
+				originator_name = FAT_moe_sparrowsbane
+			}
+			clr_country_flag = GRW_Northern_Griffonia_internationalist_policies_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_sparrowsbane.1
+				days = 28
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Northern_Griffonia_revise_the_principles
+			}
+			complete_national_focus = {
+				focus = GRW_Northern_Griffonia_revise_the_principles
+				use_side_message = yes
+				originator_name = FAT_moe_sparrowsbane
+			}
+			clr_country_flag = GRW_Northern_Griffonia_revise_the_principles_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_sparrowsbane.1
+				days = 28
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Northern_Griffonia_new_identity
+			}
+			complete_national_focus = {
+				focus = GRW_Northern_Griffonia_new_identity
+				use_side_message = yes
+				originator_name = FAT_moe_sparrowsbane
+			}
+			clr_country_flag = GRW_Northern_Griffonia_new_identity_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_sparrowsbane.1
+				days = 35
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Northern_Griffonia_collectivization
+			}
+			complete_national_focus = {
+				focus = GRW_Northern_Griffonia_collectivization
+				use_side_message = yes
+				originator_name = FAT_moe_sparrowsbane
+			}
+			clr_country_flag = GRW_Northern_Griffonia_collectivization_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_sparrowsbane.1
+				days = 42
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Northern_Griffonia_improve_infrastructure_development
+			}
+			complete_national_focus = {
+				focus = GRW_Northern_Griffonia_improve_infrastructure_development
+				use_side_message = yes
+				originator_name = FAT_moe_sparrowsbane
+			}
+			clr_country_flag = GRW_Northern_Griffonia_improve_infrastructure_development_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_sparrowsbane.1
+				days = 42
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Northern_Griffonia_expand_industrial_unions
+			}
+			complete_national_focus = {
+				focus = GRW_Northern_Griffonia_expand_industrial_unions
+				use_side_message = yes
+				originator_name = FAT_moe_sparrowsbane
+			}
+			clr_country_flag = GRW_Northern_Griffonia_expand_industrial_unions_in_progress_flag
+		}
+	}
+}
+#艾斯特勒主席
+country_event = {
+	id = GRW_inner_circle_astler.1
+	hidden = yes
+	is_triggered_only = yes
+
+	option = {
+		if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Northern_Griffonia_communalist_policies
+				}
+			}
+			activate_shine_on_focus = GRW_Northern_Griffonia_communalist_policies
+			set_country_flag = {
+				flag = GRW_Northern_Griffonia_communalist_policies_in_progress_flag
+				days = 71
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_astler.2
+				days = 70
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Northern_Griffonia_revise_the_principles
+				}
+			}
+			activate_shine_on_focus = GRW_Northern_Griffonia_revise_the_principles
+			set_country_flag = {
+				flag = GRW_Northern_Griffonia_revise_the_principles_in_progress_flag
+				days = 71
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_astler.2
+				days = 70
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Northern_Griffonia_direct_local_autonomy
+				}
+			}
+			activate_shine_on_focus = GRW_Northern_Griffonia_direct_local_autonomy
+			set_country_flag = {
+				flag = GRW_Northern_Griffonia_direct_local_autonomy_in_progress_flag
+				days = 71
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_astler.2
+				days = 70
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Northern_Griffonia_collectivization
+				}
+			}
+			activate_shine_on_focus = GRW_Northern_Griffonia_collectivization
+			set_country_flag = {
+				flag = GRW_Northern_Griffonia_collectivization_in_progress_flag
+				days = 106
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_astler.2
+				days = 105
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Northern_Griffonia_improve_infrastructure_development
+				}
+			}
+			activate_shine_on_focus = GRW_Northern_Griffonia_improve_infrastructure_development
+			set_country_flag = {
+				flag = GRW_Northern_Griffonia_improve_infrastructure_development_in_progress_flag
+				days = 141
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_astler.2
+				days = 140
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Northern_Griffonia_expand_industrial_unions
+				}
+			}
+			activate_shine_on_focus = GRW_Northern_Griffonia_expand_industrial_unions
+			set_country_flag = {
+				flag = GRW_Northern_Griffonia_expand_industrial_unions_in_progress_flag
+				days = 141
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_astler.2
+				days = 140
+			}
+		}
+	}
+}
+country_event = {
+	id = GRW_inner_circle_astler.2
+	hidden = yes
+	is_triggered_only = yes
+
+	option = {
+		if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Northern_Griffonia_communalist_policies
+			}
+			complete_national_focus = {
+				focus = GRW_Northern_Griffonia_communalist_policies
+				use_side_message = yes
+				originator_name = FAT_rikard_astler
+			}
+			clr_country_flag = GRW_Northern_Griffonia_communalist_policies_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_astler.1
+				days = 28
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Northern_Griffonia_revise_the_principles
+			}
+			complete_national_focus = {
+				focus = GRW_Northern_Griffonia_revise_the_principles
+				use_side_message = yes
+				originator_name = FAT_rikard_astler
+			}
+			clr_country_flag = GRW_Northern_Griffonia_revise_the_principles_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_astler.1
+				days = 28
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Northern_Griffonia_direct_local_autonomy
+			}
+			complete_national_focus = {
+				focus = GRW_Northern_Griffonia_direct_local_autonomy
+				use_side_message = yes
+				originator_name = FAT_rikard_astler
+			}
+			clr_country_flag = GRW_Northern_Griffonia_direct_local_autonomy_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_astler.1
+				days = 35
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Northern_Griffonia_collectivization
+			}
+			complete_national_focus = {
+				focus = GRW_Northern_Griffonia_collectivization
+				use_side_message = yes
+				originator_name = FAT_rikard_astler
+			}
+			clr_country_flag = GRW_Northern_Griffonia_collectivization_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_astler.1
+				days = 42
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Northern_Griffonia_improve_infrastructure_development
+			}
+			complete_national_focus = {
+				focus = GRW_Northern_Griffonia_improve_infrastructure_development
+				use_side_message = yes
+				originator_name = FAT_rikard_astler
+			}
+			clr_country_flag = GRW_Northern_Griffonia_improve_infrastructure_development_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_astler.1
+				days = 42
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Northern_Griffonia_expand_industrial_unions
+			}
+			complete_national_focus = {
+				focus = GRW_Northern_Griffonia_expand_industrial_unions
+				use_side_message = yes
+				originator_name = FAT_rikard_astler
+			}
+			clr_country_flag = GRW_Northern_Griffonia_expand_industrial_unions_in_progress_flag
+		}
+	}
+}
+#克吕主席
+country_event = {
+	id = GRW_inner_circle_cru.1
+	hidden = yes
+	is_triggered_only = yes
+
+	option = {
+		if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Western_Griffonia_consolidate_trade_unions_status
+				}
+			}
+			activate_shine_on_focus = GRW_Western_Griffonia_consolidate_trade_unions_status
+			set_country_flag = {
+				flag = GRW_Western_Griffonia_consolidate_trade_unions_status_in_progress_flag
+				days = 71
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_cru.2
+				days = 70
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Western_Griffonia_accept_progressives
+				}
+			}
+			activate_shine_on_focus = GRW_Western_Griffonia_accept_progressives
+			set_country_flag = {
+				flag = GRW_Western_Griffonia_accept_progressives_in_progress_flag
+				days = 71
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_cru.2
+				days = 70
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Western_Griffonia_anti_reactionary_action
+				}
+			}
+			activate_shine_on_focus = GRW_Western_Griffonia_anti_reactionary_action
+			set_country_flag = {
+				flag = GRW_Western_Griffonia_anti_reactionary_action_in_progress_flag
+				days = 71
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_cru.2
+				days = 70
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Western_Griffonia_mass_assembly
+				}
+			}
+			activate_shine_on_focus = GRW_Western_Griffonia_mass_assembly
+			set_country_flag = {
+				flag = GRW_Western_Griffonia_mass_assembly_in_progress_flag
+				days = 71
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_cru.2
+				days = 70
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Western_Griffonia_rural_electrification
+				}
+			}
+			activate_shine_on_focus = GRW_Western_Griffonia_rural_electrification
+			set_country_flag = {
+				flag = GRW_Western_Griffonia_rural_electrification_in_progress_flag
+				days = 106
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_cru.2
+				days = 105
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Western_Griffonia_construct_railway_network
+				}
+			}
+			activate_shine_on_focus = GRW_Western_Griffonia_construct_railway_network
+			set_country_flag = {
+				flag = GRW_Western_Griffonia_construct_railway_network_in_progress_flag
+				days = 141
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_cru.2
+				days = 140
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Western_Griffonia_industrial_rebuild_project
+				}
+			}
+			activate_shine_on_focus = GRW_Western_Griffonia_industrial_rebuild_project
+			set_country_flag = {
+				flag = GRW_Western_Griffonia_industrial_rebuild_project_in_progress_flag
+				days = 141
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_cru.2
+				days = 140
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Western_Griffonia_central_academy_integration
+				}
+			}
+			activate_shine_on_focus = GRW_Western_Griffonia_central_academy_integration
+			set_country_flag = {
+				flag = GRW_Western_Griffonia_central_academy_integration_in_progress_flag
+				days = 141
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_cru.2
+				days = 140
+			}
+		}
+	}
+}
+country_event = {
+	id = GRW_inner_circle_cru.2
+	hidden = yes
+	is_triggered_only = yes
+
+	option = {
+		if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Western_Griffonia_consolidate_trade_unions_status
+			}
+			complete_national_focus = {
+				focus = GRW_Western_Griffonia_consolidate_trade_unions_status
+				use_side_message = yes
+				originator_name = JER_char_cru
+			}
+			clr_country_flag = GRW_Western_Griffonia_consolidate_trade_unions_status_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_cru.1
+				days = 28
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Western_Griffonia_accept_progressives
+			}
+			complete_national_focus = {
+				focus = GRW_Western_Griffonia_accept_progressives
+				use_side_message = yes
+				originator_name = JER_char_cru
+			}
+			clr_country_flag = GRW_Western_Griffonia_accept_progressives_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_cru.1
+				days = 28
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Western_Griffonia_anti_reactionary_action
+			}
+			complete_national_focus = {
+				focus = GRW_Western_Griffonia_anti_reactionary_action
+				use_side_message = yes
+				originator_name = JER_char_cru
+			}
+			clr_country_flag = GRW_Western_Griffonia_anti_reactionary_action_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_cru.1
+				days = 28
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Western_Griffonia_mass_assembly
+			}
+			complete_national_focus = {
+				focus = GRW_Western_Griffonia_mass_assembly
+				use_side_message = yes
+				originator_name = JER_char_cru
+			}
+			clr_country_flag = GRW_Western_Griffonia_mass_assembly_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_cru.1
+				days = 35
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Western_Griffonia_rural_electrification
+			}
+			complete_national_focus = {
+				focus = GRW_Western_Griffonia_rural_electrification
+				use_side_message = yes
+				originator_name = JER_char_cru
+			}
+			clr_country_flag = GRW_Western_Griffonia_rural_electrification_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_cru.1
+				days = 42
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Western_Griffonia_construct_railway_network
+			}
+			complete_national_focus = {
+				focus = GRW_Western_Griffonia_construct_railway_network
+				use_side_message = yes
+				originator_name = JER_char_cru
+			}
+			clr_country_flag = GRW_Western_Griffonia_construct_railway_network_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_cru.1
+				days = 42
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Western_Griffonia_industrial_rebuild_project
+			}
+			complete_national_focus = {
+				focus = GRW_Western_Griffonia_industrial_rebuild_project
+				use_side_message = yes
+				originator_name = JER_char_cru
+			}
+			clr_country_flag = GRW_Western_Griffonia_industrial_rebuild_project_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_cru.1
+				days = 42
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Western_Griffonia_central_academy_integration
+			}
+			complete_national_focus = {
+				focus = GRW_Western_Griffonia_central_academy_integration
+				use_side_message = yes
+				originator_name = JER_char_cru
+			}
+			clr_country_flag = GRW_Western_Griffonia_central_academy_integration_in_progress_flag
+		}
+	}
+}
+#红尾主席
+country_event = {
+	id = GRW_inner_circle_redtail.1
+	hidden = yes
+	is_triggered_only = yes
+
+	option = {
+		if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Nova_Griffonia_purge_revolution_enemies
+				}
+			}
+			activate_shine_on_focus = GRW_Nova_Griffonia_purge_revolution_enemies
+			set_country_flag = {
+				flag = GRW_Nova_Griffonia_purge_revolution_enemies_in_progress_flag
+				days = 71
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_redtail.2
+				days = 70
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Nova_Griffonia_exceptionalism
+				}
+			}
+			activate_shine_on_focus = GRW_Nova_Griffonia_exceptionalism
+			set_country_flag = {
+				flag = GRW_Nova_Griffonia_exceptionalism_in_progress_flag
+				days = 71
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_redtail.2
+				days = 70
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Nova_Griffonia_social_welfare_program
+				}
+			}
+			activate_shine_on_focus = GRW_Nova_Griffonia_social_welfare_program
+			set_country_flag = {
+				flag = GRW_Nova_Griffonia_social_welfare_program_in_progress_flag
+				days = 106
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_redtail.2
+				days = 105
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_completed_focus = GRW_Nova_Griffonia_industrialisation_plan
+				}
+			}
+			activate_shine_on_focus = GRW_Nova_Griffonia_industrialisation_plan
+			set_country_flag = {
+				flag = GRW_Nova_Griffonia_industrialisation_plan_in_progress_flag
+				days = 141
+				value = 1
+			}
+			country_event = {
+				id = GRW_inner_circle_redtail.2
+				days = 140
+			}
+		}
+	}
+}
+country_event = {
+	id = GRW_inner_circle_redtail.2
+	hidden = yes
+	is_triggered_only = yes
+
+	option = {
+		if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Nova_Griffonia_purge_revolution_enemies
+			}
+			complete_national_focus = {
+				focus = GRW_Nova_Griffonia_purge_revolution_enemies
+				use_side_message = yes
+				originator_name = GRF_heinrich_redtail
+			}
+			clr_country_flag = GRW_Nova_Griffonia_purge_revolution_enemies_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_redtail.1
+				days = 28
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Nova_Griffonia_exceptionalism
+			}
+			complete_national_focus = {
+				focus = GRW_Nova_Griffonia_exceptionalism
+				use_side_message = yes
+				originator_name = GRF_heinrich_redtail
+			}
+			clr_country_flag = GRW_Nova_Griffonia_exceptionalism_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_redtail.1
+				days = 35
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Nova_Griffonia_social_welfare_program
+			}
+			complete_national_focus = {
+				focus = GRW_Nova_Griffonia_social_welfare_program
+				use_side_message = yes
+				originator_name = GRF_heinrich_redtail
+			}
+			clr_country_flag = GRW_Nova_Griffonia_social_welfare_program_in_progress_flag
+			country_event = {
+				id = GRW_inner_circle_redtail.1
+				days = 42
+			}
+		}
+		else_if = {
+			limit = {
+				has_shine_effect_on_focus = GRW_Nova_Griffonia_industrialisation_plan
+			}
+			complete_national_focus = {
+				focus = GRW_Nova_Griffonia_industrialisation_plan
+				use_side_message = yes
+				originator_name = GRF_heinrich_redtail
+			}
+			clr_country_flag = GRW_Nova_Griffonia_industrialisation_plan_in_progress_flag
+		}
+	}
+}

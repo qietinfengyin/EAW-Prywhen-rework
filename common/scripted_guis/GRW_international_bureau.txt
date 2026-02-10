@@ -1,0 +1,62 @@
+scripted_gui = {
+	GRW_international_bureau_window = {
+		context_type = player_context
+		window_name = "GRW_international_bureau_window"
+		
+		visible = {
+			is_ai = no
+			has_variable = GRW_NAAP_entry_content
+		}
+
+		effects = {
+			click_botton_click = {
+				clear_variable = GRW_NAAP_entry_name
+				clear_variable = GRW_NAAP_entry_title
+				clear_variable = GRW_NAAP_entry_content
+				clear_variable = GRW_NAAP_entry_effect
+
+				set_variable = {
+					GRW_NAAP_active_entry = -1
+				}
+				add_to_variable = {
+					GRW_NAAP_dirty = 0.01
+				}
+			}
+		}
+	}
+
+	GRW_signature = {
+		window_name = "GRW_signature"
+		parent_window_name = GRW_bottom_Window
+
+		visible = {
+			NOT = {
+				has_variable = GRW_NAAP_entry_content
+			}
+			meta_trigger = {
+				text = {
+					NOT = {
+						has_country_flag = [ENTRY_TOKEN]_flag
+					}
+				}
+
+				ENTRY_TOKEN = "[?GRW_NAAP_current_entry.GetTokenKey]"
+			}
+		}
+	}
+
+	GRW_signature_stationary = {
+		window_name = "GRW_signature_stationary"
+		parent_window_name = GRW_bottom_Window
+
+		visible = {
+			meta_trigger = {
+				text = {
+					has_country_flag = [ENTRY_TOKEN]_flag
+				}
+
+				ENTRY_TOKEN = "[?GRW_NAAP_current_entry.GetTokenKey]"
+			}
+		}
+	}
+}

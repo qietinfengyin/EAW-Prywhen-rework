@@ -1,0 +1,143 @@
+#调试
+GRW_debug = {
+	icon = generic_research
+	priority = {
+		base = 10000
+	}
+	allowed = {
+		original_tag = GRW
+	}
+	visible = {
+		is_debug = yes
+	}
+}
+
+#普里文的历史
+GRW_history_of_Prywhen = {
+	icon = GFX_decision_category_form_prywhen_category
+	priority = {
+		base = 100
+	}
+	allowed = {
+		original_tag = GRW
+	}
+	visible = {
+		NOT = {
+			has_country_flag = GRW_history_of_Prywhen_hidden_flag
+		}
+	}
+}
+#共和国政治
+GRW_republican_politics = {
+	icon = form_prywhen_category
+	priority = {
+		base = 99
+	}
+	allowed = {
+		original_tag = GRW
+	}
+	visible = {
+		has_country_flag = GRW_first_prywhen_political_consultative_conference_flag
+	}
+	scripted_gui = GRW_faction_decision_ui
+	visible_when_empty = yes
+}
+#埃维的外交博弈
+GRW_Evi_construction = {
+	icon = form_prywhen_category
+	priority = {
+		base = 98
+	}
+	allowed = {
+		original_tag = GRW
+	}
+	visible = {
+		has_country_flag = GRW_Evi_games_unlocked_flag
+		NOT = {
+			has_country_flag = GRW_form_Evi_flag
+		}
+	}
+	scripted_gui = GRW_Evi_ui
+	visible_when_empty = yes
+}
+#共和国工业
+GRW_republican_industry = {
+	icon = GFX_decision_category_generic_industry
+	picture = GFX_decision_cat_kirin_oil_pumps
+	priority = {
+		base = 96
+	}
+	allowed = {
+		original_tag = GRW
+	}
+	visible = {
+		has_country_flag = GRW_national_reconstruction_commission_flag
+	}
+}
+#共和国农业
+GRW_republican_agriculture = {
+	icon = GFX_decision_category_generic_industry
+	priority = {
+		base = 95
+	}
+	allowed = {
+		original_tag = GRW
+	}
+	visible = {
+		has_country_flag = GRW_land_reform_flag
+	}
+}
+#共和国外交
+GRW_republican_diplomacy = {
+	icon = form_prywhen_category
+	priority = {
+		base = 94
+	}
+	allowed = {
+		original_tag = GRW
+	}
+	visible = {
+		has_country_flag = GRW_Evi_diplomatic_games_unlocked_flag
+	}
+}
+#集结在理想之下
+GRW_internationalism_decision_cat = {
+	icon = GFX_decision_category_SOV_permanent_revolution
+	picture = GFX_decision_cat_stg_palace_of_the_soviets
+	priority = {
+		base = 93
+	}
+	allowed = {
+		original_tag = GRW
+	}
+	visible = {
+		has_completed_focus = GRW_international_brigades
+	}
+}
+#医保改革
+GRW_health_care_reform = {
+	icon = decision_category_generic_democracy
+	priority = {
+		base = 92
+	}
+	allowed = {
+		original_tag = GRW
+	}
+	visible = {
+		has_completed_focus = GRW_free_medical_care
+	}
+}
+#军事科学院
+GRW_academy_of_military_sciences_cat = {
+	icon = SOV_soviet_academy_of_sciences
+	picture = GFX_decision_cat_picture_soviet_national_academy_of_sciences
+	priority = {
+		base = 91
+	}
+	allowed = {
+		original_tag = GRW
+	}
+	visible = {
+		has_completed_focus = GRW_academy_of_military_sciences
+	}
+}

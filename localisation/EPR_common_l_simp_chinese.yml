@@ -1,0 +1,63 @@
+﻿l_simp_chinese:
+####################################################
+##################### - 目录 - #####################
+####################################################
+
+#第一部分：特殊科技
+#第二部分：地名
+
+###################################################
+############## - 第一部分：特殊科技 - ##############
+###################################################
+
+GRW_advanced_hospital: "改良的战地医院"
+GRW_advanced_hospital_tt: "启用§H$GRW_advanced_hospital$\n$field_hospital$§!\n      $STAT_ARMY_CASUALTY_TRICKLEBACK$§G+5%§!\n      $STAT_ARMY_EXPERIENCE_LOSS_FACTOR$§G-10%§!"
+
+GRW_modern_engineering_battalions: "独立工兵团"
+GRW_modern_engineering_battalions_tt: "启用§H$GRW_modern_engineering_battalions$\n$engineer$§!\n      $STAT_ARMY_ENTRENCHMENT$§G+3§!\n    §H$FORT$§!\n      $STAT_ADJUSTER_ATTACK$§G+5%§!\n      $STAT_ADJUSTER_DEFENCE$§G+10%§!\n    §H$river$§!\n      $STAT_ADJUSTER_ATTACK$§G+5%§!\n      $STAT_ADJUSTER_DEFENCE$§G+10%§!"
+
+GRW_snow_buff: "雪地作战训练"
+GRW_snow_buff_tt: "启用§H$GRW_snow_buff$\n$category_all_infantry$§!\n    §H$snow$§!\n      $STAT_ADJUSTER_ATTACK$§G+5%§!\n      $STAT_ADJUSTER_DEFENCE$§G+10%§!\n      $STAT_ADJUSTER_MOVEMENT$§G+10%§!\n§H$knights$§!\n    §H$snow$§!\n      $STAT_ADJUSTER_ATTACK$§G+10%§!\n      $STAT_ADJUSTER_DEFENCE$§G+10%§!\n      $STAT_ADJUSTER_MOVEMENT$§G+10%§!"
+
+GRW_mountain_buff: "山地作战训练"
+GRW_mountain_buff_tt: "启用§H$GRW_mountain_buff$\n$category_all_infantry$§!\n    §H$mountain$§!\n      $STAT_ADJUSTER_ATTACK$§G+5%§!\n      $STAT_ADJUSTER_DEFENCE$§G+10%§!\n      $STAT_ADJUSTER_MOVEMENT$§G+10%§!\n§H$knights$§!\n    §H$mountain$§!\n      $STAT_ADJUSTER_ATTACK$§G+10%§!\n      $STAT_ADJUSTER_DEFENCE$§G+10%§!\n      $STAT_ADJUSTER_MOVEMENT$§G+10%§!"
+
+GRW_hills_buff: "丘陵作战训练"
+GRW_hills_buff_tt: "启用§H$GRW_hills_buff$\n$category_all_infantry$§!\n    §H$hills$§!\n      $STAT_ADJUSTER_ATTACK$§G+5%§!\n      $STAT_ADJUSTER_DEFENCE$§G+10%§!\n      $STAT_ADJUSTER_MOVEMENT$§G+10%§!\n§H$knights$§!\n    §H$hills$§!\n      $STAT_ADJUSTER_ATTACK$§G+10%§!\n      $STAT_ADJUSTER_DEFENCE$§G+10%§!\n      $STAT_ADJUSTER_MOVEMENT$§G+10%§!"
+
+GRW_forest_buff: "森林作战训练"
+GRW_forest_buff_tt: "启用§H$GRW_forest_buff$\n$category_all_infantry$§!\n    §H$forest$§!\n      $STAT_ADJUSTER_ATTACK$§G+5%§!\n      $STAT_ADJUSTER_DEFENCE$§G+10%§!\n      $STAT_ADJUSTER_MOVEMENT$§G+10%§!\n§H$knights$§!\n    §H$forest$§!\n      $STAT_ADJUSTER_ATTACK$§G+10%§!\n      $STAT_ADJUSTER_DEFENCE$§G+10%§!\n      $STAT_ADJUSTER_MOVEMENT$§G+10%§!"
+
+GRW_jungle_buff: "丛林作战训练"
+GRW_jungle_buff_tt: "启用§H$GRW_jungle_buff$\n$category_all_infantry$§!\n    §H$jungle$§!\n      $STAT_ADJUSTER_ATTACK$§G+5%§!\n      $STAT_ADJUSTER_DEFENCE$§G+10%§!\n      $STAT_ADJUSTER_MOVEMENT$§G+10%§!\n§H$knights$§!\n    §H$jungle$§!\n      $STAT_ADJUSTER_ATTACK$§G+10%§!\n      $STAT_ADJUSTER_DEFENCE$§G+10%§!\n      $STAT_ADJUSTER_MOVEMENT$§G+10%§!"
+
+GRW_marsh_buff: "沼泽作战训练"
+GRW_marsh_buff_tt: "启用§H$GRW_marsh_buff$\n$category_all_infantry$§!\n    §H$marsh$§!\n      $STAT_ADJUSTER_ATTACK$§G+5%§!\n      $STAT_ADJUSTER_DEFENCE$§G+10%§!\n      $STAT_ADJUSTER_MOVEMENT$§G+10%§!\n§H$knights$§!\n    §H$marsh$§!\n      $STAT_ADJUSTER_ATTACK$§G+10%§!\n      $STAT_ADJUSTER_DEFENCE$§G+10%§!\n      $STAT_ADJUSTER_MOVEMENT$§G+10%§!"
+
+GRW_urban_buff: "不对称作战训练"
+GRW_urban_buff_tt: "启用§H$GRW_urban_buff$\n$category_light_infantry$§!\n    §H$urban$§!\n      $STAT_ADJUSTER_ATTACK$§G+10%§!\n      $STAT_ADJUSTER_DEFENCE$§G+15%§!"
+
+tech_assault_battalion: "§Y$assault_battalion$§!"
+assault_battalion: "$blackshirt_assault_battalion$"
+assault_battalion_desc: "$blackshirt_assault_battalion_desc$"
+
+###################################################
+################ - 第二部分：地名 - ################
+###################################################
+
+###- 地块 -###
+STATE_588_CLEAR: "普拉霍瓦"
+STATE_1209: "康斯塔"
+STATE_1210: "维亚托雷"
+STATE_1211: "洛莱"
+STATE_1212: "里亚波图"
+STATE_1213: "科雷焦"
+
+###- 胜利点 -###
+VICTORY_POINTS_10006: "普洛耶什蒂"
+VICTORY_POINTS_12935: "皮德吉尔齐"
+VICTORY_POINTS_12945: "山麓镇"
+
+###- 奇观 -###
+monument_to_the_peoples_heroes: "鹫民英雄纪念碑"
+monument_to_the_peoples_heroes_desc: "鹫民英雄纪念碑整体是一个巨大的九棱柱，由狮鹫岩的花岗岩雕刻而成。碑体每一面为不同地区的艺术家雕刻的九幅浮雕，从正面看第一幅浮雕是格罗弗一世时期衣衫褴褛的起义农民，随后是两个代表古代狮鹫大陆开拓者的浮雕——以盾保护鹫民的阿克图利亚骑士，持望远镜立足船头的新狮鹫尼亚探险家。在古代狮鹫后是爪持火枪与软帽的烧炭党鹫，身穿军服指挥大炮开火的狮鹫海姆共和派，头戴贝雷帽高举旗帜的普利代公社社员，这些是自978年以来狮鹫大陆第一次革命浪潮的代表。随后是在风雪中前进的天际革命者，戴毡帽挥舞弯刀的白花起义军，以及作为狮鹫大陆小马革命者代表的长剑游击队。下方铭刻碑文“由此上溯一千年，从那时起，为了反对内外仇敌，争取民族统一和鹫民自由幸福，在历次斗争中牺牲的鹫民英雄们永垂不朽！”"

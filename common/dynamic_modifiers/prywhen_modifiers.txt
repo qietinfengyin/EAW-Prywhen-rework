@@ -1,0 +1,417 @@
+###国家buff
+#普里文解放军
+GRW_GLA = {
+	icon = GFX_idea_WNG_COM_army
+
+	custom_modifier_tooltip = GRW_revolutionary_military_council_tt
+
+	#部队行军速度
+	army_speed_factor = GRW_var_GLA_army_speed_factor
+	#部队组织度
+	army_org_factor = GRW_var_GLA_army_org_factor
+	#组织度恢复
+	army_morale_factor = GRW_var_GLA_army_morale_factor
+	#补给使用
+	supply_consumption_factor = GRW_var_GLA_supply_consumption_factor
+	#计划速度
+	planning_speed = GRW_var_GLA_planning_speed
+	#计划加成上限
+	max_planning = GRW_var_GLA_max_planning
+	#单位攻击
+	army_attack_factor = GRW_var_GLA_army_attack_factor
+	#单位防御
+	army_defence_factor = GRW_var_GLA_army_defence_factor
+	#核心领土单位攻击
+	army_core_attack_factor = GRW_var_GLA_army_core_attack_factor
+	#核心领土单位防御
+	army_core_defence_factor = GRW_var_GLA_army_core_defence_factor
+	#民兵攻击
+	modifier_army_sub_unit_militia_attack_factor = GRW_var_GLA_modifier_army_sub_unit_militia_attack_factor
+	#民兵防御
+	modifier_army_sub_unit_militia_defence_factor = GRW_var_GLA_modifier_army_sub_unit_militia_defence_factor
+	#民兵组织度
+	modifier_army_sub_unit_militia_max_org_factor = GRW_var_GLA_modifier_army_sub_unit_militia_max_org_factor
+}
+
+#中央鹫民政府
+GRW_central_peoples_government = {
+	icon = GFX_idea_WNG_COM_dictator
+	 
+	remove_trigger = {
+		NOT = {
+			has_government = communism
+		}
+	}
+	custom_modifier_tooltip = GRW_central_peoples_government_tt
+}
+
+#与河间的合作
+GRW_cooperate_with_RIV_1 = {
+	icon = GFX_idea_NCH_end_deals_idea
+	 
+	remove_trigger = {
+		has_global_flag = GRW_RIV_relationship_breakdown_flag
+		NOT = {
+			GRW = {
+				has_country_flag = GRW_cooperate_with_RIV_communism_flag
+			}
+		}
+	}
+	political_power_factor = GRW_var_cwR_political_power_factor
+	trade_opinion_factor = GRW_var_cwR_trade_opinion_factor
+	party_popularity_stability_factor = GRW_var_cwR_party_popularity_stability_factor
+	production_factory_start_efficiency_factor = GRW_var_cwR_production_factory_start_efficiency_factor
+	experience_gain_navy = GRW_var_cwR_experience_gain_navy
+	naval_doctrine_cost_factor = GRW_var_cwR_naval_doctrine_cost_factor
+	local_resources_factor = GRW_var_cwR_local_resources_factor
+	production_factory_max_efficiency_factor = GRW_var_cwR_production_factory_max_efficiency_factor
+	experience_gain_army = GRW_var_cwR_experience_gain_army
+	land_doctrine_cost_factor = GRW_var_cwR_land_doctrine_cost_factor
+	opinion_gain_monthly_factor = GRW_var_cwR_opinion_gain_monthly_factor
+	consumer_goods_factor = GRW_var_cwR_consumer_goods_factor
+	production_speed_buildings_factor = GRW_var_cwR_production_speed_buildings_factor
+	research_speed_factor = GRW_var_cwR_research_speed_factor
+}
+GRW_cooperate_with_RIV_1_RIV = {
+	icon = GFX_idea_NCH_end_deals_idea
+	 
+	remove_trigger = {
+		has_global_flag = GRW_RIV_relationship_breakdown_flag
+		is_river_fed_member = no
+		NOT = {
+			GRW = {
+				has_country_flag = GRW_cooperate_with_RIV_communism_flag
+			}
+		}
+	}
+	political_power_factor = GRW_var_cwRR_political_power_factor
+	trade_opinion_factor = GRW_var_cwRR_trade_opinion_factor
+	monthly_population = GRW_var_cwRR_monthly_population
+	supply_consumption_factor = GRW_var_cwRR_supply_consumption_factor
+	production_factory_max_efficiency_factor = GRW_var_cwRR_production_factory_max_efficiency_factor
+	experience_gain_army = GRW_var_cwRR_experience_gain_army
+	land_doctrine_cost_factor = GRW_var_cwRR_land_doctrine_cost_factor
+	opinion_gain_monthly_factor = GRW_var_cwRR_opinion_gain_monthly_factor
+	consumer_goods_factor = GRW_var_cwRR_consumer_goods_factor
+	industrial_capacity_factory = GRW_var_cwRR_industrial_capacity_factory
+	industrial_capacity_dockyard = GRW_var_cwRR_industrial_capacity_dockyard
+	research_speed_factor = GRW_var_cwRR_research_speed_factor
+}
+
+#河间中央情报与战略规划处
+GRW_green_war_plan = {
+	icon = GFX_idea_NCH_river_fed_attack_idea
+	 
+	remove_trigger = {
+		all_country = {
+			OR = {
+				is_original_riv_fed_country_tag = no
+				has_government = communism
+			}
+		}
+	}
+	political_power_cost = GRW_var_gwp_political_power_cost
+	consumer_goods_factor = GRW_var_gwp_consumer_goods_factor
+	max_planning = GRW_var_gwp_max_planning
+	planning_speed = GRW_var_gwp_planning_speed
+	control_trade_mission_factor = GRW_var_gwp_control_trade_mission_factor
+	intel_network_gain_factor = GRW_var_gwp_intel_network_gain_factor
+	operative_slot = GRW_var_gwp_operative_slot
+	operation_make_resistance_contacts_outcome = GRW_var_gwp_operation_make_resistance_contacts_outcome
+	operation_boost_resistance_outcome = GRW_var_gwp_operation_boost_resistance_outcome
+	operation_infiltrate_outcome = GRW_var_gwp_operation_infiltrate_outcome
+	operation_coup_government_outcome = GRW_var_gwp_operation_coup_government_outcome
+	boost_ideology_mission_factor = GRW_var_gwp_boost_ideology_mission_factor
+	operation_collaboration_government_outcome = GRW_var_gwp_operation_collaboration_government_outcome
+	supply_node_range = GRW_var_gwp_supply_node_range
+}
+###############################################################################
+###隐藏buff
+#统一战线buff
+GRW_united_front_modifier = {
+	enable = {
+		OR = {
+			has_country_flag = GRW_form_Evi_flag
+			has_completed_focus = GRW_first_prywhen_political_consultative_conference
+		}
+		is_subject = no
+		NOT = {
+			has_country_flag = GRW_united_front_broken_flag
+		}
+	}
+	political_power_factor = GRW_var_political_power_factor
+	local_resources_factor = GRW_var_local_resources_factor
+	mobilization_laws_cost_factor = GRW_var_mobilization_laws_cost_factor
+	conscription_factor = GRW_var_conscription_total_factor
+	production_speed_buildings_factor = GRW_var_production_speed_buildings_factor
+	production_factory_max_efficiency_factor = GRW_var_production_factory_max_efficiency_factor
+	research_speed_factor = GRW_var_research_speed_factor
+	trade_laws_cost_factor = GRW_var_trade_laws_cost_factor
+	economy_cost_factor = GRW_var_economy_cost_factor
+	army_morale_factor = GRW_var_army_morale
+	army_org_factor = GRW_var_army_org
+}
+
+#共和国的稳定
+GRW_stability_dynamic_modifier = {
+	 
+	stability_factor = GRW_var_stability_factor
+}
+###############################################################################
+###地块buff
+#党中央临时驻地
+GRW_temporary_party_central_headquarters = {
+	icon = GFX_modifiers_red_flag_icon
+	 
+	global_building_slots = 1
+	state_production_speed_buildings_factor = 0.2
+	local_supplies_for_controller = 0.1
+}
+
+#战后恢复
+GRW_postwar_recovery_Kivessin = {
+	icon = GFX_modifiers_ETH_state_development
+	 
+	state_production_speed_buildings_factor = -0.5
+	recruitable_population_factor = -0.5
+	industry_repair_factor = 0.25
+	local_supplies_for_controller = -0.5
+}
+
+#战后恢复
+GRW_postwar_recovery_Sydia = {
+	icon = GFX_modifiers_ETH_state_development
+	 
+	state_production_speed_buildings_factor = -0.25
+	recruitable_population_factor = -0.25
+	industry_repair_factor = 0.25
+	local_supplies_for_controller = -0.25
+}
+
+#王国残军盘踞
+GRW_kingdom_remnant_holdout = {
+	icon = GFX_modifiers_minefields_icon
+	 
+	recruitable_population_factor = -1
+	local_factories = -1
+	resistance_growth = 0.2
+	no_compliance_gain = 1
+}
+
+#农业合作社
+GRW_agri_cooperatives_dynamic_modifier = {
+	icon = GFX_modifiers_changeling_settlement_icon
+	 
+	local_manpower = 0.05
+	monthly_population = 0.1
+	local_resources = 0.15
+}
+
+#东部大开发
+GRW_eastern_development_dynamic_modifier = {
+	icon = GFX_modifiers_FIN_weapon_caches
+	 
+	monthly_population = 0.15
+	local_resources = 0.05
+	local_building_slots_factor = 0.1
+	state_production_speed_buildings_factor = 0.05
+}
+#生产建设兵团
+GRW_eastern_development_dynamic_modifier_1 = {
+	icon = GFX_modifiers_FIN_weapon_caches
+	 
+	monthly_population = 0.2
+	recruitable_population_factor = -0.6
+	local_building_slots_factor = 0.15
+	state_production_speed_buildings_factor = 0.075
+	army_core_defence_factor = 0.15
+	cas_damage_reduction = 0.1
+}
+
+#绿色战争计划
+GRW_RIV_war_plans = {
+	icon = GFX_modifiers_GER_blitzkrieg
+	 
+	breakthrough_factor = 0.05
+	army_attack_factor = 0.1
+	supply_factor = 0.1
+}
+
+#萨尔玛克牛头怪自治政府
+GRW_minotaur_autonomous_government = {
+	icon = GFX_modifiers_changeling_settlement_icon
+	 
+	recruitable_population_factor = -0.5
+	local_building_slots_factor = 0.05
+	state_production_speed_buildings_factor = 0.05
+}
+#萨尔玛克狮鹫自治政府
+GRW_griffon_autonomous_government = {
+	icon = GFX_modifiers_changeling_settlement_icon
+	 
+	recruitable_population_factor = -0.5
+	local_building_slots_factor = 0.05
+	state_production_speed_buildings_factor = 0.05
+}
+
+#自治共和国buff
+GRW_BAN_equalism_autonomous_region = {#黑空平等主义实验区
+	icon = GFX_modifiers_red_flag_icon
+	 
+	recruitable_population_factor = -0.2
+	local_building_slots = -1
+	state_production_speed_buildings_factor = -0.1
+	local_supplies = 0.15
+}
+GRW_minotaur_autonomous_region = {#蓝百合牛头怪自治区
+	icon = GFX_modifiers_red_flag_icon
+	 
+	recruitable_population_factor = -0.3
+	local_building_slots = -1
+	state_production_speed_buildings_factor = 0.05
+}
+GRW_WNG_autonomous_region = {#翼巴第社会主义自治共和国
+	icon = GFX_modifiers_red_flag_icon
+	 
+	recruitable_population_factor = 0.2
+	local_building_slots_factor = -0.15
+	state_production_speed_buildings_factor = -0.1
+}
+GRW_FAL_autonomous_region = {#隼尔科社会主义自治共和国
+	icon = GFX_modifiers_red_flag_icon
+	 
+	recruitable_population_factor = 0.1
+	local_building_slots_factor = -0.05
+	state_production_speed_buildings_factor = -0.05
+}
+GRW_SIC_autonomous_region = {#西卡梅翁社会主义自治教区
+	icon = GFX_modifiers_red_flag_icon
+	 
+	recruitable_population_factor = 0.15
+	local_building_slots_factor = -0.05
+	state_production_speed_buildings_factor = -0.05
+	army_core_defence_factor = 0.1
+}
+GRW_TAL_autonomous_region = {#塔卢兹社会主义自治共和国
+	icon = GFX_modifiers_red_flag_icon
+	 
+	recruitable_population_factor = 0.1
+	local_building_slots_factor = -0.05
+	state_production_speed_buildings_factor = -0.05
+}
+GRW_FRN_autonomous_region = {#皮乌蒙特社会主义自治共和国
+	icon = GFX_modifiers_red_flag_icon
+	 
+	recruitable_population_factor = 0.1
+	local_building_slots_factor = -0.05
+	state_production_speed_buildings_factor = -0.05
+}
+GRW_ARA_autonomous_region = {#阿兰蒂戈社会主义自治共和国
+	icon = GFX_modifiers_red_flag_icon
+	 
+	recruitable_population_factor = 0.1
+	local_building_slots_factor = -0.05
+	state_production_speed_buildings_factor = -0.05
+}
+GRW_eastern_pony_autonomous_region = {#门界东方小马自治区
+	icon = GFX_modifiers_red_flag_icon
+	 
+	recruitable_population_factor = -0.2
+	local_building_slots = -1
+	state_production_speed_buildings_factor = 0.05
+	local_supplies = 0.15
+}
+GRW_direct_control_city = {#直辖市
+	icon = GFX_modifiers_dinkau_lighthouse_icon
+	 
+	local_building_slots_factor = 0.2
+	state_production_speed_buildings_factor = 0.15
+	local_supplies = 0.2
+	enemy_intel_network_gain_factor_over_occupied_tag = -0.3
+}
+GRW_BRZ_special_prefecture = {#铜岭行政专区
+	icon = GFX_modifiers_red_flag_icon
+	 
+	recruitable_population_factor = -0.3
+	resistance_target = -0.1
+	resistance_growth = -0.5
+	resistance_garrison_penetration_chance = -0.4
+}
+GRW_JER_autonomous_region = {#阿奎莱亚社会主义自治共和国
+	icon = GFX_modifiers_red_flag_icon
+	 
+	recruitable_population_factor = 0.2
+	local_building_slots_factor = -0.15
+	state_production_speed_buildings_factor = -0.1
+}
+GRW_AVI_autonomous_prefecture = {#卢万泰诺自治州
+	icon = GFX_modifiers_red_flag_icon
+	 
+	recruitable_population_factor = 0.1
+	local_building_slots = -1
+	state_production_speed_buildings_factor = 0.05
+}
+GRW_AET_autonomous_prefecture = {#格赖夫瓦尔德自治州
+	icon = GFX_modifiers_red_flag_icon
+	 
+	recruitable_population_factor = 0.1
+	local_building_slots = -1
+	state_production_speed_buildings_factor = 0.05
+}
+GRW_FEZ_autonomous_prefecture = {#菲兹拉自治州
+	icon = GFX_modifiers_red_flag_icon
+	 
+	recruitable_population_factor = 0.1
+	local_building_slots = -1
+	state_production_speed_buildings_factor = 0.05
+}
+GRW_TRD_autonomous_prefecture = {#鹫弗顿自治州
+	icon = GFX_modifiers_red_flag_icon
+	 
+	recruitable_population_factor = 0.1
+	local_building_slots = -1
+	state_production_speed_buildings_factor = 0.05
+}
+GRW_FAT_autonomous_region = {#漫云社会主义自治共和国
+	icon = GFX_modifiers_red_flag_icon
+	 
+	recruitable_population_factor = 0.1
+	local_building_slots_factor = -0.05
+	state_production_speed_buildings_factor = -0.05
+}
+GRW_MNC_autonomous_region = {#白尾社会主义自治共和国
+	icon = GFX_modifiers_red_flag_icon
+	 
+	recruitable_population_factor = 0.1
+	local_building_slots_factor = -0.05
+	state_production_speed_buildings_factor = -0.05
+}
+GRW_VED_autonomous_region = {#韦迪纳社会主义自治共和国
+	icon = GFX_modifiers_red_flag_icon
+	 
+	recruitable_population_factor = 0.1
+	local_building_slots_factor = -0.05
+	state_production_speed_buildings_factor = -0.05
+}
+GRW_northern_pony_autonomous_region = {#天际纳维亚北方小马自治区
+	icon = GFX_modifiers_red_flag_icon
+	 
+	recruitable_population_factor = -0.2
+	local_building_slots = -1
+	state_production_speed_buildings_factor = 0.05
+	local_supplies = 0.15
+}
+GRW_HAU_special_prefecture = {#毫克兰行政专区
+	icon = GFX_modifiers_red_flag_icon
+	 
+	recruitable_population_factor = -0.3
+	resistance_target = -0.1
+	resistance_growth = -0.5
+	resistance_garrison_penetration_chance = -0.4
+}
+GRW_GRF_autonomous_region = {#新狮鹫尼亚社会主义自治共和国
+	icon = GFX_modifiers_red_flag_icon
+	recruitable_population_factor = 0.2
+	local_building_slots_factor = -0.15
+	state_production_speed_buildings_factor = -0.1
+}

@@ -1,0 +1,222 @@
+GRW_INF_01 = {#步兵
+	name = "Corpul Infanterie"
+
+	for_countries = {
+		GRW
+	}
+
+	division_types = {
+		"infantry" "magical_infantry"
+	}
+
+	fallback_name = "Corpul %d Infanterie"
+
+	ordered = {
+		1 = { "Corpul %d Infanterie 'Floare Alba'" }
+		2 = { "Corpul %d Infanterie" }
+		3 = { "Corpul %d Infanterie" }
+		4 = { "Corpul %d Infanterie 'Comitetul'" }
+		5 = { "Corpul %d Infanterie" }
+		6 = { "Corpul %d Infanterie" }
+		7 = { "Corpul %d Infanterie" }
+		8 = { "Corpul %d Infanterie" }
+		9 = { "Corpul %d Infanterie" }
+		10 = { "Corpul %d Infanterie" }
+		11 = { "Corpul %d Infanterie" }
+		12 = { "Corpul %d Infanterie" }
+		13 = { "Corpul %d Infanterie" }
+		14 = { "Corpul %d Infanterie" }
+		15 = { "Corpul %d Infanterie 'Tineretului Comunist'" }
+	}
+}
+
+GRW_INF_02 = {#民兵
+	name = "Garda Revoluționară" #“革命卫队”，相当于武警。
+
+	for_countries = {
+		GRW
+	}
+
+	division_types = {
+		"militia"
+	}
+
+	fallback_name = "Divizia %d. a G.R."
+
+	ordered = {
+		1 = { "Divizia %d a G.R. 'Muncitorime'" }
+		2 = { "Divizia %d a G.R." }
+		3 = { "Divizia %d a G.R." }
+		4 = { "Divizia %d a G.R." }
+		5 = { "Divizia %d a G.R." }
+		6 = { "Divizia %d a G.R." }
+		7 = { "Divizia %d a G.R." }
+		8 = { "Divizia %d a G.R." }
+		9 = { "Divizia %d a G.R." }
+		10 = { "Divizia %d a G.R." }
+		11 = { "Divizia %d a G.R." }
+		12 = { "Divizia %d a G.R." }
+		13 = { "Divizia %d a G.R." }
+		14 = { "Divizia %d a G.R." }
+		15 = { "Divizia %d a G.R." }
+		16 = { "Divizia %d a G.R." }
+		17 = { "Divizia %d a G.R." }
+		18 = { "Divizia %d a G.R." }
+		19 = { "Divizia %d a G.R." }
+		20 = { "Divizia %d a G.R." }
+		21 = { "Divizia %d a G.R." }
+		22 = { "Divizia %d a G.R." }
+		23 = { "Divizia %d a G.R." }
+		24 = { "Divizia %d a G.R." }
+		25 = { "Divizia %d a G.R." }
+	}
+}
+
+GRW_MOT_01 = {#机动部队
+	name = "Corpul Motomecanizat"
+
+	for_countries = {
+		GRW
+	}
+
+	division_types = { "motorized" "mechanized" }
+
+	link_numbering_with = { GRW_INF_01 }
+
+	fallback_name = "Corpul %d Motomecanizat"
+
+	ordered = {
+		1 = { "Corpul %d Motomecanizat 'Republica'" }
+		2 = { "Corpul %d Motomecanizat" }
+		3 = { "Corpul %d Motomecanizat" }
+		4 = { "Corpul %d Motomecanizat" }
+		5 = { "Corpul %d Motomecanizat" }
+		6 = { "Corpul %d Motomecanizat" }
+		7 = { "Corpul %d Motomecanizat" }
+		8 = { "Corpul %d Motomecanizat" }
+		9 = { "Corpul %d Motomecanizat" }
+		10 = { "Corpul %d Motomecanizat" }
+		11 = { "Corpul %d Motomecanizat" }
+		12 = { "Corpul %d Motomecanizat" }
+		13 = { "Corpul %d Motomecanizat" }
+		14 = { "Corpul %d Motomecanizat" }
+		15 = { "Corpul %d Motomecanizat" }
+		16 = { "Corpul %d Motomecanizat" }
+		17 = { "Corpul %d Motomecanizat" }
+		18 = { "Corpul %d Motomecanizat" }
+		19 = { "Corpul %d Motomecanizat" }
+		20 = { "Corpul %d Motomecanizat" }
+		21 = { "Corpul %d Motomecanizat" }
+		22 = { "Corpul %d Motomecanizat" }
+		23 = { "Corpul %d Motomecanizat" }
+		24 = { "Corpul %d Motomecanizat" }
+	}
+}
+
+GRW_ARM_01 = {#装甲部队
+	name = "Corpul De Tancuri"
+
+	for_countries = {
+		GRW
+	}
+
+	division_types = { "light_armor" "medium_armor" "heavy_armor" "modern_armor" }
+
+	fallback_name = "Corpul %d Blindata"
+
+	ordered = { 
+		1 = { "Corpul %d Blindata 'Steaua Roșie'" }
+		2 = { "Corpul %d Blindata" }
+		3 = { "Corpul %d Blindata" }
+		4 = { "Corpul %d Blindata" }
+		5 = { "Corpul %d Blindata" }
+	}
+}
+
+GRW_GRD_01 = {#骑士
+	name = "Ordinul Cavalerilor"
+
+	for_countries = {
+		GRW
+	}
+
+	division_types = {
+		"knights"
+	}
+
+	fallback_name = "Corpul %d. Ordinul Cavalerilor"
+
+	ordered = { 
+		1 = { "Corpul %d Ordinul Cavalerilor 'Order of Salt Island'" }
+		2 = { "Corpul %d Ordinul Cavalerilor" }
+		3 = { "Corpul %d Ordinul Cavalerilor 'Order of the White Flower'" }
+		4 = { "Corpul %d Ordinul Cavalerilor" }
+		5 = { "Corpul %d Ordinul Cavalerilor" }
+		6 = { "Corpul %d Ordinul Cavalerilor 'Order of the Silver Trovel'" }
+		7 = { "Corpul %d Ordinul Cavalerilor" }
+		8 = { "Corpul %d Ordinul Cavalerilor" }
+		9 = { "Corpul %d Ordinul Cavalerilor 'Săraci'" }
+	}
+}
+
+GRW_MNT_01 = {#山地师
+	name = "Vanatori de Munte"
+
+	for_countries = { GRW }
+
+	division_types = { "mountaineers" }
+
+	fallback_name = "Corpul %d de Munte Mixtă"
+	
+	ordered = {
+		1 = { "Corpul %d de Munte Mixtă 'Stanca'" }
+		2 = { "Corpul %d de Munte Mixtă" }
+		3 = { "Corpul %d de Munte Mixtă" }
+		4 = { "Corpul %d de Munte Mixtă" }
+		5 = { "Corpul %d de Munte Mixtă 'Piatra'" }
+		6 = { "Corpul %d de Munte Mixtă" }
+		7 = { "Corpul %d de Munte Mixtă" }
+		8 = { "Corpul %d de Munte Mixtă" }
+		9 = { "Corpul %d de Munte Mixtă 'Culme'" }
+		10 = { "Corpul %d de Munte Mixtă" }
+		11 = { "Corpul %d de Munte Mixtă" }
+		12 = { "Corpul %d de Munte Mixtă" }
+		13 = { "Corpul %d de Munte Mixtă 'Acute Padure'" }
+	}
+}
+
+GRW_PAR_01 = {#伞兵
+	name = "Parasutisti"
+
+	for_countries = {
+		GRW
+	}
+
+	division_types = { "paratrooper" }
+
+	fallback_name = "Divizie %d Parasutisti"
+
+	ordered = { 
+		1 = { "Divizie %d Parasutisti 'Ciocarlia'" }
+		2 = { "Divizie %d Parasutisti" }
+		3 = { "Divizie %d Parasutisti" }
+	}
+}
+
+GRW_MAR_01 = {#马润
+	name = "Infanterie Marina"
+
+	for_countries = {
+		GRW
+	}
+
+	division_types = { "marine" "amphibious_armor" "amphibious_mechanized" }
+
+	fallback_name = "Divizie %d Marinar"
+
+	ordered = { 
+		307 = { "Divizie %d Marinar 'Evi'" }
+		1 = { "Divizie %d Marinar" }
+		2 = { "Divizie %d Marinar" }
+	}
+}

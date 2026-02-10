@@ -1,0 +1,201 @@
+﻿#初始国策
+focus = {
+	current = "BRF_regroup_routed_troops"
+	progress = 34
+}
+
+#初始生产线
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = melee_equipment_1
+			creator = "BRF"
+		}
+		requested_factories = 2
+		progress = 0.25
+		efficiency = 15
+	}
+	add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_0
+			creator = "BRF"
+		}
+		requested_factories = 1
+		progress = 0.45
+		efficiency = 10
+	}
+}
+
+#编制
+division_template = {
+	name = "皇家骑士团"
+	priority = 2	
+	division_names_group = BRF_GRD_01
+	regiments = {
+		knights = { x = 0 y = 0 }
+		knights = { x = 0 y = 1 }
+		knights = { x = 0 y = 2 }
+		knights = { x = 1 y = 0 }
+		knights = { x = 1 y = 1 }
+		knights = { x = 1 y = 2 }
+		knights = { x = 2 y = 0 }
+		knights = { x = 2 y = 1 }
+		knights = { x = 2 y = 2 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+		recon = { x = 0 y = 2 }
+	}
+}
+division_template = {
+	name = "王国陆军"
+	division_names_group = BRF_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }
+	}
+}
+division_template = {
+	name = "地方民团"
+	division_names_group = BRF_INF_02
+	priority = 0
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+	}
+}
+
+
+units = {
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 10377
+		division_template = "皇家骑士团"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.66
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 12378
+		division_template = "王国陆军"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.54
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 12310
+		division_template = "王国陆军"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.5
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 7633
+		division_template = "王国陆军"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 12109
+		division_template = "王国陆军"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 10431
+		division_template = "王国陆军"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 7549
+		division_template = "王国陆军"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 4504
+		division_template = "王国陆军"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 10261
+		division_template = "王国陆军"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 10616
+		division_template = "王国陆军"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 3
+		}
+		location = 12436
+		division_template = "地方民团"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.3
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 3
+		}
+		location = 7292
+		division_template = "地方民团"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.3
+	}
+}
+
+

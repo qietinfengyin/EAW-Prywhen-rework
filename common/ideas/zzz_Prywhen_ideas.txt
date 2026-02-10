@@ -1,0 +1,625 @@
+ideas = {
+	#工业企业
+	industrial_concern = {
+		#国立基韦辛大学
+		GRW_national_kivessin_university_idea = {
+			picture = GRW_electronics_manufacturer
+
+			allowed = {
+				original_tag = GRW
+			}
+			available = {
+				508 = {
+					is_controlled_by = ROOT
+				}
+				has_completed_focus = GRW_national_kivessin_university
+			}
+
+			traits = {
+				GRW_research_institutions
+			}
+
+			research_bonus = {
+				industry = 0.1
+				electronics = 0.1
+			}
+
+			modifier = {
+				custom_modifier_tooltip = GRW_national_kivessin_university_tt
+				research_speed_factor = 0.1
+			}
+
+			on_add = {
+				hidden_effect = {
+					country_event = {
+						id = GRW_earlygame.20
+						days = 180
+						random_days = 20
+					}
+				}
+			}
+		}
+
+		#国家建筑工程总局
+		GRW_national_construction_directorate_1 = {
+			picture = GRW_construction_concern
+
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_national_construction_directorate_level2
+					has_country_flag = GRW_national_construction_directorate_level3
+					has_country_flag = GRW_national_construction_directorate_level4
+				}
+			}
+			available = {
+				has_completed_focus = GRW_national_reconstruction_commission
+			}
+
+			traits = {
+				GRW_directorate_of_industry
+			}
+
+			modifier = {
+				custom_modifier_tooltip = GRW_national_construction_directorate_tt
+				production_speed_rail_way_factor = 0.1
+				production_speed_industrial_complex_factor = 0.05
+				production_speed_arms_factory_factor = 0.05
+				production_speed_dockyard_factor = 0.05
+			}
+
+			on_add = {
+				custom_effect_tooltip = GRW_var_construction_materials_growth10_tt
+				hidden_effect = {
+					add_to_variable = {
+						var = GRW_var_construction_materials_growth
+						value = 10
+					}
+				}
+			}
+			on_remove = {
+				custom_effect_tooltip = GRW_var_construction_materials_decrease10_tt
+				hidden_effect = {
+					add_to_variable = {
+						var = GRW_var_construction_materials_growth
+						value = -10
+					}
+				}
+			}
+		}
+		GRW_national_construction_directorate_2 = {
+			name = GRW_national_construction_directorate_1
+			picture = GRW_construction_concern
+
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_national_construction_directorate_level3
+					has_country_flag = GRW_national_construction_directorate_level4
+				}
+				has_country_flag = GRW_national_construction_directorate_level2
+			}
+			available = {
+				has_completed_focus = GRW_national_reconstruction_commission
+			}
+
+			traits = {
+				GRW_directorate_of_industry
+			}
+
+			modifier = {
+				custom_modifier_tooltip = GRW_national_construction_directorate_tt
+				production_factory_max_efficiency_factor = 0.05
+				line_change_production_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+				production_speed_rail_way_factor = 0.15
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_arms_factory_factor = 0.1
+				production_speed_dockyard_factor = 0.1
+			}
+
+			on_add = {
+				custom_effect_tooltip = GRW_var_construction_materials_growth10_tt
+				hidden_effect = {
+					add_to_variable = {
+						var = GRW_var_construction_materials_growth
+						value = 10
+					}
+				}
+			}
+			on_remove = {
+				custom_effect_tooltip = GRW_var_construction_materials_decrease10_tt
+				hidden_effect = {
+					add_to_variable = {
+						var = GRW_var_construction_materials_growth
+						value = -10
+					}
+				}
+			}
+		}
+		GRW_national_construction_directorate_3 = {
+			name = GRW_national_construction_directorate_1
+			picture = GRW_construction_concern
+
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_national_construction_directorate_level4
+				}
+				has_country_flag = GRW_national_construction_directorate_level3
+			}
+			available = {
+				has_completed_focus = GRW_national_reconstruction_commission
+			}
+
+			traits = {
+				GRW_directorate_of_industry
+			}
+
+			modifier = {
+				custom_modifier_tooltip = GRW_national_construction_directorate_tt
+				production_factory_max_efficiency_factor = 0.1
+				line_change_production_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+				production_speed_rail_way_factor = 0.15
+				production_speed_industrial_complex_factor = 0.15
+				production_speed_arms_factory_factor = 0.15
+				production_speed_dockyard_factor = 0.15
+			}
+
+			on_add = {
+				custom_effect_tooltip = GRW_var_construction_materials_growth10_tt
+				hidden_effect = {
+					add_to_variable = {
+						var = GRW_var_construction_materials_growth
+						value = 10
+					}
+				}
+			}
+			on_remove = {
+				custom_effect_tooltip = GRW_var_construction_materials_decrease10_tt
+				hidden_effect = {
+					add_to_variable = {
+						var = GRW_var_construction_materials_growth
+						value = -10
+					}
+				}
+			}
+		}
+		GRW_national_construction_directorate_4 = {
+			name = GRW_national_construction_directorate_1
+			picture = GRW_construction_concern
+
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				has_country_flag = GRW_national_construction_directorate_level4
+			}
+			available = {
+				has_completed_focus = GRW_national_reconstruction_commission
+			}
+
+			traits = {
+				GRW_directorate_of_industry
+			}
+
+			modifier = {
+				production_factory_max_efficiency_factor = 0.15
+				line_change_production_efficiency_factor = 0.15
+				production_factory_efficiency_gain_factor = 0.15
+				production_speed_rail_way_factor = 0.2
+				production_speed_industrial_complex_factor = 0.2
+				production_speed_arms_factory_factor = 0.2
+				production_speed_dockyard_factor = 0.2
+			}
+
+			on_add = {
+				custom_effect_tooltip = GRW_var_construction_materials_growth10_tt
+				hidden_effect = {
+					add_to_variable = {
+						var = GRW_var_construction_materials_growth
+						value = 10
+					}
+				}
+			}
+			on_remove = {
+				custom_effect_tooltip = GRW_var_construction_materials_decrease10_tt
+				hidden_effect = {
+					add_to_variable = {
+						var = GRW_var_construction_materials_growth
+						value = -10
+					}
+				}
+			}
+		}
+
+		#普里文农业银行
+		GRW_agricultural_bank_1 = {
+			picture = GRW_agricultural_company
+
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_agricultural_bank_level2
+				}
+			}
+			available = {
+				has_completed_focus = GRW_land_reform
+			}
+
+			traits = {
+				GRW_agricultural_credit_bank
+			}
+
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_speed_infrastructure_factor = 0.1
+				min_export = -0.15
+				monthly_population = 0.15
+			}
+
+			on_add = {
+				GRW_land_reform_cost_decrease = yes
+			}
+			on_remove = {
+				GRW_land_reform_cost_increase = yes
+			}
+		}
+		GRW_agricultural_bank_2 = {
+			name = GRW_agricultural_bank_1
+			picture = GRW_agricultural_company
+
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				has_country_flag = GRW_agricultural_bank_level2
+			}
+			available = {
+				has_completed_focus = GRW_land_reform
+			}
+
+			traits = {
+				GRW_agricultural_credit_bank
+			}
+
+			modifier = {
+				consumer_goods_factor = -0.25
+				production_speed_infrastructure_factor = 0.15
+				min_export = -0.2
+				monthly_population = 0.3
+			}
+
+			on_add = {
+				GRW_land_reform_cost_decrease = yes
+			}
+			on_remove = {
+				GRW_land_reform_cost_increase = yes
+			}
+		}
+
+		#彼得罗布罗德
+		GRW_refinery_1 = {
+			picture = BRF_refinery
+
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				has_country_flag = GRW_develop_Prahova_flag
+				NOT = {
+					has_country_flag = GRW_refinery_level2
+					has_country_flag = GRW_refinery_level3
+				}
+			}
+
+			traits = {
+				refinery_concern
+			}
+
+			modifier = {
+				fuel_gain_factor_from_states = 0.05
+				production_speed_synthetic_refinery_factor = 0.1
+				production_speed_fuel_silo_factor = 0.1
+			}
+		}
+		GRW_refinery_2 = {
+			name = GRW_refinery_1
+			picture = BRF_refinery
+
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				has_country_flag = GRW_develop_Prahova_flag
+				has_country_flag = GRW_refinery_level2
+				NOT = {
+					has_country_flag = GRW_refinery_level3
+				}
+			}
+
+			traits = {
+				refinery_concern
+			}
+
+			modifier = {
+				fuel_gain_factor = 0.05
+				fuel_gain_factor_from_states = 0.1
+				production_speed_synthetic_refinery_factor = 0.15
+				production_speed_fuel_silo_factor = 0.15
+			}
+		}
+		GRW_refinery_3 = {
+			name = GRW_refinery_1
+			picture = BRF_refinery
+
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				has_country_flag = GRW_develop_Prahova_flag
+				has_country_flag = GRW_refinery_level3
+			}
+
+			traits = {
+				refinery_concern
+			}
+
+			modifier = {
+				local_resources_factor = 0.05
+				fuel_gain_factor = 0.1
+				fuel_gain_factor_from_states = 0.15
+				production_speed_synthetic_refinery_factor = 0.2
+				production_speed_fuel_silo_factor = 0.2
+			}
+		}
+
+		#河间开发公司
+		GRW_river_development_company = {
+			picture = RCT_Under_The_River
+
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				has_country_flag = GRW_rdc_investments_flag
+			}
+			available = {
+				NOT = {
+					has_global_flag = GRW_RIV_relationship_breakdown_flag
+				}
+			}
+
+			traits = {
+				industrial_concern
+			}
+
+			research_bonus = {
+				industry = 0.2
+			}
+			modifier = {
+				production_factory_max_efficiency_factor = 0.075
+				local_resources_factor = 0.1
+				production_speed_arms_factory_factor = 0.1
+				production_speed_industrial_complex_factor = 0.2
+			}
+			targeted_modifier = {
+				tag = RIL
+				cic_to_target_factor = 0.05
+				trade_cost_for_target_factor = -0.2
+				extra_trade_to_target_factor = 0.2
+			}
+			on_add = {
+				RIL = {
+					add_intel = {
+						target = ROOT
+						civilian_intel = 10
+					}
+				}
+			}
+			on_remove = {
+				RIL = {
+					add_intel = {
+						target = ROOT
+						civilian_intel = -10
+					}
+				}
+			}
+		}
+	}
+
+	#坦克
+	tank_manufacturer = {
+		designer = yes
+
+		#普里文装甲生产厂
+		GRW_infantry_tank_manufacturer = {
+			picture = GRW_medium_tank_manufacturer
+
+			allowed = {
+				original_tag = GRW
+			}
+
+			traits = {
+				infantry_tank_manufacturer
+			}
+
+			research_bonus = {
+				armor = 0.15
+			}
+		}
+
+		#特拉维特拖拉机厂
+		GRW_Twelt_tractor_factory = {
+			picture = GRW_motorized_manufacturer
+
+			allowed = {
+				original_tag = GRW
+			}
+			available = {
+				has_country_flag = GRW_expand_Twelt_tractor_factory_flag
+			}
+
+			traits = {
+				tank_refurbishment_plant
+			}
+
+			research_bonus = {
+				armor = 0.15
+			}
+		}
+	}
+
+	#步兵
+	materiel_manufacturer = {
+		designer = yes
+
+		#普里文军用兵器
+		GRW_inf_manufacturer = {
+			picture = GRW_inf_manufacturer
+
+			allowed = {
+				original_tag = GRW
+			}
+
+			traits = {
+				infantry_equipment_manufacturer
+			}
+
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+		}
+
+		#炮弹飞射火炮厂
+		GRW_arty_manufacturer = {
+			picture = GRW_arty_manufacturer
+
+			allowed = {
+				original_tag = GRW
+			}
+			available = {
+				508 = {
+					is_controlled_by = ROOT
+				}
+				has_country_flag = GRW_reorganize_the_Royal_Arsenal_flag
+			}
+
+			traits = {
+				artillery_manufacturer
+			}
+
+			research_bonus = {
+				artillery = 0.15
+			}
+		}
+
+		#蒂姆索拉第一汽车制造厂
+		GRW_Temsoar_FAW = {
+			picture = GRW_motorized_manufacturer
+
+			allowed = {
+				original_tag = GRW
+			}
+			available = {
+				has_country_flag = GRW_Temsoar_FAW_flag
+			}
+
+			traits = {
+				motorized_equipment_manufacturer
+			}
+
+			research_bonus = {
+				motorized_equipment = 0.15
+				mot_rockets = 0.15
+			}
+		}
+	}
+
+	#飞机
+	aircraft_manufacturer = {
+		designer = yes
+
+		#迅捷高飞飞行器
+		GRW_aircraft_manufacturer = {
+			picture = GRW_aircraft_manufacturer
+
+			allowed = {
+				original_tag = GRW
+			}
+
+			traits = {
+				light_aircraft_manufacturer
+			}
+
+			research_bonus = {
+				air_equipment = 0.15
+			}
+		}
+
+		#普里文航空工业
+		GRW_med_aircraft_manufacturer = {
+			picture = GRW_med_aircraft_manufacturer
+
+			allowed = {
+				original_tag = GRW
+			}
+
+			traits = {
+				medium_aircraft_manufacturer
+			}
+
+			research_bonus = {
+				air_equipment = 0.15
+			}
+		}
+	}
+
+	#海军
+	naval_manufacturer = {
+		designer = yes
+
+		#西迪亚船坞
+		GRW_naval_manufacturer = {
+			picture = GRW_naval_manufacturer
+
+			allowed = {
+				original_tag = GRW
+			}
+
+			traits = {
+				convoy_escort_naval_manufacturer
+			}
+
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+		}
+
+		#盐岛船坞
+		GRW_naval_manufacturer2 = {
+			picture = GRW_naval_manufacturer2
+
+			allowed = {
+				original_tag = GRW
+			}
+
+			traits = {
+				coastal_defence_naval_manufacturer
+			}
+
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+		}
+	}
+}

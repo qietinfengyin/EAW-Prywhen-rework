@@ -1,0 +1,528 @@
+#决议内部分
+guiTypes = {
+	containerWindowType = {
+		name = "GRW_Evi_ui"
+		position = {
+			x = 0
+			y = 0
+		}
+		size = {
+			width = 100%
+			height = 761
+		}
+
+		#大地图按钮
+		containerWindowType = {
+			name = "GRW_Evi_map_small_button"
+			position = {
+				x = -1.5
+				y = 0
+			}
+			size = {
+				width = 495
+				height = 120
+			}
+			background = {
+				name = "background"
+				spriteType = "GFX_tiled_bg"
+			}
+			#大地图按钮
+			buttonType = {
+				name = "GRW_Evi_map_button"
+				spriteType = "GFX_goal_UESR_TNO_post_scarcity"
+				position = {
+					x = 10
+					y = 10
+				}
+				pdx_tooltip = "GRW_Evi_map_tooltip"
+			}
+			buttonType = {#黑石
+				name = "GRW_Evi_map_button_BAN_small"
+				spriteType = "GFX_Evi_ui_BAN"
+				position = {
+					x = 115
+					y = 30
+				}
+				pdx_tooltip = "GRW_Evi_map_BAN_tooltip"
+			}
+			buttonType = {#卢什
+				name = "GRW_Evi_map_button_LUS_small"
+				spriteType = "GFX_Evi_ui_LUS"
+				position = {
+					x = 190
+					y = 30
+				}
+				pdx_tooltip = "GRW_Evi_map_LUS_tooltip"
+			}
+			buttonType = {#普里文
+				name = "GRW_Evi_map_button_GRW_small"
+				spriteType = "GFX_Evi_ui_GRW"
+				position = {
+					x = 265
+					y = 30
+				}
+				pdx_tooltip = "GRW_Evi_map_GRW_tooltip"
+			}
+			buttonType = {#格里菲亚
+				name = "GRW_Evi_map_button_GRY_small"
+				spriteType = "GFX_Evi_ui_GRY"
+				position = {
+					x = 340
+					y = 30
+				}
+				pdx_tooltip = "GRW_Evi_map_GRY_tooltip"
+			}
+			buttonType = {#格里富斯
+				name = "GRW_Evi_map_button_GRU_small"
+				spriteType = "GFX_Evi_ui_GRU"
+				position = {
+					x = 415
+					y = 30
+				}
+				pdx_tooltip = "GRW_Evi_map_GRU_tooltip"
+			}
+		}
+		#小地图
+		containerWindowType = {
+			name = "GRW_Evi_map_small_frame"
+			position = {
+				x = -1.5
+				y = 118
+			}
+			size = {
+				width = 495
+				height = 421
+			}
+			background = {
+				name = "background"
+				spriteType = "GFX_tiled_bg"
+			}
+
+			iconType = {
+				name = "GRW_Evi_map_border_GRW"
+				spriteType = "GFX_Evi_map_border_GRW"
+				position = {
+					x = 13
+					y = 11
+				}
+			}
+			buttonType = {
+				name = "GRW_Evi_map_Whiteflower"
+				spriteType = "GFX_Evi_map_Whiteflower"
+				position = {
+					x = 33
+					y = 25
+				}
+			}
+			buttonType = {
+				name = "GRW_Evi_map_Acute_Forest"
+				spriteType = "GFX_Evi_map_Acute_Forest"
+				position = {
+					x = 99.5
+					y = 135
+				}
+			}
+			buttonType = {
+				name = "GRW_Evi_map_Griffonwill"
+				spriteType = "GFX_Evi_map_Griffonwill"
+				position = {
+					x = 197.5
+					y = 82.5
+				}
+			}
+			buttonType = {
+				name = "GRW_Evi_map_Brodfeld"
+				spriteType = "GFX_Evi_map_Brodfeld"
+				position = {
+					x = 232
+					y = 186
+				}
+			}
+			buttonType = {
+				name = "GRW_Evi_map_Terrible_Marsh"
+				spriteType = "GFX_Evi_map_Terrible_Marsh"
+				position = {
+					x = 244
+					y = 52.5
+				}
+			}
+			buttonType = {
+				name = "GRW_Evi_map_Kivessin"
+				spriteType = "GFX_Evi_map_Kivessin"
+				position = {
+					x = 382
+					y = 127
+				}
+			}
+			buttonType = {
+				name = "GRW_Evi_map_Lifov"
+				spriteType = "GFX_Evi_map_Lifov"
+				position = {
+					x = 342.5
+					y = 169
+				}
+			}
+			buttonType = {
+				name = "GRW_Evi_map_Consta"
+				spriteType = "GFX_Evi_map_Consta"
+				position = {
+					x = 345
+					y = 273.5
+				}
+			}
+			buttonType = {
+				name = "GRW_Evi_map_Sydia"
+				spriteType = "GFX_Evi_map_Sydia"
+				position = {
+					x = 383
+					y = 358
+				}
+			}
+			buttonType = {
+				name = "GRW_Evi_map_Salt_Island"
+				spriteType = "GFX_Evi_map_Salt_Island"
+				position = {
+					x = 425
+					y = 383
+				}
+			}
+			iconType = {
+				name = "GRW_Evi_map_border_BAN"
+				spriteType = "GFX_Evi_map_border_BAN"
+				position = {
+					x = 13
+					y = 11
+				}
+			}
+			iconType = {
+				name = "GRW_Evi_map_border_GRU"
+				spriteType = "GFX_Evi_map_border_GRU"
+				position = {
+					x = 13
+					y = 11
+				}
+			}
+			iconType = {
+				name = "GRW_Evi_map_border_GRY"
+				spriteType = "GFX_Evi_map_border_GRY"
+				position = {
+					x = 13
+					y = 11
+				}
+			}
+			iconType = {
+				name = "GRW_Evi_map_border_LUS"
+				spriteType = "GFX_Evi_map_border_LUS"
+				position = {
+					x = 13
+					y = 11
+				}
+			}
+		}
+		#详细内容介绍
+		containerWindowType = {
+			name = "GRW_Evi_map_centralization_info_container"
+			position = {
+				x = -4
+				y = 536
+			}
+			size = {
+				width = 500
+				height = 230
+			}
+
+			background = {
+				name = "Background"
+				quadTextureSprite = "GFX_tiled_bg"
+			}
+
+			#切换显示地区介绍
+			buttonType = {
+				name = "GRW_Evi_map_button_state_lore"
+				spriteType = "GFX_state_lore_button"
+				position = {
+					x = 13
+					y = 12
+				}
+				orientation = UPPER_LEFT
+				pdx_tooltip = "GRW_Evi_map_button_state_lore_tooltip"
+			}
+
+			instantTextBoxType = {#标题
+				name = "GRW_Evi_centralization_text_title"
+				position = {
+					x = 150
+					y = 20
+				}
+				font = "hoi_30header"
+				text = "GRW_Evi_map_Text_Title"
+				format = center
+				maxWidth = 200
+				fixedsize = yes
+				maxHeight = 100
+			}
+
+			#重建部分
+			instantTextboxType = {#地区介绍
+				name = "GRW_Evi_area_introduction"
+				position = {
+					x = 25
+					y = 55
+				}
+				font = "hoi_18mbs"
+				text = "GRW_Evi_area_introduction_tt"
+				maxWidth = 450
+				maxHeight = 150
+				fixedsize = yes
+			}
+
+			#外交部分
+			instantTextboxType = {#内容介绍（普里文）
+				name = "GRW_Evi_centralization_text_Prywhen"
+				position = {
+					x = 30
+					y = 55
+				}
+				font = "hoi_18mbs"
+				text = "GRW_Evi_map_Text_Prywhen"
+				maxWidth = 450
+				fixedsize = yes
+				maxHeight = 200
+			}
+			instantTextboxType = {#国际局-外交部平衡
+				name = "GRW_Evi_diplomatic_preference_title"
+				position = {
+					x = 150
+					y = 130
+				}
+				font = "hoi_24header"
+				text = "GRW_Evi_map_diplomatic_preference_title"
+				maxWidth = 450
+				fixedsize = yes
+				maxHeight = 100
+			}
+			iconType = {#国际局-外交部平衡条
+				name = "GRW_Evi_diplomatic_preference"
+				spriteType = "GFX_GRW_Evi_map_diplomatic_preference"
+				position = {
+					x = 70
+					y = 160
+				}
+			}
+			instantTextboxType = {#内容介绍（除普里文）
+				name = "GRW_Evi_centralization_text"
+				position = {
+					x = 100
+					y = 60
+				}
+				font = "hoi_24header"
+				text = "GRW_Evi_map_Text"
+				format = center
+				maxWidth = 300
+				fixedsize = yes
+				maxHeight = 200
+			}
+		}
+	}
+}
+#大地图
+guiTypes = {
+	containerWindowType = {
+		name = "GRW_Evi_map_window"
+		position = { x = 535 y = 200 }
+		size = { width = 1200 height= 700}
+		hide_sound = menu_close_window
+		show_sound = menu_open_window
+		moveable = yes
+		background = {
+			name = "blackground"
+			spriteType = "GFX_tiled_plain_bg"
+		}
+
+		buttonType = {
+			name = "close_button"
+			position = {
+				x = -41
+				y = 10
+			}
+			quadTextureSprite = "GFX_closebutton"
+			shortcut = "ESCAPE"
+			orientation = UPPER_RIGHT
+			pdx_tooltip = "CLOSE"
+		}
+
+		iconType = {
+			name = "GRW_Evi_map_help_button"
+			position = {
+				x = -125
+				y = 12
+			}
+			orientation = UPPER_RIGHT
+			spriteType = "GFX_Evi_map_help_button"
+			pdx_tooltip ="GRW__Evi_map_help_button_tt"
+		}
+		instantTextBoxType = {
+			name = "GRW_Evi_map_summary"
+			position = {
+				x = -205
+				y = 60
+			}
+			orientation = UPPER_RIGHT
+			font = "hoi_30header"
+			format = center
+			text = "GRW_Evi_map_summary_text"
+			maxWidth = 200
+			fixedsize = yes
+			maxHeight = 200
+		}
+		#紧张度
+		instantTextBoxType = {
+			name = "GRW_Evi_tension_text"
+			position = {
+				x = -200
+				y = 120
+			}
+			orientation = UPPER_RIGHT
+			font = "hoi_24header"
+			format = center
+			text = "GRW_Evi_tension_text"
+			maxWidth = 200
+			fixedsize = yes
+			maxHeight = 200
+		}
+		instantTextBoxType = {
+			name = "GRW_Evi_map_tension"
+			position = {
+				x = -220
+				y = 145
+			}
+			orientation = UPPER_RIGHT
+			font = "hoi_30header"
+			format = center
+			text = "GRW_Evi_map_tension"
+			maxWidth = 220
+			fixedsize = yes
+			maxHeight = 200
+		}
+		#紧张度变化
+		instantTextBoxType = {
+			name = "GRW_Evi_map_tension_change_text"
+			position = {
+				x = -205
+				y = 200
+			}
+			orientation = UPPER_RIGHT
+			font = "hoi_24header"
+			format = center
+			text = "GRW_Evi_map_tension_change_Text"
+			maxWidth = 210
+			fixedsize = yes
+			maxHeight = 200
+		}
+		instantTextBoxType = {
+			name = "GRW_Evi_map_tension_change"
+			position = {
+				x = -220
+				y = 225
+			}
+			orientation = UPPER_RIGHT
+			font = "hoi_30header"
+			format = center
+			text = "GRW_Evi_map_tension_change"
+			maxWidth = 220
+			fixedsize = yes
+			maxHeight = 200
+		}
+		#部队数量
+		instantTextBoxType = {
+			name = "GRW_Evi_map_troops_number"
+			position = {
+				x = -205
+				y = 285
+			}
+			orientation = UPPER_RIGHT
+			font = "hoi_24header"
+			format = center
+			text = "GRW_Evi_map_troops_number_text"
+			maxWidth = 200
+			fixedsize = yes
+			maxHeight = 200
+		}
+		#埃维五国按钮
+		buttonType = {#普里文
+			name = "GRW_Evi_map_button_GRW"
+			spriteType = "GFX_Evi_ui_GRW"
+			position = {
+				x = -140
+				y = 410
+			}
+			orientation = UPPER_RIGHT
+			pdx_tooltip = "GRW_Evi_map_GRW_tooltip"
+		}
+		buttonType = {#卢什
+			name = "GRW_Evi_map_button_LUS"
+			spriteType = "GFX_Evi_ui_LUS"
+			position = {
+				x = -185
+				y = 485
+			}
+			orientation = UPPER_RIGHT
+			pdx_tooltip = "GRW_Evi_map_LUS_tooltip"
+		}
+		buttonType = {#格里菲亚
+			name = "GRW_Evi_map_button_GRY"
+			spriteType = "GFX_Evi_ui_GRY"
+			position = {
+				x = -95
+				y = 485
+			}
+			orientation = UPPER_RIGHT
+			pdx_tooltip = "GRW_Evi_map_GRY_tooltip"
+		}
+		buttonType = {#黑石
+			name = "GRW_Evi_map_button_BAN"
+			spriteType = "GFX_Evi_ui_BAN"
+			position = {
+				x = -185
+				y = 565
+			}
+			orientation = UPPER_RIGHT
+			pdx_tooltip = "GRW_Evi_map_BAN_tooltip"
+		}
+		buttonType = {#格里富斯
+			name = "GRW_Evi_map_button_GRU"
+			spriteType = "GFX_Evi_ui_GRU"
+			position = {
+				x = -95
+				y = 565
+			}
+			orientation = UPPER_RIGHT
+			pdx_tooltip = "GRW_Evi_map_GRU_tooltip"
+		}
+
+		containerWindowType = {
+			name = "GRW_Evi_map_small_window"
+			position = {
+				x = 8
+				y = 5
+			}
+			size = {
+				width = 990
+				height = 690
+			}
+			background = {
+				name = "background"
+				spriteType = "GFX_tiled_bg"
+			}
+
+			iconType = {
+				name = "GRW_Evi_map"
+				spriteType = "GFX_Evi_map_Evi_map"
+				position = {
+					x = 13
+					y = 11
+				}
+			}
+		}
+	}
+}

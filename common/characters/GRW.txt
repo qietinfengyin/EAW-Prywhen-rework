@@ -1,0 +1,1413 @@
+characters={
+	###各意识形态领导人
+	#中立
+	GRW_dorian_of_brodfeld = {
+		name = GRW_dorian_of_brodfeld
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/GRW/Dorian_of_Brodfeld.tga"
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			expire = "1965.1.1.1"
+		}
+	}
+	#霸权
+	GRW_princip_meyer_brantbeak = {
+		name = GRW_princip_meyer_brantbeak
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/GRW/Puppet_leader.tga"
+			}
+		}
+		country_leader = {
+			ideology = nazism
+			expire = "1965.1.1.1"
+		}
+	}
+
+	#共产
+	GRW_comradegeneral_filip_redglad = {#红兴
+		name = GRW_comradegeneral_filip_redglad
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/GRW/LocalMio.tga"
+			}
+			army = {
+				large = "gfx/leaders/GRW/LocalMio.tga"
+				small = "gfx/interface/ideas/Advisors/GRW/GRW_local_mio.tga"
+			}
+		}
+		country_leader = {
+			desc = GRW_comradegeneral_filip_redglad_desc
+			ideology = new_democracy
+			expire = "1965.1.1.1"
+			traits = {
+				GRW_red_star_shines
+			}
+		}
+		field_marshal = {
+			desc = GRW_comradegeneral_filip_redglad_desc
+			traits = {
+				griffon_race_trait
+				commissar_general
+				brilliant_strategist
+				politically_connected
+				adaptable
+			}
+			skill = 3
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+	#谐率
+	GRW_Sonia_Cialaina = {#索尼娅·齐亚莱娜
+		name = GRW_Sonia_Cialaina
+		portraits = {
+			civilian = {
+				large = "GFX_Sonia_Cialaina_portrait"
+				small = "GFX_Sonia_Cialaina_advisor_portrait"
+			}
+		}
+		gender = female
+		country_leader = {
+			desc = GRW_Sonia_Cialaina_desc
+			ideology = socialism
+			expire = "1965.1.1.1"
+		}
+		advisor = {
+			desc = GRW_Sonia_Cialaina_desc
+			slot = political_advisor
+			idea_token = GRW_Sonia_Cialaina
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_Sonia_Cialaina_dead
+					has_completed_focus = GRW_NPCSC
+				}
+			}
+			available = {
+				hidden_trigger = {
+					NOT = {
+						has_country_flag = GRW_Sonia_Cialaina_dead
+						has_completed_focus = GRW_NPCSC
+					}
+				}
+			}
+			traits = {
+				mother_of_country
+			}
+			on_add = {
+				if = {
+					limit = {
+						has_country_flag = GRW_first_prywhen_political_consultative_conference_flag
+					}
+					GRW_democratic_socialism_influence_slightincrease = yes
+				}
+			}
+		}
+	}
+
+	###顾问
+	GRW_Lucian_Goldwing = {#卢西安·金翼
+		name = GRW_Lucian_Goldwing
+		portraits = {
+			civilian = {
+				large = "GFX_Lucian_Goldwing_portrait"
+				small = "GFX_Lucian_Goldwing_advisor_portrait"
+			}
+		}
+		advisor = {
+			desc = GRW_Lucian_Goldwing_desc
+			slot = political_advisor
+			idea_token = GRW_Lucian_Goldwing
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_Lucian_Goldwing_dead
+					has_completed_focus = GRW_NPCSC
+					has_country_leader = GRW_Lucian_Goldwing
+				}
+			}
+			available = {
+				hidden_trigger = {
+					NOT = {
+						has_country_flag = GRW_Lucian_Goldwing_dead
+						has_completed_focus = GRW_NPCSC
+						has_country_leader = GRW_Lucian_Goldwing
+					}
+				}
+			}
+			traits = {
+				GRW_organisation_builder
+			}
+			on_add = {
+				if = {
+					limit = {
+						has_country_flag = GRW_first_prywhen_political_consultative_conference_flag
+					}
+					GRW_primitive_communism_influence_slightincrease = yes
+				}
+			}
+		}
+	}
+	GRW_Ionel_Shortfeather = {#若安内尔·短羽
+		name = GRW_Ionel_Shortfeather
+		portraits = {
+			civilian = {
+				large = "GFX_Ionel_Shortfeather_portrait"
+				small = "GFX_Ionel_Shortfeather_advisor_portrait"
+			}
+		}
+		advisor = {
+			desc = GRW_Ionel_Shortfeather_desc
+			slot = political_advisor
+			idea_token = GRW_Ionel_Shortfeather
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_Ionel_Shortfeather_dead
+					has_completed_focus = GRW_NPCSC
+				}
+			}
+			available = {
+				hidden_trigger = {
+					NOT = {
+						has_country_flag = GRW_Ionel_Shortfeather_dead
+						has_completed_focus = GRW_NPCSC
+					}
+				}
+			}
+			traits = {
+				GRW_genius_diplomat
+			}
+			on_add = {
+				if = {
+					limit = {
+						has_country_flag = GRW_first_prywhen_political_consultative_conference_flag
+					}
+					GRW_primitive_communism_influence_slightincrease = yes
+				}
+			}
+		}
+	}
+	GRW_Bashir_Mistwing = {#贝希尔·岚翼
+		name = GRW_Bashir_Mistwing
+		portraits = {
+			civilian = {
+				small = "GFX_Bashir_Mistwing_advisor_portrait"
+			}
+		}
+		advisor = {
+			desc = GRW_Bashir_Mistwing_desc
+			slot = political_advisor
+			idea_token = GRW_Bashir_Mistwing
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_Bashir_Mistwing_dead
+				}
+				has_completed_focus = GRW_establish_people_bank
+			}
+			traits = {
+				economic_planner
+			}
+			on_add = {
+				if = {
+					limit = {
+						has_country_flag = GRW_first_prywhen_political_consultative_conference_flag
+					}
+					GRW_primitive_communism_influence_slightincrease = yes
+				}
+			}
+		}
+	}
+	GRW_Dumitru_Startail = {#杜米特鲁·星尾
+		name = GRW_Dumitru_Startail
+		portraits = {
+			civilian = {
+				small = "GFX_idea_generic_griffon_with_glasses"
+			}
+		}
+		advisor = {
+			desc = GRW_Dumitru_Startail_desc
+			slot = political_advisor
+			idea_token = GRW_Dumitru_Startail
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_Dumitru_Startail_dead
+				}
+				has_completed_focus = GRW_land_reform
+			}
+			traits = {
+				agricultural_policy_experts
+			}
+			on_add = {
+				if = {
+					limit = {
+						has_country_flag = GRW_first_prywhen_political_consultative_conference_flag
+					}
+					GRW_primitive_communism_influence_slightincrease = yes
+				}
+			}
+		}
+	}
+	GRW_George_Flamefeather = {#乔治·焰翎
+		name = GRW_George_Flamefeather
+		portraits = {
+			civilian = {
+				small = "GFX_George_Flamefeather_advisor_portrait"
+			}
+		}
+		advisor = {
+			desc = GRW_George_Flamefeather_desc
+			slot = political_advisor
+			idea_token = GRW_George_Flamefeather
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_George_Flamefeather_dead
+				}
+				has_completed_focus = GRW_ministry_of_foreign_affairs
+			}
+			traits = {
+				cultural_ambassador
+			}
+			on_add = {
+				if = {
+					limit = {
+						has_country_flag = GRW_first_prywhen_political_consultative_conference_flag
+					}
+					GRW_rozenkampism_influence_slightincrease = yes
+				}
+			}
+		}
+	}
+	GRW_Calin_Thunderfeather = {#卡林·霆羽
+		name = GRW_Calin_Thunderfeather
+		portraits = {
+			civilian = {
+				large = "GFX_Calin_Thunderfeather_portrait"
+				small = "GFX_Calin_Thunderfeather_advisor_portrait"
+			}
+		}
+		advisor = {
+			desc = GRW_Calin_Thunderfeather_desc
+			slot = political_advisor
+			idea_token = GRW_Calin_Thunderfeather
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_LiuXiao_dead
+				}
+				has_completed_focus = GRW_ministry_of_foreign_affairs
+			}
+			traits = {
+				GRW_ideological_crusader
+			}
+			on_add = {
+				if = {
+					limit = {
+						has_country_flag = GRW_first_prywhen_political_consultative_conference_flag
+					}
+					GRW_rozenkampism_influence_slightincrease = yes
+				}
+			}
+		}
+	}
+	GRW_Liviu_Moonbeak = {#利维乌·月喙
+		name = GRW_Liviu_Moonbeak
+		portraits = {
+			civilian = {
+				large = "GFX_Liviu_Moonbeak_portrait"
+				small = "GFX_Liviu_Moonbeak_advisor_portrait"
+			}
+		}
+		advisor = {
+			desc = GRW_Liviu_Moonbeak_desc
+			slot = political_advisor
+			idea_token = GRW_Liviu_Moonbeak
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_Liviu_Moonbeak_dead
+					has_country_flag = GRW_midgame_20_flag
+				}
+				has_completed_focus = GRW_develop_heavy_industry
+			}
+			available = {
+				hidden_trigger = {
+					NOT = {
+						has_country_flag = GRW_Liviu_Moonbeak_dead
+						has_country_flag = GRW_midgame_20_flag
+					}
+					has_completed_focus = GRW_develop_heavy_industry
+				}
+			}
+			traits = {
+				director_of_planning_commission
+			}
+			on_add = {
+				if = {
+					limit = {
+						has_country_flag = GRW_first_prywhen_political_consultative_conference_flag
+					}
+					GRW_syndicalism_influence_slightincrease = yes
+				}
+			}
+		}
+	}
+	GRW_Trifan_Sidioveanu = {#特里凡·西迪约韦亚努
+		name = GRW_Trifan_Sidioveanu
+		portraits = {
+			civilian = {
+				large = "GFX_Trifan_Sidioveanu_portrait"
+				small = "GFX_Trifan_Sidioveanu_advisor_portrait"
+			}
+		}
+		advisor = {
+			desc = GRW_Trifan_Sidioveanu_desc
+			slot = political_advisor
+			idea_token = GRW_Trifan_Sidioveanu
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_Trifan_Sidioveanu_dead
+				}
+				has_completed_focus = GRW_national_reconstruction_commission
+			}
+			traits = {
+				union_supporter
+			}
+			on_add = {
+				if = {
+					limit = {
+						has_country_flag = GRW_first_prywhen_political_consultative_conference_flag
+					}
+					GRW_syndicalism_influence_slightincrease = yes
+				}
+			}
+		}
+	}
+	GRW_Ianos_Amberpaw = {#光波·布鲁诺
+		name = GRW_Ianos_Amberpaw
+		portraits = {
+			civilian = {
+				small = "GFX_Ianos_Amberpaw_advisor_portrait"
+			}
+		}
+		advisor = {
+			desc = GRW_Ianos_Amberpaw_desc
+			slot = political_advisor
+			idea_token = GRW_Ianos_Amberpaw
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_Ianos_Amberpaw_dead
+				}
+			}
+			traits = {
+				GRW_popular_figurehead
+			}
+			on_add = {
+				if = {
+					limit = {
+						has_country_flag = GRW_first_prywhen_political_consultative_conference_flag
+					}
+					GRW_democratic_socialism_influence_slightincrease = yes
+				}
+			}
+		}
+	}
+	GRW_Marin_Dascalu = {#马林·达斯卡卢
+		name = GRW_Marin_Dascalu
+		portraits = {
+			civilian = {
+				small = "GFX_Marin_Dascalu_advisor_portrait"
+			}
+		}
+		advisor = {
+			desc = GRW_Marin_Dascalu_desc
+			slot = political_advisor
+			idea_token = GRW_Marin_Dascalu
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_Marin_Dascalu_dead
+				}
+				has_completed_focus = GRW_commencement_of_literacy_campaigns
+			}
+			traits = {
+				GRW_education_reformer
+			}
+			on_add = {
+				if = {
+					limit = {
+						has_country_flag = GRW_first_prywhen_political_consultative_conference_flag
+					}
+					GRW_democratic_socialism_influence_slightincrease = yes
+				}
+			}
+		}
+	}
+	GRW_Anatol_Vilan = {#阿纳托尔·维兰
+		name = GRW_Anatol_Vilan
+		portraits = {
+			civilian = {
+				small = "GFX_idea_WNG_advisor_4"
+			}
+		}
+		advisor = {
+			desc = GRW_Anatol_Vilan_desc
+			slot = political_advisor
+			idea_token = GRW_Anatol_Vilan
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_Anatol_Vilan_dead
+				}
+				has_completed_focus = GRW_cultural_education_committee
+			}
+			traits = {
+				enlightened_academic
+			}
+			on_add = {
+				if = {
+					limit = {
+						has_country_flag = GRW_first_prywhen_political_consultative_conference_flag
+					}
+					GRW_democratic_socialism_influence_slightincrease = yes
+				}
+			}
+		}
+	}
+	GRW_XiaoZi = {#赫尔穆特·肖兹
+		name = GRW_XiaoZi
+		portraits = {
+			civilian = {
+				small = "GFX_idea_FEA_izaak_reigers"
+			}
+		}
+		advisor = {
+			desc = GRW_XiaoZi_desc
+			slot = political_advisor
+			idea_token = GRW_XiaoZi
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_XiaoZi_dead
+				}
+				has_completed_focus = GRW_establish_the_army_academy
+			}
+			traits = {
+				GRW_reformist_military
+			}
+			on_add = {
+				if = {
+					limit = {
+						has_country_flag = GRW_first_prywhen_political_consultative_conference_flag
+					}
+					GRW_democratic_socialism_influence_slightincrease = yes
+				}
+			}
+		}
+	}
+	GRW_RainyBlaze = {#雨露耀光
+		name = GRW_RainyBlaze
+		portraits = {
+			civilian = {
+				small = "GFX_RainyBlaze_advisor_portrait"
+			}
+		}
+		advisor = {
+			desc = GRW_RainyBlaze_desc
+			slot = political_advisor
+			idea_token = GRW_RainyBlaze
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				has_country_flag = GRW_national_health_commission_flag
+				NOT = {
+					has_country_flag = GRW_RainyBlaze_dead
+				}
+			}
+			traits = {
+				GRW_sun_of_chinese_localization_group
+			}
+			on_add = {
+				if = {
+					limit = {
+						has_country_flag = GRW_first_prywhen_political_consultative_conference_flag
+					}
+					GRW_democratic_socialism_influence_slightincrease = yes
+				}
+			}
+		}
+	}
+	GRW_Cristian_Ghostwing = {#克里斯蒂安·幽翼
+		instance = {
+			allowed = {
+				NOT = { has_dlc = "La Resistance" }
+			}
+			name = GRW_Cristian_Ghostwing
+			portraits = {
+				civilian = {
+					small = "GFX_idea_GRW_Mandarin"
+				}
+			}
+			advisor = {
+				desc = GRW_Cristian_Ghostwing_desc
+				slot = political_advisor
+				idea_token = GRW_Cristian_Ghostwing
+				allowed = {
+					original_tag = GRW
+				}
+				visible = {
+					NOT = {
+						has_country_flag = GRW_Cristian_Ghostwing_dead
+					}
+				}
+				traits = {
+					king_of_spies
+				}
+			}
+		}
+		instance = {
+			allowed = {
+				has_dlc = "La Resistance"
+			}
+			name = GRW_Cristian_Ghostwing
+			portraits = {
+				civilian = {
+					small = "GFX_idea_GRW_Mandarin"
+				}
+			}
+			advisor = {
+				desc = GRW_Cristian_Ghostwing_desc
+				slot = political_advisor
+				idea_token = GRW_Cristian_Ghostwing_lar
+				allowed = {
+					original_tag = GRW
+				}
+				visible = {
+					NOT = {
+						has_country_flag = GRW_Cristian_Ghostwing_dead
+					}
+				}
+				traits = {
+					king_of_spies_lar
+				}
+			}
+		}
+	}
+	
+	###理论家
+	GRW_Codrin_Popescu = {#科德林·波佩斯库
+		name = GRW_Codrin_Popescu
+		portraits = {
+			army = {
+				small = "GFX_idea_GRW_Iegov"
+			}
+		}
+		advisor = {
+			desc = GRW_Codrin_Popescu_desc
+			cost = 100
+			slot = theorist
+			idea_token = GRW_Codrin_Popescu
+			ledger = army
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_Codrin_Popescu_dead
+				}
+			}
+			traits = {
+				military_theorist
+			}
+		}
+	}
+	GRW_Vasile_Bila = {#瓦西里·比拉
+		name = GRW_Vasile_Bila
+		portraits = {
+			army = {
+				small = "GFX_idea_GRW_Ludochka"
+			}
+		}
+		advisor = {
+			desc = GRW_Vasile_Bila_desc
+			cost = 100
+			slot = theorist
+			idea_token = GRW_Vasile_Bila
+			ledger = air
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_Vasile_Bila_dead
+				}
+			}
+			traits = {
+				air_warfare_theorist
+			}
+		}
+	}
+	GRW_Snowbunny = {#雪兔同志
+		name = GRW_Snowbunny
+		portraits = {
+			army = {
+				small = "GFX_Snowbunny_advisor_portrait"
+			}
+		}
+		advisor = {
+			desc = GRW_Snowbunny_desc
+			cost = 150
+			slot = theorist
+			idea_token = GRW_Snowbunny
+			ledger = air
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_Snowbunny_dead
+				}
+				has_country_flag = GRW_available_Snowbunny
+			}
+			available = {
+				not_already_hired_except_as = high_command
+				hidden_trigger = {
+					has_country_flag = GRW_available_Snowbunny
+					NOT = {
+						has_country_flag = GRW_Snowbunny_dead
+					}
+				}
+			}
+			traits = {
+				close_air_support_proponent
+			}
+		}
+		advisor = {
+			desc = GRW_Snowbunny_desc
+			cost = 100
+			slot = high_command
+			idea_token = GRW_Snowbunny
+			ledger = air
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_Snowbunny_dead
+				}
+				has_country_flag = GRW_available_Snowbunny
+			}
+			available = {
+				not_already_hired_except_as = high_command
+				hidden_trigger = {
+					has_country_flag = GRW_available_Snowbunny
+					NOT = {
+						has_country_flag = GRW_Snowbunny_dead
+					}
+				}
+			}
+			traits = {
+				air_close_air_support_2
+			}
+		}
+	}
+	GRW_golden_sands = {#金沙
+		name = GRW_golden_sands
+		portraits = {
+			army = {
+				small = "GFX_idea_BAL_commie_waifu"
+			}
+		}
+		advisor = {
+			desc = GRW_golden_sands_desc
+			cost = 100
+			slot = theorist
+			idea_token = GRW_golden_sands
+			ledger = army
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_golden_sands_dead
+					has_country_flag = GRW_free_unions_flag
+				}
+			}
+			available = {
+				NOT = {
+					has_country_flag = GRW_free_unions_flag
+				}
+				hidden_trigger = {
+					NOT = {
+						has_country_flag = GRW_golden_sands_dead
+					}
+				}
+			}
+			research_bonus = {
+				nuclear = 0.15
+			}
+			traits = {
+				GRW_neutral_technocrats
+			}
+		}
+	}
+	#陆军部长
+	GRW_Linas_Bielu = {#理查德·尖矛
+		name = GRW_Linas_Bielu
+		portraits = {
+			army = {
+				large = "gfx/leaders/GRW/RichardSpear.tga"
+				small = "gfx/interface/ideas/Advisors/GRW/GRW_richard_spear.tga"
+			}
+		}
+		field_marshal = {
+			desc = GRW_Linas_Bielu_desc
+			traits = {
+				griffon_race_trait
+				brilliant_strategist
+				infantry_officer
+				infantry_leader
+				hill_fighter
+			}
+			skill = 4
+			attack_skill = 5
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 4
+		}
+		advisor = {
+			desc = GRW_Linas_Bielu_desc
+			cost = 100
+			slot = army_chief
+			idea_token = GRW_Linas_Bielu
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_Linas_Bielu_dead
+				}
+			}
+			traits = {
+				GRW_eagle_of_red_army
+			}
+			on_add = {
+				if = {
+					limit = {
+						has_country_flag = GRW_first_prywhen_political_consultative_conference_flag
+					}
+					
+				}
+			}
+		}
+	}
+	GRW_Florian_von_Quixote = {#弗洛里安·冯·吉诃德
+		name = GRW_Florian_von_Quixote
+		portraits = {
+			civilian = {
+				large = "GFX_Florian_von_Quixote_portrait"
+			}
+			army = {
+				large = "GFX_Florian_von_Quixote_portrait"
+				small = "GFX_Florian_von_Quixote_advisor_portrait"
+			}
+		}
+		field_marshal = {
+			desc = GRW_Florian_von_Quixote_desc
+			traits = {
+				griffon_race_trait
+				medical_expert
+				inspirational_leader
+				career_officer
+				swamp_fox
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+		}
+		advisor = {
+			desc = GRW_Florian_von_Quixote_desc
+			cost = 200
+			slot = army_chief
+			idea_token = GRW_Florian_von_Quixote
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_Florian_von_Quixote_dead
+				}
+			}
+			traits = {
+				alt_army_commando_2
+			}
+		}
+	}
+	GRW_Helios_Longov = {#赫利欧斯·龙戈夫
+		name = GRW_Helios_Longov
+		portraits = {
+			army = {
+				small = "GFX_idea_GRW_Mandarin"
+			}
+		}
+		advisor = {
+			desc = GRW_Helios_Longov_desc
+			cost = 100
+			slot = army_chief
+			idea_token = GRW_Helios_Longov
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_Helios_Longov_dead
+				}
+			}
+			traits = {
+				army_chief_maneuver_2
+			}
+		}
+	}
+	GRW_Constantin_Caishen = {#康斯坦丁·凯申
+		name = GRW_Constantin_Caishen
+		portraits = {
+			army = {
+				large = "gfx/leaders/GRW/Cammunist.tga"
+				small = "GFX_idea_GRW_Witia"
+			}
+		}
+		gender = female
+		corps_commander = {
+			desc = GRW_Constantin_Caishen_desc
+			traits = {
+				griffon_race_trait
+				inflexible_strategist
+				trait_cautious
+				trait_reckless
+				logistics_wizard
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 4
+		}
+		advisor = {
+			desc = GRW_Constantin_Caishen_desc
+			cost = 200
+			slot = army_chief
+			idea_token = GRW_Constantin_Caishen
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_Constantin_Caishen_dead
+				}
+			}
+			traits = {
+				alt_army_logistics_3
+			}
+		}
+	}
+	#海军部长
+	GRW_Marino_Aquario = {#马里诺·阿夸里奥
+		name = GRW_Marino_Aquario
+		portraits = {
+			army = {
+				large = "gfx/leaders/GRW/SailorPirate.tga"
+				small = "GFX_idea_GRW_Sailor_Pirate"
+			}
+		}
+		navy_leader = {
+			desc = GRW_Marino_Aquario_desc
+			traits = {
+				griffon_race_trait
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 3
+			maneuvering_skill = 1
+			coordination_skill = 1
+		}
+		advisor = {
+			desc = GRW_Marino_Aquario_desc
+			cost = 100
+			slot = navy_chief
+			idea_token = GRW_Marino_Aquario
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_Marino_Aquario_dead
+				}
+				has_completed_focus = GRW_establishment_of_Navy
+			}
+			traits = {
+				navy_chief_reform_2
+			}
+		}
+	}
+	GRW_Enache_Pescrush = {#埃纳凯·佩斯克鲁什
+		name = GRW_Enache_Pescrush
+		portraits = {
+			army = {
+				large = "gfx/leaders/GRW/Searaider.tga"
+				small = "gfx/interface/ideas/Advisors/GRW/GRW_searaider.tga"
+			}
+		}
+		navy_leader = {
+			desc = GRW_Enache_Pescrush_desc
+			traits = {
+				griffon_race_trait
+			}
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			maneuvering_skill = 1
+			coordination_skill = 1
+		}
+		advisor = {
+			desc = GRW_Enache_Pescrush_desc
+			cost = 100
+			slot = navy_chief
+			idea_token = GRW_Enache_Pescrush
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_Enache_Pescrush_dead
+				}
+				has_completed_focus = GRW_establishment_of_Navy
+			}
+			traits = {
+				alt_navy_screen_2
+			}
+		}
+	}
+	#空军部长
+	GRW_Constantin_Canden = {#康斯坦丁·坎登
+		name = GRW_Constantin_Canden
+		portraits = {
+			army = {
+				small = "GFX_idea_GRW_Duskfluffian"
+			}
+		}
+		advisor = {
+			desc = GRW_Constantin_Canden_desc
+			cost = 200
+			slot = air_chief
+			idea_token = GRW_Constantin_Canden
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_Constantin_Canden_dead
+				}
+				has_completed_focus = GRW_found_the_Air_Force_Academy
+			}
+			traits = {
+				air_chief_reform_3
+			}
+		}
+	}
+	GRW_Luca_Lipini = {#卢卡·利皮尼
+		name = GRW_Luca_Lipini
+		portraits = {
+			army = {
+				small = "GFX_idea_GRW_Andor"
+			}
+		}
+		advisor = {
+			desc = GRW_Luca_Lipini_desc
+			cost = 100
+			slot = air_chief
+			idea_token = GRW_Luca_Lipini
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_Luca_Lipini_dead
+				}
+				has_completed_focus = GRW_found_the_Air_Force_Academy
+			}
+			traits = {
+				air_chief_ground_support_2
+			}
+		}
+	}
+	#总司令
+	GRW_Sorin_Yuru = {#索林·裕鲁
+		name = GRW_Sorin_Yuru
+		portraits = {
+			army = {
+				large = "gfx/leaders/GRW/Mors.tga"
+				small = "GFX_idea_GRW_Theresa"
+			}
+		}
+		gender = female
+		corps_commander = {
+			desc = GRW_Sorin_Yuru_desc
+			traits = {
+				griffon_race_trait
+				brilliant_strategist
+				infantry_officer
+				jungle_rat
+				promising_general
+			}
+			skill = 3
+			attack_skill = 4
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 3
+		}
+		advisor = {
+			desc = GRW_Sorin_Yuru_desc
+			cost = 200
+			slot = high_command
+			idea_token = GRW_Sorin_Yuru
+			ledger = army
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_Sorin_Yuru_dead
+				}
+			}
+			traits = {
+				army_infantry_3
+			}
+		}
+	}
+	GRW_Victor_Ignatescu = {#维克托·伊格纳泰斯库
+		name = GRW_Victor_Ignatescu
+		portraits = {
+			army = {
+				small = "GFX_idea_GRW_advisor18"
+			}
+		}
+		advisor = {
+			desc = GRW_Victor_Ignatescu_desc
+			cost = 100
+			slot = high_command
+			idea_token = GRW_Victor_Ignatescu
+			ledger = army
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_Victor_Ignatescu_dead
+				}
+			}
+			available = {
+				OR = {
+					has_completed_focus = GRW_tank_blueprints_from_Stalliongrad
+					has_completed_focus = GRW_our_armoured_division
+				}
+			}
+			traits = {
+				army_armored_2
+			}
+		}
+	}
+	GRW_Cornel_Gherna = {#科内尔·格纳
+		name = GRW_Cornel_Gherna
+		portraits = {
+			army = {
+				small = "GFX_idea_GRW_Murkfeathers"
+			}
+		}
+		advisor = {
+			desc = GRW_Cornel_Gherna_desc
+			cost = 100
+			slot = high_command
+			idea_token = GRW_Cornel_Gherna
+			ledger = army
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_Cornel_Gherna_dead
+				}
+			}
+			traits = {
+				army_regrouping_2
+			}
+		}
+	}
+	GRW_Constantin_Cornel = {#康斯坦丁·克内尔
+		name = GRW_Constantin_Cornel
+		portraits = {
+			army = {
+				small = "GFX_idea_GRW_Finbol"
+			}
+		}
+		advisor = {
+			desc = GRW_Constantin_Cornel_desc
+			cost = 100
+			slot = high_command
+			idea_token = GRW_Constantin_Cornel
+			ledger = army
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_Constantin_Cornel_dead
+				}
+			}
+			traits = {
+				alt_army_chief_morale_2
+			}
+		}
+	}
+	GRW_Rainbow_Sword = {#虹剑
+		name = GRW_Rainbow_Sword
+		portraits = {
+			civilian = {
+				large = "GFX_Rainbow_Sword_portrait"
+			}
+			army = {
+				large = "GFX_Rainbow_Sword_portrait"
+				small = "GFX_Rainbow_Sword_advisor_portrait"
+			}
+		}
+		gender = female
+		corps_commander = {
+			desc = GRW_Rainbow_Sword_desc
+			traits = {
+				pony_race_trait
+				promising_general
+				brilliant_strategist
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+		advisor = {
+			desc = GRW_Rainbow_Sword_desc
+			cost = 50
+			slot = high_command
+			idea_token = GRW_Rainbow_Sword
+			ledger = army
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				NOT = {
+					has_country_flag = GRW_Rainbow_Sword_dead
+				}
+			}
+			traits = {
+				army_commando_1
+			}
+		}
+	}
+	#仅将领
+	GRW_rain_twister = {#雨露旋风
+		name = GRW_rain_twister
+		portraits = {
+			army = {
+				large = "gfx/leaders/GRW/Rain_Twister.tga"
+				small = "gfx/interface/ideas/Advisors/GRW/GRW_rain_twister.tga"
+			}
+		}
+		corps_commander = {
+			traits = {
+				pony_race_trait
+				infantry_officer
+				trickster
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 2
+			desc = CORPS_COMMANDER_RAIN_TWISTER_DESC
+		}
+	}
+	GRW_Valentin_Rosescu = {#瓦伦丁·罗塞斯库
+		name = GRW_Valentin_Rosescu
+		portraits = {
+			army = {
+				large = "gfx/leaders/GRW/Puppet_leader.tga"
+				small = "gfx/interface/ideas/Advisors/GRW/GRW_puppet_leader.tga"
+			}
+			civilian = {
+				large = "gfx/leaders/GRW/Puppet_leader.tga"
+			}
+		}
+		corps_commander = {
+			desc = GRW_Valentin_Rosescu_desc
+			traits = {
+				griffon_race_trait
+				infantry_officer
+				commando
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 3
+		}
+	}
+	GRW_HXFS = {#赫星法斯
+		name = GRW_HXFS
+		portraits = {
+			army = {
+				large = "GFX_HXFS_portrait"
+				small = "GFX_HXFS_advisor_portrait"
+			}
+		}
+		corps_commander = {
+			desc = GRW_HXFS_desc
+			traits = {
+				pony_race_trait
+				promising_general
+				armor_officer
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	GRW_Custer = {#卡斯特
+		name = GRW_Custer
+		portraits = {
+			army = {
+				large = "GFX_Custer_portrait"
+				small = "GFX_Custer_advisor_portrait"
+			}
+		}
+		corps_commander = {
+			desc = GRW_Custer_desc
+			traits = {
+				griffon_race_trait
+				promising_general
+				artillery_officer
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	GRW_rory_laurel = {#绒绒月桂
+		name = GRW_rory_laurel
+		portraits = {
+			army = {
+				large = "GFX_rory_laurel_portrait"
+				small = "GFX_rory_laurel_advisor_portrait"
+			}
+		}
+		corps_commander = {
+			desc = GRW_rory_laurel_desc
+			traits = {
+				pony_race_trait
+				promising_general
+				signal_expert_trait
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	#科学家
+	GRW_Cenar_Tidau = {#切纳尔·齐道
+		name = GRW_Cenar_Tidau
+		portraits = {
+			army={
+				large = "GFX_portrait_griffon_generic_operative_male_1"
+				small="GFX_idea_generic_griffon_nuclear_scientist"
+			}
+		}
+		scientist = {
+			desc = GRW_Cenar_Tidau_desc
+			traits = {
+				scientist_trait_artillery_specialist
+				scientist_trait_genius
+				scientist_trait_resourceful
+			}
+			skills = {
+				specialization_land = 1
+			}
+		}
+	}
+	GRW_Vlad_Gancan = {#弗拉德·甘坎
+		name = GRW_Vlad_Gancan
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_griffon_nuclear_scientist"
+			}
+		}
+		scientist = {
+			desc = GRW_Vlad_Gancan_desc
+			visible = {
+				owner = {
+					has_completed_focus = GRW_miracle_weapon
+				}
+			}
+			traits = {
+				scientist_trait_nuclear_specialist
+				scientist_trait_bright
+			}
+			skills = {
+				specialization_nuclear = 1
+			}
+		}
+	}
+}

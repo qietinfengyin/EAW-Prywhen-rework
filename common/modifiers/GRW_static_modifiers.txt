@@ -1,0 +1,43 @@
+#沙伊斯森林地区
+GRW_scheisswald_forest_1 = {
+	attrition = 0.08
+	army_attack_factor = -0.25
+	local_org_regain = -0.32
+	army_core_defence_factor = 0.18
+	army_defence_factor = 0.08
+	air_bombing_targetting = -0.1
+	army_speed_factor = -0.42
+}
+GRW_scheisswald_forest_2 = {
+	attrition = 0.06
+	army_attack_factor = -0.2
+	local_org_regain = -0.24
+	army_core_defence_factor = 0.16
+	army_defence_factor = 0.06
+	air_bombing_targetting = -0.1
+	army_speed_factor = -0.34
+}
+GRW_scheisswald_forest_3 = {
+	attrition = 0.04
+	army_attack_factor = -0.15
+	local_org_regain = -0.16
+	army_core_defence_factor = 0.14
+	army_defence_factor = 0.04
+	air_bombing_targetting = -0.1
+	army_speed_factor = -0.26
+}
+GRW_scheisswald_forest_4 = {
+	attrition = 0.02
+	army_attack_factor = -0.1
+	local_org_regain = -0.08
+	army_core_defence_factor = 0.12
+	army_defence_factor = 0.02
+	air_bombing_targetting = -0.1
+	army_speed_factor = -0.18
+}
+GRW_scheisswald_forest_5 = {
+	army_attack_factor = -0.05
+	army_core_defence_factor = 0.1
+	air_bombing_targetting = -0.1
+	army_speed_factor = -0.1
+}

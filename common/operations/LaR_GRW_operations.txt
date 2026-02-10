@@ -1,0 +1,1176 @@
+###通用外交间谍行动
+#支持左翼
+GRW_operation_spread_communism = {
+	icon = GFX_operations_coup_government
+	map_icon = GFX_operations_coup_government_map
+	name = GRW_operation_spread_communism
+	desc = GRW_operation_spread_communism_desc
+	priority = 10
+
+	days = 90
+	network_strength = 30
+	operatives = 1
+
+	equipment = {
+		civilian_factories = {
+			amount = 3
+			days = 30
+		}
+	}
+
+	allowed = {
+		original_tag = GRW
+	}
+	visible = {
+		is_subject = no
+		has_government = communism
+		FROM = {
+			exists = yes
+			has_government = democratic
+			has_country_flag = GRW_diplomacy_democratic_friends
+			NOT = {
+				has_war_with = ROOT
+				is_in_faction_with = ROOT
+				has_country_flag = GRW_operation_spread_communism_flag
+			}
+		}
+	}
+	available = {
+		network_national_coverage = {
+			target = FROM
+			value > 0
+		}
+	}
+
+	risk_chance = 0.2
+	experience = 1.5
+
+	outcome_potential = {
+		FROM = {
+			GRW_influence_improve = yes
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+		}
+	}
+	outcome_execute = {
+		FROM = {
+			GRW_influence_improve = yes
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+			set_country_flag = GRW_operation_spread_communism_flag
+		}
+	}
+
+	phases = {
+		infiltration_border = { base = 100 }
+	}
+	phases = {
+		collaboration_government_set_up_planning_committees = { base = 100 }
+	}
+	phases = {
+		exfiltration_border = { base = 100 }
+	}
+}
+
+#武装准军事组织
+GRW_operation_smuggle_weapons = {
+	icon = GFX_operations_boost_resistance
+	map_icon = GFX_operations_boost_resistance_map
+	name = GRW_operation_smuggle_weapons
+	desc = GRW_operation_smuggle_weapons_desc
+	priority = 10
+
+	days = 90
+	network_strength = 50
+	operatives = 2
+
+	equipment = {
+		infantry_equipment = 300
+	}
+
+	allowed = {
+		original_tag = GRW
+	}
+	visible = {
+		is_subject = no
+		has_government = communism
+		FROM = {
+			exists = yes
+			has_government = democratic
+			has_country_flag = GRW_diplomacy_democratic_friends
+			has_country_flag = GRW_operation_spread_communism_flag
+			NOT = {
+				has_war_with = ROOT
+				is_in_faction_with = ROOT
+				has_country_flag = GRW_operation_smuggle_weapons_flag
+			}
+		}
+	}
+	available = {
+		network_national_coverage = {
+			target = FROM
+			value > 0
+		}
+	}
+
+	risk_chance = 0.2
+	experience = 1.5
+
+	outcome_potential = {
+		FROM = {
+			GRW_influence_improve = yes
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+		}
+	}
+	outcome_execute = {
+		FROM = {
+			GRW_influence_improve = yes
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			set_country_flag = GRW_operation_smuggle_weapons_flag
+		}
+	}
+
+	phases = {
+		infiltration_border = { base = 100 } 
+	}
+	phases = {
+		collaboration_government_train_paramilitary_forces = { base = 100 }
+	}
+	phases = {
+		exfiltration_border = { base = 100 } 
+	}
+}
+
+#策划政变
+GRW_operation_orchestrate_coups = {
+	icon = GFX_operations_boost_resistance
+	map_icon = GFX_operations_boost_resistance_map
+	name = GRW_operation_orchestrate_coups
+	desc = GRW_operation_orchestrate_coups_desc
+	priority = 10
+
+	days = 90
+	network_strength = 50
+	operatives = 3
+
+	equipment = {
+		infantry_equipment = 500
+		support_equipment = 150
+	}
+
+	allowed = {
+		original_tag = GRW
+	}
+	visible = {
+		is_subject = no
+		has_government = communism
+		FROM = {
+			exists = yes
+			has_government = democratic
+			has_country_flag = GRW_diplomacy_democratic_friends
+			has_idea = GRW_influence3
+			NOT = {
+				has_war_with = ROOT
+				is_in_faction_with = ROOT
+			}
+		}
+	}
+	available = {
+		network_national_coverage = {
+			target = FROM
+			value > 0
+		}
+		FROM = {
+			communism > 0.5
+		}
+	}
+
+	risk_chance = 0.2
+	experience = 1.5
+
+	outcome_potential = {
+		FROM = {
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.2
+			}
+		}
+		ROOT = {
+			country_event = {
+				id = GRW_earlygame.53
+				days = 1
+			}
+		}
+	}
+	outcome_execute = {
+		FROM = {
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.2
+			}
+		}
+		ROOT = {
+			country_event = {
+				id = GRW_earlygame.53
+				days = 1
+			}
+		}
+	}
+
+	phases = {
+		infiltration_diplomatic = { base = 100 }
+	}
+	phases = {
+		collaboration_government_contact_military_officers = { base = 100 }
+	}
+	phases = {
+		exfiltration_border = { base = 100 }
+	}
+}
+############################################################
+###河间间谍行动
+#联络当地红色组织
+GRW_operation_contact_local_red_organization = {
+	icon = GFX_operations_coup_government
+	map_icon = GFX_operations_coup_government_map
+	name = GRW_operation_contact_local_red_organization
+	desc = GRW_operation_contact_local_red_organization_desc
+	priority = 10
+
+	days = 90
+	network_strength = 30
+	operatives = 1
+
+	equipment = {
+		civilian_factories = {
+			amount = 2
+			days = 30
+		}
+	}
+
+	allowed = {
+		original_tag = GRW
+	}
+	visible = {
+		is_subject = no
+		has_government = communism
+		FROM = {
+			exists = yes
+			is_in_array = {
+				array = GRW.RIV_revolution_diplomacy
+				value = THIS
+			}
+			NOT = {
+				has_government = communism
+				has_war_with = ROOT
+				is_in_faction_with = ROOT
+				has_country_flag = GRW_operation_contact_local_red_organization_flag
+			}
+		}
+	}
+	available = {
+		network_national_coverage = {
+			target = FROM
+			value > 0
+		}
+	}
+
+	risk_chance = 0.2
+	experience = 1.5
+
+	outcome_potential = {
+		FROM = {
+			country_event = {
+				id = GRW_midgame.31
+			}
+		}
+	}
+	outcome_execute = {
+		FROM = {
+			country_event = {
+				id = GRW_midgame.31
+			}
+			set_country_flag = GRW_operation_contact_local_red_organization_flag
+		}
+	}
+
+	phases = {
+		infiltration_border = { base = 100 }
+	}
+	phases = {
+		collaboration_government_set_up_planning_committees = { base = 100 }
+	}
+	phases = {
+		exfiltration_border = { base = 100 }
+	}
+}
+
+#煽动民众抗议
+GRW_incite_public_protest = {
+	icon = GFX_operations_coup_government
+	map_icon = GFX_operations_coup_government_map
+	name = GRW_incite_public_protest
+	desc = GRW_incite_public_protest_desc
+	priority = 10
+
+	days = 60
+	network_strength = 30
+	operatives = 1
+
+	equipment = {
+		civilian_factories = {
+			amount = 1
+			days = 30
+		}
+	}
+
+	allowed = {
+		original_tag = GRW
+	}
+	visible = {
+		is_subject = no
+		has_government = communism
+		FROM = {
+			exists = yes
+			is_in_array = {
+				array = GRW.RIV_revolution_diplomacy
+				value = THIS
+			}
+			has_country_flag = GRW_operation_contact_local_red_organization_flag
+			NOT = {
+				has_government = communism
+				has_war_with = ROOT
+				is_in_faction_with = ROOT
+			}
+		}
+	}
+	available = {
+		network_national_coverage = {
+			target = FROM
+			value > 0
+		}
+		FROM  ={
+			NOT = {
+				has_country_flag = GRW_incite_public_protest_flag
+			}
+		}
+	}
+
+	risk_chance = 0.2
+	experience = 1.5
+
+	outcome_potential = {
+		ROOT = {
+			random_list = {
+				30 = {
+					modifier = {
+						FROM = {
+							original_tag = WIT
+							has_completed_focus = WIT_protect_workers
+						}
+						add = -25
+					}
+					modifier = {
+						FROM = {
+							original_tag = DMT
+							has_completed_focus = DMT_the_emancipation_proclamation
+						}
+						add = -20
+					}
+					modifier = {
+						FROM = {
+							original_tag = NIM
+							has_completed_focus = NIM_diversify_recruitment
+						}
+						add = -10
+					}
+					modifier = {
+						FROM = {
+							original_tag = NIM
+							has_completed_focus = NIM_citizenship_for_auxilaries
+						}
+						add = -10
+					}
+					modifier = {
+						FROM = {
+							original_tag = BAK
+							has_completed_focus = BAK_for_the_little_pony
+						}
+						add = -10
+					}
+					modifier = {
+						FROM = {
+							original_tag = BAK
+							has_completed_focus = BAK_for_the_little_pony_2
+						}
+						add = -10
+					}
+					modifier = {
+						FROM = {
+							original_tag = BAK
+							has_completed_focus = BAK_healthcare_advancement_plan
+						}
+						add = -10
+					}
+					modifier = {
+						FROM = {
+							original_tag = BAK
+							has_completed_focus = BAK_healthcare_advancement_plan_2
+						}
+						add = -10
+					}
+					modifier = {
+						FROM = {
+							original_tag = BAK
+							has_completed_focus = BAK_townhall_democracy
+						}
+						add = -10
+					}
+					modifier = {
+						FROM = {
+							original_tag = BAK
+							has_completed_focus = BAK_townhall_democracy_2
+						}
+						add = -10
+					}
+					modifier = {
+						FROM = {
+							original_tag = LCT
+							has_completed_focus = LCT_employment_reforms
+						}
+						add = -20
+					}
+					modifier = {
+						FROM = {
+							original_tag = RCT
+							has_completed_focus = RCT_social_security_act
+						}
+						add = -15
+					}
+					modifier = {
+						FROM = {
+							original_tag = RCT
+							has_completed_focus = RCT_healthcare_reform
+						}
+						add = -10
+					}
+					country_event = {
+						id = GRW_midgame.32
+					}
+				}
+				35 = {
+					country_event = {
+						id = GRW_midgame.33
+					}
+				}
+				25 = {
+					modifier = {
+						FROM = {
+							original_tag = WIT
+							has_completed_focus = WIT_serfdom_time_bitches
+						}
+						add = -20
+					}
+					modifier = {
+						FROM = {
+							original_tag = WIT
+							has_completed_focus = WIT_exploit_the_weak
+						}
+						add = -15
+					}
+					modifier = {
+						FROM = {
+							original_tag = DMT
+							has_government = fascism
+						}
+						add = -10
+					}
+					modifier = {
+						FROM = {
+							original_tag = DMT
+							has_government = fascism
+							has_completed_focus = DMT_work_the_slaves_harder
+						}
+						add = -15
+					}
+					modifier = {
+						FROM = {
+							original_tag = NIM
+							has_government = neutrality
+						}
+						add = -15
+					}
+					modifier = {
+						FROM = {
+							original_tag = NIM
+							has_government = fascism
+						}
+						add = -20
+					}
+					modifier = {
+						FROM = {
+							original_tag = BAK
+							has_completed_focus = BAK_literally_the_ORPO
+						}
+						add = -15
+					}
+					modifier = {
+						FROM = {
+							original_tag = BAK
+							has_completed_focus = BAK_political_prisoner_camps
+						}
+						add = -15
+					}
+					modifier = {
+						FROM = {
+							original_tag = LCT
+							has_government = fascism
+						}
+						add = -10
+					}
+					country_event = {
+						id = GRW_midgame.34
+					}
+				}
+				10 = {
+					modifier = {
+						FROM = {
+							original_tag = WIT
+							has_government = fascism
+						}
+						add = 10
+					}
+					modifier = {
+						FROM = {
+							original_tag = WIT
+							has_completed_focus = WIT_hold_trial
+						}
+						add = 10
+					}
+					modifier = {
+						FROM = {
+							original_tag = WIT
+							has_completed_focus = WIT_ban_commie_cucks
+						}
+						add = 20
+					}
+					modifier = {
+						FROM = {
+							original_tag = DMT
+							has_government = fascism
+						}
+						add = 10
+					}
+					modifier = {
+						FROM = {
+							original_tag = DMT
+							has_completed_focus = DMT_crackdown_on_dissent
+						}
+						add = 20
+					}
+					modifier = {
+						FROM = {
+							original_tag = NIM
+							OR = {
+								has_government = neutrality
+								has_government = fascism
+							}
+						}
+						add = 10
+					}
+					modifier = {
+						FROM = {
+							original_tag = NIM
+							has_completed_focus = NIM_fascism_focus_5
+						}
+						add = 20
+					}
+					modifier = {
+						FROM = {
+							original_tag = BAK
+							has_government = fascism
+						}
+						add = 10
+					}
+					modifier = {
+						FROM = {
+							original_tag = BAK
+							has_completed_focus = BAK_anti_communism
+						}
+						add = 20
+					}
+					modifier = {
+						FROM = {
+							original_tag = BAK
+							has_completed_focus = BAK_naval_intelligence
+						}
+						add = 20
+					}
+					modifier = {
+						FROM = {
+							original_tag = LCT
+							OR = {
+								has_government = neutrality
+								has_government = fascism
+							}
+						}
+						add = 10
+					}
+					country_event = {
+						id = GRW_midgame.35
+					}
+				}
+			}
+		}
+	}
+	outcome_execute = {
+		ROOT = {
+			random_list = {
+				30 = {
+					modifier = {
+						FROM = {
+							original_tag = WIT
+							has_completed_focus = WIT_protect_workers
+						}
+						add = -25
+					}
+					modifier = {
+						FROM = {
+							original_tag = DMT
+							has_completed_focus = DMT_the_emancipation_proclamation
+						}
+						add = -20
+					}
+					modifier = {
+						FROM = {
+							original_tag = NIM
+							has_completed_focus = NIM_diversify_recruitment
+						}
+						add = -10
+					}
+					modifier = {
+						FROM = {
+							original_tag = NIM
+							has_completed_focus = NIM_citizenship_for_auxilaries
+						}
+						add = -10
+					}
+					modifier = {
+						FROM = {
+							original_tag = BAK
+							has_completed_focus = BAK_for_the_little_pony
+						}
+						add = -10
+					}
+					modifier = {
+						FROM = {
+							original_tag = BAK
+							has_completed_focus = BAK_for_the_little_pony_2
+						}
+						add = -10
+					}
+					modifier = {
+						FROM = {
+							original_tag = BAK
+							has_completed_focus = BAK_healthcare_advancement_plan
+						}
+						add = -10
+					}
+					modifier = {
+						FROM = {
+							original_tag = BAK
+							has_completed_focus = BAK_healthcare_advancement_plan_2
+						}
+						add = -10
+					}
+					modifier = {
+						FROM = {
+							original_tag = BAK
+							has_completed_focus = BAK_townhall_democracy
+						}
+						add = -10
+					}
+					modifier = {
+						FROM = {
+							original_tag = BAK
+							has_completed_focus = BAK_townhall_democracy_2
+						}
+						add = -10
+					}
+					modifier = {
+						FROM = {
+							original_tag = LCT
+							has_completed_focus = LCT_employment_reforms
+						}
+						add = -20
+					}
+					modifier = {
+						FROM = {
+							original_tag = RCT
+							has_completed_focus = RCT_social_security_act
+						}
+						add = -15
+					}
+					modifier = {
+						FROM = {
+							original_tag = RCT
+							has_completed_focus = RCT_healthcare_reform
+						}
+						add = -10
+					}
+					country_event = {
+						id = GRW_midgame.32
+					}
+				}
+				35 = {
+					country_event = {
+						id = GRW_midgame.33
+					}
+				}
+				25 = {
+					modifier = {
+						FROM = {
+							original_tag = WIT
+							has_completed_focus = WIT_serfdom_time_bitches
+						}
+						add = -20
+					}
+					modifier = {
+						FROM = {
+							original_tag = WIT
+							has_completed_focus = WIT_exploit_the_weak
+						}
+						add = -15
+					}
+					modifier = {
+						FROM = {
+							original_tag = DMT
+							has_government = fascism
+						}
+						add = -10
+					}
+					modifier = {
+						FROM = {
+							original_tag = DMT
+							has_government = fascism
+							has_completed_focus = DMT_work_the_slaves_harder
+						}
+						add = -15
+					}
+					modifier = {
+						FROM = {
+							original_tag = NIM
+							has_government = neutrality
+						}
+						add = -15
+					}
+					modifier = {
+						FROM = {
+							original_tag = NIM
+							has_government = fascism
+						}
+						add = -20
+					}
+					modifier = {
+						FROM = {
+							original_tag = BAK
+							has_completed_focus = BAK_literally_the_ORPO
+						}
+						add = -15
+					}
+					modifier = {
+						FROM = {
+							original_tag = BAK
+							has_completed_focus = BAK_political_prisoner_camps
+						}
+						add = -15
+					}
+					modifier = {
+						FROM = {
+							original_tag = LCT
+							has_government = fascism
+						}
+						add = -10
+					}
+					country_event = {
+						id = GRW_midgame.34
+					}
+				}
+				10 = {
+					modifier = {
+						FROM = {
+							original_tag = WIT
+							has_government = fascism
+						}
+						add = 10
+					}
+					modifier = {
+						FROM = {
+							original_tag = WIT
+							has_completed_focus = WIT_hold_trial
+						}
+						add = 10
+					}
+					modifier = {
+						FROM = {
+							original_tag = WIT
+							has_completed_focus = WIT_ban_commie_cucks
+						}
+						add = 20
+					}
+					modifier = {
+						FROM = {
+							original_tag = DMT
+							has_government = fascism
+						}
+						add = 10
+					}
+					modifier = {
+						FROM = {
+							original_tag = DMT
+							has_completed_focus = DMT_crackdown_on_dissent
+						}
+						add = 20
+					}
+					modifier = {
+						FROM = {
+							original_tag = NIM
+							OR = {
+								has_government = neutrality
+								has_government = fascism
+							}
+						}
+						add = 10
+					}
+					modifier = {
+						FROM = {
+							original_tag = NIM
+							has_completed_focus = NIM_fascism_focus_5
+						}
+						add = 20
+					}
+					modifier = {
+						FROM = {
+							original_tag = BAK
+							has_government = fascism
+						}
+						add = 10
+					}
+					modifier = {
+						FROM = {
+							original_tag = BAK
+							has_completed_focus = BAK_anti_communism
+						}
+						add = 20
+					}
+					modifier = {
+						FROM = {
+							original_tag = BAK
+							has_completed_focus = BAK_naval_intelligence
+						}
+						add = 20
+					}
+					modifier = {
+						FROM = {
+							original_tag = LCT
+							OR = {
+								has_government = neutrality
+								has_government = fascism
+							}
+						}
+						add = 10
+					}
+					country_event = {
+						id = GRW_midgame.35
+					}
+				}
+			}
+		}
+	}
+
+	phases = {
+		infiltration_border = { base = 100 }
+	}
+	phases = {
+		collaboration_government_set_up_planning_committees = { base = 100 }
+	}
+	phases = {
+		exfiltration_border = { base = 100 }
+	}
+}
+
+#武装游击队
+GRW_armed_guerrilla_forces = {
+	icon = GFX_operations_boost_resistance
+	map_icon = GFX_operations_boost_resistance_map
+	name = GRW_operation_smuggle_weapons
+	desc = GRW_operation_smuggle_weapons_desc
+	priority = 10
+
+	days = 90
+	network_strength = 50
+	operatives = 2
+
+	equipment = {
+		infantry_equipment = 300
+		support_equipment = 25
+	}
+
+	allowed = {
+		original_tag = GRW
+	}
+	visible = {
+		is_subject = no
+		has_government = communism
+		has_completed_focus = GRW_smash_old_world_to_smithereens
+		FROM = {
+			exists = yes
+			is_in_array = {
+				array = GRW.RIV_revolution_diplomacy
+				value = THIS
+			}
+			has_country_flag = GRW_operation_contact_local_red_organization_flag
+			NOT = {
+				has_government = communism
+				has_war_with = ROOT
+				is_in_faction_with = ROOT
+			}
+		}
+	}
+	available = {
+		network_national_coverage = {
+			target = FROM
+			value > 0
+		}
+	}
+
+	risk_chance = 0.2
+	experience = 1.5
+
+	outcome_potential = {
+		FROM = {
+			random_list = {
+				50 = {
+					add_popularity = {
+						ideology = communism
+						popularity = 0.05
+					}
+				}
+				25 = {
+					modifier = {
+						FROM = {
+							original_tag = WIT
+							has_completed_focus = WIT_only_finest_shall_serve
+						}
+						add = 15
+					}
+					modifier = {
+						FROM = {
+							original_tag = WIT
+							has_completed_focus = WIT_centrist_paramilitary
+						}
+						add = 25
+					}
+					modifier = {
+						FROM = {
+							original_tag = WIT
+							has_completed_focus = WIT_defang_state
+						}
+						add = -15
+					}
+					modifier = {
+						FROM = {
+							original_tag = NIM
+							has_completed_focus = NIM_discipline_the_army
+						}
+						add = 20
+					}
+					modifier = {
+						FROM = {
+							original_tag = NIM
+							has_completed_focus = NIM_fascism_focus_5
+						}
+						add = 25
+					}
+					modifier = {
+						FROM = {
+							original_tag = BAK
+							has_completed_focus = BAK_literally_the_ORPO
+						}
+						add = 15
+					}
+					modifier = {
+						FROM = {
+							original_tag = BAK
+							has_completed_focus = BAK_naval_intelligence
+						}
+						add = 15
+					}
+					modifier = {
+						FROM = {
+							original_tag = LCT
+							has_completed_focus = LCT_self_defence_forces
+						}
+						add = 20
+					}
+					modifier = {
+						FROM = {
+							original_tag = LCT
+							has_completed_focus = LCT_south_wall
+						}
+						add = 15
+					}
+					modifier = {
+						FROM = {
+							original_tag = LCT
+							has_completed_focus = LCT_fan_fanaticism
+						}
+						add = 20
+					}
+					modifier = {
+						FROM = {
+							original_tag = LCT
+							has_completed_focus = LCT_youth_army
+						}
+						add = 20
+					}
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 300
+					}
+					add_equipment_to_stockpile = {
+						type = support_equipment
+						amount = 25
+					}
+				}
+			}
+		}
+	}
+	outcome_execute = {
+		FROM = {
+			random_list = {
+				50 = {
+					add_popularity = {
+						ideology = communism
+						popularity = 0.05
+					}
+				}
+				25 = {
+					modifier = {
+						FROM = {
+							original_tag = WIT
+							has_completed_focus = WIT_only_finest_shall_serve
+						}
+						add = 15
+					}
+					modifier = {
+						FROM = {
+							original_tag = WIT
+							has_completed_focus = WIT_centrist_paramilitary
+						}
+						add = 25
+					}
+					modifier = {
+						FROM = {
+							original_tag = WIT
+							has_completed_focus = WIT_defang_state
+						}
+						add = -15
+					}
+					modifier = {
+						FROM = {
+							original_tag = NIM
+							has_completed_focus = NIM_discipline_the_army
+						}
+						add = 20
+					}
+					modifier = {
+						FROM = {
+							original_tag = NIM
+							has_completed_focus = NIM_fascism_focus_5
+						}
+						add = 25
+					}
+					modifier = {
+						FROM = {
+							original_tag = BAK
+							has_completed_focus = BAK_literally_the_ORPO
+						}
+						add = 15
+					}
+					modifier = {
+						FROM = {
+							original_tag = BAK
+							has_completed_focus = BAK_naval_intelligence
+						}
+						add = 15
+					}
+					modifier = {
+						FROM = {
+							original_tag = LCT
+							has_completed_focus = LCT_self_defence_forces
+						}
+						add = 20
+					}
+					modifier = {
+						FROM = {
+							original_tag = LCT
+							has_completed_focus = LCT_south_wall
+						}
+						add = 15
+					}
+					modifier = {
+						FROM = {
+							original_tag = LCT
+							has_completed_focus = LCT_fan_fanaticism
+						}
+						add = 20
+					}
+					modifier = {
+						FROM = {
+							original_tag = LCT
+							has_completed_focus = LCT_youth_army
+						}
+						add = 20
+					}
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 300
+					}
+					add_equipment_to_stockpile = {
+						type = support_equipment
+						amount = 25
+					}
+				}
+			}
+		}
+	}
+
+	phases = {
+		infiltration_border = { base = 100 } 
+	}
+	phases = {
+		collaboration_government_train_paramilitary_forces = { base = 100 }
+	}
+	phases = {
+		exfiltration_border = { base = 100 } 
+	}
+}

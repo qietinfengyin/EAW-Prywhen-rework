@@ -1,0 +1,345 @@
+#布罗德费尔德第一次内战国策树
+focus_tree = {
+	id = BRF_first_civil_war 
+
+	country = {
+		factor = 0
+
+		modifier = {
+			add = 20
+			original_tag = BRF
+		}
+	}
+	default = no
+	continuous_focus_position = { x = 0 y = 0 }
+
+	shared_focus = BRF_regroup_routed_troops
+}
+
+
+###############################################################################
+########################布罗德费尔德第一次内战国策树###########################
+###############################################################################
+shared_focus = {#重整溃兵
+	id = BRF_regroup_routed_troops
+	icon = GFX_goal_BRF_flag
+	cost = 6
+	ai_will_do = {
+		factor = 5
+	}
+	x = 10
+	y = 0
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus BRF_regroup_routed_troops"
+	}
+}
+shared_focus = {#实施物资管控
+	id = BRF_implement_material_control
+	icon = GFX_focus_generic_concessions
+	cost = 2
+	ai_will_do = {
+		factor = 5
+	}
+	prerequisite = {
+		focus = BRF_regroup_routed_troops
+	}
+	relative_position_id = BRF_regroup_routed_troops
+	x = -2
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus BRF_implement_material_control"
+	}
+}
+shared_focus = {#控制舆论
+	id = BRF_control_public_opinion
+	icon = GFX_goal_big_news
+	cost = 2
+	ai_will_do = {
+		factor = 5
+	}
+	prerequisite = {
+		focus = BRF_regroup_routed_troops
+	}
+	relative_position_id = BRF_regroup_routed_troops
+	x = 2
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus BRF_control_public_opinion"
+	}
+}
+shared_focus = {#深层军事计划
+	id = BRF_deep_military_plan 
+	icon = GFX_goal_planning_bonus
+	cost = 2
+	ai_will_do = {
+		factor = 5
+	}
+	prerequisite = {
+		focus = BRF_regroup_routed_troops		
+	}
+	relative_position_id = BRF_regroup_routed_troops
+	x = 0
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus BRF_deep_military_plan"
+	}
+}
+shared_focus = {#授予王子临时指挥权
+	id = BRF_grant_prince_temporary_command 
+	icon = GFX_focus_generic_strike_at_democracy1
+	cost = 2
+	ai_will_do = {
+		factor = 5
+	}
+	prerequisite = {
+		focus = BRF_deep_military_plan		
+	}
+	relative_position_id = BRF_deep_military_plan
+	x = -1
+	y = 1
+	mutually_exclusive = {
+		focus = BRF_maintain_absolute_authority
+	}
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus BRF_grant_prince_temporary_command"
+	}
+}
+shared_focus = {#维持绝对权威
+	id = BRF_maintain_absolute_authority 
+	icon = GFX_goal_authority
+	cost = 2
+	ai_will_do = {
+		factor = 5
+	}
+	prerequisite = {
+		focus = BRF_deep_military_plan		
+	}
+	relative_position_id = BRF_deep_military_plan
+	x = 1
+	y = 1
+	mutually_exclusive = {
+		focus = BRF_grant_prince_temporary_command
+	}
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus BRF_maintain_absolute_authority"
+	}
+}
+shared_focus = {#强征失业者
+	id = BRF_conscript_unemployed
+	icon = GFX_goal_conscription
+	cost = 2
+	ai_will_do = {
+		factor = 5
+	}
+	prerequisite = {
+		focus = BRF_grant_prince_temporary_command
+		focus = BRF_maintain_absolute_authority
+	}
+	relative_position_id = BRF_grant_prince_temporary_command
+	x = -2
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus BRF_conscript_unemployed"
+	}
+}
+shared_focus = {#武装所有劳工
+	id = BRF_arm_all_workers
+	icon = GFX_goal_economic_control
+	cost = 2
+	ai_will_do = {
+		factor = 5
+	}
+	prerequisite = {
+		focus = BRF_conscript_unemployed
+	}
+	relative_position_id = BRF_conscript_unemployed
+	x = -1
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus BRF_arm_all_workers"
+	}
+}
+shared_focus = {#后勤现代化
+	id = BRF_logistics_modernization
+	icon = GFX_goal_generic_positive_trade_relations
+	cost = 2
+	ai_will_do = {
+		factor = 5
+	}
+	prerequisite = {
+		focus = BRF_conscript_unemployed
+	}
+	relative_position_id = BRF_conscript_unemployed
+	x = 1
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus BRF_logistics_modernization"
+	}
+}
+shared_focus = {#鹫鹫皆兵
+	id = BRF_everyone_is_a_soldier
+	icon = GFX_goal_griffon_levy
+	cost = 2
+	ai_will_do = {
+		factor = 5
+	}
+	prerequisite = {
+		focus = BRF_arm_all_workers
+	}
+	prerequisite = {
+		focus = BRF_logistics_modernization
+	}
+	relative_position_id = BRF_arm_all_workers
+	x = 1
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus BRF_everyone_is_a_soldier"
+	}
+}
+shared_focus = {#加强军事高层管理
+	id = BRF_strengthen_military_high_command
+	icon = GFX_goal_officers
+	cost = 2
+	ai_will_do = {
+		factor = 5
+	}
+	prerequisite = {
+		focus = BRF_grant_prince_temporary_command
+		focus = BRF_maintain_absolute_authority
+	}
+	relative_position_id = BRF_grant_prince_temporary_command
+	x = 1
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus BRF_strengthen_military_high_command"
+	}
+}
+shared_focus = {#放宽征兵标准
+	id = BRF_relax_conscription_policy
+	icon = GFX_goal_generic_axis_build_infantry
+	cost = 2
+	ai_will_do = {
+		factor = 5
+	}
+	prerequisite = {
+		focus = BRF_strengthen_military_high_command
+	}
+	relative_position_id = BRF_strengthen_military_high_command
+	x = 0
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus BRF_relax_conscription_policy"
+	}
+}
+shared_focus = {#扩大王家实验室
+	id = BRF_expand_royal_laboratory
+	icon = GFX_focus_research
+	cost = 2
+	ai_will_do = {
+		factor = 5
+	}
+	prerequisite = {
+		focus = BRF_relax_conscription_policy
+	}
+	relative_position_id = BRF_relax_conscription_policy
+	x = 0
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus BRF_expand_royal_laboratory"
+	}
+}
+shared_focus = {#外国经济援助
+	id = BRF_foreign_economic_aid
+	icon = GFX_goal_gold_reserve
+	cost = 2
+	ai_will_do = {
+		factor = 4
+	}
+	prerequisite = {
+		focus = BRF_grant_prince_temporary_command
+		focus = BRF_maintain_absolute_authority
+	}
+	relative_position_id = BRF_maintain_absolute_authority
+	x = 2
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus BRF_foreign_economic_aid"
+	}
+}
+shared_focus = {#外国军事援助
+	id = BRF_foreign_military_aid
+	icon = GFX_focus_generic_military_mission
+	cost = 2
+	ai_will_do = {
+		factor = 4
+	}
+	prerequisite = {
+		focus = BRF_foreign_economic_aid
+	}
+	relative_position_id = BRF_foreign_economic_aid
+	x = -1
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus BRF_foreign_military_aid"
+	}
+}
+shared_focus = {#外国工程师
+	id = BRF_foreign_engineers
+	icon = GFX_goal_generic_production
+	cost = 2
+	ai_will_do = {
+		factor = 4
+	}
+	prerequisite = {
+		focus = BRF_foreign_economic_aid
+	}
+	relative_position_id = BRF_foreign_economic_aid
+	x = 1
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus BRF_foreign_engineers"
+	}
+}
+shared_focus = {#请求坦克供应
+	id = BRF_request_tank_supply
+	icon = GFX_focus_NZL_bob_semple_tank
+	cost = 2
+	ai_will_do = {
+		factor = 4
+	}
+	prerequisite = {
+		focus = BRF_foreign_military_aid
+	}
+	prerequisite = {
+		focus = BRF_foreign_engineers
+	}
+	relative_position_id = BRF_foreign_military_aid
+	x = 1
+	y = 1
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus BRF_request_tank_supply"
+	}
+}
+shared_focus = {#紫罗兰行动
+	id = BRF_operation_violet
+	icon = GFX_goal_griffon_knights
+	cost = 2
+	ai_will_do = {
+		factor = 10
+	}
+	prerequisite = {
+		focus = BRF_everyone_is_a_soldier
+	}
+	prerequisite = {
+		focus = BRF_expand_royal_laboratory
+	}
+	prerequisite = {
+		focus = BRF_request_tank_supply
+	}
+	relative_position_id = BRF_expand_royal_laboratory
+	x = 0
+	y = 1
+	completion_reward = { 
+		log = "[GetDateText]: [Root.GetName]: Focus BRF_operation_violet"
+	}
+}

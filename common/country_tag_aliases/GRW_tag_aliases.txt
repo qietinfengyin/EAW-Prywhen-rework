@@ -1,0 +1,7 @@
+RIL = {
+	global_event_target = RIV_leader
+	targets = {
+		global.RIV_leader_var
+	}
+	tag = global.RIV_leader_var
+}

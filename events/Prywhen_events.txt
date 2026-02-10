@@ -1,0 +1,418 @@
+﻿add_namespace = GRW_flavor
+add_namespace = GRW_flavor_news
+add_namespace = GRW_international_bureau_events
+
+#小皇帝的命运
+country_event = {
+	id = GRW_flavor.1
+	title = GRW_flavor.1.t
+	desc = GRW_flavor.1.d
+
+	trigger = {
+		NOT = {
+			has_global_flag = GRI_grover_vi_dead
+		}
+	}
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_flavor.1.a
+	}
+}
+
+#大米略取（本国）
+country_event = {
+	id = GRW_flavor.2
+	title = GRW_flavor.2.t
+	desc = GRW_flavor.2.d
+	picture = GFX_event_conquest_of_rice_book
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_flavor.2.a
+		hidden_effect = {
+			every_other_country = {
+				limit = {
+					NOT = {
+						has_government = communism
+					}
+					OR = {
+						is_neighbor_of = GRW
+						AND = {							
+							is_major = yes
+							communism > 0.06
+							is_griffon_continent_griffon_country = yes
+						}
+					}
+				}
+				country_event = {
+					id = GRW_flavor.5
+					days = 30
+				}
+			}
+		}
+	}
+}
+
+#水稻
+country_event = {
+	id = GRW_flavor.3
+	title = GRW_flavor.3.t
+	desc = GRW_flavor.3.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_flavor.3.a
+	}
+}
+
+#红星照耀埃维
+country_event = {
+	id = GRW_flavor.4
+	title = GRW_flavor.4.t
+	desc = GRW_flavor.4.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_flavor.4.a
+	}
+}
+
+#大米略取（别国）
+country_event = {
+	id = GRW_flavor.5
+	title = GRW_flavor.5.t
+	desc = GRW_flavor.5.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_flavor.5.a
+	}
+}
+#################################################################
+###新闻格式
+#联动事件
+news_event = {
+	id = GRW_flavor_news.1
+	title = GRW_flavor_news.1.t
+	desc = GRW_flavor_news.1.d
+	picture = GFX_event_pictures_1
+
+	major = yes
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_flavor_news.1.a
+	}
+}
+
+#kards
+news_event = {
+	id = GRW_flavor_news.2
+	title = GRW_flavor_news.2.t
+	desc = GRW_flavor_news.2.d
+	picture = GFX_event_pictures_2
+	
+	major = yes
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_flavor_news.2.a
+	}
+}
+#################################################################
+###国际局事件
+#翼巴第内战结束
+country_event = {#翼巴第内战
+	id = GRW_international_bureau_events.1
+	hidden = yes
+
+	trigger = {
+		original_tag = GRW
+		has_global_flag = WNG_civil_war
+	}
+	fire_only_once = yes
+
+	option = {
+		set_temp_variable = {
+			temp_GRW_NAAP_department = 3
+		}
+		set_temp_variable = {
+			temp_GRW_NAAP_entry = 1
+		}
+		GRW_NAAP_add_entry_to_department = yes
+		GRW_NAAP_set_active_event = yes
+
+		add_ideas = GRW_support_WNG_idea
+	}
+}
+country_event = {#长剑内战
+	id = GRW_international_bureau_events.2
+	hidden = yes
+
+	trigger = {
+		original_tag = GRW
+		has_global_flag = LNS_civil_war_flag
+	}
+	fire_only_once = yes
+
+	option = {
+		set_temp_variable = {
+			temp_GRW_NAAP_department = 3
+		}
+		set_temp_variable = {
+			temp_GRW_NAAP_entry = 2
+		}
+		GRW_NAAP_add_entry_to_department = yes
+		GRW_NAAP_set_active_event = yes
+
+		add_ideas = GRW_support_LSC_idea
+	}
+}
+country_event = {#格里富斯革命
+	id = GRW_international_bureau_events.3
+	hidden = yes
+
+	trigger = {
+		original_tag = GRW
+		GRU = {
+			has_government = communism
+			has_civil_war = yes
+		}
+	}
+	fire_only_once = yes
+
+	option = {
+		set_temp_variable = {
+			temp_GRW_NAAP_department = 3
+		}
+		set_temp_variable = {
+			temp_GRW_NAAP_entry = 3
+		}
+		GRW_NAAP_add_entry_to_department = yes
+		GRW_NAAP_set_active_event = yes
+
+		add_ideas = GRW_support_GRU_idea
+		diplomatic_relation = {
+			country = GRU
+			relation = guarantee
+		}
+		GRU = {
+			diplomatic_relation = {
+				country = GRW
+				relation = guarantee
+			}
+			diplomatic_relation = {
+				country = ROOT
+				relation = embargo
+				active = no
+			}
+		}
+	}
+}
+country_event = {#星空转黑
+	id = GRW_international_bureau_events.4
+	hidden = yes
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		set_temp_variable = {
+			temp_GRW_NAAP_department = 3
+		}
+		set_temp_variable = {
+			temp_GRW_NAAP_entry = 4
+		}
+		GRW_NAAP_add_entry_to_department = yes
+		GRW_NAAP_set_active_event = yes
+
+		country_event = {
+			id = GRW_earlygame.105
+		}
+		set_country_flag = GRW_MIT_comrades_exile_our_country
+		MIT = {
+			MIT_maximin_kokkinos = {
+				set_nationality = ROOT
+			}
+			MIT_ilias_tsirimoukos = {
+				set_nationality = ROOT
+				hidden_effect = { 
+					remove_advisor_role = {
+						slot = political_advisor
+					} 
+				}
+			}
+			add_advisor_role = {
+				character = MIT_ilias_tsirimoukos
+				advisor = {
+					slot = political_advisor
+					idea_token = MIT_ilias_tsirimoukos
+					traits = {
+						GRW_socialist_novelist
+					}
+				}
+			}
+		}
+	}
+}
+country_event = {#天际-共和国战争
+	id = GRW_international_bureau_events.5
+	hidden = yes
+
+	trigger = {
+		original_tag = GRW
+		SRS = {
+			has_government = communism
+			is_subject = no
+			OR = {
+				has_war_with = FAT
+				has_war_with = FAW
+			}
+			NOT = {
+				is_in_faction_with = GRW
+				has_war_with = GRW
+			}
+		}
+	}
+	fire_only_once = yes
+
+	option = {
+		set_temp_variable = {
+			temp_GRW_NAAP_department = 3
+		}
+		set_temp_variable = {
+			temp_GRW_NAAP_entry = 5
+		}
+		GRW_NAAP_add_entry_to_department = yes
+		GRW_NAAP_set_active_event = yes
+
+		add_ideas = GRW_support_SRS_idea
+	}
+}
+country_event = {#共和国转红
+	id = GRW_international_bureau_events.6
+	hidden = yes
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		set_temp_variable = {
+			temp_GRW_NAAP_department = 3
+		}
+		set_temp_variable = {
+			temp_GRW_NAAP_entry = 6
+		}
+		GRW_NAAP_add_entry_to_department = yes
+		GRW_NAAP_set_active_event = yes
+
+		country_event = {
+			id = GRW_earlygame.106
+			days = 1
+		}
+	}
+}
+country_event = {#红骏鹰北斑战争
+	id = GRW_international_bureau_events.7
+	hidden = yes
+
+	trigger = {
+		original_tag = GRW
+		HIP = {
+			NOT = {
+				has_war_with = GRW
+			}
+			has_government = communism
+		}
+		has_global_flag = HIP_north_war_news_event_fired
+	}
+	fire_only_once = yes
+
+	option = {
+		set_temp_variable = {
+			temp_GRW_NAAP_department = 3
+		}
+		set_temp_variable = {
+			temp_GRW_NAAP_entry = 7
+		}
+		GRW_NAAP_add_entry_to_department = yes
+		GRW_NAAP_set_active_event = yes
+
+		add_ideas = GRW_support_HIP_idea
+	}
+}
+country_event = {#新狮鹫尼亚内战
+	id = GRW_international_bureau_events.8
+	hidden = yes
+
+	trigger = {
+		original_tag = GRW
+		has_global_flag = GRF_civil_war_begun
+	}
+	fire_only_once = yes
+
+	option = {
+		set_temp_variable = {
+			temp_GRW_NAAP_department = 3
+		}
+		set_temp_variable = {
+			temp_GRW_NAAP_entry = 8
+		}
+		GRW_NAAP_add_entry_to_department = yes
+		GRW_NAAP_set_active_event = yes
+
+		add_ideas = GRW_support_GRA_idea
+	}
+}
+country_event = {#河间大革命
+	id = GRW_international_bureau_events.9
+	hidden = yes
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		set_temp_variable = {
+			temp_GRW_NAAP_department = 3
+		}
+		set_temp_variable = {
+			temp_GRW_NAAP_entry = 9
+		}
+		GRW_NAAP_add_entry_to_department = yes
+		GRW_NAAP_set_active_event = yes
+
+		add_ideas = GRW_support_RIV_idea
+	}
+}
+country_event = {#
+	id = GRW_international_bureau_events.10
+	hidden = yes
+
+	trigger = {
+		original_tag = GRW
+		always = no
+	}
+	fire_only_once = yes
+
+	option = {
+		set_variable = {
+			var = GRW_international_bureau_variable
+			value = 10
+		}
+		
+	}
+}

@@ -1,0 +1,940 @@
+#决议内gui
+guiTypes = {
+	containerWindowType = {
+		name = "GRW_faction_decision_ui_window"
+		position = {
+			x = 0
+			y = 0
+		}
+		size = {
+			width = 100%
+			height= 250
+		}
+
+		#革命激进度
+		iconType = {
+			name = "GRW_revolutionary_radicalisation_progress"
+			spriteType = "GFX_SOV_paranoia_bg"
+			orientation = center_up
+			position = { x = -205 y = 0 }
+			#pdx_tooltip = "GRW_revolutionary_radicalisation_progress"
+		}
+		iconType = {
+			name = "GRW_revolutionary_radicalisation_progress_meter"
+			spriteType = "GFX_SOV_paranoia_meter"
+			orientation = center_up
+			position = { x = -159 y = 73 }
+		}
+		iconType = {
+			name = "GRW_revolutionary_radicalisation_progress_needle"
+			spriteType = "GFX_SOV_paranoia_needle"
+			orientation = center_up
+			position = { x = -159 y = 73 }
+		}
+		instantTextBoxType = {
+			name = "GRW_revolutionary_radicalisation_value"
+			orientation = center_up
+			position = { x = -189 y = 193 }
+			font = "hoi_20b"
+			text = "GRW_revolutionary_radicalisation_value_tt"
+			maxWidth = 250
+			maxHeight = 24
+		}
+
+		#各个派系详情开关
+		instantTextBoxType = {
+			name = "GRW_open_faction_button_text"
+			position = { x = 30 y = 30 }
+			orientation = center_up
+			font = "hoi_24header"
+			text = "GRW_open_faction_tt"
+			format = center
+			fixedsize = yes
+			maxWidth = 200
+		}
+		buttonType = {
+			name = "GRW_open_faction_button"
+			orientation = center_up
+			position = { x= 80 y = 70 }
+			spriteType ="GFX_goal_Workers_of_Griffonia"
+			clicksound = click_default
+			pdx_tooltip = "GRW_open_faction_button_tt"
+		}
+	}
+}
+
+#详情窗口
+guiTypes = {
+	containerWindowType = {
+		name = "GRW_faction_window"
+		position = {
+			x = -422
+			y = -368
+		}
+		size = {
+			width = 1032
+			height= 638
+		}
+		orientation = center
+		clipping = no
+
+		show_sound = menu_open_window
+		hide_sound = menu_close_window
+
+		containerWindowType = {
+			name = "GRW_tabs"
+			position = {
+				x = 0
+				y = 1
+			}
+			size = {
+				width = 28
+				height = 100%%
+			}
+
+			buttonType = {
+				name = "GRW_central_peoples_government_issue"
+				position = {
+					x = 6
+					y = -27
+				}
+				quadTextureSprite = "GFX_GRW_tab"
+			}
+			instantTextBoxType = {
+				name = "GRW_central_peoples_government_issue_title"
+				position = {
+					x = 33.5
+					y = -17
+				}
+				text = "GRW_central_peoples_government_issue_tt"
+				font = "hoi_24header"
+				maxWidth = 200
+				maxHeight = 20
+				format = center
+				alwaystransparent = yes
+			}
+
+			buttonType = {
+				name = "GRW_revolutionary_military_council_issue"
+				position = {
+					x = 270
+					y = -27
+				}
+				quadTextureSprite = "GFX_GRW_tab"
+			}
+			instantTextBoxType = {
+				name = "GRW_revolutionary_military_council_issue_title"
+				position = {
+					x = 299
+					y = -17
+				}
+				text = "GRW_revolutionary_military_council_issue_tt"
+				font = "hoi_24header"
+				maxWidth = 200
+				maxHeight = 20
+				format = center
+				alwaystransparent = yes
+			}
+
+		}
+	}
+}
+#中央鹫民政府
+guiTypes = {
+	containerWindowType = {
+		name = "GRW_faction_window_CPGC"
+		position = {
+			x = 0
+			y = 11
+		}
+		size = {
+			width = 1032
+			height= 618
+		}
+		clipping = no
+
+		background = {
+			name = "blackground"
+			spriteType = "GFX_tiled_plain_bg"
+		}
+
+		containerWindowType = {
+			name = "GRW_faction_window_CPGC_top"
+			position = {
+				x = 0
+				y = 0
+			}
+			size = {
+				width = 100%
+				height = 80
+			}
+
+			background = {
+				name = "GRW_faction_window_CPGC_top_bg"
+				spriteType = "console_background2"
+			}
+
+			instantTextBoxType = {
+				name = "GRW_faction_window_CPGC_title"
+				position = {
+					x = 340
+					y = 23
+				}
+				text = "GRW_faction_window_CPGC_tt"
+				font = "hoi_36header"
+				maxWidth = 370
+				format = center
+				alwaystransparent = yes
+			}
+
+			buttonType = {
+				name = "GRW_faction_window_CPGC_close_button"
+				position = {
+					x = -60
+					y = 22
+				}
+				quadTextureSprite = "GFX_closebutton"
+				shortcut = "ESCAPE"
+				Orientation = "UPPER_RIGHT"
+				pdx_tooltip = "CLOSE"
+				clicksound = click_close
+			}
+		}
+
+		containerWindowType = {
+			name = "GRW_faction_window_CPGC_pie_chart"
+			position = {
+				x = 0
+				y = 73
+			}
+			size = {
+				width = 313
+				height = 245
+			}
+
+			background = {
+				name = "GRW_faction_window_CPGC_pie_chart_bg"
+				spriteType = "console_background2"
+			}
+
+			instantTextBoxType = {
+				name = "GRW_faction_influence"
+				position = {
+					x = 33
+					y = 27
+				}
+				font = "hoi_24header"
+				text = "GRW_faction_influence_tt"
+				format = center
+				fixedsize = yes
+				maxWidth = 250
+			}
+
+			containerWindowType = {
+				name = "GRW_pie_chart_group"
+				position = {
+					x = 10
+					y = 61
+				}
+
+				icontype = {
+					name = "GRW_syndicalism_pie"
+					position = {
+						x = 9
+						y = 9
+					}
+					spriteType = "GFX_GRW_syndicalism_pie"
+				}
+				icontype = {
+					name = "GRW_democratic_socialism_pie"
+					position = {
+						x = 9
+						y = 8
+					}
+					quadtexturesprite = "GFX_GRW_democratic_socialism_pie"
+				}
+				icontype = {
+					name = "GRW_primitive_communism_pie"
+					position = {
+						x = 9
+						y = 8
+					}
+					quadtexturesprite = "GFX_GRW_primitive_communism_pie"
+				}
+				icontype = {
+					name = "GRW_rozenkampism_pie"
+					position = {
+						x = 9
+						y = 8
+					}
+					quadtexturesprite = "GFX_GRW_rozenkampism_pie"
+				}
+				icontype = {
+					name = "GRW_pie_overlay"
+					spritetype = "GFX_CVA_pie_overlay"
+					position = {
+						x = 0
+						y = 0
+					}
+					pdx_tooltip = "GRW_factions_pie_tt"
+				}
+			}
+
+			instantTextBoxType = {
+				name = "GRW_primitive_communism_influence"
+				position = {
+					x = 163
+					y = 70
+				}
+				font = "hoi_18mbs"
+				text = "GRW_primitive_communism_influence_tt"
+				fixedsize = yes
+				maxWidth = 140
+			}
+			instantTextBoxType = {
+				name = "GRW_rozenkampism_influence"
+				position = {
+					x = 163
+					y = 110
+				}
+				font = "hoi_18mbs"
+				text = "GRW_rozenkampism_influence_tt"
+				fixedsize = yes
+				maxWidth = 140
+			}
+			instantTextBoxType = {
+				name = "GRW_democratic_socialism_influence"
+				position = {
+					x = 163
+					y = 150
+				}
+				font = "hoi_18mbs"
+				text = "GRW_democratic_socialism_influence_tt"
+				fixedsize = yes
+				maxWidth = 140
+			}
+			instantTextBoxType = {
+				name = "GRW_syndicalism_influence"
+				position = {
+					x = 163
+					y = 190
+				}
+				font = "hoi_18mbs"
+				text = "GRW_syndicalism_influence_tt"
+				fixedsize = yes
+				maxWidth = 140
+			}
+		}
+		
+		containerWindowType = {
+			name = "GRW_faction_window_CPGC_policy"
+			position = {
+				x = 306
+				y = 73
+			}
+			size = {
+				width = 245
+				height = 245
+			}
+
+			background = {
+				name = "GRW_faction_window_CPGC_policy_bg"
+				spriteType = "console_background2"
+			}
+
+			containerWindowType = {
+				name = "GRW_faction_window_CPGC_policy_ag"
+				position = {
+					x = 10
+					y = 10
+				}
+				size = {
+					width = 115
+					height = 115
+				}
+
+				background = {
+					name = "GRW_faction_window_CPGC_policy_ag_bg"
+					spriteType = "GFX_tiled_decisions_bg_small"
+				}
+				buttonType = {
+					name = "GRW_faction_window_CPGC_policy_ag_button"
+					quadTextureSprite = "GFX_GRW_faction_window_CPGC_policy_ag"
+					position = {
+						x = 5
+						y = 5
+					}
+					pdx_tooltip = "GRW_faction_window_CPGC_policy_ag_button_tt"
+				}
+			}
+			containerWindowType = {
+				name = "GRW_faction_window_CPGC_policy_ind"
+				position = {
+					x = 120
+					y = 10
+				}
+				size = {
+					width = 115
+					height = 115
+				}
+
+				background = {
+					name = "GRW_faction_window_CPGC_policy_ind_bg"
+					spriteType = "GFX_tiled_decisions_bg_small"
+				}
+				buttonType = {
+					name = "GRW_faction_window_CPGC_policy_ind_button"
+					quadTextureSprite = "GFX_GRW_faction_window_CPGC_policy_ind"
+					position = {
+						x = 5
+						y = 5
+					}
+					pdx_tooltip = "GRW_faction_window_CPGC_policy_ind_button_tt"
+				}
+			}
+			containerWindowType = {
+				name = "GRW_faction_window_CPGC_policy_int"
+				position = {
+					x = 10
+					y = 120
+				}
+				size = {
+					width = 115
+					height = 115
+				}
+
+				background = {
+					name = "GRW_faction_window_CPGC_policy_int_bg"
+					spriteType = "GFX_tiled_decisions_bg_small"
+				}
+				buttonType = {
+					name = "GRW_faction_window_CPGC_policy_int_button"
+					quadTextureSprite = "GFX_GRW_faction_window_CPGC_policy_int"
+					position = {
+						x = 5
+						y = 5
+					}
+					pdx_tooltip = "GRW_faction_window_CPGC_policy_int_button_tt"
+				}
+			}
+			containerWindowType = {
+				name = "GRW_faction_window_CPGC_policy_sci"
+				position = {
+					x = 120
+					y = 120
+				}
+				size = {
+					width = 115
+					height = 115
+				}
+
+				background = {
+					name = "GRW_faction_window_CPGC_policy_sci"
+					spriteType = "GFX_tiled_decisions_bg_small"
+				}
+				buttonType = {
+					name = "GRW_faction_window_CPGC_policy_sci_button"
+					quadTextureSprite = "GFX_GRW_faction_window_CPGC_policy_sci"
+					position = {
+						x = 5
+						y = 5
+					}
+					pdx_tooltip = "GRW_faction_window_CPGC_policy_sci_button_tt"
+				}
+			}
+		}
+
+		containerWindowType = {
+			name = "GRW_faction_window_CPGC_leader"
+			position = {
+				x = 544
+				y = 73
+			}
+			size = {
+				width = 486
+				height = 245
+			}
+
+			background = {
+				name = "GRW_faction_window_CPGC_leader_bg"
+				spriteType = "console_background2"
+			}
+
+			#领导人肖像
+			instantTextBoxType = {
+				name = "GRW_president"
+				position = {
+					x = 17
+					y = 25
+				}
+				font = "hoi_24header"
+				text = "GRW_president"
+				format = center
+				fixedsize = yes
+				maxWidth = 120
+			}
+			iconType = {
+				name = "GRW_president_portrait"
+				spriteType = "GFX_faction_blank"
+				position = {
+					x = 22
+					y = 60
+				}
+				scale = 0.7
+			}
+			iconType = {
+				name = "GRW_president_background"
+				spriteType = "GFX_GRW_faction_background_leader"
+				position = {
+					x = 15
+					y = 55
+				}
+				pdx_tooltip = "GRW_president_status"
+				scale = 0.7
+			}
+
+			iconType = {
+				name = "GRW_president_signature"
+				spriteType = "GFX_mao_signature"
+				position = {
+					x = 143
+					y = 5
+				}
+			}
+			instantTextBoxType = {
+				name = "GRW_president_name"
+				position = {
+					x = 144
+					y = 95
+				}
+				font = "hoi_18mbs"
+				text = "GRW_president_status"
+			}
+			instantTextBoxType = {
+				name = "GRW_Premier_name"
+				position = {
+					x = 144
+					y = 140
+				}
+				font = "hoi_18mbs"
+				text = "GRW_premier_status"
+			}
+			instantTextBoxType = {
+				name = "GRW_faction_name"
+				position = {
+					x = 144
+					y = 185
+				}
+				font = "hoi_18mbs"
+				text = "GRW_faction_united_front"
+			}
+
+			#总理肖像
+			instantTextBoxType = {
+				name = "GRW_premier"
+				position = {
+					x = 348
+					y = 25
+				}
+				font = "hoi_24header"
+				text = "GRW_premier"
+				format = center
+				fixedsize = yes
+				maxWidth = 120
+			}
+			iconType = {
+				name = "GRW_premier_portrait"
+				spriteType = "GFX_faction_blank"
+				position = {
+					x = 353
+					y = 60
+				}
+				scale = 0.7
+			}
+			iconType = {
+				name = "GRW_premier_background"
+				spriteType = "GFX_GRW_faction_background_leader"
+				position = {
+					x = 346
+					y = 55
+				}
+				pdx_tooltip = "GRW_premier_status"
+				scale = 0.7
+			}
+		}
+
+		containerWindowType = {
+			name = "GRW_faction_window_CPGC_solidarity"
+			position = {
+				x = 0
+				y = 311
+			}
+			size = {
+				width = 98
+				height = 307
+			}
+
+			background = {
+				name = "GRW_faction_window_CPGC_solidarity_bg"
+				spriteType = "console_background2"
+			}
+
+			icontype = {
+				name = "GRW_faction_window_CPGC_solidarity_progress_bar"
+				position = {
+					x = 13
+					y = 12
+				}
+				quadtexturesprite = "GFX_GRW_CPGC_progress_bar"
+			}
+			icontype = {
+				name = "GRW_faction_window_CPGC_solidarity_progress_bar_border"
+				position = {
+					x = 13
+					y = 13
+				}
+				spriteType = "GFX_GRW_CPGC_progress_bar_border"
+				pdx_tooltip = "GRW_faction_window_CPGC_solidarity_progress_bar_tt"
+			}
+		}
+
+		containerWindowType = {
+			name = "GRW_faction_window_CPGC_primitive_communism"
+			position = {
+				x = 91
+				y = 311
+			}
+			size = {
+				width = 205
+				height = 307
+			}
+
+			background = {
+				name = "GRW_faction_window_CPGC_faction_bg"
+				spriteType = "console_background2"
+			}
+			
+			icontype = {
+				name = "GRW_faction_window_CPGC_primitive_communism_icon"
+				position = {
+					x = 13
+					y = 10
+				}
+				spriteType = "GFX_GRW_CPGC_primitive_communism"
+				pdx_tooltip = "GRW_faction_window_CPGC_primitive_communism_icon_tt"
+			}
+
+			instantTextBoxType = {#满意度
+				name = "GRW_faction_window_CPGC_primitive_communism_loyalty_title"
+				position = {
+					x = 25
+					y = 201
+				}
+				font = "hoi_20b"
+				text = "GRW_faction_window_CPGC_primitive_communism_loyalty_tt"
+			}
+			instantTextBoxType = {
+				name = "GRW_faction_window_CPGC_primitive_communism_loyalty"
+				position = {
+					x = 150
+					y = 199
+				}
+				font = "hoi_24header"
+				text = "GRW_faction_window_CPGC_primitive_communism_loyalty"
+			}
+
+			instantTextBoxType = {#派系效果
+				name = "GRW_faction_window_CPGC_primitive_communism_effect"
+				position = {
+					x = 27
+					y = 228
+				}
+				format = center
+				font = "hoi_20b"
+				maxWidth = 150
+				text = "GRW_faction_window_CPGC_primitive_communism_effect_tt"
+			}
+		}
+		containerWindowType = {
+			name = "GRW_faction_window_CPGC_rozenkampism_faction"
+			position = {
+				x = 290
+				y = 311
+			}
+			size = {
+				width = 205
+				height = 307
+			}
+
+			background = {
+				name = "GRW_faction_window_CPGC_faction_bg"
+				spriteType = "console_background2"
+			}
+			
+			icontype = {
+				name = "GRW_faction_window_CPGC_rozenkampism_icon"
+				position = {
+					x = 13
+					y = 10
+				}
+				spriteType = "GFX_GRW_CPGC_rozenkampism"
+				pdx_tooltip = "GRW_faction_window_CPGC_rozenkampism_icon_tt"
+			}
+
+			instantTextBoxType = {#满意度
+				name = "GRW_faction_window_CPGC_rozenkampism_loyalty_title"
+				position = {
+					x = 25
+					y = 201
+				}
+				font = "hoi_20b"
+				text = "GRW_faction_window_CPGC_rozenkampism_loyalty_tt"
+			}
+			instantTextBoxType = {
+				name = "GRW_faction_window_CPGC_rozenkampism_loyalty"
+				position = {
+					x = 150
+					y = 199
+				}
+				font = "hoi_24header"
+				text = "GRW_faction_window_CPGC_rozenkampism_loyalty"
+			}
+
+			instantTextBoxType = {#派系效果
+				name = "GRW_faction_window_CPGC_rozenkampism_effect"
+				position = {
+					x = 27
+					y = 228
+				}
+				format = center
+				font = "hoi_20b"
+				maxWidth = 150
+				text = "GRW_faction_window_CPGC_rozenkampism_effect_tt"
+			}
+		}
+		containerWindowType = {
+			name = "GRW_faction_window_CPGC_syndicalism_faction"
+			position = {
+				x = 489
+				y = 311
+			}
+			size = {
+				width = 205
+				height = 307
+			}
+
+			background = {
+				name = "GRW_faction_window_CPGC_faction_bg"
+				spriteType = "console_background2"
+			}
+			
+			icontype = {
+				name = "GRW_faction_window_CPGC_syndicalism_icon"
+				position = {
+					x = 13
+					y = 10
+				}
+				spriteType = "GFX_GRW_CPGC_syndicalism"
+				pdx_tooltip = "GRW_faction_window_CPGC_syndicalism_icon_tt"
+			}
+
+			instantTextBoxType = {#满意度
+				name = "GRW_faction_window_CPGC_syndicalism_loyalty_title"
+				position = {
+					x = 25
+					y = 201
+				}
+				font = "hoi_20b"
+				text = "GRW_faction_window_CPGC_syndicalism_loyalty_tt"
+			}
+			instantTextBoxType = {
+				name = "GRW_faction_window_CPGC_syndicalism_loyalty"
+				position = {
+					x = 150
+					y = 199
+				}
+				font = "hoi_24header"
+				text = "GRW_faction_window_CPGC_syndicalism_loyalty"
+			}
+
+			instantTextBoxType = {#派系效果
+				name = "GRW_faction_window_CPGC_syndicalism_effect"
+				position = {
+					x = 27
+					y = 228
+				}
+				format = center
+				font = "hoi_20b"
+				maxWidth = 150
+				text = "GRW_faction_window_CPGC_syndicalism_effect_tt"
+			}
+		}
+		containerWindowType = {
+			name = "GRW_faction_window_CPGC_democratic_socialism_faction"
+			position = {
+				x = 688
+				y = 311
+			}
+			size = {
+				width = 205
+				height = 307
+			}
+
+			background = {
+				name = "GRW_faction_window_CPGC_faction_bg"
+				spriteType = "console_background2"
+			}
+			
+			icontype = {
+				name = "GRW_faction_window_CPGC_democratic_socialism_icon"
+				position = {
+					x = 6
+					y = 10
+				}
+				spriteType = "GFX_GRW_CPGC_democratic_socialism"
+				pdx_tooltip = "GRW_faction_window_CPGC_democratic_socialism_icon_tt"
+			}
+
+			instantTextBoxType = {#满意度
+				name = "GRW_faction_window_CPGC_democratic_socialism_loyalty_title"
+				position = {
+					x = 25
+					y = 206
+				}
+				font = "hoi_20b"
+				text = "GRW_faction_window_CPGC_democratic_socialism_loyalty_tt"
+			}
+			instantTextBoxType = {
+				name = "GRW_faction_window_CPGC_democratic_socialism_loyalty"
+				position = {
+					x = 150
+					y = 204
+				}
+				font = "hoi_24header"
+				text = "GRW_faction_window_CPGC_democratic_socialism_loyalty"
+			}
+
+			instantTextBoxType = {#派系效果
+				name = "GRW_faction_window_CPGC_democratic_socialism_effect"
+				position = {
+					x = 18
+					y = 228
+				}
+				format = center
+				font = "hoi_20b"
+				maxWidth = 170
+				text = "GRW_faction_window_CPGC_democratic_socialism_effect_tt"
+			}
+		}
+
+		containerWindowType = {
+			name = "GRW_faction_window_CPGC_focus"
+			position = {
+				x = 887
+				y = 311
+			}
+			size = {
+				width = 143
+				height = 307
+			}
+
+			background = {
+				name = "GRW_faction_window_CPGC_focus_bg"
+				spriteType = "console_background2"
+			}
+
+			instantTextBoxType = {
+				name = "GRW_faction_window_CPGC_focus_title"
+				position = {
+					x = -120
+					y = 25
+				}
+				orientation = UPPER_RIGHT
+				font = "hoi_24header"
+				text = "GRW_faction_window_CPGC_focus_tt"
+				format = center
+				fixedsize = yes
+				maxWidth = 100
+			}
+
+			containerWindowType = {
+				name = "GRW_faction_window_CPGC_focus_sci"
+				position = {
+					x = -106
+					y = 100
+				}
+				orientation = UPPER_RIGHT
+				size = {
+					width = 70
+					height = 40
+				}
+
+				background = {
+					name = "GRW_faction_window_CPGC_focus_sci_bg"
+					quadTextureSprite ="GFX_tiled_decisions_bg_small"
+				}
+				buttonType = {
+					name = "GRW_faction_window_CPGC_focus_sci_button"
+					quadTextureSprite = "GFX_GRW_faction_window_CPGC_focus_sci"
+					position = {
+						x = 5
+						y = 5
+					}
+					pdx_tooltip = "GRW_faction_window_CPGC_focus_sci_button_tt"
+				}
+			}
+			containerWindowType = {
+				name = "GRW_faction_window_CPGC_focus_ind"
+				position = {
+					x = -106
+					y = 160
+				}
+				orientation = UPPER_RIGHT
+				size = {
+					width = 70
+					height = 40
+				}
+
+				background = {
+					name = "GRW_faction_window_CPGC_focus_ind_bg"
+					quadTextureSprite ="GFX_tiled_decisions_bg_small"
+				}
+				buttonType = {
+					name = "GRW_faction_window_CPGC_focus_ind_button"
+					quadTextureSprite = "GFX_GRW_faction_window_CPGC_focus_ind"
+					position = {
+						x = 5
+						y = 5
+					}
+					pdx_tooltip = "GRW_faction_window_CPGC_focus_ind_button_tt"
+				}
+			}
+			containerWindowType = {
+				name = "GRW_faction_window_CPGC_focus_ag"
+				position = {
+					x = -106
+					y = 220
+				}
+				orientation = UPPER_RIGHT
+				size = {
+					width = 70
+					height = 40
+				}
+
+				background = {
+					name = "GRW_faction_window_CPGC_focus_ag_bg"
+					quadTextureSprite ="GFX_tiled_decisions_bg_small"
+				}
+				buttonType = {
+					name = "GRW_faction_window_CPGC_focus_ag_button"
+					quadTextureSprite = "GFX_GRW_faction_window_CPGC_focus_ag"
+					position = {
+						x = 5
+						y = 5
+					}
+					pdx_tooltip = "GRW_faction_window_CPGC_focus_ag_button_tt"
+				}
+			}
+		}
+	}
+}

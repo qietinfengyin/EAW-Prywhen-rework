@@ -1,0 +1,11 @@
+volunteer_limit_plus_one = {
+	send_volunteer_size = 1
+}
+
+volunteer_limit_plus_two = {
+	send_volunteer_size = 2
+}
+
+volunteer_limit_plus_three = {
+	send_volunteer_size = 3
+}

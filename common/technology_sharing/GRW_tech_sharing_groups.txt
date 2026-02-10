@@ -1,0 +1,21 @@
+technology_sharing_group = {
+	id = GRW_EMA_tech_sharing_group
+	name = GRW_EMA_tech_sharing_group_name
+	desc = GRW_EMA_tech_sharing_group_desc
+	picture = GFX_idea_WNG_COM_home
+
+	research_sharing_per_country_bonus = 0.15
+
+	categories = {
+		infantry_weapons
+		electronics
+		industry
+	}
+
+	available = {
+		NOT = {
+			has_war_with = GRW
+		}
+		has_government = communism
+	}
+}

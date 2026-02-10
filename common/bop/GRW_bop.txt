@@ -1,0 +1,126 @@
+GRW_house_of_cards_bop = {
+	initial_value = 0
+	left_side = GRW_house_of_cards_bop_stalinism
+	right_side = GRW_house_of_cards_bop_rozenkampism
+
+	range = {
+		id = GRW_house_of_cards_bop_balanced
+		min = -0.15
+		max = 0.15
+		modifier = {
+			political_power_factor = -0.05
+			stability_factor = 0.1
+		}
+	}
+
+	side = {
+		id = GRW_house_of_cards_bop_stalinism
+		icon = GFX_bop_ITA_communism_side
+		range = {
+			id = GRW_house_of_cards_bop_stalinism_low_control_range
+			min = -0.35
+			max = -0.15
+			modifier = {
+				stability_factor = 0.05
+			}
+		}
+		range = {
+			id = GRW_house_of_cards_bop_stalinism_medium_control_range
+			min = -0.55
+			max = -0.35
+			modifier = {
+				experience_gain_army = 0.1
+				command_power_gain = 0.3
+				stability_weekly = -0.001
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+		range = {
+			id = GRW_house_of_cards_bop_stalinism_high_control_range
+			min = -0.85
+			max = -0.55
+			modifier = {
+				experience_gain_army = 0.3
+				command_power_gain = 0.5
+				stability_weekly = -0.003
+			}
+		}
+		range = {
+			id = GRW_house_of_cards_bop_stalinism_total_control_range
+			min = -1
+			max = -0.85
+			modifier = {
+				experience_gain_army = 0.5
+				command_power_gain = 0.8
+				stability_weekly = -0.005
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+	}
+
+	side = {
+		id = GRW_house_of_cards_bop_rozenkampism
+		icon = GFX_bop_ITA_democratic_side
+		range = {
+			id = GRW_house_of_cards_bop_rozenkampism_low_control_range
+			min = 0.15
+			max = 0.35
+			modifier = {
+				stability_factor = 0.05
+
+			}	
+		}
+		range = {
+			id = GRW_house_of_cards_bop_rozenkampism_medium_control_range
+			min = 0.35
+			max = 0.55
+			modifier = {
+				political_power_factor = 0.05
+				stability_weekly = -0.001
+				
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+		range = {
+			id = GRW_house_of_cards_bop_rozenkampism_high_control_range
+			min = 0.55
+			max = 0.85
+			modifier = {
+				political_power_factor = 0.1
+				stability_weekly = -0.003
+				
+			}
+		}
+		range = {
+			id = GRW_house_of_cards_bop_rozenkampism_total_control_range
+			min = 0.85
+			max = 1
+			modifier = {
+				political_power_factor = 0.15
+				stability_weekly = -0.005
+				
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+	}
+}

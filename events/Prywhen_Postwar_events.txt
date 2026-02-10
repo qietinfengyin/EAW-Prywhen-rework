@@ -1,0 +1,6701 @@
+﻿add_namespace = GRW_introgame
+add_namespace = GRW_earlygame
+add_namespace = GRW_midgame
+
+
+#################################################################
+###第一次内战时期事件
+country_event = {#南方明珠
+	id = GRW_introgame.1
+	title = GRW_introgame.1.t
+	desc = GRW_introgame.1.d
+	picture = GFX_event_medieval_castle_on_hill
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_introgame.1.a
+	}
+}
+
+country_event = {#宪政繁荣
+	id = GRW_introgame.2
+	title = GRW_introgame.2.t
+	desc = GRW_introgame.2.d
+	picture = GFX_event_western_griffon_city
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_introgame.2.a
+	}
+}
+
+country_event = {#梦幻泡影
+	id = GRW_introgame.3
+	title = GRW_introgame.3.t
+	desc = GRW_introgame.3.d
+	picture = GFX_event_viking
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_introgame.3.a
+	}
+}
+
+country_event = {#至暗时刻
+	id = GRW_introgame.4
+	title = GRW_introgame.4.t
+	desc = GRW_introgame.4.d
+	picture = GFX_event_evil_griffon_ghosts
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_introgame.4.a
+	}
+}
+
+country_event = {#星火燎原
+	id = GRW_introgame.5
+	title = GRW_introgame.5.t
+	desc = GRW_introgame.5.d
+	picture = GFX_event_griffon_soldier
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_introgame.5.a
+	}
+}
+#################################################################
+###重建期事件
+country_event = {#内战结束
+	id = GRW_earlygame.1
+	title = GRW_earlygame.1.t
+	desc = GRW_earlygame.1.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.1.a
+		set_global_flag = Prywhen_civil_war_is_over_flag
+		custom_effect_tooltip = load_new_focus_tree
+		set_stability = 0.15
+		set_war_support = 0.2
+		set_capital = {
+			state = 508
+			remember_old_capital = no
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_BRF_famine_worsens = yes
+		GRW_banditry_worsens = yes
+		increase_poverty = yes
+		add_timed_idea = {
+			idea = GRW_recover_from_civil_war
+			days = 180
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_idea = GRW_BRF_postwar_1
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.68
+				days = 3
+			}
+		}
+	}
+}
+#政治协商会议事件链
+country_event = {#政协会议开始
+	id = GRW_earlygame.2
+	title = GRW_earlygame.2.t
+	desc = GRW_earlygame.2.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.3
+				days = 7
+			}
+		}
+	}
+
+	option = {
+		name = GRW_earlygame.2.a
+		effect_tooltip = {
+			country_event = {
+				id = GRW_earlygame.3
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				var = GRW_var_revolutionary_radicalisation
+				value = 30
+			}
+			GRW_update_revolutionary_radicalisation_effect = yes
+		}
+	}
+}
+country_event = {#介绍正统派
+	id = GRW_earlygame.3
+	title = GRW_earlygame.3.t
+	desc = GRW_earlygame.3.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.4
+				days = 7
+			}
+		}
+	}
+
+	option = {
+		name = GRW_earlygame.3.a
+		effect_tooltip = {
+			country_event = {
+				id = GRW_earlygame.4
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				var = GRW_var_primitive_communism_influence
+				value = 30
+			}
+			set_variable = {
+				var = GRW_var_primitive_communism_loyalty
+				value = 100
+			}
+		}
+	}
+}
+country_event = {#介绍国际派
+	id = GRW_earlygame.4
+	title = GRW_earlygame.4.t
+	desc = GRW_earlygame.4.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.5
+				days = 7
+			}
+		}
+	}
+
+	option = {
+		name = GRW_earlygame.4.a
+		effect_tooltip = {
+			country_event = {
+				id = GRW_earlygame.5
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				var = GRW_var_rozenkampism_influence
+				value = 23
+			}
+			set_variable = {
+				var = GRW_var_rozenkampism_loyalty
+				value = 75
+			}
+		}
+	}
+}
+country_event = {#介绍劳工派
+	id = GRW_earlygame.5
+	title = GRW_earlygame.5.t
+	desc = GRW_earlygame.5.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.6
+				days = 7
+			}
+		}
+	}
+
+	option = {
+		name = GRW_earlygame.5.a
+		effect_tooltip = {
+			country_event = {
+				id = GRW_earlygame.6
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				var = GRW_var_syndicalism_influence
+				value = 25
+			}
+			set_variable = {
+				var = GRW_var_syndicalism_loyalty
+				value = 80
+			}
+		}
+	}
+}
+country_event = {#介绍民主党派
+	id = GRW_earlygame.6
+	title = GRW_earlygame.6.t
+	desc = GRW_earlygame.6.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.7
+				days = 7
+			}
+		}
+	}
+
+	option = {
+		name = GRW_earlygame.6.a
+		effect_tooltip = {
+			country_event = {
+				id = GRW_earlygame.7
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				var = GRW_var_democratic_socialism_influence
+				value = 22
+			}
+			set_variable = {
+				var = GRW_var_democratic_socialism_loyalty
+				value = 70
+			}
+		}
+	}
+}
+country_event = {#建立革命军事委员会
+	id = GRW_earlygame.7
+	title = GRW_earlygame.7.t
+	desc = GRW_earlygame.7.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.8
+				days = 7
+			}
+		}
+	}
+
+	option = {
+		name = GRW_earlygame.7.a
+		hidden_effect = {
+			set_variable = {
+				var = GRW_var_stalinism_influence
+				value = 10
+			}
+			set_variable = {
+				var = GRW_var_stalinism_loyalty
+				value = 100
+			}
+		}
+	}
+}
+country_event = {#大会结束
+	id = GRW_earlygame.8
+	title = GRW_earlygame.8.t
+	desc = GRW_earlygame.8.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.8.a
+		custom_effect_tooltip = GRW_first_prywhen_political_consultative_conference_tt
+		drop_cosmetic_tag = yes
+		set_cosmetic_tag = GRW_republic
+		set_country_flag = GRW_united_front_flag
+	}
+}
+
+country_event = {#海军初建
+	id = GRW_earlygame.9
+	title = GRW_earlygame.9.t
+	desc = GRW_earlygame.9.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.9.a
+		navy_experience = 10
+	}
+}
+
+country_event = {#创办空军学院
+	id = GRW_earlygame.10
+	title = GRW_earlygame.10.t
+	desc = GRW_earlygame.10.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.10.a
+		air_experience = 10
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.115
+				days = 1
+				random_hours = 18
+			}
+		}
+	}
+}
+country_event = {#来自嘶大林格勒的航空志愿者
+	id = GRW_earlygame.115
+	title = GRW_earlygame.115.t
+	desc = GRW_earlygame.115.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.115.a
+		set_country_flag = GRW_available_Snowbunny
+		custom_effect_tooltip = available_military_high_command
+		show_ideas_tooltip = GRW_Snowbunny
+	}
+}
+
+#购置战机蓝图事件链
+country_event = {
+	id = GRW_earlygame.11
+	title = GRW_earlygame.11.t
+	desc = GRW_earlygame.11.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GRW_earlygame.11.a
+		ai_chance = {
+			factor = 60
+		}
+		FROM = {
+			country_event = {
+				id = GRW_earlygame.12
+				days = 3
+			}
+		}
+	}
+	option = {
+		name = GRW_earlygame.11.b
+		ai_chance = {
+			factor = 0
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < 10
+				}
+				add = 40
+			}
+		}
+		FROM = {
+			country_event = {
+				id = GRW_earlygame.13
+				days = 3
+			}
+		}
+	}
+}
+country_event = {#同意
+	id = GRW_earlygame.12
+	title = GRW_earlygame.12.t
+	desc = GRW_earlygame.12.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GRW_earlygame.12.a
+		FROM = {
+			add_political_power = 50
+		}
+		if = {
+			limit = {
+				FROM = {
+					original_tag = JER
+				}
+			}
+			add_tech_bonus = {
+				name = GRW_acquisition_of_warplanes
+				bonus = 1
+				uses = 1
+				category = medium_air
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					original_tag = WNG
+				}
+			}
+			add_tech_bonus = {
+				name = GRW_acquisition_of_warplanes
+				bonus = 1
+				uses = 1
+				category = heavy_air
+			}
+		}
+		else = {
+			add_tech_bonus = {
+				name = GRW_acquisition_of_warplanes
+				bonus = 1
+				uses = 1
+				category = light_air
+			}
+		}
+	}
+}
+country_event = {#拒绝
+	id = GRW_earlygame.13
+	title = GRW_earlygame.13.t
+	desc = GRW_earlygame.13.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GRW_earlygame.13.a
+		add_political_power = 30
+	}
+}
+
+country_event = {#对应国策“建立中央鹫民政府委员会”
+	id = GRW_earlygame.14
+	title = GRW_earlygame.14.t
+	desc = GRW_earlygame.14.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.14.a
+		
+	}
+}
+
+country_event = {#对应国策“文化教育委员会”
+	id = GRW_earlygame.15
+	title = GRW_earlygame.15.t
+	desc = GRW_earlygame.15.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.15.a
+		
+	}
+}
+
+#扫盲运动事件链
+country_event = {
+	id = GRW_earlygame.16
+	title = GRW_earlygame.16.t
+	desc = GRW_earlygame.16.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.17
+				days = 150
+				random_hours = 1440
+			}
+		}
+	}
+
+	option = {
+		name = GRW_earlygame.16.a
+		add_political_power = 30
+		add_popularity = {
+			ideology = communism
+			popularity =  0.03
+		}
+		decrease_illiteracy = yes
+	}
+}
+country_event = {
+	id = GRW_earlygame.17
+	title = GRW_earlygame.17.t
+	desc = GRW_earlygame.17.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.18
+				days = 150
+				random_hours = 1440
+			}
+		}
+	}
+
+	option = {
+		name = GRW_earlygame.17.a
+		add_political_power = 30
+		add_popularity = {
+			ideology = communism
+			popularity =  0.03
+		}
+		decrease_illiteracy = yes
+	}
+}
+country_event = {
+	id = GRW_earlygame.18
+	title = GRW_earlygame.18.t
+	desc = GRW_earlygame.18.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.18.a
+		GRW_unfulfilled_promises_improve = yes
+		add_political_power = 50
+		add_popularity = {
+			ideology = communism
+			popularity =  0.05
+		}
+		decrease_illiteracy = yes
+		remove_ideas = GRW_literacy_campaign
+		GRW_primitive_communism_influence_slightincrease = yes
+		GRW_democratic_socialism_influence_slightincrease = yes
+		set_country_flag = GRW_commencement_of_literacy_campaigns_flag
+	}
+}
+
+country_event = {#对应国策“派遣赴嘶留学生”
+	id = GRW_earlygame.19
+	title = GRW_earlygame.19.t
+	desc = GRW_earlygame.19.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.19.a
+		
+	}
+}
+country_event = {#国策“派遣赴嘶留学生”365天后触发
+	id = GRW_earlygame.96
+	title = GRW_earlygame.96.t
+	desc = GRW_earlygame.96.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.96.a
+		add_tech_bonus = {
+			name = GRW_send_international_students
+			bonus = 1
+			uses = 1
+			category = industry
+		}
+		add_tech_bonus = {
+			name = GRW_send_international_students
+			bonus = 1
+			uses = 1
+			category = construction_tech
+		}
+		GRW_industrial_enterprise_upgrade = yes
+	}
+}
+
+#基韦辛大学科研事件链
+country_event = {#决定是哪一种加成卡
+	id = GRW_earlygame.20
+	title = GRW_earlygame.20.t
+	desc = GRW_earlygame.20.d
+	hidden = yes
+
+	trigger = {
+		OR = {
+			has_idea = GRW_national_kivessin_university_idea
+			has_idea = GRW_focus_sci_idea
+		}
+	}
+
+	is_triggered_only = yes
+
+	immediate = {
+		country_event = {
+			id = GRW_earlygame.20
+			days = 180
+			random_days = 20
+		}
+	}
+
+	option = {
+		name = GRW_earlygame.20.a
+		random_list = {
+			20 = {	
+				modifier = {
+					add = -20
+					cat_production_has_been_fully_researched = yes
+				}
+				country_event = {
+					id = GRW_earlygame.21
+				}
+			}
+			25 = {
+				modifier = {
+					add = -25
+					construction_tech_has_been_fully_researched = yes
+				}
+				country_event = {
+					id = GRW_earlygame.22
+				}
+			}
+			10 = {
+				modifier = {
+					add = -10
+					synth_resources_has_been_fully_researched = yes
+				}
+				country_event = {
+					id = GRW_earlygame.23
+				}
+			}
+			20 = {
+				modifier = {
+					add = -20
+					radar_tech_has_been_fully_researched = yes
+				}
+				country_event = {
+					id = GRW_earlygame.25
+				}
+			}
+			25 = {
+				modifier = {
+					add = -25
+					computing_tech_has_been_fully_researched = yes
+				}
+				country_event = {
+					id = GRW_earlygame.24
+				}
+			}
+		}
+	}
+}
+country_event = {#生产科技突破
+	id = GRW_earlygame.21
+	title = GRW_earlygame.21.t
+	desc = GRW_earlygame.21.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GRW_earlygame.21.a
+		add_tech_bonus = {
+			name = GRW_national_kivessin_university_idea
+			bonus = 1
+			uses = 1
+			category = cat_production
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		random_list = {
+			25 = {
+				GRW_democratic_socialism_influence_slightincrease = yes
+			}
+			75 = {
+			}
+		}
+	}
+}
+country_event = {#建筑科技突破
+	id = GRW_earlygame.22
+	title = GRW_earlygame.22.t
+	desc = GRW_earlygame.22.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GRW_earlygame.22.a
+		add_tech_bonus = {
+			name = GRW_national_kivessin_university_idea
+			bonus = 1
+			uses = 1
+			category = construction_tech
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		random_list = {
+			25 = {
+				GRW_democratic_socialism_influence_slightincrease = yes
+			}
+			75 = {
+			}
+		}
+	}
+}
+country_event = {#合成资源突破
+	id = GRW_earlygame.23
+	title = GRW_earlygame.23.t
+	desc = GRW_earlygame.23.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GRW_earlygame.23.a
+		add_tech_bonus = {
+			name = GRW_national_kivessin_university_idea
+			bonus = 1
+			uses = 1
+			category = synth_resources
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		random_list = {
+			15 = {
+				GRW_democratic_socialism_influence_slightincrease = yes
+			}
+			85 = {
+			}
+		}
+	}
+}
+country_event = {#雷达科技突破
+	id = GRW_earlygame.24
+	title = GRW_earlygame.24.t
+	desc = GRW_earlygame.24.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GRW_earlygame.24.a
+		add_tech_bonus = {
+			name = GRW_national_kivessin_university_idea
+			bonus = 1
+			uses = 1
+			category = radar_tech
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		random_list = {
+			25 = {
+				GRW_democratic_socialism_influence_slightincrease = yes
+			}
+			75 = {
+			}
+		}
+	}
+}
+country_event = {#计算机科技突破
+	id = GRW_earlygame.25
+	title = GRW_earlygame.25.t
+	desc = GRW_earlygame.25.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GRW_earlygame.25.a
+		add_tech_bonus = {
+			name = GRW_national_kivessin_university_idea
+			bonus = 1
+			uses = 1
+			category = computing_tech
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		random_list = {
+			25 = {
+				GRW_democratic_socialism_influence_slightincrease = yes
+			}
+			75 = {
+			}
+		}
+	}
+}
+
+#审判事件链
+country_event = {#国王的命运
+	id = GRW_earlygame.26
+	title = GRW_earlygame.26.t
+	desc = GRW_earlygame.26.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.26.a
+		country_event = {
+			id = GRW_earlygame.71
+		}
+	}
+}
+country_event = {#国王的命运
+	id = GRW_earlygame.71
+	title = GRW_earlygame.71.t
+	desc = GRW_earlygame.71.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.27
+				days = 13
+				random_hours = 12
+			}
+		}
+	}
+
+	option = {
+		name = GRW_earlygame.71.a
+		add_political_power = 100
+		add_popularity = {
+			ideology = neutrality
+			popularity = -0.03
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_primitive_communism_loyalty_slightincrease = yes
+		GRW_rozenkampism_loyalty_slightincrease = yes
+		GRW_syndicalism_loyalty_slightincrease = yes
+		GRW_democratic_socialism_loyalty_slightincrease = yes
+	}
+}
+country_event = {#贵族的命运
+	id = GRW_earlygame.27
+	title = GRW_earlygame.27.t
+	desc = GRW_earlygame.27.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.28
+				days = 13
+				random_hours = 12
+			}
+		}
+	}
+
+	option = {
+		name = GRW_earlygame.27.a
+		add_stability = 0.01
+		add_political_power = 35
+		add_popularity = {
+			ideology = neutrality
+			popularity = -0.05
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_primitive_communism_loyalty_slightincrease = yes
+		GRW_rozenkampism_loyalty_slightincrease = yes
+		GRW_syndicalism_loyalty_moderateincrease = yes
+		GRW_revolutionary_radicalisation_slightincrease = yes
+	}
+	option = {
+		name = GRW_earlygame.27.b
+		add_stability = 0.04
+		add_popularity = {
+			ideology = neutrality
+			popularity =  0.03
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_primitive_communism_loyalty_slightdecrease = yes
+		GRW_rozenkampism_loyalty_slightdecrease = yes
+		GRW_syndicalism_loyalty_slightdecrease = yes
+		GRW_democratic_socialism_loyalty_slightincrease = yes
+		set_country_flag = GRW_tolerate_nobility
+	}
+}
+country_event = {#保皇派官员的命运
+	id = GRW_earlygame.28
+	title = GRW_earlygame.28.t
+	desc = GRW_earlygame.28.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.29
+				days = 13
+				random_hours = 12
+			}
+		}
+	}
+
+	option = {
+		name = GRW_earlygame.28.a
+		add_stability = -0.04
+		add_political_power = 125
+		add_popularity = {
+			ideology = neutrality
+			popularity = -0.08
+		}
+		add_timed_idea = {
+			idea = GRW_power_vacumn
+			days = 120
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_rozenkampism_loyalty_slightincrease = yes
+		GRW_syndicalism_loyalty_moderateincrease = yes
+		GRW_revolutionary_radicalisation_slightincrease = yes
+	}
+	option = {
+		name = GRW_earlygame.28.b
+		add_stability = 0.03
+		add_political_power = -25
+		add_popularity = {
+			ideology = fascism
+			popularity =  0.01
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity =  0.03
+		}
+		add_popularity = {
+			ideology = communism
+			popularity =  0.04
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_rozenkampism_loyalty_slightdecrease = yes
+		GRW_syndicalism_loyalty_slightdecrease = yes
+		GRW_democratic_socialism_loyalty_slightincrease = yes
+		set_country_flag = GRW_tolerate_officials
+	}
+}
+country_event = {#保皇派将领的命运
+	id = GRW_earlygame.29
+	title = GRW_earlygame.29.t
+	desc = GRW_earlygame.29.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.29.a
+		add_political_power = 35
+		add_command_power = 20
+		add_popularity = {
+			ideology = fascism
+			popularity = -0.1
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_revolutionary_radicalisation_slightincrease = yes
+	}
+	option = {
+		name = GRW_earlygame.29.b
+		add_political_power = -10
+		army_experience = 50
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.03
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.02
+		}
+		BRF = {
+			BRF_lexandru_leuescu = {
+				set_nationality = ROOT
+			}
+			BRF_catelin_toderoiu = {
+				set_nationality = ROOT
+			}
+		}
+		set_country_flag = GRW_tolerate_generals
+	}
+}
+
+#离婚率大幅提升
+country_event = {
+	id = GRW_earlygame.73
+	title = GRW_earlygame.73.t
+	desc = GRW_earlygame.73.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GRW_earlygame.73.a
+		add_stability = -0.03
+	}
+}
+
+#剿匪事件链
+country_event = {#开始剿匪
+	id = GRW_earlygame.30
+	title = GRW_earlygame.30.t
+	desc = GRW_earlygame.30.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.30.a
+		country_event = {
+			id = GRW_earlygame.72
+		}
+	}
+}
+country_event = {#开始剿匪
+	id = GRW_earlygame.72
+	title = GRW_earlygame.72.t
+	desc = GRW_earlygame.72.d
+	picture = GFX_event_great_lakes_burned_village
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.31
+				days = 140
+				random_hours = 1440
+			}
+		}
+	}
+
+	option = {
+		name = GRW_earlygame.72.a
+		custom_effect_tooltip = GRW_send_armed_forces_to_suppress_tt1
+	}
+}
+country_event = {#第一次
+	id = GRW_earlygame.31
+	title = GRW_earlygame.31.t
+	desc = GRW_earlygame.31.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.32
+				days = 140
+				random_hours = 1440
+			}
+		}
+	}
+
+	option = {
+		name = GRW_earlygame.31.a
+		add_stability = 0.03
+		GRW_banditry_improves = yes
+	}
+}
+country_event = {#第二次
+	id = GRW_earlygame.32
+	title = GRW_earlygame.32.t
+	desc = GRW_earlygame.32.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.32.a
+		add_stability = 0.05
+		GRW_banditry_improves = yes
+	}
+}
+country_event = {#黑石匪帮的覆灭
+	id = GRW_earlygame.33
+	title = GRW_earlygame.33.t
+	desc = GRW_earlygame.33.d
+
+	trigger = {
+		original_tag = GRW
+		BAN = {
+			OR = {
+				exists = no
+				NOT = {
+					has_government = fascism
+				}
+			}
+		}
+	}
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.33.a
+		add_stability = 0.1
+		GRW_banditry_improves = yes
+	}
+}
+
+country_event = {#对应国策“教会的命运”
+	id = GRW_earlygame.34
+	title = GRW_earlygame.34.t
+	desc = GRW_earlygame.34.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.34.a
+		add_stability = -0.05
+		add_political_power = 25
+		add_ideas = GRW_controlled_unions
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_rozenkampism_loyalty_slightincrease = yes
+		GRW_syndicalism_loyalty_slightincrease = yes
+	}
+	option = {
+		name = GRW_earlygame.34.b
+		set_country_flag = GRW_free_unions_flag
+		custom_effect_tooltip = GRW_free_unions_tt
+		add_stability = 0.05
+		add_ideas = GRW_free_unions
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_democratic_socialism_loyalty_slightincrease = yes
+	}
+}
+
+country_event = {#发现石油
+	id = GRW_earlygame.35
+	title = GRW_earlygame.35.t
+	desc = GRW_earlygame.35.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.35.a
+		set_country_flag = GRW_Prahova_found_oil
+		588 = {
+			set_state_name = STATE_588_CLEAR
+		}
+		unlock_decision_tooltip = GRW_develop_Prahova
+	}
+}
+
+#内战恢复事件链
+country_event = {#第一次从内战恢复
+	id = GRW_earlygame.36
+	title = GRW_earlygame.36.t
+	desc = GRW_earlygame.36.d
+
+	trigger = {
+		original_tag = GRW
+		check_variable = {
+			GRW_reconstruction_progress > 3
+		}
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.36.a
+		GRW_recovery_from_civil_war = yes
+		increase_society_development = yes
+		GRW_primitive_communism_loyalty_slightincrease = yes
+		GRW_rozenkampism_loyalty_slightincrease = yes
+		GRW_syndicalism_loyalty_slightincrease = yes
+		GRW_democratic_socialism_loyalty_slightincrease = yes
+	}
+}
+country_event = {#第二次从内战恢复
+	id = GRW_earlygame.37
+	title = GRW_earlygame.37.t
+	desc = GRW_earlygame.37.d
+
+	trigger = {
+		original_tag = GRW
+		check_variable = {
+			GRW_reconstruction_progress > 6
+		}
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.37.a
+		GRW_recovery_from_civil_war = yes
+		decrease_poverty = yes
+		increase_society_development = yes
+		GRW_primitive_communism_loyalty_slightincrease = yes
+		GRW_rozenkampism_loyalty_slightincrease = yes
+		GRW_syndicalism_loyalty_slightincrease = yes
+		GRW_democratic_socialism_loyalty_slightincrease = yes
+	}
+}
+country_event = {#完全从内战恢复
+	id = GRW_earlygame.38
+	title = GRW_earlygame.38.t
+	desc = GRW_earlygame.38.d
+
+	trigger = {
+		original_tag = GRW
+		check_variable = {
+			GRW_reconstruction_progress > 9
+		}
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.38.a
+		GRW_unfulfilled_promises_improve = yes
+		add_political_power = 25
+		GRW_recovery_from_civil_war = yes
+		increase_society_development = yes
+		GRW_primitive_communism_influence_slightincrease = yes
+		GRW_primitive_communism_loyalty_slightincrease = yes
+		GRW_rozenkampism_loyalty_slightincrease = yes
+		GRW_syndicalism_loyalty_slightincrease = yes
+		GRW_democratic_socialism_loyalty_slightincrease = yes
+	}
+}
+
+country_event = {#全国土地丈量完毕，准备开始土地改革
+	id = GRW_earlygame.39
+	title = GRW_earlygame.39.t
+	desc = GRW_earlygame.39.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.39.a
+		add_political_power = 100
+		set_country_flag = GRW_field_measured_flag
+		activate_mission = GRW_mission_land_reform_first_phase
+	}
+}
+
+country_event = {#与鹦鹉维亚的联系
+	id = GRW_earlygame.40
+	title = GRW_earlygame.40.t
+	desc = GRW_earlygame.40.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.40.a
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.03
+		}
+
+		diplomatic_relation = {
+			country = MCW
+			relation = non_aggression_pact
+			active = yes
+		}
+		add_opinion_modifier = {
+			target = MCW
+			modifier = GRW_cooperation_MCW
+		}
+		MCW = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = GRW_cooperation_MCW
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_democratic_socialism_loyalty_slightincrease = yes
+	}
+}
+
+#爱勒海条约谈判事件链
+country_event = {#交易的艺术
+	id = GRW_earlygame.77
+	title = GRW_earlygame.77.t
+	desc = {
+		trigger = {
+			OR = {
+				has_idea = GRW_current_status_of_agriculture_1
+				has_idea = GRW_current_status_of_agriculture_2
+			}
+		}
+		text = GRW_earlygame.77.d.agriculture_non_recovery
+	}
+	desc = {
+		trigger = {
+			NOT = {
+				has_idea = GRW_current_status_of_agriculture_1
+				has_idea = GRW_current_status_of_agriculture_2
+			}
+		}
+		text = GRW_earlygame.77.d.agriculture_recovery
+	}
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.77.a
+		trigger = {
+			OR = {
+				has_idea = GRW_current_status_of_agriculture_1
+				has_idea = GRW_current_status_of_agriculture_2
+			}
+		}
+		custom_effect_tooltip = GRW_eler_sea_agreement_tt
+		set_country_flag = GRW_earlygame_77_a_flag
+		effect_tooltip = {
+			add_ideas = GRW_talk_with_MCW_idea1
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = -0.04
+			}
+			GRW_primitive_communism_loyalty_slightdecrease = yes
+			GRW_rozenkampism_loyalty_slightdecrease = yes
+			GRW_democratic_socialism_loyalty_slightdecrease = yes
+			GRW_democratic_socialism_influence_slightincrease = yes
+			MCW = {
+				add_ideas = GRW_talk_with_MCW_idea_MCW_1
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.79
+				days = 7
+			}
+		}
+	}
+	option = {
+		name = GRW_earlygame.77.b
+		trigger = {
+			NOT = {
+				has_idea = GRW_current_status_of_agriculture_1
+				has_idea = GRW_current_status_of_agriculture_2
+			}
+		}
+		custom_effect_tooltip = GRW_eler_sea_agreement_tt
+		set_country_flag = GRW_earlygame_77_b_flag
+		effect_tooltip = {
+			add_ideas = GRW_talk_with_MCW_idea2
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+			385 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			GRW_democratic_socialism_influence_slightincrease = yes
+			MCW = {
+				add_ideas = GRW_talk_with_MCW_idea_MCW_1
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.78
+				days = 7
+			}
+		}
+	}
+	option = {
+		name = GRW_earlygame.77.c
+		trigger = {
+			NOT = {
+				has_idea = GRW_current_status_of_agriculture_1
+				has_idea = GRW_current_status_of_agriculture_2
+			}
+			check_variable = {
+				resource_produced@oil > 45
+			}
+		}
+		custom_effect_tooltip = GRW_eler_sea_agreement_tt
+		set_country_flag = GRW_earlygame_77_c_flag
+		effect_tooltip = {
+			add_political_power = 20
+			add_ideas = GRW_talk_with_MCW_idea3
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+			385 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			588 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+			GRW_primitive_communism_influence_slightincrease = yes
+			GRW_democratic_socialism_influence_slightincrease = yes
+			MCW = {
+				add_ideas = GRW_talk_with_MCW_idea_MCW_2
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = GRW_eler_sea_agreement_oil_tt
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.78
+				days = 7
+			}
+		}
+	}
+}
+country_event = {#科文交流计划
+	id = GRW_earlygame.78
+	title = GRW_earlygame.78.t
+	desc = GRW_earlygame.78.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.78.a
+		custom_effect_tooltip = GRW_eler_sea_agreement_tt
+		set_country_flag = GRW_earlygame_78_a_flag
+		effect_tooltip = {
+			add_political_power = 35
+			swap_ideas = {
+				remove_idea = GRW_talk_with_MCW_idea2
+				add_idea = GRW_talk_with_MCW_idea4
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.04
+			}
+			GRW_rozenkampism_loyalty_slightdecrease = yes
+			GRW_democratic_socialism_loyalty_slightincrease = yes
+			GRW_democratic_socialism_influence_slightincrease = yes
+			MCW = {
+				add_political_power = 35
+				swap_ideas = {
+					remove_idea = GRW_talk_with_MCW_idea_MCW_1
+					add_idea = GRW_talk_with_MCW_idea_MCW_3
+				}
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.79
+				days = 7
+			}
+		}
+	}
+	option = {
+		name = GRW_earlygame.78.b
+		set_country_flag = GRW_earlygame_78_b_flag
+		GRW_rozenkampism_loyalty_slightincrease = yes
+		GRW_democratic_socialism_loyalty_slightdecrease = yes
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.79
+				days = 7
+			}
+		}
+	}
+}
+country_event = {#条约签署
+	id = GRW_earlygame.79
+	title = GRW_earlygame.79.t
+	desc = GRW_earlygame.79.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.79.a
+		trigger = {
+			has_country_flag = GRW_earlygame_77_a_flag
+		}
+		custom_effect_tooltip = GRW_earlygame_79_a_tt
+		add_stability = -0.03
+		complete_national_focus = GRW_eler_sea_agreement
+		GRW_foreign_trade_improves = yes
+		add_ideas = GRW_talk_with_MCW_idea1
+		add_offsite_building = {
+			type = industrial_complex
+			level = 1
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = -0.04
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_primitive_communism_loyalty_slightdecrease = yes
+		GRW_rozenkampism_loyalty_slightdecrease = yes
+		GRW_democratic_socialism_loyalty_slightdecrease = yes
+		GRW_democratic_socialism_influence_slightincrease = yes
+		GRW_revolutionary_radicalisation_slightincrease = yes
+		MCW = {
+			add_ideas = GRW_talk_with_MCW_idea_MCW_1
+		}
+	}
+
+	option = {
+		name = GRW_earlygame.79.b
+		trigger = {
+			NOT = {
+				has_country_flag = GRW_earlygame_77_a_flag
+			}
+		}
+		complete_national_focus = GRW_eler_sea_agreement
+		GRW_foreign_trade_improves = yes
+		if = {
+			limit = {
+				has_country_flag = GRW_earlygame_77_b_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = GRW_earlygame_78_a_flag
+				}
+				add_political_power = 35
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.04
+				}
+				add_ideas = GRW_talk_with_MCW_idea4
+				add_offsite_building = {
+					type = industrial_complex
+					level = 1
+				}
+				385 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				GRW_rozenkampism_loyalty_slightdecrease = yes
+				GRW_democratic_socialism_loyalty_slightincrease = yes
+				GRW_democratic_socialism_influence_moderateincrease = yes
+				MCW = {
+					add_ideas = GRW_talk_with_MCW_idea_MCW_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = GRW_earlygame_78_b_flag
+				}
+				add_ideas = GRW_talk_with_MCW_idea2
+				add_offsite_building = {
+					type = industrial_complex
+					level = 1
+				}
+				385 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				GRW_rozenkampism_loyalty_slightincrease = yes
+				GRW_democratic_socialism_loyalty_slightdecrease = yes
+				GRW_democratic_socialism_influence_slightincrease = yes
+				MCW = {
+					add_ideas = GRW_talk_with_MCW_idea_MCW_1
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = GRW_earlygame_77_c_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = GRW_earlygame_78_a_flag
+				}
+				add_political_power = 55
+				add_ideas = GRW_talk_with_MCW_idea5
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.04
+				}
+				add_offsite_building = {
+					type = industrial_complex
+					level = 1
+				}
+				385 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				588 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 1
+						instant_build = yes
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				GRW_primitive_communism_influence_slightincrease = yes
+				GRW_rozenkampism_loyalty_slightdecrease = yes
+				GRW_democratic_socialism_loyalty_slightincrease = yes
+				GRW_democratic_socialism_influence_moderateincrease = yes
+				MCW = {
+					add_political_power = 35
+					add_ideas = GRW_talk_with_MCW_idea_MCW_4
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = GRW_earlygame_78_b_flag
+				}
+				add_political_power = 20
+				add_ideas = GRW_talk_with_MCW_idea3
+				add_offsite_building = {
+					type = industrial_complex
+					level = 1
+				}
+				385 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				588 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 1
+						instant_build = yes
+					}
+				}
+				GRW_primitive_communism_influence_slightincrease = yes
+				GRW_rozenkampism_loyalty_slightincrease = yes
+				GRW_democratic_socialism_loyalty_slightdecrease = yes
+				GRW_democratic_socialism_influence_slightincrease = yes
+				MCW = {
+					add_political_power = 35
+					add_ideas = GRW_talk_with_MCW_idea_MCW_2
+				}
+			}
+		}
+	}
+}
+
+country_event = {#鹦鹉维亚断交
+	id = GRW_earlygame.41
+	title = GRW_earlygame.41.t
+	desc = GRW_earlygame.41.d
+
+	trigger = {
+		original_tag = GRW
+		OR = {
+			has_war_with = ZES
+			has_war_with = MCW
+			check_variable = {
+				GRW_var_revolutionary_radicalisation > 65
+			}
+		}
+	}
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 5
+	}
+
+	option = {
+		name = GRW_earlygame.41.a
+		set_country_flag = GRW_earlygame_41_flag
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.04
+		}
+		diplomatic_relation = {
+			country = MCW
+			relation = non_aggression_pact
+			active = no
+		}
+		remove_opinion_modifier = {
+			target = MCW
+			modifier = GRW_cooperation_MCW
+		}
+		add_opinion_modifier = {
+			target = MCW
+			modifier = distrustful_relations
+		}
+		MCW = {
+			remove_opinion_modifier = {
+				target = ROOT
+				modifier = GRW_cooperation_MCW
+			}
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = distrustful_relations
+			}
+		}
+		add_offsite_building = {
+			type = industrial_complex
+			level = -1
+		}
+		remove_ideas = GRW_talk_with_MCW_idea1
+		remove_ideas = GRW_talk_with_MCW_idea2
+		remove_ideas = GRW_talk_with_MCW_idea3
+		remove_ideas = GRW_talk_with_MCW_idea4
+		remove_ideas = GRW_talk_with_MCW_idea5
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_rozenkampism_influence_slightincrease = yes
+		GRW_democratic_socialism_influence_slightdecrease = yes
+	}
+}
+
+country_event = {#对应国策“拜访嘶大林格勒”
+	id = GRW_earlygame.42
+	title = GRW_earlygame.42.t
+	desc = GRW_earlygame.42.d
+	picture = GFX_event_bronzhill_communist_party
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.42.a
+		add_opinion_modifier = {
+			target = STG
+			modifier = friendly_government
+		}
+		STG = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = friendly_government
+			}
+		}
+		hidden_effect = {
+			STG = {
+				save_event_target_as = volunteer_target
+			}
+			send_volunteers_to_TARGET = yes
+			STG = {
+				ROOT = {
+					save_event_target_as = volunteer_target
+				}
+				send_volunteers_to_TARGET = yes
+			}
+		}
+	}
+}
+
+country_event = {#对应国策“极北之地的同志”
+	id = GRW_earlygame.43
+	title = GRW_earlygame.43.t
+	desc = GRW_earlygame.43.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.43.a
+		add_opinion_modifier = {
+			target = SRS
+			modifier = friendly_government
+		}
+		SRS = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = friendly_government
+			}
+		}
+		army_experience = 35
+		set_technology = {
+			popup = no
+			GRW_snow_buff = 1
+		}
+		custom_effect_tooltip = GRW_snow_buff_tt
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_rozenkampism_influence_slightincrease = yes
+		hidden_effect = {
+			SRS = {
+				save_event_target_as = volunteer_target
+			}
+			send_volunteers_to_TARGET = yes
+			SRS = {
+				ROOT = {
+					save_event_target_as = volunteer_target
+				}
+				send_volunteers_to_TARGET = yes
+			}
+		}
+	}
+}
+
+#黑石事件链
+country_event = {#和里夫的协议
+	id = GRW_earlygame.44
+	title = GRW_earlygame.44.t
+	desc = GRW_earlygame.44.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.44.a
+		add_political_power = 25
+	}
+}
+country_event = {#与山谐党合作
+	id = GRW_earlygame.45
+	title = GRW_earlygame.45.t
+	desc = GRW_earlygame.45.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.45.a
+		
+	}
+}
+country_event = {#平等主义的破产
+	id = GRW_earlygame.46
+	title = GRW_earlygame.46.t
+	desc = GRW_earlygame.46.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.46.a
+		every_state = {
+			limit = {
+				has_dynamic_modifier = {
+					modifier = GRW_BAN_equalism_autonomous_region
+				}
+			}
+			remove_dynamic_modifier = {
+				modifier = GRW_BAN_equalism_autonomous_region
+			}
+		}
+	}
+}
+
+country_event = {#来自普里文的使者（通用）
+	id = GRW_earlygame.47
+	title = GRW_earlygame.47.t
+	desc = GRW_earlygame.47.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GRW_earlygame.47.a
+		FROM = {
+			country_event = {
+				id = GRW_earlygame.48
+				days = 3
+			}
+		}
+	}
+}
+country_event = {#同意
+	id = GRW_earlygame.48
+	title = GRW_earlygame.48.t
+	desc = GRW_earlygame.48.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GRW_earlygame.48.a
+		if = {
+			limit = {
+				FROM.FROM = {
+					has_war = yes
+				}
+			}
+			FROM.FROM = {
+				every_enemy_country = {
+					limit = {
+						NOT = {
+							has_war_with = ROOT
+						}
+					}
+					ROOT = {
+						add_to_war = {
+							targeted_alliance = PREV.PREV
+							enemy = PREV
+						}
+					}
+				}
+			}
+		}
+		annex_country = {
+			target = FROM
+			transfer_troops = yes
+		}
+	}
+}
+
+#处理谐率国家事件链
+country_event = {#如何处理谐率国家
+	id = GRW_earlygame.49
+	title = GRW_earlygame.49.t
+	desc = GRW_earlygame.49.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GRW_earlygame.49.a
+		FROM.FROM = {
+			country_event = {
+				id = GRW_earlygame.50
+				days = 3
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_democratic_socialism_influence_slightincrease = yes
+	}
+	option = {
+		name = GRW_earlygame.49.b
+		create_wargoal = {
+			target = FROM.FROM
+			type = annex_everything
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_rozenkampism_influence_slightincrease = yes
+		if = {
+			limit = {
+				has_country_flag = GRW_earlygame_88_flag
+				FROM.FROM = {
+					original_tag = MIT
+				}
+			}
+			GRW_revolutionary_radicalisation_moderateincrease = yes
+		}
+	}
+}
+country_event = {#普里文提议签定贸易协议
+	id = GRW_earlygame.50
+	title = GRW_earlygame.50.t
+	desc = GRW_earlygame.50.d
+
+	is_triggered_only = yes
+
+	option = {#同意
+		name = GRW_earlygame.50.a
+		ai_chance = {
+			factor = 60
+		}
+		FROM = {
+			country_event = {
+				id = GRW_earlygame.51
+				days = 3
+			}
+		}
+	}
+	option = {#拒绝
+		name = GRW_earlygame.50.b
+		ai_chance = {
+			factor = 0
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < 10
+				}
+				add = 40
+			}
+		}
+		FROM = {
+			country_event = {
+				id = GRW_earlygame.52
+				days = 3
+			}
+		}
+	}
+}
+country_event = {#同意
+	id = GRW_earlygame.51
+	title = GRW_earlygame.51.t
+	desc = GRW_earlygame.51.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GRW_earlygame.51.a
+		FROM = {
+			add_ideas = GRW_trade_idea
+			diplomatic_relation = {
+				country = GRW
+				relation = non_aggression_pact
+				active = yes
+			}
+			custom_effect_tooltip = GRW_diplomacy_democratic_tt
+			GRW_influence_improve = yes
+			set_country_flag = GRW_diplomacy_democratic_friends
+		}
+	}
+}
+country_event = {#拒绝
+	id = GRW_earlygame.52
+	title = GRW_earlygame.52.t
+	desc = GRW_earlygame.52.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GRW_earlygame.52.a
+		add_political_power = -25
+		FROM = {
+			set_country_flag = GRW_diplomacy_democratic_enemies
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_rozenkampism_influence_slightincrease = yes
+		GRW_democratic_socialism_influence_slightdecrease = yes
+	}
+}
+country_event = {#政变成功
+	id = GRW_earlygame.53
+	title = GRW_earlygame.53.t
+	desc = GRW_earlygame.53.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GRW_earlygame.53.a
+		if = {
+			limit = {
+				FROM.FROM = {
+					has_war = yes
+				}
+			}
+			FROM.FROM = {
+				every_enemy_country = {
+					limit = {
+						NOT = {
+							has_war_with = ROOT
+						}
+					}
+					ROOT = {
+						add_to_war = {
+							targeted_alliance = PREV.PREV
+							enemy = PREV
+						}
+					}
+				}
+				ROOT = {
+					annex_country = {
+						target = PREV
+						transfer_troops = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+#星空谈判事件链
+country_event = {#来自普里文的代表团
+	id = GRW_earlygame.54
+	title = GRW_earlygame.54.t
+	desc = GRW_earlygame.54.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.54.a
+		FROM = {
+			country_event = {
+				id = GRW_earlygame.80
+				days = 2
+			}
+		}
+	}
+}
+country_event = {#谈判开始
+	id = GRW_earlygame.80
+	title = GRW_earlygame.80.t
+	desc = GRW_earlygame.80.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.80.a
+		custom_effect_tooltip = GRW_earlygame_80_tt
+		hidden_effect = {
+			if = {
+				limit = {
+					CYA = {
+						exists = yes
+						is_subject = no
+						NOT = {
+							has_war_with = MIT
+						}
+					}
+				}
+				country_event = {
+					id = GRW_earlygame.81
+					days = 2
+				}
+			}
+			else = {
+				country_event = {
+					id = GRW_earlygame.82
+					days = 3
+				}
+			}
+			set_variable = {
+				var = GRW_dispatch_envoy_to_Asterion_var
+				value = 0
+			}
+		}
+	}
+}
+country_event = {#针对蓝百合的防御性同盟
+	id = GRW_earlygame.81
+	title = GRW_earlygame.81.t
+	desc = GRW_earlygame.81.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.81.a
+		set_country_flag = GRW_earlygame_81_flag
+		custom_effect_tooltip = GRW_eler_sea_agreement_tt
+		effect_tooltip = {
+			diplomatic_relation = {
+				country = MIT
+				relation = non_aggression_pact
+				active = yes
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.82
+				days = 3
+			}
+		}
+	}
+}
+country_event = {#萨尔玛克问题
+	id = GRW_earlygame.82
+	title = GRW_earlygame.82.t
+	desc = GRW_earlygame.82.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.82.a
+		set_country_flag = GRW_earlygame_82_a_flag
+		custom_effect_tooltip = GRW_eler_sea_agreement_tt
+		effect_tooltip = {
+			if = {
+				limit = {
+					NOT = {
+						507 = {
+							is_owned_by = MIT
+						}
+					}
+				}
+				custom_effect_tooltip = GRW_earlygame_82_a_tt
+				507 = {
+					add_claim_by = ROOT
+				}
+			}
+			else = {
+				507 = {
+					transfer_state_to = ROOT
+					add_core_of = ROOT
+					remove_claim_by = MIT
+					set_demilitarized_zone = yes
+					add_dynamic_modifier = {
+						modifier = GRW_minotaur_autonomous_government
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.83
+				days = 3
+			}
+			add_to_variable = {
+				var = GRW_dispatch_envoy_to_Asterion_var
+				value = -1
+			}
+		}
+	}
+	option = {
+		name = GRW_earlygame.82.b
+		set_country_flag = GRW_earlygame_82_b_flag
+		custom_effect_tooltip = GRW_eler_sea_agreement_tt
+		effect_tooltip = {
+			diplomatic_relation = {
+				country = MIT
+				relation = docking_rights
+				active = yes
+			}
+			if = {
+				limit = {
+					NOT = {
+						507 = {
+							is_owned_by = MIT
+						}
+					}
+				}
+				custom_effect_tooltip = GRW_earlygame_82_b_tt
+			}
+			else = {
+				507 = {
+					set_demilitarized_zone = yes
+					add_dynamic_modifier = {
+						modifier = GRW_griffon_autonomous_government
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.83
+				days = 3
+			}
+		}
+	}
+}
+country_event = {#爬行者山脉问题
+	id = GRW_earlygame.83
+	title = GRW_earlygame.83.t
+	desc = GRW_earlygame.83.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.83.a
+		set_country_flag = GRW_earlygame_83_a_flag
+		effect_tooltip = {
+			if = {
+				limit = {
+					446 = {
+						is_owned_or_subject_trigger = no
+					}
+				}
+				custom_effect_tooltip = GRW_earlygame_83_a_tt
+			}
+		}
+		hidden_effect = {
+			add_to_variable = {
+				var = GRW_dispatch_envoy_to_Asterion_var
+				value = -1
+			}
+			if = {
+				limit = {
+					check_variable = {
+						GRW_dispatch_envoy_to_Asterion_var = -2
+					}
+				}
+				country_event = {
+					id = GRW_earlygame.88
+					days = 2
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						CYA = {
+							exists = yes
+							is_subject = no
+							NOT = {
+								has_war_with = MIT
+							}
+						}
+					}
+					country_event = {
+						id = GRW_earlygame.84
+						days = 3
+					}
+				}
+				else = {
+					country_event = {
+						id = GRW_earlygame.86
+						days = 3
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = GRW_earlygame.83.b
+		set_country_flag = GRW_earlygame_83_b_flag
+		custom_effect_tooltip = GRW_eler_sea_agreement_tt
+		effect_tooltip = {
+			if = {
+				limit = {
+					446 = {
+						is_owned_or_subject_trigger = no
+					}
+				}
+				custom_effect_tooltip = GRW_earlygame_83_b_tt
+			}
+			else = {
+				give_resource_rights = {
+					receiver = MIT
+					state = 446
+				}
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					CYA = {
+						exists = yes
+						is_subject = no
+						NOT = {
+							has_war_with = MIT
+						}
+					}
+				}
+				country_event = {
+					id = GRW_earlygame.84
+					days = 3
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						check_variable = {
+							GRW_dispatch_envoy_to_Asterion_var = -1
+						}
+					}
+					country_event = {
+						id = GRW_earlygame.85
+						days = 3
+					}
+				}
+				else = {
+					country_event = {
+						id = GRW_earlygame.87
+						days = 3
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = GRW_earlygame.83.c
+		trigger = {
+			has_country_flag = GRW_earlygame_82_a_flag
+		}
+		set_country_flag = GRW_earlygame_83_c_flag
+		custom_effect_tooltip = GRW_eler_sea_agreement_tt
+		effect_tooltip = {
+			if = {
+				limit = {
+					446 = {
+						is_owned_or_subject_trigger = no
+					}
+				}
+				custom_effect_tooltip = GRW_earlygame_83_c_tt
+			}
+			else = {
+				446 = {
+					transfer_state_to = MIT
+					remove_claim_by = ROOT
+					remove_core_of = ROOT
+				}
+			}
+		}
+		hidden_effect = {
+			add_to_variable = {
+				var = GRW_dispatch_envoy_to_Asterion_var
+				value = 1
+			}
+			if = {
+				limit = {
+					CYA = {
+						exists = yes
+						is_subject = no
+						NOT = {
+							has_war_with = MIT
+						}
+					}
+				}
+				country_event = {
+					id = GRW_earlygame.84
+					days = 3
+				}
+			}
+			else = {
+				country_event = {
+					id = GRW_earlygame.87
+					days = 3
+				}
+			}
+		}
+	}
+}
+country_event = {#军事佯攻的提议
+	id = GRW_earlygame.84
+	title = GRW_earlygame.84.t
+	desc = GRW_earlygame.84.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.84.a
+		set_country_flag = GRW_earlygame_84_a_flag
+		custom_effect_tooltip = GRW_eler_sea_agreement_tt
+		effect_tooltip = {
+			add_political_power = -25
+			add_command_power = -50
+			custom_effect_tooltip = GRW_earlygame_84_a_tt
+			unlock_decision_tooltip = GRW_initiate_feigned_attack
+			CYA = {
+				add_stability = -0.07
+				add_war_support = -0.1
+				add_ideas = GRW_red_bandits_destruction
+			}
+			if = {
+				limit = {
+					check_variable = {
+						GRW_dispatch_envoy_to_Asterion_var > -1
+					}
+				}
+				unlock_decision_tooltip = GRW_buy_MIT_support_equipment
+				add_ideas = GRW_MIT_military_industrial_complex_aid
+				589 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.87
+				days = 3
+			}
+		}
+	}
+	option = {
+		name = GRW_earlygame.84.b
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = {
+						GRW_dispatch_envoy_to_Asterion_var = -1
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = GRW_earlygame_82_a_flag
+					}
+					country_event = {
+						id = GRW_earlygame.85
+						days = 3
+					}
+				}
+				else_if = {
+					limit = {
+						has_country_flag = GRW_earlygame_82_b_flag
+					}
+					country_event = {
+						id = GRW_earlygame.86
+						days = 3
+					}
+				}
+			}
+			else = {
+				country_event = {
+					id = GRW_earlygame.87
+					days = 3
+				}
+			}
+		}
+	}
+}
+country_event = {#来自星临城的报价
+	id = GRW_earlygame.85
+	title = GRW_earlygame.85.t
+	desc = GRW_earlygame.85.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.85.a
+		set_country_flag = GRW_earlygame_85_a_flag
+		custom_effect_tooltip = GRW_eler_sea_agreement_tt
+		effect_tooltip = {
+			custom_effect_tooltip = GRW_earlygame_85_a_tt
+			add_political_power = -50
+			add_timed_idea = {
+				idea = GRW_Salmarkt_payment
+				days = 120
+			}
+			MIT = {
+				add_political_power = 50
+				add_timed_idea = {
+					idea = GRW_MIT_Salmarkt_payment
+					days = 120
+				}
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.87
+				days = 3
+			}
+		}
+	}
+	option = {
+		name = GRW_earlygame.85.b
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.88
+				days = 2
+			}
+		}
+	}
+}
+country_event = {#星空方的讨价还价
+	id = GRW_earlygame.86
+	title = GRW_earlygame.86.t
+	desc = GRW_earlygame.86.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.86.a
+		set_country_flag = GRW_earlygame_86_a_flag
+		custom_effect_tooltip = GRW_earlygame_86_tt
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.87
+				days = 3
+			}
+		}
+	}
+	option = {
+		name = GRW_earlygame.86.b
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.88
+				days = 2
+			}
+		}
+	}
+}
+country_event = {#贸易协定
+	id = GRW_earlygame.87
+	title = GRW_earlygame.87.t
+	desc = GRW_earlygame.87.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.87.a
+		custom_effect_tooltip = GRW_eler_sea_agreement_tt
+		effect_tooltip = {
+			if = {
+				limit = {
+					has_country_flag = GRW_earlygame_86_a_flag
+				}
+				add_offsite_building = {
+					type = industrial_complex
+					level = 1
+				}
+				GRW_foreign_trade_improves = yes
+			}
+			else = {
+				add_political_power = 30
+				add_offsite_building = {
+					type = industrial_complex
+					level = 1
+				}
+				589 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				GRW_foreign_trade_improves = yes		
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.89
+				days = 3
+			}
+		}
+	}
+}
+country_event = {#谈判破裂
+	id = GRW_earlygame.88
+	title = GRW_earlygame.88.t
+	desc = GRW_earlygame.88.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.88.a
+		set_country_flag = GRW_earlygame_87_flag
+		clr_country_flag = GRW_earlygame_81_flag
+		clr_country_flag = GRW_earlygame_82_a_flag
+		clr_country_flag = GRW_earlygame_82_b_flag
+		clr_country_flag = GRW_earlygame_83_a_flag
+		clr_country_flag = GRW_earlygame_83_b_flag
+		clr_country_flag = GRW_earlygame_83_c_flag
+		clr_country_flag = GRW_earlygame_84_a_flag
+		clr_country_flag = GRW_earlygame_85_a_flag
+		clr_country_flag = GRW_earlygame_86_a_flag
+		add_opinion_modifier = {
+			target = MIT
+			modifier = distrustful_relations
+		}
+		MIT = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = distrustful_relations
+			}
+		}
+		507 = {
+			add_claim_by = ROOT
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_rozenkampism_influence_slightincrease = yes
+		GRW_democratic_socialism_influence_slightdecrease = yes
+		GRW_revolutionary_radicalisation_slightincrease = yes
+	}
+}
+country_event = {#最终协议签订
+	id = GRW_earlygame.89
+	title = GRW_earlygame.89.t
+	desc = GRW_earlygame.89.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.89.a
+		set_country_flag = GRW_earlygame_88_flag
+		if = {
+			limit = {
+				has_country_flag = GRW_earlygame_81_flag
+			}
+			diplomatic_relation = {
+				country = MIT
+				relation = non_aggression_pact
+				active = yes
+			}
+			hidden_effect = {
+				MIT = {
+					save_event_target_as = volunteer_target
+				}
+				send_volunteers_to_TARGET = yes
+				MIT = {
+					ROOT = {
+						save_event_target_as = volunteer_target
+					}
+					send_volunteers_to_TARGET = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = GRW_earlygame_82_a_flag
+			}
+			if = {
+				limit = {
+					NOT = {
+						507 = {
+							is_owned_by = MIT
+						}
+					}
+				}
+				custom_effect_tooltip = GRW_earlygame_82_a_tt
+				507 = {
+					add_claim_by = ROOT
+				}
+			}
+			else = {
+				507 = {
+					transfer_state_to = ROOT
+					add_core_of = ROOT
+					remove_claim_by = MIT
+					set_demilitarized_zone = yes
+					add_dynamic_modifier = {
+						modifier = GRW_minotaur_autonomous_government
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = GRW_earlygame_82_b_flag
+			}
+			diplomatic_relation = {
+				country = MIT
+				relation = docking_rights
+				active = yes
+			}
+			if = {
+				limit = {
+					NOT = {
+						507 = {
+							is_owned_by = MIT
+						}
+					}
+				}
+				custom_effect_tooltip = GRW_earlygame_82_b_tt
+			}
+			else = {
+				507 = {
+					set_demilitarized_zone = yes
+					add_dynamic_modifier = {
+						modifier = GRW_griffon_autonomous_government
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = GRW_earlygame_83_b_flag
+			}
+			if = {
+				limit = {
+					446 = {
+						is_owned_or_subject_trigger = no
+					}
+				}
+				custom_effect_tooltip = GRW_earlygame_83_b_tt
+			}
+			else = {
+				give_resource_rights = {
+					receiver = MIT
+					state = 446
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = GRW_earlygame_83_c_flag
+			}
+			if = {
+				limit = {
+					446 = {
+						is_owned_or_subject_trigger = no
+					}
+				}
+				custom_effect_tooltip = GRW_earlygame_83_c_tt
+			}
+			else = {
+				446 = {
+					transfer_state_to = MIT
+					remove_claim_by = ROOT
+					remove_core_of = ROOT
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = GRW_earlygame_84_a_flag
+			}
+			add_political_power = -25
+			add_command_power = -50
+			custom_effect_tooltip = GRW_earlygame_84_a_tt
+			effect_tooltip = {
+				unlock_decision_tooltip = GRW_initiate_feigned_attack
+				CYA = {
+					add_stability = -0.07
+					add_war_support = -0.1
+					add_ideas = GRW_red_bandits_destruction
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						GRW_dispatch_envoy_to_Asterion_var > -1
+					}
+				}
+				unlock_decision_tooltip = GRW_buy_MIT_support_equipment
+				add_ideas = GRW_MIT_military_industrial_complex_aid
+				589 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = GRW_earlygame_85_a_flag
+				507 = {
+					is_owned_by = MIT
+				}
+			}
+			add_political_power = -50
+			add_timed_idea = {
+				idea = GRW_Salmarkt_payment
+				days = 120
+			}
+			MIT = {
+				add_political_power = 50
+				add_timed_idea = {
+					idea = GRW_MIT_Salmarkt_payment
+					days = 120
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = GRW_earlygame_86_a_flag
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+			GRW_foreign_trade_improves = yes
+		}
+		else = {
+			add_political_power = 30
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+			589 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			GRW_foreign_trade_improves = yes	
+		}
+	}
+}
+country_event = {#佯攻胜利
+	id = GRW_earlygame.90
+	title = GRW_earlygame.90.t
+	desc = GRW_earlygame.90.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.90.a
+		add_political_power = 30
+		army_experience = 25
+	}
+}
+country_event = {#佯攻失败
+	id = GRW_earlygame.91
+	title = GRW_earlygame.91.t
+	desc = GRW_earlygame.91.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.91.a
+		add_political_power = -15
+		army_experience = 10
+	}
+}
+country_event = {#防御胜利
+	id = GRW_earlygame.92
+	title = GRW_earlygame.92.t
+	desc = GRW_earlygame.92.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.92.a
+		add_political_power = 25
+		add_stability = 0.05
+		add_war_support = 0.1
+	}
+}
+country_event = {#防御战败
+	id = GRW_earlygame.93
+	title = GRW_earlygame.93.t
+	desc = GRW_earlygame.93.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.93.a
+		add_political_power = -25
+		add_stability = -0.05
+		add_war_support = -0.1
+	}
+}
+country_event = {#奥德修斯行动开始
+	id = GRW_earlygame.94
+	title = GRW_earlygame.94.t
+	desc = GRW_earlygame.94.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.94.a
+		activate_mission = GRW_initiate_feigned_attack
+		CYA = {
+			add_stability = -0.07
+			add_war_support = -0.1
+			add_ideas = GRW_red_bandits_destruction
+		}
+	}
+}
+country_event = {#奥德修斯行动胜利结束
+	id = GRW_earlygame.95
+	title = GRW_earlygame.95.t
+	desc = GRW_earlygame.95.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.95.a
+		if = {
+			limit = {
+				has_country_flag = GRW_earlygame_82_a_flag
+			}
+			507 = {
+				transfer_state_to = ROOT
+				add_core_of = ROOT
+				remove_claim_by = MIT
+				set_demilitarized_zone = yes
+				add_dynamic_modifier = {
+					modifier = GRW_minotaur_autonomous_government
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = GRW_earlygame_82_b_flag
+			}
+			507 = {
+				set_demilitarized_zone = yes
+				add_dynamic_modifier = {
+					modifier = GRW_griffon_autonomous_government
+				}
+			}
+		}
+	}
+}
+country_event = {#星空断绝关系
+	id = GRW_earlygame.105
+	title = GRW_earlygame.105.t
+	desc = GRW_earlygame.105.d
+
+	trigger = {
+		original_tag = GRW
+		has_country_flag = GRW_earlygame_88_flag
+		OR = {
+			has_war_with = MIT
+			check_variable = {
+				GRW_var_revolutionary_radicalisation > 60
+			}
+		}
+	}
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.105.a
+		set_country_flag = GRW_earlygame_87_flag
+		clr_country_flag = GRW_earlygame_88_flag
+		clr_country_flag = GRW_earlygame_81_flag
+		clr_country_flag = GRW_earlygame_82_a_flag
+		clr_country_flag = GRW_earlygame_82_b_flag
+		clr_country_flag = GRW_earlygame_83_a_flag
+		clr_country_flag = GRW_earlygame_83_b_flag
+		clr_country_flag = GRW_earlygame_83_c_flag
+		clr_country_flag = GRW_earlygame_84_a_flag
+		clr_country_flag = GRW_earlygame_85_a_flag
+		clr_country_flag = GRW_earlygame_86_a_flag
+		if = {
+			limit = {
+				has_country_flag = GRW_earlygame_81_flag
+			}
+			diplomatic_relation = {
+				country = MIT
+				relation = non_aggression_pact
+				active = no
+			}
+			if = {
+				limit = {
+					CYA = {
+						exists = yes
+						is_subject = no
+					}
+				}
+				MIT = {
+					save_event_target_as = volunteer_target
+				}
+				clear_volunteers_to_TARGET = yes
+				MIT = {
+					GRW = {
+						save_event_target_as = volunteer_target
+					}
+					clear_volunteers_to_TARGET = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				CYA = {
+					OR = {
+						exists = no
+						is_subject = yes
+					}
+				}
+			}
+			507 = {
+				set_demilitarized_zone = no
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = GRW_earlygame_82_b_flag
+			}
+			507 = {
+				add_claim_by = ROOT
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = GRW_Evi_revolution_end
+				has_country_flag = GRW_earlygame_83_b_flag
+			}
+			MIT = {
+				remove_resource_rights = 446
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = GRW_Evi_revolution_end
+				has_country_flag = GRW_earlygame_83_c_flag
+			}
+			446 = {
+				add_claim_by = ROOT
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = GRW_earlygame_84_a_flag
+			}
+			remove_ideas = GRW_MIT_military_industrial_complex_aid
+		}
+		add_offsite_building = {
+			type = industrial_complex
+			level = -1
+		}
+	}
+}
+
+#接触白冠亲王
+country_event = {
+	id = GRW_earlygame.55
+	title = GRW_earlygame.55.t
+	desc = GRW_earlygame.55.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.55.a
+		set_country_flag = GRW_access_to_smug_elia_flag
+		diplomatic_relation = {
+			country = LUS
+			relation = non_aggression_pact
+			active = yes
+		}
+		LUS = {
+			complete_national_focus = LUS_free_the_peasants
+			GRW = {
+				save_event_target_as = volunteer_target
+			}
+			send_volunteers_to_TARGET = yes
+		}
+		if = {
+			limit = {
+				has_global_flag = LNS_civil_war_flag
+				NOT = {
+					has_global_flag = LNS_civil_war_end_flag
+				}
+			}
+			custom_effect_tooltip = GRW_earlygame_55_tt
+			set_country_flag = GRW_earlygame_55_flag
+		}
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.99
+				days = 1
+			}
+		}
+	}
+}
+country_event = {
+	id = GRW_earlygame.99
+	title = GRW_earlygame.99.t
+	desc = GRW_earlygame.99.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.99.a
+		LUS = {
+			add_stability = 0.05
+			add_popularity = {
+				ideology = communism
+				popularity = 0.03
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = LNS_civil_war_flag
+				NOT = {
+					has_global_flag = LNS_civil_war_end_flag
+				}
+			}
+			custom_effect_tooltip = GRW_earlygame_99_tt
+			hidden_effect = {
+				LSC = {
+					division_template = {
+						name = "白花志愿军"
+						priority = 0
+						regiments = {
+							militia = { x = 0 y = 0 }
+							militia = { x = 0 y = 1 }
+							militia = { x = 0 y = 2 }
+						}
+					}
+					505 = {
+						create_unit = {
+							division = "name = \"白花志愿军\" division_template = \"白花志愿军\" start_experience_factor = 0.1"
+							owner = PREV
+							count = 1
+							allow_spawning_on_enemy_provs = yes
+						}
+					}
+				}
+			}
+		}
+	}
+}
+country_event = {#对应决议“卢什整合谈判”
+	id = GRW_earlygame.56
+	title = GRW_earlygame.56.t
+	desc = GRW_earlygame.56.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.56.a
+		if = {
+			limit = {
+				LUS = {
+					has_war = yes
+				}
+			}
+			LUS = {
+				every_enemy_country = {
+					limit = {
+						NOT = {
+							has_war_with = ROOT
+						}
+					}
+					ROOT = {
+						add_to_war = {
+							targeted_alliance = PREV.PREV
+							enemy = PREV
+						}
+					}
+				}
+			}
+		}
+		annex_country = {
+			target = LUS
+		}
+		every_owned_state = {
+			limit = {
+				has_state_flag = LUS_cores
+			}
+			set_compliance = 10
+		}
+	}
+}
+
+country_event = {#对应国策“破冰河间”
+	id = GRW_earlygame.57
+	title = GRW_earlygame.57.t
+	desc = GRW_earlygame.57.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.57.a
+		add_political_power = 25
+	}
+}
+
+#湖城“7日战争”事件链
+country_event = {#湖城向我们发起进攻！
+	id = GRW_earlygame.58
+	title = GRW_earlygame.58.t
+	desc = GRW_earlygame.58.d
+
+	trigger = {
+		original_tag = GRW
+		NOT = {
+			has_completed_focus = GRW_revisiting_riverlands_diplomacy
+		}
+	}
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.58.a
+		every_owned_state = {
+			limit = {
+				any_neighbor_state = {
+					is_owned_and_controlled_by = LCT
+				}
+			}
+			create_unit = {
+				division = "name = \"民兵大队\" division_template = \"赤卫队\" start_experience_factor = 0.1"
+				owner = ROOT
+				count = 2
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.59
+				days = 7
+				random_hours = 12
+			}
+		}
+	}
+}
+country_event = {#白和
+	id = GRW_earlygame.59
+	title = GRW_earlygame.59.t
+	desc = GRW_earlygame.59.d
+
+	trigger = {
+		original_tag = GRW
+		all_owned_state = {
+			if = {
+				limit = {
+					any_neighbor_state = {
+						is_owned_and_controlled_by = LCT
+					}
+				}
+				is_controlled_by = ROOT
+			}
+		}
+	}
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.59.a
+		white_peace = LCT
+		delete_unit_template_and_units = {
+			division_template = "赤卫队"
+			disband = yes
+		}
+	}
+}
+
+#埃维地区革命成功
+country_event = {
+	id = GRW_earlygame.60
+	title = GRW_earlygame.60.t
+	desc = GRW_earlygame.60.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GRW_earlygame.60.a
+		diplomatic_relation = {
+			country = FROM
+			relation = guarantee
+		}
+		FROM = {
+			diplomatic_relation = {
+				country = GRW
+				relation = guarantee
+			}
+			diplomatic_relation = {
+				country = ROOT
+				relation = embargo
+				active = no
+			}
+		}
+	}
+}
+
+#对应决议"凯辅的老朋友"
+country_event = {
+	id = GRW_earlygame.61
+	title = GRW_earlygame.61.t
+	desc = GRW_earlygame.61.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.61.a
+		add_political_power = 25
+	}
+}
+
+#对应决议"深井镇会议"
+country_event = {
+	id = GRW_earlygame.62
+	title = GRW_earlygame.62.t
+	desc = GRW_earlygame.62.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.62.a
+		add_political_power = 25
+	}
+}
+
+#反共条约事件
+country_event = {
+	id = GRW_earlygame.63
+	title = GRW_earlygame.63.t
+	desc = GRW_earlygame.63.d
+	hidden = yes
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.63.a
+		FROM = {
+			every_other_country = {
+				limit = {
+					has_idea = GRW_anti_Prywhen_pact
+				}
+				add_to_war = {
+					targeted_alliance = PREV.PREV
+					enemy = GRW
+				}
+			}
+		}
+	}
+}
+
+#反共条约组建
+country_event = {
+	id = GRW_earlygame.68
+	title = GRW_earlygame.68.t
+	desc = GRW_earlygame.68.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.68.a
+		set_country_flag = GRW_Evi_games_unlocked_flag
+		set_country_flag = GRW_Evi_map_button_GRW_flag
+		set_country_flag = GRW_Evi_map_Kivessin_flag
+		BAN = {
+			set_country_flag = GRW_Evi_hostile_flag
+			add_ideas = GRW_anti_Prywhen_pact
+			diplomatic_relation = {
+				country = ROOT
+				relation = embargo
+			}
+		}
+		LUS = {
+			set_country_flag = GRW_Evi_neutral_flag
+		}
+		GRY = {
+			set_country_flag = GRW_Evi_hostile_flag
+			add_ideas = GRW_anti_Prywhen_pact
+			diplomatic_relation = {
+				country = ROOT
+				relation = embargo
+			}
+		}
+		GRU = {
+			set_country_flag = GRW_Evi_hostile_flag
+			add_ideas = GRW_anti_Prywhen_pact
+			diplomatic_relation = {
+				country = ROOT
+				relation = embargo
+			}
+		}
+		WNG = {
+			if = {
+				limit = {
+					OR = {
+						has_government = neutrality
+						has_government = fascism
+					}
+				}
+				diplomatic_relation = {
+					country = ROOT
+					relation = embargo
+				}
+			}
+		}
+		CYA = {
+			if = {
+				limit = {
+					has_government = neutrality
+				}
+				diplomatic_relation = {
+					country = ROOT
+					relation = embargo
+				}
+			}
+		}
+		CTH = {
+			if = {
+				limit = {
+					OR = {
+						has_government = neutrality
+						has_government = fascism
+					}
+				}
+				diplomatic_relation = {
+					country = ROOT
+					relation = embargo
+				}
+			}
+		}
+		HIP = {
+			if = {
+				limit = {
+					NOT = {
+						has_government = communism
+					}
+				}
+				diplomatic_relation = {
+					country = ROOT
+					relation = embargo
+				}
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		swap_ideas = {
+			remove_idea = GRW_chaotic_monetary_policy_1
+			add_idea = GRW_chaotic_monetary_policy_2
+		}
+		GRW_revolutionary_radicalisation_slightincrease = yes
+		hidden_effect = {
+			set_variable = {
+				var = GRW_Evi_tension
+				value = 20
+			}
+			clamp_variable = {
+				var = GRW_Evi_tension
+				min = 0
+				max = 100
+			}
+
+			set_variable = {
+				var = GRW_Evi_tension_change
+				value = -1
+			}
+
+			set_variable = {
+				var = GRW_Evi_map_diplomatic_International_Bureau
+				value = 50
+			}
+			clamp_variable = {
+				var = GRW_Evi_map_diplomatic_International_Bureau
+				min = 0
+				max = 100
+			}
+			GRW_recount_diplomatic_preference = yes
+
+			set_variable = {
+				var = GRW_Foreign_Ministry_var
+				value = 20
+			}
+			set_variable = {
+				var = GRW_International_Bureau_var
+				value = 20
+			}
+
+			set_variable = {
+				var = GRW_Evi_troops_number
+				value = 0
+			}
+
+			set_variable = {
+				var = GRW_BAN_communism_power
+				value = BAN.party_popularity@communism
+			}
+			multiply_variable = {GRW_BAN_communism_power = 100}
+			set_variable = {
+				var = GRW_GRU_communism_power
+				value = GRU.party_popularity@communism
+			}
+			multiply_variable = {GRW_GRU_communism_power = 100}
+			set_variable = {
+				var = GRW_GRY_communism_power
+				value = GRY.party_popularity@communism
+			}
+			multiply_variable = {GRW_GRY_communism_power = 100}
+			set_variable = {
+				var = GRW_LUS_communism_power
+				value = LUS.party_popularity@communism
+			}
+			multiply_variable = {GRW_LUS_communism_power = 100}
+		}
+	}
+}
+
+#统一战线负面事件
+country_event = {#国际派影响力过高
+	id = GRW_earlygame.65
+	title = GRW_earlygame.65.t
+	desc = GRW_earlygame.65.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GRW_earlygame.65.a
+		add_political_power = -50
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_rozenkampism_influence_moderatedecrease = yes
+		GRW_primitive_communism_loyalty_slightdecrease = yes
+		GRW_syndicalism_loyalty_slightdecrease = yes
+		GRW_democratic_socialism_loyalty_slightdecrease = yes
+	}
+}
+country_event = {#劳工派影响力过高
+	id = GRW_earlygame.66
+	title = GRW_earlygame.66.t
+	desc = GRW_earlygame.66.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GRW_earlygame.66.a
+		add_political_power = -50
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_syndicalism_influence_moderatedecrease = yes
+		GRW_primitive_communism_loyalty_slightdecrease = yes
+		GRW_rozenkampism_loyalty_slightdecrease = yes
+		GRW_democratic_socialism_loyalty_slightdecrease = yes
+	}
+}
+country_event = {#民主党派影响力过高
+	id = GRW_earlygame.67
+	title = GRW_earlygame.67.t
+	desc = GRW_earlygame.67.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GRW_earlygame.67.a
+		add_political_power = -50
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_democratic_socialism_influence_moderatedecrease = yes
+		GRW_primitive_communism_loyalty_slightdecrease = yes
+		GRW_rozenkampism_loyalty_slightdecrease = yes
+		GRW_syndicalism_loyalty_slightdecrease = yes
+	}
+}
+
+#埃维解放战争开始
+country_event = {
+	id = GRW_earlygame.69
+	title = GRW_earlygame.69.t
+	desc = GRW_earlygame.69.d
+
+	trigger = {
+		original_tag = GRW
+		check_variable = {
+			var = GRW_Evi_tension
+			value = 100
+			compare = greater_than_or_equals
+		}
+		NOT = {
+			has_country_flag = GRW_Evi_revolution_start
+			has_country_flag = GRW_Evi_revolution_end
+		}
+	}
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.69.a
+		set_country_flag = GRW_Evi_revolution_start
+		if = {
+			limit = {
+				is_faction_leader = no
+			}
+			set_rule = {
+				can_create_factions = yes
+			}
+			create_faction = GRW_faction_name_1
+			every_other_country = {
+				limit = {
+					OR = {
+						original_tag = BAN
+						original_tag = GRU
+						original_tag = GRY
+					}
+					has_government = communism
+				}
+				ROOT = {
+					add_to_faction = PREV
+				}
+			}
+		}
+		every_other_country = {
+			limit = {
+				has_country_flag = GRW_Evi_hostile_flag
+			}
+			declare_war_on = {
+				target = ROOT
+   				type = annex_everything
+			}
+		}
+		hidden_effect = {
+			if = {#黑石
+				limit = {
+					any_state = {
+						has_state_flag = GRW_Evi_revolution_state_BANflag
+					}
+				}
+				create_dynamic_country = {
+					original_tag = BAN
+					set_AI_strategies_on_every_possible_country_delayed = yes
+					set_cosmetic_tag = BAN_communism
+					division_template = {
+						name = "地区武装"
+						is_locked = yes
+						priority = 0
+						regiments = {
+							militia = { x = 0 y = 0 }
+							militia = { x = 0 y = 1 }
+							militia = { x = 0 y = 2 }
+						}
+					}
+					every_state = {
+						limit = {
+							has_state_flag = GRW_Evi_revolution_state_BANflag
+						}
+						transfer_state_to = PREV
+						add_core_of  = PREV
+						create_unit = {
+							division = "name = \"地区武装\" division_template = \"地区武装\" start_experience_factor = 0.1"
+							owner = PREV
+							count = 2
+							allow_spawning_on_enemy_provs = yes
+						}
+					}
+					set_capital = {
+						state = 446
+					}
+					transfer_technology = yes
+					set_research_slots = 3
+					load_focus_tree = generic_griffon_focus
+					set_politics = {
+						ruling_party = communism
+					}
+					create_country_leader = {
+						name = BAN_reeve_blyeddin
+						desc = "gommie_boi_desc"
+						picture = "gfx/leaders/BAN/Reeve.tga"
+						ideology = equalism
+					}
+					set_popularities = {
+						democratic = 20
+						fascism = 0
+						communism = 80
+						neutrality = 0
+					}
+					set_party_name = {
+						ideology = communism
+						long_name = BAN_communism_party_long
+						name = BAN_communism_party
+					}
+					set_stability = 0.3
+					set_war_support = 0.8
+					add_ideas = poverty2
+					add_ideas = pre_industrial_society2
+					add_ideas = low_economic_mobilisation
+					add_ideas = lack_of_scientists3
+					add_ideas = proper_science_base
+					add_ideas = griffon_race
+
+					ROOT = {
+						set_autonomy = {
+							target = PREV
+							autonomy_state = autonomy_sister_republics
+						}
+					}
+				}
+			}
+			if = {#格里菲亚
+				limit = {
+					any_state = {
+						has_state_flag = GRW_Evi_revolution_state_GRYflag
+					}
+				}
+				create_dynamic_country = {
+					original_tag = GRY
+					set_AI_strategies_on_every_possible_country_delayed = yes
+					set_cosmetic_tag = GRY_communism
+					division_template = {
+						name = "地区武装"
+						is_locked = yes
+						priority = 0
+						regiments = {
+							militia = { x = 0 y = 0 }
+							militia = { x = 0 y = 1 }
+							militia = { x = 0 y = 2 }
+						}
+					}
+					every_state = {
+						limit = {
+							has_state_flag = GRW_Evi_revolution_state_GRYflag
+						}
+						transfer_state_to = PREV
+						add_core_of  = PREV
+						create_unit = {
+							division = "name = \"地区武装\" division_template = \"地区武装\" start_experience_factor = 0.1"
+							owner = PREV
+							count = 1
+							allow_spawning_on_enemy_provs = yes
+						}
+					}
+					if = {
+						limit = {
+							GRW = {
+								has_country_flag = GRW_free_the_Vorobeyko_flag
+							}
+						}
+						GRY = {
+							transfer_units_fraction = {
+								target = PREV
+								target_organization = 1
+								source_organization = 1
+								size = 0.6
+								stockpile_ratio = 0
+								army_ratio = 0.6
+								navy_ratio = 0
+								air_ratio = 0
+								keep_unit_leaders_trigger = {
+									always = yes
+								}
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							GRW = {
+								has_country_flag = GRW_Soloboda_encounter_flag
+							}
+						}
+						GRY = {
+							transfer_units_fraction = {
+								target = PREV
+								target_organization = 1
+								source_organization = 1
+								size = 0.45
+								stockpile_ratio = 0
+								army_ratio = 0.45
+								navy_ratio = 0
+								air_ratio = 0
+								keep_unit_leaders_trigger = {
+									always = yes
+								}
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							GRW = {
+								has_country_flag = GRW_into_the_Pohryfynnja_flag
+							}
+						}
+						GRY = {
+							transfer_units_fraction = {
+								target = PREV
+								target_organization = 1
+								source_organization = 1
+								size = 0.3
+								stockpile_ratio = 0
+								army_ratio = 0.3
+								navy_ratio = 0
+								air_ratio = 0
+								keep_unit_leaders_trigger = {
+									always = yes
+								}
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							GRW = {
+								has_country_flag = GRW_Chykchyryn_uprising_flag
+							}
+						}
+						GRY = {
+							transfer_units_fraction = {
+								target = PREV
+								target_organization = 1
+								source_organization = 1
+								size = 0.15
+								stockpile_ratio = 0
+								army_ratio = 0.15
+								navy_ratio = 0
+								air_ratio = 0
+								keep_unit_leaders_trigger = {
+									always = yes
+								}
+							}
+						}
+					}
+					set_capital = {
+						state = 609
+					}
+					transfer_technology = yes
+					set_research_slots = 3
+					load_focus_tree = generic_griffon_focus
+					set_politics = {
+						ruling_party = communism
+					}
+					create_country_leader = {
+						name = GRY_cornilo_khurshevich
+						desc = "GRY_CORNBOI_DESC"
+						picture = "gfx/leaders/GRY/Cornilo_Khursevich.tga"
+						ideology = leninism
+					}
+					set_popularities = {
+						democratic = 10
+						fascism = 0
+						communism = 80
+						neutrality = 10
+					}
+					set_party_name = {
+						ideology = communism
+						long_name = GRY_communism_party_long
+						name = GRY_communism_party
+					}
+					set_stability = 0.3
+					set_war_support = 0.8
+					add_ideas = poverty2
+					add_ideas = pre_industrial_society2
+					add_ideas = low_economic_mobilisation
+					add_ideas = lack_of_scientists3
+					add_ideas = proper_science_base
+					add_ideas = griffon_race
+
+					ROOT = {
+						set_autonomy = {
+							target = PREV
+							autonomy_state = autonomy_sister_republics
+						}
+					}
+				}
+			}
+			if = {#格里富斯
+				limit = {
+					any_state = {
+						has_state_flag = GRW_Evi_revolution_state_GRUflag
+					}
+				}
+				create_dynamic_country = {
+					original_tag = GRU
+					set_AI_strategies_on_every_possible_country_delayed = yes
+					set_cosmetic_tag = GRU_communism
+					division_template = {
+						name = "地区武装"
+						is_locked = yes
+						priority = 0
+						regiments = {
+							militia = { x = 0 y = 0 }
+							militia = { x = 0 y = 1 }
+							militia = { x = 0 y = 2 }
+						}
+					}
+					every_state = {
+						limit = {
+							has_state_flag = GRW_Evi_revolution_state_GRUflag
+						}
+						transfer_state_to = PREV
+						add_core_of  = PREV
+						create_unit = {
+							division = "name = \"地区武装\" division_template = \"地区武装\" start_experience_factor = 0.1"
+							owner = PREV
+							count = 2
+							allow_spawning_on_enemy_provs = yes
+						}
+					}
+					set_capital = {
+						state = 600
+					}
+					transfer_technology = yes
+					set_research_slots = 3
+					load_focus_tree = generic_griffon_focus
+					set_politics = {
+						ruling_party = communism
+					}
+					create_country_leader = {
+						name = GRU_revolutionary_coalition
+						picture = "gfx/leaders/GRU/polski_pierogi.tga"
+						ideology = marxism
+						traits = {
+							provisional
+						}
+					}
+					set_popularities = {
+						democratic = 20
+						fascism = 0
+						communism = 70
+						neutrality = 10
+					}
+					set_party_name = {
+						ideology = communism
+						long_name = GRU_communism_party_long
+						name = GRU_communism_party
+					}
+					set_stability = 0.3
+					set_war_support = 0.8
+					add_ideas = poverty2
+					add_ideas = pre_industrial_society2
+					add_ideas = low_economic_mobilisation
+					add_ideas = lack_of_scientists3
+					add_ideas = proper_science_base
+					add_ideas = griffon_race
+
+					ROOT = {
+						set_autonomy = {
+							target = PREV
+							autonomy_state = autonomy_sister_republics
+						}
+					}
+				}
+			}
+			country_event = {
+				id = GRW_earlygame.76
+				days = 30
+				random_days = 10
+			}
+		}
+	}
+}
+#埃维解放战争胜利
+country_event = {
+	id = GRW_earlygame.70
+	title = GRW_earlygame.70.t
+	desc = GRW_earlygame.70.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.70.a
+		set_country_flag = GRW_Evi_revolution_end
+		every_other_country = {
+			limit = {
+				OR = {
+					original_tag = BAN
+					original_tag = GRY
+					original_tag = GRU
+				}
+				has_government = communism
+			}
+			delete_unit_template_and_units = {
+				division_template = "地区武装"
+				disband = yes
+			}
+			delete_unit = {
+				disband = yes
+			}
+			ROOT = {
+				annex_country = {
+					target = PREV
+					transfer_troops = yes
+				}
+			}
+		}
+		every_owned_state = {
+			limit = {
+				OR = {
+					has_state_flag = BAN_cores
+					has_state_flag = GRY_cores
+					has_state_flag = GRU_cores
+				}
+			}
+			set_compliance = 10
+		}
+		hidden_effect = {
+			clear_array = GRW.revolution_diplomacy
+			if = {
+				limit = {
+					has_country_flag = GRW_earlygame_88_flag
+				}
+				country_event = {
+					id = GRW_earlygame.64
+					days = 1
+				}
+			}
+		}
+	}
+}
+country_event = {#工具事件
+	id = GRW_earlygame.64
+	title = GRW_earlygame.64.t
+	desc = GRW_earlygame.64.d
+	hidden = yes
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.64.a
+		if = {
+			limit = {
+				has_country_flag = GRW_earlygame_83_b_flag
+			}
+			give_resource_rights = {
+				receiver = MIT
+				state = 446
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = GRW_earlygame_83_c_flag
+			}
+			446 = {
+				transfer_state_to = MIT
+				remove_claim_by = ROOT
+				remove_core_of = ROOT
+			}
+		}
+	}
+}
+
+#赤卫队的复员
+country_event = {
+	id = GRW_earlygame.74
+	title = GRW_earlygame.74.t
+	desc = GRW_earlygame.74.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.74.a
+		add_stability = 0.01
+		add_war_support = -0.03
+	}
+}
+
+#意外之喜
+country_event = {
+	id = GRW_earlygame.75
+	title = GRW_earlygame.75.t
+	desc = GRW_earlygame.75.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.75.a
+		if = {
+			limit = {
+				has_dlc = "No Step Back"
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_tech = gwtank_chassis
+					}
+				}
+				set_technology = {
+					gwtank_chassis = 1
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					name = GRW_tank_blueprints_from_Stalliongrad
+					bonus = 0.75
+					uses = 1
+					category = armor
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					NOT = {
+						has_tech = gwtank
+					}
+				}
+				set_technology = {
+					gwtank = 1
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					name = GRW_tank_blueprints_from_Stalliongrad
+					bonus = 0.75
+					uses = 1
+					category = armor
+				}
+			}
+		}
+	}
+}
+
+#后方支援
+country_event = {
+	id = GRW_earlygame.76
+	title = GRW_earlygame.76.t
+	desc = GRW_earlygame.76.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.76.a
+		add_war_support = 0.05
+		add_popularity = {
+			ideology = communism
+			popularity =  0.03
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_rozenkampism_influence_slightincrease = yes
+	}
+}
+
+#派志愿军前往翼巴第触发
+country_event = {
+	id = GRW_earlygame.97
+	title = GRW_earlygame.97.t
+	desc = GRW_earlygame.97.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.97.a
+		WNG = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.07
+			}
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = GRW_support_WNG
+			}
+		}
+	}
+}
+
+#派志愿军前往长剑解放军触发
+country_event = {
+	id = GRW_earlygame.98
+	title = GRW_earlygame.98.t
+	desc = GRW_earlygame.98.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.98.a
+		LSC = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = GRW_support_WNG
+			}
+		}
+	}
+}
+country_event = {#骑士团写信骂改组派的事件
+	id = GRW_earlygame.113
+	title = GRW_earlygame.113.t
+	desc = GRW_earlygame.113.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.113.a
+		if = {
+			limit = {
+				HLQ = {
+					has_government = fascism
+				}
+			}
+			HLQ = {
+				country_event = {
+					id = GRW_earlygame.114
+					days = 4
+				}
+			}
+		}
+		else = {
+			LNS = {
+				country_event = {
+					id = GRW_earlygame.114
+					days = 4
+				}
+			}
+		}
+	}
+}
+country_event = {#来自瑟拉齐骑士团的夸奖信
+	id = GRW_earlygame.114
+	title = GRW_earlygame.114.t
+	desc = GRW_earlygame.114.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.114.a
+	}
+}
+
+#重建与翼巴第的外交联系事件链
+country_event = {
+	id = GRW_earlygame.100
+	title = GRW_earlygame.100.t
+	desc = GRW_earlygame.100.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.100.a
+		ai_chance = {
+			factor = 100
+		}
+		FROM = {
+			country_event = {
+				id = GRW_earlygame.101
+				days = 4
+			}
+		}
+	}
+	option = {
+		name = GRW_earlygame.100.b
+		ai_chance = {
+			factor = 0
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < 10
+				}
+				add = 50
+			}
+			modifier = {
+				if = {
+					limit = {
+						has_completed_focus = WNG_a_victory_for_the_unitary_socialists
+					}
+					FROM = {
+						check_variable = {
+							GRW_var_revolutionary_radicalisation > 50
+						}
+					}
+				}
+				add = 50
+			}
+			modifier = {
+				if = {
+					limit = {
+						has_completed_focus = WNG_a_victory_for_the_republicans
+					}
+					FROM = {
+						check_variable = {
+							GRW_var_revolutionary_radicalisation > 30
+						}
+					}
+				}
+				add = 50
+			}
+		}
+		FROM = {
+			country_event = {
+				id = GRW_earlygame.102
+				days = 4
+			}
+		}
+	}
+}
+country_event = {#翼巴第同意了
+	id = GRW_earlygame.101
+	title = GRW_earlygame.101.t
+	desc = GRW_earlygame.101.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.101.a
+		add_political_power = 30
+		unlock_decision_tooltip = GRW_greda
+		if = {
+			limit = {
+				FROM = {
+					has_government = communism
+				}
+				unlock_decision_tooltip = GRW_buy_WNG_artillery
+			}
+		}
+		WNG = {
+			diplomatic_relation = {
+				country = ROOT
+				relation = embargo
+				active = no
+			}
+		}
+		GRW_foreign_trade_improves = yes
+	}
+}
+country_event = {#翼巴第拒绝了
+	id = GRW_earlygame.102
+	title = GRW_earlygame.102.t
+	desc = GRW_earlygame.102.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.102.a
+		add_political_power = -15
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_rozenkampism_influence_slightincrease = yes
+		GRW_revolutionary_radicalisation_slightincrease = yes
+	}
+}
+
+#红骏鹰外交
+country_event = {
+	id = GRW_earlygame.103
+	title = GRW_earlygame.103.t
+	desc = GRW_earlygame.103.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.103.a
+		add_political_power = 15
+		country_event = {
+			id = GRW_earlygame.104
+			days = 7
+		}
+	}
+}
+country_event = {
+	id = GRW_earlygame.104
+	title = GRW_earlygame.104.t
+	desc = GRW_earlygame.104.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.104.a
+		add_political_power = 20
+		unlock_decision_tooltip = GRW_general_machines
+		unlock_decision_tooltip = GRW_buy_HIP_anti_air
+		HIP = {
+			diplomatic_relation = {
+				country = ROOT
+				relation = embargo
+				active = no
+			}
+		}
+		GRW_foreign_trade_improves = yes
+	}
+}
+
+#共和国转红
+country_event = {#终结986年的错误
+	id = GRW_earlygame.106
+	title = GRW_earlygame.106.t
+	desc = GRW_earlygame.106.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.106.a
+		set_country_flag = GRW_FAT_annex_SRS_flag
+		add_political_power = -30
+		FAT  = {
+			country_event = {
+				id = GRW_earlygame.109
+				days = 7
+			}
+		}
+	}
+}
+country_event = {#漫云峰会
+	id = GRW_earlygame.109
+	title = GRW_earlygame.109.t
+	desc = GRW_earlygame.109.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.109.a
+		complete_national_focus = FAT_reconcile_with_north
+		complete_national_focus = FAT_core_skynavia
+		annex_country = {
+			target = SRS
+			transfer_troops = yes
+		}
+		create_wargoal = {
+			target = NTR
+			type = puppet_wargoal_focus
+		}
+		SRS = {
+			SRS_asper_sickleclaw = {
+				set_nationality = ROOT
+			}
+			SRS_horson_welles = {
+				set_nationality = ROOT
+			}
+			SRS_riley_vinchers = {
+				set_nationality = ROOT
+			}
+			SRS_petr_pulitorov = {
+				set_nationality = ROOT
+			}
+			SRS_emilia_stalwart = {
+				set_nationality = ROOT
+			}
+			SRS_thomas_redwell = {
+				set_nationality = ROOT
+			}
+			SRS_finigal_deagleton = {
+				set_nationality = ROOT
+			}
+			SRS_emma_goldgriff = {
+				set_nationality = ROOT
+			}
+			SRS_mikhail_beakunin = {
+				set_nationality = ROOT
+			}
+			SRS_henry_von_weinte = {
+				set_nationality = ROOT
+			}
+			SRS_ambroise = {
+				set_nationality = ROOT
+			}
+			SRS_august_fischer = {
+				set_nationality = ROOT
+			}
+			SRS_merlin_pelagique = {
+				set_nationality = ROOT
+			}
+			SRS_comrade_schulz = {
+				set_nationality = ROOT
+			}
+			SRS_comrade_ovum = {
+				set_nationality = ROOT
+			}
+			SRS_justin_de_fleur = {
+				set_nationality = ROOT
+			}
+			SRS_anton_frust = {
+				set_nationality = ROOT
+			}
+			SRS_pierre_ponehon = {
+				set_nationality = ROOT
+			}
+			SRS_comrade_shell = {
+				set_nationality = ROOT
+			}
+			SRS_comrade_featherquill = {
+				set_nationality = ROOT
+			}
+			SRS_andreas_noyes = {
+				set_nationality = ROOT
+			}
+		}
+		FROM = {
+			country_event = {
+				id = GRW_earlygame.110
+				days = 7
+			}
+		}
+	}
+}
+country_event = {#天际军官南下
+	id = GRW_earlygame.110
+	title = GRW_earlygame.110.t
+	desc = GRW_earlygame.110.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.110.a
+		add_manpower = 1374
+		army_experience = 25
+		SRS = {
+			SRS_john_carlini = {
+				set_nationality = ROOT
+			}
+			SRS_malcolm_granger = {
+				set_nationality = ROOT
+			}
+		}
+		set_technology = {
+			popup = no
+			GRW_snow_buff = 1
+		}
+		custom_effect_tooltip = GRW_snow_buff_tt
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_rozenkampism_influence_slightincrease = yes
+	}
+}
+
+#派志愿军前往天际触发
+country_event = {
+	id = GRW_earlygame.107
+	title = GRW_earlygame.107.t
+	desc = GRW_earlygame.107.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.107.a
+		SRS = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = GRW_support_WNG
+			}
+			custom_effect_tooltip = SRS_recall_delegates_communard_2_tt
+			subtract_from_variable = {
+				var = communards_support_var
+				value = 2
+			}
+			add_to_variable = {
+				var = internationalists_support_var
+				value = 2
+			}
+		}
+	}
+}
+
+#派志愿军前往共和国触发
+country_event = {
+	id = GRW_earlygame.108
+	title = GRW_earlygame.108.t
+	desc = GRW_earlygame.108.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.108.a
+		FAT = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.07
+			}
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = GRW_support_WNG
+			}
+		}
+	}
+}
+
+#派志愿军前往骏鹰菲亚触发
+country_event = {
+	id = GRW_earlygame.111
+	title = GRW_earlygame.111.t
+	desc = GRW_earlygame.111.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.111.a
+		HIP = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.04
+			}
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = GRW_support_WNG
+			}
+		}
+	}
+}
+
+#派志愿军前往新狮鹫尼亚触发
+country_event = {
+	id = GRW_earlygame.112
+	title = GRW_earlygame.112.t
+	desc = GRW_earlygame.112.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.112.a
+		GRA = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.08
+			}
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = GRW_support_WNG
+			}
+		}
+	}
+}
+
+country_event = {
+	id = GRW_earlygame.116
+	title = GRW_earlygame.116.t
+	desc = GRW_earlygame.116.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_earlygame.116.a
+		
+	}
+}
+#################################################################
+###统一期事件
+#全埃维第一次国民代表大会事件链
+country_event = {#第一届国民代表大会第一次会议
+	id = GRW_midgame.1
+	title = GRW_midgame.1.t
+	desc = GRW_midgame.1.d
+	picture = GFX_event_griffon_mountain
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = GRW_midgame.2
+				days = 8
+				random_hours = 6
+			}
+		}
+	}
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.1.a
+		swap_ideas = {
+			remove_idea = GRW_prywhen_interim_national_plan
+			add_idea = GRW_constitution_for_workers_and_peasants
+		}
+		set_country_flag = GRW_chairman_filip_redglad
+		mark_focus_tree_layout_dirty = yes
+	}
+}
+country_event = {#第一届国民代表大会第二次会议
+	id = GRW_midgame.2
+	title = GRW_midgame.2.t
+	desc = GRW_midgame.2.d
+	picture = GFX_event_griffon_mountain
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = GRW_midgame.3
+				days = 8
+				random_hours = 6
+			}
+		}
+	}
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.2.a
+		add_political_power = 50
+		set_country_flag = GRW_national_planning_commission_flag
+		set_country_flag = GRW_ministry_of_agriculture_flag
+	}
+}
+country_event = {#第一届国民代表大会第三次会议
+	id = GRW_midgame.3
+	title = GRW_midgame.3.t
+	desc = GRW_midgame.3.d
+	picture = GFX_event_griffon_mountain
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = GRW_midgame.4
+				days = 8
+				random_hours = 6
+			}
+		}
+	}
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.3.a
+		add_stability = 0.03
+	}
+}
+country_event = {#第一届国民代表大会第四次会议
+	id = GRW_midgame.4
+	title = GRW_midgame.4.t
+	desc = GRW_midgame.4.d
+	picture = GFX_event_griffon_mountain
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = GRW_midgame.5
+				days = 8
+				random_hours = 6
+			}
+		}
+	}
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.4.a
+		every_owned_state = {
+			limit = {
+				has_state_flag = BAN_cores
+			}
+			add_dynamic_modifier = {
+				modifier = GRW_BAN_equalism_autonomous_region
+			}
+		}
+		every_owned_state = {
+			limit = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
+			add_compliance = 10
+		}
+		hidden_effect = {
+			country_event = {
+				id = GRW_earlygame.46
+				days = 365
+				random_days = 10
+			}
+		}
+	}
+}
+country_event = {#第一届国民代表大会第五次会议
+	id = GRW_midgame.5
+	title = GRW_midgame.5.t
+	desc = GRW_midgame.5.d
+	picture = GFX_event_griffon_mountain
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = GRW_midgame.6
+				days = 8
+				random_hours = 6
+			}
+		}
+	}
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.5.a
+		add_political_power = 50
+	}
+}
+country_event = {#大会闭幕
+	id = GRW_midgame.6
+	title = GRW_midgame.6.t
+	desc = GRW_midgame.6.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.6.a
+		complete_national_focus = GRW_Evi_people_congress
+		add_ideas = GRW_stability_idea
+		hidden_effect = {
+			GRW_evaluate_stabillity_modifier_high = yes
+		}
+	}
+}
+
+country_event = {#对应国策“军委扩大会议”
+	id = GRW_midgame.7
+	title = GRW_midgame.7.t
+	desc = GRW_midgame.7.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.7.a
+		trigger = {
+			has_country_leader = {
+				ruling_only = yes
+				character = GRW_comradegeneral_filip_redglad
+			}
+		}
+		add_command_power = 25
+		set_country_flag = GRW_military_middle_road_flag
+		mark_focus_tree_layout_dirty = yes
+		custom_effect_tooltip = GRW_enlarged_military_commission_tt
+	}
+}
+
+#选择各地行政委员会的领导
+country_event = {#南狮鹫尼亚
+	id = GRW_midgame.42
+	title = GRW_midgame.42.t
+	desc = GRW_midgame.42.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.42.a
+		trigger = {
+			WNG = {
+				NOT = {
+					has_completed_focus = WNG_the_socialists_take_power
+				}
+			}
+		}
+		complete_national_focus = GRW_chairman_proletarino
+		custom_effect_tooltip = {
+			localization_key = GRW_MARC_ascension_of_character_tt
+			CHARACTER = WNG_antonino_proletarino
+			major_administrative_region = major_administrative_region_Southern_Griffonia
+		}
+	}
+	option = {
+		name = GRW_midgame.42.b
+		trigger = {
+			WNG = {
+				NOT = {
+					has_completed_focus = WNG_the_communists_take_power
+				}
+			}
+		}
+		complete_national_focus = GRW_chairman_gacci
+		custom_effect_tooltip = {
+			localization_key = GRW_MARC_ascension_of_character_tt
+			CHARACTER = WNG_giovanni_gacci
+			major_administrative_region = major_administrative_region_Southern_Griffonia
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_rozenkampism_loyalty_slightdecrease = yes
+		GRW_democratic_socialism_loyalty_slightincrease = yes
+	}
+}
+country_event = {#中狮鹫尼亚
+	id = GRW_midgame.43
+	title = GRW_midgame.43.t
+	desc = GRW_midgame.43.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.43.a
+		complete_national_focus = GRW_chairman_stappenbeld
+		custom_effect_tooltip = {
+			localization_key = GRW_MARC_ascension_of_character_tt
+			CHARACTER = FEA_bernhardt_stappenbeld
+			major_administrative_region = major_administrative_region_Central_Griffonia
+		}
+	}
+}
+country_event = {#门界
+	id = GRW_midgame.44
+	title = GRW_midgame.44.t
+	desc = GRW_midgame.44.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.44.a
+		complete_national_focus = GRW_chairman_fischer
+		custom_effect_tooltip = {
+			localization_key = GRW_MARC_ascension_of_character_tt
+			CHARACTER = HLQ_ernst_fischer
+			major_administrative_region = major_administrative_region_vartai
+		}
+	}
+	option = {
+		name = GRW_midgame.44.b
+		trigger = {
+			NOT = {
+				has_global_flag = starry_dead
+			}
+		}
+		complete_national_focus = GRW_chairman_starry_night
+		custom_effect_tooltip = {
+			localization_key = GRW_MARC_ascension_of_character_tt
+			CHARACTER = LSC_starry_night
+			major_administrative_region = major_administrative_region_vartai
+		}
+	}
+}
+country_event = {#西狮鹫尼亚
+	id = GRW_midgame.45
+	title = GRW_midgame.45.t
+	desc = GRW_midgame.45.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.45.a
+		complete_national_focus = GRW_chairman_cru
+		custom_effect_tooltip = {
+			localization_key = GRW_MARC_ascension_of_character_tt
+			CHARACTER = JER_char_cru
+			major_administrative_region = major_administrative_region_Western_Griffonia
+		}
+	}
+}
+country_event = {#北狮鹫尼亚
+	id = GRW_midgame.46
+	title = GRW_midgame.46.t
+	desc = GRW_midgame.46.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.46.a
+		complete_national_focus = GRW_chairman_sparrowsbane
+		custom_effect_tooltip = {
+			localization_key = GRW_MARC_ascension_of_character_tt
+			CHARACTER = FAT_moe_sparrowsbane
+			major_administrative_region = major_administrative_region_Northern_Griffonia
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_rozenkampism_loyalty_slightincrease = yes
+	}
+	option = {
+		name = GRW_midgame.46.b
+		complete_national_focus = GRW_chairman_astler
+		custom_effect_tooltip = {
+			localization_key = GRW_MARC_ascension_of_character_tt
+			CHARACTER = FAT_rikard_astler
+			major_administrative_region = major_administrative_region_Northern_Griffonia
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_democratic_socialism_loyalty_slightincrease = yes
+	}
+}
+country_event = {#新狮鹫尼亚
+	id = GRW_midgame.47
+	title = GRW_midgame.47.t
+	desc = GRW_midgame.47.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.47.a
+		complete_national_focus = GRW_chairman_redtail
+		custom_effect_tooltip = {
+			localization_key = GRW_MARC_ascension_of_character_tt
+			CHARACTER = GRF_heinrich_redtail
+			major_administrative_region = major_administrative_region_Nova_Griffonia
+		}
+	}
+}
+
+#铜岭社会党的命运
+country_event = {
+	id = GRW_midgame.48
+	title = GRW_midgame.48.t
+	desc = GRW_midgame.48.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.48.a
+		add_political_power = 50
+		every_owned_state = {
+			limit = {
+				has_state_flag = BRZ_cores
+			}
+			add_resistance = 5
+			add_compliance = -5
+		}
+	}
+	option = {
+		name = GRW_midgame.48.b
+		add_political_power = -50
+		every_possible_country = {
+			limit = {
+				has_character = BRZ_rosey_softfur
+			}
+			BRZ_rosey_softfur = {
+				set_nationality = ROOT
+				hidden_effect = { 
+					remove_advisor_role = {
+						slot = political_advisor
+					}
+					add_advisor_role = {
+						advisor = {
+							slot = political_advisor
+							idea_token = BRZ_rosey_softfur
+							traits = {
+								BRZ_socialist_theorist
+							}
+						}
+					}
+				}
+			}
+		}
+		every_possible_country = {
+			limit = {
+				has_character = BRZ_carlo_redpen
+			}
+			BRZ_carlo_redpen = {
+				set_nationality = ROOT
+				hidden_effect = { 
+					remove_advisor_role = {
+						slot = political_advisor
+					}
+					add_advisor_role = {
+						advisor = {
+							slot = political_advisor
+							idea_token = BRZ_carlo_redpen
+							traits = {
+								revolutionary_lawyer
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#整合门界骑士团
+country_event = {
+	id = GRW_midgame.49
+	title = GRW_midgame.49.t
+	desc = GRW_midgame.49.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.49.a
+		custom_effect_tooltip = GRW_vartai_consolidate_two_knightly_orders_tt
+		division_template = {
+			name = "门界地区骑士团"
+			regiments = {
+				knights = { x = 0 y = 0 }
+				knights = { x = 1 y = 0 }
+				knights = { x = 0 y = 1 }
+				knights = { x = 1 y = 1 }
+				knights = { x = 0 y = 2 }
+				knights = { x = 1 y = 2 }
+			}
+			support = {
+				artillery = { x = 0 y = 0 }
+				recon = { x = 0 y = 0 }
+			}
+			priority = 2
+		}
+		hidden_effect = {
+			537 = {
+				create_unit = {
+					division = "name = \"冥翎骑士队\" division_template = \"门界地区骑士团\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = ROOT
+					count = 1
+				}
+			}
+			552 = {
+				create_unit = {
+					division = "name = \"蔷薇木骑士队\" division_template = \"门界地区骑士团\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = ROOT
+					count = 1
+				}
+			}
+		}
+	}
+}
+
+#加冕北风神官
+country_event = {
+	id = GRW_midgame.50
+	title = GRW_midgame.50.t
+	desc = GRW_midgame.50.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.50.a
+		KAT_heinrich_duskfeather = {
+			set_character_name = GRW_Pontus_I
+		}
+		tooltip = available_political_advisor_tt
+		show_ideas_tooltip = KAT_heinrich_duskfeather
+	}
+}
+
+country_event = {#对应国策“推广普通话”
+	id = GRW_midgame.8
+	title = GRW_midgame.8.t
+	desc = GRW_midgame.8.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.8.a
+		add_timed_idea = {
+			idea = GRW_promote_mandarin_idea
+			days = 365
+		}
+		add_stability = -0.05
+		every_owned_state = {
+			limit = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
+			add_compliance = -10
+		}
+	}
+	option = {
+		name = GRW_midgame.8.b
+		add_timed_idea = {
+			idea = GRW_promote_mandarin_idea
+			days = 180
+		}
+		add_stability = -0.1
+		every_owned_state = {
+			limit = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
+			add_compliance = -3
+		}
+	}
+}
+
+country_event = {#对应国策“扭转鹫才流失”
+	id = GRW_midgame.9
+	title = GRW_midgame.9.t
+	desc = GRW_midgame.9.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.9.a
+		
+	}
+}
+
+#东方外交政策
+country_event = {
+	id = GRW_midgame.10
+	title = GRW_midgame.10.t
+	desc = {
+		trigger = {
+			all_country = {
+				OR = {
+					is_original_riv_fed_country_tag = no
+					NOT = {
+						has_government = communism
+					}
+				}
+			}
+		}
+		text = GRW_midgame.10.d1
+	}
+	desc = {
+		trigger = {
+			RCT = {
+				NOT = {
+					has_government = communism
+				}
+			}
+			any_country = {
+				exists = yes
+				is_original_riv_fed_country_tag = yes
+				has_government = communism
+			}
+		}
+		text = GRW_midgame.10.d2
+	}
+	desc = {
+		trigger = {
+			RCT = {
+				has_government = communism
+			}
+		}
+		text = GRW_midgame.10.d3
+	}
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {#与河间合作
+		name = GRW_midgame.10.a
+		trigger = {
+			RCT = {
+				NOT = {
+					has_government = communism
+				}
+			}
+			check_variable = {
+				var = GRW_var_revolutionary_radicalisation
+				value = 55
+				compare = less_than_or_equals
+			}
+		}
+		set_country_flag = GRW_cooperate_with_RIV_flag
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_rozenkampism_influence_slightdecrease = yes
+		GRW_democratic_socialism_influence_slightincrease = yes
+	}
+	option = {#对抗河间
+		name = GRW_midgame.10.b
+		trigger = {
+			all_country = {
+				OR = {
+					is_original_riv_fed_country_tag = no
+					NOT = {
+						has_government = communism
+					}
+				}
+			}
+		}
+		set_country_flag = GRW_attack_RIV_flag
+		mark_focus_tree_layout_dirty = yes
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_rozenkampism_influence_slightincrease = yes
+		GRW_democratic_socialism_loyalty_slightdecrease = yes
+		GRW_democratic_socialism_influence_slightdecrease = yes
+	}
+	option = {#支持红色
+		name = GRW_midgame.10.c
+		trigger = {
+			any_country = {
+				exists = yes
+				is_original_riv_fed_country_tag = yes
+				has_government = communism
+			}
+		}
+		set_country_flag = GRW_attack_RIV_flag
+		mark_focus_tree_layout_dirty = yes
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_rozenkampism_influence_slightincrease = yes
+		GRW_democratic_socialism_influence_slightdecrease = yes
+	}
+}
+
+#卡萨外交
+country_event = {
+	id = GRW_midgame.11
+	title = GRW_midgame.11.t
+	desc = GRW_midgame.11.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+
+	option = {
+		name = GRW_midgame.11.a
+		trigger = {
+			original_tag = GRW
+		}
+		add_political_power = 15
+		diplomatic_relation = {
+			country = ZES
+			relation = non_aggression_pact
+			active = yes
+		}
+	}
+	option = {
+		name = GRW_midgame.11.b
+		trigger = {
+			original_tag = ZES
+			NOT = {
+				has_country_leader = {
+					character = ZES_altu_kexa
+					ruling_only = yes
+				}
+			}
+		}
+		add_political_power = 25
+		effect_tooltip = {
+			diplomatic_relation = {
+				country = GRW
+				relation = non_aggression_pact
+				active = yes
+			}
+		}
+	}
+	option = {
+		name = GRW_midgame.11.c
+		trigger = {
+			original_tag = ZES
+			has_country_leader = {
+				character = ZES_altu_kexa
+				ruling_only = yes
+			}
+			always = no
+		}
+		add_political_power = 25
+		effect_tooltip = {
+			diplomatic_relation = {
+				country = GRW
+				relation = non_aggression_pact
+				active = yes
+			}
+		}
+		GRW = {
+			country_event = {
+				id = GRW_midgame.12
+				days = 3
+			}
+		}
+	}
+}
+country_event = {#开启骑士团的卡萨事件链
+	id = GRW_midgame.12
+	title = GRW_midgame.12.t
+	desc = GRW_midgame.12.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.12.a
+		
+	}
+}
+
+#高鬃城会议事件链
+country_event = {#选择“组织高鬃城会议”国策触发
+	id = GRW_midgame.24
+	title = GRW_midgame.24.t
+	desc = GRW_midgame.24.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {#同意
+		name = GRW_midgame.24.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				check_variable = {
+					GRW_var_revolutionary_radicalisation > 55
+				}
+				factor = 0
+			}
+		}
+		FROM = {
+			country_event = {
+				id = GRW_midgame.25
+				days = 3
+			}
+		}
+	}
+	option = {#拒绝
+		name = GRW_midgame.24.b
+		ai_chance = {
+			factor = 0
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < 20
+				}
+				add = 20
+			}
+			modifier = {
+				check_variable = {
+					GRW_var_revolutionary_radicalisation > 45
+				}
+				add = 30
+			}
+			modifier = {
+				has_country_flag = GRW_earlygame_87_flag
+				add = 40
+			}
+			modifier = {
+				has_country_flag = GRW_earlygame_41_flag
+				add = 60
+			}
+		}
+		FROM = {
+			country_event = {
+				id = GRW_midgame.26
+				days = 3
+			}
+		}
+	}
+}
+country_event = {#河间同意
+	id = GRW_midgame.25
+	title = GRW_midgame.25.t
+	desc = GRW_midgame.25.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.25.a
+		add_political_power = 15
+		country_event = {
+			id = GRW_midgame.27
+			days = 7
+			random_hours = 12
+		}
+		FROM = {
+			country_event = {
+				id = GRW_midgame.27
+				days = 7
+				random_hours = 12
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+				var = GRW_var_cwR_political_power_factor
+				value = 0.05
+			}
+			set_variable = {
+				var = GRW_var_cwR_trade_opinion_factor
+				value = 0.15
+			}
+			set_variable = {
+				var = GRW_var_cwR_consumer_goods_factor
+				value = 0
+			}
+			set_variable = {
+				var = GRW_var_cwR_party_popularity_stability_factor
+				value = 0
+			}
+			set_variable = {
+				var = GRW_var_cwR_production_factory_start_efficiency_factor
+				value = 0
+			}
+			set_variable = {
+				var = GRW_var_cwR_local_resources_factor
+				value = 0
+			}
+			set_variable = {
+				var = GRW_var_cwR_naval_doctrine_cost_factor
+				value = 0
+			}
+			set_variable = {
+				var = GRW_var_cwR_experience_gain_navy
+				value = 0
+			}
+			set_variable = {
+				var = GRW_var_cwR_production_factory_max_efficiency_factor
+				value = 0
+			}
+			set_variable = {
+				var = GRW_var_cwR_opinion_gain_monthly_factor
+				value = 0
+			}
+			set_variable = {
+				var = GRW_var_cwR_research_speed_factor
+				value = 0
+			}
+			set_variable = {
+				var = GRW_var_cwR_production_speed_buildings_factor
+				value = 0
+			}
+			set_variable = {
+				var = GRW_var_cwR_experience_gain_army
+				value = 0
+			}
+			set_variable = {
+				var = GRW_var_cwR_land_doctrine_cost_factor
+				value = 0
+			}
+			every_country = {
+				limit = {
+					exists = yes
+					is_river_fed_member = yes
+				}
+				set_variable = {
+					var = GRW_var_cwRR_political_power_factor
+					value = 0.05
+				}
+				set_variable = {
+					var = GRW_var_cwRR_trade_opinion_factor
+					value = 0.15
+				}
+				set_variable = {
+					var = GRW_var_cwRR_consumer_goods_factor
+					value = 0
+				}
+				set_variable = {
+					var = GRW_var_cwRR_monthly_population
+					value = 0
+				}
+				set_variable = {
+					var = GRW_var_cwRR_supply_consumption_factor
+					value = 0
+				}
+				set_variable = {
+					var = GRW_var_cwRR_production_factory_max_efficiency_factor
+					value = 0
+				}
+				set_variable = {
+					var = GRW_var_cwRR_industrial_capacity_factory
+					value = 0
+				}
+				set_variable = {
+					var = GRW_var_cwRR_industrial_capacity_dockyard
+					value = 0
+				}
+				set_variable = {
+					var = GRW_var_cwRR_research_speed_factor
+					value = 0
+				}
+				set_variable = {
+					var = GRW_var_cwRR_experience_gain_army
+					value = 0
+				}
+				set_variable = {
+					var = GRW_var_cwRR_land_doctrine_cost_factor
+					value = 0
+				}
+			}
+		}
+	}
+}
+country_event = {#河间拒绝
+	id = GRW_midgame.26
+	title = GRW_midgame.26.t
+	desc = GRW_midgame.26.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.26.a
+		add_political_power = -30
+		clr_country_flag = GRW_cooperate_with_RIV_flag
+		set_country_flag = GRW_attack_RIV_flag
+		mark_focus_tree_layout_dirty = yes
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_rozenkampism_influence_slightincrease = yes
+		hidden_effect = {
+			set_variable = {
+				var = GRW_var_gwp_political_power_cost
+				value = 0.04
+			}
+			set_variable = {
+				var = GRW_var_gwp_consumer_goods_factor
+				value = 0.02
+			}
+			set_variable = {
+				var = GRW_var_gwp_max_planning
+				value = 0.05
+			}
+			set_variable = {
+				var = GRW_var_gwp_planning_speed
+				value = 0.1
+			}
+			set_variable = {
+				var = GRW_var_gwp_control_trade_mission_factor
+				value = 0
+			}
+			set_variable = {
+				var = GRW_var_gwp_intel_network_gain_factor
+				value = 0
+			}
+			set_variable = {
+				var = GRW_var_gwp_operative_slot
+				value = 0
+			}
+			set_variable = {
+				var = GRW_var_gwp_operation_make_resistance_contacts_outcome
+				value = 0
+			}
+			set_variable = {
+				var = GRW_var_gwp_operation_boost_resistance_cost
+				value = 0
+			}
+			set_variable = {
+				var = GRW_var_gwp_operation_infiltrate_outcome
+				value = 0
+			}
+			set_variable = {
+				var = GRW_var_gwp_operation_coup_government_cost
+				value = 0
+			}
+			set_variable = {
+				var = GRW_var_gwp_boost_ideology_mission_factor
+				value = 0
+			}
+			set_variable = {
+				var = GRW_var_gwp_operation_collaboration_government_outcome
+				value = 0
+			}
+			set_variable = {
+				var = GRW_var_gwp_supply_node_range
+				value = 0
+			}
+		}
+	}
+}
+country_event = {#高鬃城会议
+	id = GRW_midgame.27
+	title = GRW_midgame.27.t
+	desc = GRW_midgame.27.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GRW_midgame.27.a
+		trigger = {
+			original_tag = GRW
+		}
+		set_country_flag = GRW_organize_High_Mane_conference_flag
+		complete_national_focus = GRW_organize_High_Mane_conference
+		add_political_power = 50
+		every_other_country = {
+			limit = {
+				exists = yes
+				is_river_fed_member = yes
+			}
+			diplomatic_relation = {
+				country = ROOT
+				relation = non_aggression_pact
+				active = yes
+			}
+		}
+		add_dynamic_modifier = {
+			modifier = GRW_cooperate_with_RIV_1
+		}
+		every_other_country = {
+			limit = {
+				exists = yes
+				has_government = democratic
+				is_river_fed_member = yes
+			}
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = GRW_High_Mane_conference
+			}
+			ROOT = {
+				add_opinion_modifier = {
+					target = PREV
+					modifier = GRW_High_Mane_conference
+				}
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_democratic_socialism_influence_slightincrease = yes
+		GRW_revolutionary_radicalisation_slightdecrease = yes
+	}
+	option = {
+		name = GRW_midgame.27.b
+		trigger = {
+			original_tag = RIL
+		}
+		add_political_power = 50
+		every_country = {
+			limit = {
+				exists = yes
+				is_river_fed_member = yes
+			}
+			add_dynamic_modifier = {
+				modifier = GRW_cooperate_with_RIV_1_RIV
+			}
+		}
+		effect_tooltip = {
+			every_country = {
+				limit = {
+					exists = yes
+					is_river_fed_member = yes
+				}
+				diplomatic_relation = {
+					country = GRW
+					relation = non_aggression_pact
+					active = yes
+				}
+			}
+			every_country = {
+				limit = {
+					exists = yes
+					has_government = democratic
+					is_river_fed_member = yes
+				}
+				add_opinion_modifier = {
+					target = GRW
+					modifier = GRW_High_Mane_conference
+				}
+				GRW = {
+					add_opinion_modifier = {
+						target = PREV
+						modifier = GRW_High_Mane_conference
+					}
+				}
+			}
+		}
+	}
+}
+country_event = {#与河间的关系破裂
+	id = GRW_midgame.28
+	title = GRW_midgame.28.t
+	desc = GRW_midgame.28.d
+
+	trigger = {
+		original_tag = GRW
+		has_country_flag = GRW_organize_High_Mane_conference_flag
+		OR = {
+			has_war_with = RIL
+			check_variable = {
+				GRW_var_revolutionary_radicalisation > 55
+			}
+		}
+	}
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.28.a
+		clr_country_flag = GRW_cooperate_with_RIV_flag
+		clr_country_flag = GRW_organize_High_Mane_conference_flag
+		set_country_flag = GRW_attack_RIV_flag
+		set_global_flag = GRW_RIV_relationship_breakdown_flag
+		mark_focus_tree_layout_dirty = yes
+		every_other_country = {
+			limit = {
+				exists = yes
+				is_river_fed_member = yes
+			}
+			diplomatic_relation = {
+				country = GRW
+				relation = non_aggression_pact
+				active = no
+			}
+		}
+		every_other_country = {
+			limit = {
+				exists = yes
+				has_opinion_modifier = GRW_High_Mane_conference
+			}
+			remove_opinion_modifier = {
+				target = ROOT
+				modifier = GRW_High_Mane_conference
+			}
+			ROOT = {
+				remove_opinion_modifier = {
+					target = PREV
+					modifier = GRW_High_Mane_conference
+				}
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		GRW_rozenkampism_influence_slightincrease = yes
+		GRW_democratic_socialism_influence_slightdecrease = yes
+	}
+}
+
+#艾宛角纪念碑落成
+country_event = {
+	id = GRW_midgame.29
+	title = GRW_midgame.29.t
+	desc = {
+		trigger = {
+			original_tag = GRW
+		}
+		text = GRW_midgame.29.d1
+	}
+	desc = {
+		trigger = {
+			original_tag = WIT
+		}
+		text = GRW_midgame.29.d2
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = GRW_midgame.29.a
+		trigger = {
+			original_tag = GRW
+		}
+		add_political_power = 15
+		add_opinion_modifier = {
+			target = WIT
+			modifier = GRW_racial_reconciliation
+		}
+	}
+	option = {
+		name = GRW_midgame.29.b
+		trigger = {
+			original_tag = WIT
+		}
+		add_political_power = 15
+		add_opinion_modifier = {
+			target = GRW
+			modifier = GRW_racial_reconciliation
+		}
+	}
+}
+
+#普里文请求我国加入对河间的禁运之中
+country_event = {
+	id = GRW_midgame.30
+	title = GRW_midgame.30.t
+	desc = GRW_midgame.30.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.30.a
+		ai_chance = {
+			factor = 1
+		}
+		add_political_power = -10
+		every_other_country = {
+			limit = {
+				exists = yes
+				OR = {
+					is_original_riv_fed_country_tag = yes
+					is_river_fed_member = yes
+				}
+				NOT = {
+					has_government = communism
+				}
+			}
+			ROOT = {
+				diplomatic_relation = {
+					country = PREV
+					relation = embargo
+				}
+			}
+		}
+	}
+	option = {
+		name = GRW_midgame.30.b
+		ai_chance = {
+			factor = 100
+			modifier = {
+				has_government = communism
+				add = -100
+			}
+		}
+		add_political_power = 10
+	}
+}
+
+#普里文对河间的渗透
+country_event = {
+	id = GRW_midgame.31
+	title = GRW_midgame.31.t
+	desc = GRW_midgame.31.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.31.a
+		if = {
+			limit = {
+				original_tag = NIM
+			}
+			add_ideas = GRW_communist_infiltrators_NIM
+		}
+		else = {
+			add_ideas = GRW_communist_infiltrators
+		}
+	}
+}
+
+#煽动河间民众抗议
+country_event = {#大成功
+	id = GRW_midgame.32
+	title = GRW_midgame.32.t
+	desc = GRW_midgame.32.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.32.a
+		FROM.FROM = {
+			if = {
+				limit = {
+					NOT = {
+						original_tag = NIM
+					}
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.07
+				}
+			}
+			else = {
+				add_stability = -0.08
+			}
+		}
+	}
+}
+country_event = {#普通
+	id = GRW_midgame.33
+	title = GRW_midgame.33.t
+	desc = GRW_midgame.33.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.33.a
+		FROM.FROM = {
+			if = {
+				limit = {
+					NOT = {
+						original_tag = NIM
+					}
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.03
+				}
+			}
+			else = {
+				add_stability = -0.05
+			}
+		}
+	}
+}
+country_event = {#效果不佳
+	id = GRW_midgame.34
+	title = GRW_midgame.34.t
+	desc = GRW_midgame.34.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.34.a
+		FROM.FROM = {
+			if = {
+				limit = {
+					NOT = {
+						original_tag = NIM
+					}
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = -0.01
+				}
+			}
+			else = {
+				add_stability = 0.03
+			}
+		}
+	}
+}
+country_event = {#被逮捕
+	id = GRW_midgame.35
+	title = GRW_midgame.35.t
+	desc = GRW_midgame.35.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.35.a
+		custom_effect_tooltip = GRW_incite_public_protest_tt
+		FROM.FROM = {
+			add_stability = -0.04
+			add_popularity = {
+				ideology = communism
+				popularity = -0.02
+			}
+			set_country_flag = {
+				flag = GRW_incite_public_protest_flag
+				days = 70
+				value = 1
+			}
+		}
+	}
+}
+
+#加入河间大革命
+country_event = {
+	id = GRW_midgame.36
+	title = GRW_midgame.36.t
+	desc = GRW_midgame.36.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = GRW_midgame.36.a
+		ai_chance = {
+			factor = 1
+		}
+		set_country_flag = GRW_agree_to_join_RIV_revolution
+		if = {
+			limit = {
+				is_in_faction = yes
+			}
+			leave_faction = yes
+		}
+		FROM = {
+			country_event = {
+				id = GRW_midgame.37
+				days = 3
+			}
+		}
+	}
+
+	option = {
+		name = GRW_midgame.36.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				is_ai = yes
+				factor = 0
+			}
+		}
+		add_political_power = 10
+		FROM = {
+			country_event = {
+				id = GRW_midgame.38
+				days = 3
+			}
+		}
+	}
+}
+country_event = {#同意
+	id = GRW_midgame.37
+	title = GRW_midgame.37.t
+	desc = GRW_midgame.37.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.37.a
+	}
+}
+country_event = {#拒绝
+	id = GRW_midgame.38
+	title = GRW_midgame.38.t
+	desc = GRW_midgame.38.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.38.a
+	}
+}
+
+
+country_event = {#河间革命成功
+	id = GRW_midgame.39
+	title = GRW_midgame.39.t
+	desc = GRW_midgame.39.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.39.a
+		add_political_power = 100
+		if = {
+			limit = {
+				has_completed_focus = GRW_revisiting_riverlands_diplomacy
+			}
+			clr_country_flag = GRW_attack_RIV_flag
+			set_country_flag = GRW_cooperate_with_RIV_flag
+			set_country_flag = GRW_cooperate_with_RIV_communism_flag
+			complete_national_focus = GRW_cooperation_with_RIV
+		}
+		GRW_primitive_communism_influence_moderateincrease = yes
+		GRW_rozenkampism_influence_slightincrease = yes
+		GRW_rozenkampism_loyalty_moderateincrease = yes
+	}
+}
+country_event = {#河间革命失败
+	id = GRW_midgame.40
+	title = GRW_midgame.40.t
+	desc = GRW_midgame.40.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.40.a
+		add_political_power = -100
+		GRW_primitive_communism_influence_moderatedecrease = yes
+		GRW_rozenkampism_influence_slightdecrease = yes
+		GRW_rozenkampism_loyalty_slightdecrease = yes
+	}
+}
+country_event = {#红河间统一的工具事件
+	id = GRW_midgame.41
+	title = GRW_midgame.41.t
+	desc = GRW_midgame.41.d
+	hidden = yes
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.41.a
+		every_country = {
+			limit = {
+				NOT = {
+					tag = RCT
+				}
+				OR = {
+					has_country_flag = GRW_not_say_we_have_nothing_we_will_rule_all_flag
+					has_country_flag = GRW_agree_to_join_RIV_revolution
+				}
+			}
+			every_country = {
+				limit = {
+					is_subject_of = PREV
+				}
+				RCT = {
+					annex_country = {
+						target = PREV
+						transfer_troops = yes
+					}
+				}
+			}
+			RCT = {
+				annex_country = {
+					target = PREV
+					transfer_troops = yes
+				}
+			}
+		}
+		every_possible_country = {
+			limit = {
+				has_character = RCT_nova_whirl
+			}
+			RCT_nova_whirl = {
+				set_nationality = RCT 
+			}
+		}
+		every_possible_country = {
+			limit = {
+				has_character = RCT_caramel_haze
+			}
+			RCT_caramel_haze = {
+				set_nationality = RCT 
+			}
+		}
+		RCT = {
+			set_politics = {
+				ruling_party = communism
+			}
+			set_popularities = {
+				democratic = 10
+				fascism = 5
+				communism = 77
+				neutrality = 8
+			}
+			if = {
+				limit = {
+					has_country_flag = RCT_caramels_coup
+				}
+				set_cosmetic_tag = RCT_USSR
+			}
+			else = {
+				set_cosmetic_tag = RCT_democratic_socialist_republic
+			}
+			load_focus_tree = river_city_focus
+			complete_national_focus = RCT_declare_riverland_soviet_union
+			complete_national_focus = RCT_revolution_triumphant
+		}
+	}
+}
+
+#第二届国民代表大会事件链
+country_event = {#对应国策“第二届国民代表大会”
+	id = GRW_midgame.13
+	title = GRW_midgame.13.t
+	desc = GRW_midgame.13.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.13.a
+		add_political_power = 50
+		custom_effect_tooltip = GRW_people_congress_tt
+		hidden_effect = {
+			remove_ideas = GRW_stability_idea
+			remove_dynamic_modifier = {
+				modifier = GRW_stability_dynamic_modifier
+			}
+			country_event = {
+				id = GRW_midgame.20
+			}
+		}
+	}
+}
+country_event = {#红兴退休
+	id = GRW_midgame.20
+	title = GRW_midgame.20.t
+	desc = GRW_midgame.20.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.20.a
+		set_country_flag = GRW_midgame_20_flag
+		add_country_leader_role = {
+			character = GRW_Lucian_Goldwing
+			promote_leader = yes
+
+			country_leader = {
+				ideology = maoism
+				expire="1965.1.1"
+				desc = GRW_Lucian_Goldwing_desc
+
+				traits = {
+					GRW_organisation_builder_1
+				}
+			}
+		}
+		custom_effect_tooltip = GRW_midgame_20_tt
+		hidden_effect = {
+			swap_ideas = {
+				remove_idea = GRW_vice_chairman
+				add_idea = GRW_vice_chairman_1
+			}
+			if = {
+				limit = {
+					has_idea = GRW_state_council_premier
+				}
+				swap_ideas = {
+					remove_idea = GRW_state_council_premier
+					add_idea = GRW_state_council_premier_1
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = GRW_state_council_premier_no_aat
+				}
+				swap_ideas = {
+					remove_idea = GRW_state_council_premier_no_aat
+					add_idea = GRW_state_council_premier_no_aat_1
+				}
+			}
+		}
+	}
+}
+
+#邀请加入阵营
+country_event = {#GRW邀请
+	id = GRW_midgame.14
+	title = GRW_midgame.14.t
+	desc = GRW_midgame.14.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+
+	option = {
+		name = GRW_midgame.14.a
+		FROM = {
+			country_event = {
+				id = GRW_midgame.15
+				days = 4
+			}
+		}
+	}
+}
+country_event = {#同意
+	id = GRW_midgame.15
+	title = GRW_midgame.15.t
+	desc = GRW_midgame.15.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+
+	option = {
+		name = GRW_midgame.15.a
+		if = {
+			limit = {
+				FROM = {
+					is_faction_leader = yes
+				}
+			}
+			every_other_country = {
+				limit = {
+					is_in_faction_with = FROM
+				}
+				ROOT = {
+					add_to_faction = PREV
+				}
+			}
+		}
+		add_to_faction = FROM
+	}
+}
+
+country_event = {#是否继续和河间的合作
+	id = GRW_midgame.16
+	title = GRW_midgame.16.t
+	desc = {
+		trigger = {
+			has_country_flag = GRW_cooperate_with_RIV_flag
+			any_country = {
+				exists = yes
+				is_river_fed_member = yes
+				is_original_riv_fed_country_tag = yes
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		text = GRW_midgame.16.d1
+	}
+	desc = {
+		trigger = {
+			all_country = {
+				OR = {
+					is_original_riv_fed_country_tag = no
+					has_government = communism
+				}
+			}
+		}
+		text = GRW_midgame.16.d2
+	}
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {#合作
+		name = GRW_midgame.16.a
+		trigger = {
+			OR = {
+				has_country_flag = GRW_cooperate_with_RIV_flag
+				any_country = {
+					exists = yes
+					is_river_fed_member = yes
+					is_original_riv_fed_country_tag = yes
+					NOT = {
+						has_government = communism
+					}
+				}
+			}
+		}
+		set_country_flag = GRW_revisiting_riverlands_diplomacy_flag
+	}
+	option = {#图图图
+		name = GRW_midgame.16.b
+		trigger = {
+			OR = {
+				has_country_flag = GRW_cooperate_with_RIV_flag
+				any_country = {
+					exists = yes
+					is_river_fed_member = yes
+					is_original_riv_fed_country_tag = yes
+					NOT = {
+						has_government = communism
+					}
+				}
+			}
+		}
+		set_country_flag = GRW_revisiting_riverlands_diplomacy_flag
+		country_event = {
+			id = GRW_midgame.28
+		}
+	}
+	option = {#和红河间合作
+		name = GRW_midgame.16.c
+		trigger = {
+			all_country = {
+				OR = {
+					is_original_riv_fed_country_tag = no
+					has_government = communism
+				}
+			}
+		}
+		set_country_flag = GRW_revisiting_riverlands_diplomacy_flag
+		clr_country_flag = GRW_attack_RIV_flag
+		set_country_flag = GRW_cooperate_with_RIV_flag
+		set_country_flag = GRW_cooperate_with_RIV_communism_flag
+	}
+}
+
+country_event = {#海军建成
+	id = GRW_midgame.17
+	title = GRW_midgame.17.t
+	desc = GRW_midgame.17.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.17.a
+		swap_ideas = {
+			remove_idea = GRW_brownwater_strategy
+			add_idea = GRW_shipbuilding_programme
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					has_dlc = "Man the Guns"
+				}
+				load_oob = "GRW_fleet"
+			}
+			else = {
+				load_oob = "GRW_fleet_legacy"
+			}
+		}
+	}
+}
+
+country_event = {#清剿海盗
+	id = GRW_midgame.18
+	title = GRW_midgame.18.t
+	desc = GRW_midgame.18.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.18.a
+		add_timed_idea = {
+			idea = GRW_pirate_suppression_idea
+			days = 120
+		}
+	}
+}
+
+country_event = {#军队改革方向
+	id = GRW_midgame.19
+	title = GRW_midgame.19.t
+	desc = GRW_midgame.19.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.19.a
+		army_experience = 10
+	}
+}
+
+country_event = {#世界革命
+	id = GRW_midgame.21
+	title = GRW_midgame.21.t
+	desc = GRW_midgame.21.d
+
+	trigger = {
+		original_tag = GRW
+		has_country_flag = GRW_people_congress_flag
+		all_state = {
+			if = {
+				limit = {
+					OR = {
+						is_on_continent = europe
+						is_on_continent = asia
+					}
+				}
+				owner = {
+					OR = {
+						has_government = communism
+						original_tag = DED
+						original_tag = HLR
+						original_tag = DRG
+						original_tag = PCB
+						original_tag = MER
+					}
+				}
+			}
+		}
+	}
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.21.a
+		country_event = {
+			id = GRW_midgame.22
+		}
+	}
+	option = {
+		name = GRW_midgame.21.b
+		set_country_flag = GRW_world_revolution_flag
+		mark_focus_tree_layout_dirty = yes
+		every_other_country = {
+			limit = {
+				NOT = {
+					has_government = communism
+				}
+			}
+			ROOT = {
+				declare_war_on = {
+					target = PREV
+					type = annex_everything
+				}
+			}
+		}
+	}
+}
+
+country_event = {#结束事件
+	id = GRW_midgame.22
+	title = GRW_midgame.22.t
+	desc = GRW_midgame.22.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.22.a
+		custom_effect_tooltip = GRW_mid_game_end_tt
+	}
+}
+
+country_event = {#
+	id = GRW_midgame.23
+	title = GRW_midgame.23.t
+	desc = GRW_midgame.23.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.23.a
+		
+	}
+}
+
+country_event = {#
+	id = GRW_midgame.51
+	title = GRW_midgame.51.t
+	desc = GRW_midgame.51.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GRW_midgame.51.a
+		
+	}
+}

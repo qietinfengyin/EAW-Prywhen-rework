@@ -1,0 +1,195 @@
+technologies = {
+	#改良的战地医院
+	GRW_advanced_hospital = {
+		research_cost = 1
+		allow = {
+			always = no
+		}
+
+		field_hospital = {
+			casualty_trickleback = 0.05
+			experience_loss_factor = -0.10
+		}
+	}
+
+	#雪地作战训练
+	GRW_snow_buff = {
+		research_cost = 1
+		allow = {
+			always = no
+		}
+
+		category_all_infantry = {
+			snow = {
+				attack = 0.05
+				defence = 0.1
+				movement = 0.1
+			}
+		}
+		knights = {
+			snow = {
+				attack = 0.1
+				defence = 0.1
+				movement = 0.1
+			}
+		}
+	}
+
+	#独立工兵团
+	GRW_modern_engineering_battalions = {
+		research_cost = 1
+		allow = {
+			always = no
+		}
+
+		engineer = {
+			entrenchment = 3
+			fort = {
+				attack = 0.05
+				defence = 0.1
+			}
+			river = {
+				attack = 0.05
+				defence = 0.1
+			}
+		}
+	}
+
+	#山地作战训练
+	GRW_mountain_buff = {
+		research_cost = 1
+		allow = {
+			always = no
+		}
+
+		category_all_infantry = {
+			mountain = {
+				attack = 0.05
+				defence = 0.1
+				movement = 0.1
+			}
+		}
+		knights = {
+			mountain = {
+				attack = 0.1
+				defence = 0.1
+				movement = 0.1
+			}
+		}
+	}
+	#丘陵作战训练
+	GRW_hills_buff = {
+		research_cost = 1
+		allow = {
+			always = no
+		}
+
+		category_all_infantry = {
+			hills = {
+				attack = 0.05
+				defence = 0.1
+				movement = 0.1
+			}
+		}
+		knights = {
+			hills = {
+				attack = 0.1
+				defence = 0.1
+				movement = 0.1
+			}
+		}
+	}
+	#森林作战训练
+	GRW_forest_buff = {
+		research_cost = 1
+		allow = {
+			always = no
+		}
+
+		category_all_infantry = {
+			forest = {
+				attack = 0.05
+				defence = 0.1
+				movement = 0.1
+			}
+		}
+		knights = {
+			forest = {
+				attack = 0.1
+				defence = 0.1
+				movement = 0.1
+			}
+		}
+	}
+	#丛林作战训练
+	GRW_jungle_buff = {
+		research_cost = 1
+		allow = {
+			always = no
+		}
+
+		category_all_infantry = {
+			jungle = {
+				attack = 0.05
+				defence = 0.1
+				movement = 0.1
+			}
+		}
+		knights = {
+			jungle = {
+				attack = 0.1
+				defence = 0.1
+				movement = 0.1
+			}
+		}
+	}
+	#沼泽作战训练
+	GRW_marsh_buff = {
+		research_cost = 1
+		allow = {
+			always = no
+		}
+
+		category_all_infantry = {
+			marsh = {
+				attack = 0.05
+				defence = 0.1
+				movement = 0.1
+			}
+		}
+		knights = {
+			marsh = {
+				attack = 0.1
+				defence = 0.1
+				movement = 0.1
+			}
+		}
+	}
+
+	#不对称作战训练
+	GRW_urban_buff = {
+		research_cost = 1
+		allow = {
+			always = no
+		}
+
+		category_light_infantry = {
+			urban = {
+				attack = 0.1
+				defence = 0.15
+			}
+		}
+	}
+
+	#突击营
+	tech_assault_battalion = {
+		research_cost = 1
+		allow = {
+			always = no
+		}
+
+		enable_subunits = {
+			assault_battalion
+		}
+	}
+}

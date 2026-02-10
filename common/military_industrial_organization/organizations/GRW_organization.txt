@@ -1,0 +1,470 @@
+###坦克
+#普里文装甲生产厂
+GRW_infantry_tank_manufacturer_organization = {
+	name = GRW_infantry_tank_manufacturer
+	include = generic_infantry_tank_organization
+	icon = GFX_idea_GRW_medium_tank_manufacturer
+	
+	allowed = {
+		has_dlc = "Arms Against Tyranny"
+		original_tag = GRW
+	}
+
+	add_trait = {#抢修与改装
+		name = GRW_mio_trait_salvaged_and_retooled
+		token = GRW_mio_trait_salvaged_and_retooled
+		icon = GFX_generic_mio_department_icon_tank_general_materials
+		special_trait_background = yes
+
+		position = {
+			x = -2
+			y = 1
+		}
+		relative_position_id = generic_mio_trait_adaptable_chassis
+
+		available = {
+			FROM = {
+				OR = {
+					has_completed_focus = GRW_three_rules_eight_points
+					has_country_flag = GRW_form_Evi_flag
+				}
+			}
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.05
+			production_resource_need_factor = -0.1
+		}
+	}
+	add_trait = {#“军代表”制度
+		token = GRW_mio_trait_military_representatives
+		name = GRW_mio_trait_military_representatives
+		icon = GFX_generic_mio_department_icon_tank_general_production
+		special_trait_background = yes
+
+		position = {
+			x = 2
+			y = 1
+		}
+		relative_position_id = generic_mio_trait_adaptable_chassis
+
+		available = {
+			FROM = {
+				has_completed_focus = GRW_military_representatives_in_factories
+			}
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.1
+		}
+	}
+}
+#特拉维特拖拉机厂
+GRW_Twelt_tractor_factory_organization = {
+	name = GRW_Twelt_tractor_factory
+	include = generic_tank_refurbishment_plant_organization
+	icon = GFX_idea_GRW_motorized_manufacturer
+
+	allowed = {
+		has_dlc = "Arms Against Tyranny"
+		original_tag = GRW
+	}
+	available = {
+		FROM = {
+			has_country_flag = GRW_expand_Twelt_tractor_factory_flag
+		}
+	}
+
+	add_trait = {#抢修与改装
+		name = GRW_mio_trait_salvaged_and_retooled
+		token = GRW_mio_trait_salvaged_and_retooled
+		icon = GFX_generic_mio_department_icon_tank_general_materials
+		special_trait_background = yes
+
+		position = {
+			x = 0
+			y = 1
+		}
+		relative_position_id = generic_mio_trait_enemy_tank_refitting
+
+		available = {
+			FROM = {
+				OR = {
+					has_completed_focus = GRW_three_rules_eight_points
+					has_country_flag = GRW_form_Evi_flag
+				}
+			}
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.05
+			production_resource_need_factor = -0.1
+		}
+	}
+	add_trait = {#“军代表”制度
+		token = GRW_mio_trait_military_representatives
+		name = GRW_mio_trait_military_representatives
+		icon = GFX_generic_mio_department_icon_tank_general_production
+		special_trait_background = yes
+
+		position = {
+			x = 2
+			y = 0
+		}
+		relative_position_id = GRW_mio_trait_salvaged_and_retooled
+
+		available = {
+			FROM = {
+				has_completed_focus = GRW_military_representatives_in_factories
+			}
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.1
+		}
+	}
+}
+
+###步兵
+#普里文军用兵器
+GRW_inf_manufacturer_organization = {
+	name = GRW_inf_manufacturer
+	include = generic_infantry_equipment_organization
+	icon = GFX_idea_GRW_inf_manufacturer
+
+	allowed = {
+		has_dlc = "Arms Against Tyranny"
+		original_tag = GRW
+	}
+	
+	add_trait = {#抢修与改装
+		name = GRW_mio_trait_salvaged_and_retooled
+		token = GRW_mio_trait_salvaged_and_retooled
+		icon = GFX_generic_mio_department_icon_infantry_materials
+		special_trait_background = yes
+
+		position = {
+			x = -2
+			y = 0
+		}
+		relative_position_id = generic_mio_trait_reinforced_stocks
+
+		available = {
+			FROM = {
+				OR = {
+					has_completed_focus = GRW_three_rules_eight_points
+					has_country_flag = GRW_form_Evi_flag
+				}
+			}
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.05
+			production_resource_need_factor = -0.1
+		}
+	}
+	add_trait = {#“军代表”制度
+		token = GRW_mio_trait_military_representatives
+		name = GRW_mio_trait_military_representatives
+		icon = GFX_generic_mio_department_icon_infantry_production
+		special_trait_background = yes
+
+		position = {
+			x = 1
+			y = 1
+		}
+		relative_position_id = generic_mio_trait_drum_pattern_sights
+
+		available = {
+			FROM = {
+				has_completed_focus = GRW_military_representatives_in_factories
+			}
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.1
+		}
+	}
+}
+#炮弹飞射火炮厂
+GRW_arty_manufacturer_organization = {
+	name = GRW_arty_manufacturer
+	include = generic_artillery_organization
+	icon = GFX_idea_GRW_arty_manufacturer
+
+	allowed = {
+		has_dlc = "Arms Against Tyranny"
+		original_tag = GRW
+	}
+	available = {
+		FROM = {
+			owns_state = 508
+			has_country_flag = GRW_reorganize_the_Royal_Arsenal_flag
+		}
+	}
+
+	add_trait = {#抢修与改装
+		name = GRW_mio_trait_salvaged_and_retooled
+		token = GRW_mio_trait_salvaged_and_retooled
+		icon = GFX_generic_mio_department_icon_artillery_materials
+		special_trait_background = yes
+
+		position = {
+			x = 1
+			y = 0
+		}
+		relative_position_id = generic_mio_trait_improved_hydraulic_recoil_system
+
+		available = {
+			FROM = {
+				OR = {
+					has_completed_focus = GRW_three_rules_eight_points
+					has_country_flag = GRW_form_Evi_flag
+				}
+			}
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.05
+			production_resource_need_factor = -0.1
+		}
+	}
+	add_trait = {#“军代表”制度
+		token = GRW_mio_trait_military_representatives
+		name = GRW_mio_trait_military_representatives
+		icon = GFX_generic_mio_department_icon_artillery_production
+		special_trait_background = yes
+
+		position = {
+			x = 1
+			y = 0
+		}
+		relative_position_id = GRW_mio_trait_salvaged_and_retooled
+
+		available = {
+			FROM = {
+				has_completed_focus = GRW_military_representatives_in_factories
+			}
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.1
+		}
+	}
+}
+#蒂姆索拉第一汽车制造厂
+GRW_Temsoar_FAW_organization = {
+	name = GRW_Temsoar_FAW
+	include = generic_motorized_mechanized_organization
+	icon = GFX_idea_GRW_motorized_manufacturer
+
+	allowed = {
+		has_dlc = "Arms Against Tyranny"
+		original_tag = GRW
+	}
+	available = {
+		FROM = {
+			has_country_flag = GRW_Temsoar_FAW_flag
+		}
+	}
+
+	add_trait = {#抢修与改装
+		name = GRW_mio_trait_salvaged_and_retooled
+		token = GRW_mio_trait_salvaged_and_retooled
+		icon = GFX_generic_mio_department_icon_motorized_mechanized_materials
+		special_trait_background = yes
+
+		position = {
+			x = 0
+			y = 1
+		}
+		relative_position_id = generic_mio_trait_steel_cargo_bed
+
+		available = {
+			FROM = {
+				OR = {
+					has_completed_focus = GRW_three_rules_eight_points
+					has_country_flag = GRW_form_Evi_flag
+				}
+			}
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.05
+			production_resource_need_factor = -0.1
+		}
+	}
+	add_trait = {#“军代表”制度
+		token = GRW_mio_trait_military_representatives
+		name = GRW_mio_trait_military_representatives
+		icon = GFX_generic_mio_department_icon_motorized_mechanized_production
+		special_trait_background = yes
+
+		position = {
+			x = 0
+			y = 1
+		}
+		relative_position_id = generic_mio_trait_open_chassi
+
+		available = {
+			FROM = {
+				has_completed_focus = GRW_military_representatives_in_factories
+			}
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.1
+		}
+	}
+}
+
+###飞机
+#迅捷高飞飞行器
+GRW_aircraft_manufacturer_organization = {
+	name = GRW_aircraft_manufacturer
+	include = generic_light_aircraft_organization
+	icon = GFX_idea_GRW_aircraft_manufacturer
+
+	allowed = {
+		has_dlc = "Arms Against Tyranny"
+		original_tag = GRW
+	}
+
+	add_trait = {#“军代表”制度
+		token = GRW_mio_trait_military_representatives
+		name = GRW_mio_trait_military_representatives
+		icon = GFX_generic_mio_department_icon_plane_fighter_production
+		special_trait_background = yes
+
+		position = {
+			x = 2
+			y = 0
+		}
+		relative_position_id = generic_mio_trait_advanced_aerodynamics
+
+		available = {
+			FROM = {
+				has_completed_focus = GRW_military_representatives_in_factories
+			}
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.1
+		}
+	}
+}
+#普里文航空工业
+GRW_med_aircraft_manufacturer_organization = {
+	name = GRW_med_aircraft_manufacturer
+	include = generic_medium_aircraft_organization
+	icon = GFX_idea_GRW_med_aircraft_manufacturer
+
+	allowed = {
+		has_dlc = "Arms Against Tyranny"
+		original_tag = GRW
+	}
+
+	add_trait = {#“军代表”制度
+		token = GRW_mio_trait_military_representatives
+		name = GRW_mio_trait_military_representatives
+		icon = GFX_generic_mio_department_icon_plane_general_production
+		special_trait_background = yes
+
+		position = {
+			x = 0
+			y = 1
+		}
+		relative_position_id = generic_mio_trait_narrow_build
+
+		available = {
+			FROM = {
+				has_completed_focus = GRW_military_representatives_in_factories
+			}
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.1
+		}
+	}
+}
+
+###海军
+#西迪亚船坞
+GRW_naval_manufacturer_organization = {
+	name =  GRW_naval_manufacturer
+	include = generic_escort_ship_organization
+	icon = GFX_idea_GRW_naval_manufacturer
+
+	allowed = {
+		has_dlc = "Arms Against Tyranny"
+		original_tag = GRW
+	}
+	available = {
+		FROM = {
+			owns_state = 385
+			has_country_flag = GRW_Sydia_dockyard_flag
+		}
+	}
+
+	add_trait = {#“军代表”制度
+		token = GRW_mio_trait_military_representatives
+		name = GRW_mio_trait_military_representatives
+		icon = GFX_generic_mio_department_icon_ship_screen_ship_production
+		special_trait_background = yes
+
+		position = {
+			x = 2
+			y = 0
+		}
+		relative_position_id = generic_mio_trait_submarine_hunters
+
+		available = {
+			FROM = {
+				has_completed_focus = GRW_military_representatives_in_factories
+			}
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.1
+		}
+	}
+}
+#盐岛船坞
+GRW_naval_manufacturer2_organization = {
+	name =  GRW_naval_manufacturer2
+	include = generic_raider_ship_organization
+	icon = GFX_idea_GRW_naval_manufacturer2
+
+	allowed = {
+		has_dlc = "Arms Against Tyranny"
+		original_tag = GRW
+	}
+	available = {
+		FROM = {
+			owns_state = 663
+		}
+	}
+
+	add_trait = {#“军代表”制度
+		token = GRW_mio_trait_military_representatives
+		name = GRW_mio_trait_military_representatives
+		icon = GFX_generic_mio_department_icon_ship_capital_ship_production
+		special_trait_background = yes
+
+		position = {
+			x = 2
+			y = 0
+		}
+		relative_position_id = generic_mio_trait_high_speed_raiding
+
+		available = {
+			FROM = {
+				has_completed_focus = GRW_military_representatives_in_factories
+			}
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.1
+		}
+	}
+}

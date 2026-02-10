@@ -1,0 +1,7 @@
+category = {
+	name = "GRW_signature_sounds_effects"
+	soundeffects = {
+		GRW_signature_soundeffect
+	}
+	compressor = master_compressor
+}

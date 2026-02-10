@@ -1,0 +1,548 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_filip_redglad_portrait"
+		texturefile = "gfx/leaders/filip_redglad.tga"
+        legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_Sonia_Cialaina_portrait"
+		texturefile = "gfx/leaders/Sonia_Cialaina.tga"
+	}
+	spriteType = {
+		name = "GFX_Lucian_Goldwing_portrait"
+		texturefile = "gfx/leaders/Lucian_Goldwing.tga"
+        legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_Ionel_Shortfeather_portrait"
+		texturefile = "gfx/leaders/Ionel_Shortfeather.tga"
+	}
+	spriteType = {
+		name = "GFX_Calin_Thunderfeather_portrait"
+		texturefile = "gfx/leaders/Calin_Thunderfeather.tga"
+        legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_Liviu_Moonbeak_portrait"
+		texturefile = "gfx/leaders/Liviu_Moonbeak.tga"
+        legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_Trifan_Sidioveanu_portrait"
+		texturefile = "gfx/leaders/Trifan_Sidioveanu.tga"
+        legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_HXFS_portrait"
+		texturefile = "gfx/leaders/HXFS.dds"
+	}
+	spriteType = {
+		name = "GFX_Custer_portrait"
+		texturefile = "gfx/leaders/Custer.dds"
+	}
+	spriteType = {
+		name = "GFX_rory_laurel_portrait"
+		texturefile = "gfx/leaders/rory_laurel.tga"
+	}
+	spriteType = {
+		name = "GFX_Florian_von_Quixote_portrait"
+		texturefile = "gfx/leaders/Florian_von_Quixote.tga"
+	}
+	spriteType = {
+		name = "GFX_Rainbow_Sword_portrait"
+		texturefile = "gfx/leaders/Rainbow_Sword.tga"
+	}
+	spriteType = {
+		name = "GFX_democratic_parties_portrait"
+		texturefile = "gfx/leaders/KIR/common_senate.tga"
+        legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_idea_GRW_higher_military_academy"
+		texturefile = "gfx/interface/ideas/NOR_syndicalist_support.tga"
+	}
+
+	spriteType = {
+		name = "GFX_Sonia_Cialaina_advisor_portrait"
+		texturefile = "gfx/interface/ideas/advisors/Sonia_Cialaina.png"
+	}
+	spriteType = {
+		name = "GFX_Lucian_Goldwing_advisor_portrait"
+		texturefile = "gfx/interface/ideas/advisors/Lucian_Goldwing.tga"
+	}
+	spriteType = {
+		name = "GFX_Ionel_Shortfeather_advisor_portrait"
+		texturefile = "gfx/interface/ideas/advisors/Ionel_Shortfeather.dds"
+	}
+	spriteType = {
+		name = "GFX_Bashir_Mistwing_advisor_portrait"
+		texturefile = "gfx/interface/ideas/advisors/Bashir_Mistwing.dds"
+	}
+	spriteType = {
+		name = "GFX_George_Flamefeather_advisor_portrait"
+		texturefile = "gfx/interface/ideas/advisors/Dumitru_Startail.dds"
+	}
+	spriteType = {
+		name = "GFX_Calin_Thunderfeather_advisor_portrait"
+		texturefile = "gfx/interface/ideas/advisors/Calin_Thunderfeather.tga"
+	}
+	spriteType = {
+		name = "GFX_Liviu_Moonbeak_advisor_portrait"
+		texturefile = "gfx/interface/ideas/advisors/Liviu_Moonbeak.tga"
+	}
+	spriteType = {
+		name = "GFX_Trifan_Sidioveanu_advisor_portrait"
+		texturefile = "gfx/interface/ideas/advisors/Trifan_Sidioveanu.tga"
+	}
+	spriteType = {
+		name = "GFX_Ianos_Amberpaw_advisor_portrait"
+		texturefile = "gfx/interface/ideas/advisors/Ianos_Amberpaw.dds"
+	}
+	spriteType = {
+		name = "GFX_Marin_Dascalu_advisor_portrait"
+		texturefile = "gfx/interface/ideas/advisors/Marin_Dascalu.dds"
+	}
+	spriteType = {
+		name = "GFX_HXFS_advisor_portrait"
+		texturefile = "gfx/interface/ideas/advisors/HXFS.png"
+	}
+	spriteType = {
+		name = "GFX_Custer_advisor_portrait"
+		texturefile = "gfx/interface/ideas/advisors/Custer.png"
+	}
+	spriteType = {
+		name = "GFX_rory_laurel_advisor_portrait"
+		texturefile = "gfx/interface/ideas/advisors/rory_laurel.png"
+	}
+	spriteType = {
+		name = "GFX_RainyBlaze_advisor_portrait"
+		texturefile = "gfx/interface/ideas/advisors/RainyBlaze.png"
+	}
+	spriteType = {
+		name = "GFX_Snowbunny_advisor_portrait"
+		texturefile = "gfx/interface/ideas/advisors/Snowbunny.png"
+	}
+	spriteType = {
+		name = "GFX_cornilo_khurshevich_advisor_portrait"
+		texturefile = "gfx/interface/ideas/advisors/cornilo_khurshevich.png"
+	}
+	spriteType = {
+		name = "GFX_Florian_von_Quixote_advisor_portrait"
+		texturefile = "gfx/interface/ideas/advisors/Florian_von_Quixote.tga"
+	}
+	spriteType = {
+		name = "GFX_Rainbow_Sword_advisor_portrait"
+		texturefile = "gfx/interface/ideas/advisors/Rainbow_Sword.tga"
+	}
+
+	#类核心圈子
+	spriteType = {
+		name = "GFX_inner_circle_filip_redglad_portrait"
+		texturefile = "gfx/interface/inner_circle/filip_redglad.dds"
+	}
+	spriteType = {
+		name = "GFX_inner_circle_Lucian_Goldwing_portrait"
+		texturefile = "gfx/interface/inner_circle/Lucian_Goldwing.dds"
+	}
+	spriteType = {
+		name = "GFX_MARC_portrait"
+		texturefile = "gfx/interface/inner_circle/frame_MARC.png"
+	}
+
+	spriteType = {
+		name = "GFX_event_pictures_1"
+		texturefile = "gfx/event_pictures/event_pictures_1.dds"
+	}
+	spriteType = {
+		name = "GFX_event_pictures_2"
+		texturefile = "gfx/event_pictures/event_pictures_2.dds"
+	}
+
+	#傀儡
+	spriteType = {
+		name = "GFX_autonomy_sister_republics_icon"
+		texturefile = "gfx/interface/autonomy/autonomy_sister_republics_icon.png"
+	}
+
+	#意识形态
+	spriteType = {
+		name = "GFX_ideology_new_democracy"
+		texturefile = "gfx/interface/ideologies/new_democracy.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_maoism"
+		texturefile = "gfx/interface/ideologies/maoism.dds"
+	}
+
+	#国际局
+	spriteType = {
+		name = "GFX_filip_redglad_signature"
+		texturefile = "gfx/interface/international_bureau/signature.png"
+	}
+	spriteType = {
+		name = "GFX_international_bureau_logo"
+		texturefile = "gfx/interface/international_bureau/international_bureau_logo.png"
+	}
+	spriteType = {
+		name = "GFX_international_bureau_click_botton"
+		texturefile = "gfx/interface/international_bureau/clickbotton.png"
+	}
+
+	spriteType = {
+		name = "GFX_decision_forestry"
+		texturefile = "gfx/interface/decisions/forestry.png"
+	}
+	spriteType = {
+		name = "GFX_decision_road"
+		texturefile = "gfx/interface/decisions/road.png"
+	}
+	spriteType = {
+		name = "GFX_decision_generic_agriculture"
+		texturefile = "gfx/interface/decisions/generic_agriculture.png"
+	}
+	spriteType = {
+		name = "GFX_decision_give_cash"
+		texturefile = "gfx/interface/decisions/give_cash.png"
+	}
+	spriteType = {
+		name = "GFX_decision_artillery"
+		texturefile = "gfx/interface/decisions/artillery.png"
+	}
+	spriteType = {
+		name = "GFX_decision_support_equipment"
+		texturefile = "gfx/interface/decisions/support_equipment.png"
+	}
+
+	#鹫民政府
+	spriteType = {
+		name = "GFX_national_emblem_button"
+		texturefile = "gfx/interface/faction/national_emblem.png"
+	}
+	spriteType = {
+		name = "GFX_faction_blank"
+		texturefile = "gfx/interface/faction/parliament_blank.png"
+	}
+	spriteType = {
+		name = "GFX_GRW_faction_background_leader"
+		texturefile = "gfx/interface/faction/bg.dds"
+	}
+	spriteType = {
+       name = "GFX_GRW_tab"
+       textureFile = "gfx/interface/faction/GRW_tab.dds"
+       noOfFrames = 2
+    }
+	progressbartype = {
+		name = "GFX_GRW_rozenkampism_pie"
+		texturefile1 = "gfx/interface/faction/GRW_rozenkampism.dds"
+		texturefile2 = "gfx/interface/CVA/faction_influence/empty_pie.dds"
+		size = { x = 140 y = 140 }
+		effectfile = "gfx/FX/progress_radial.lua"
+	}
+	progressbartype = {
+		name = "GFX_GRW_primitive_communism_pie"
+		texturefile1 = "gfx/interface/faction/GRW_primitive_communism.dds"
+		texturefile2 = "gfx/interface/CVA/faction_influence/empty_pie.dds"
+		size = { x = 140 y = 140 }
+		effectfile = "gfx/FX/progress_radial.lua"
+	}
+	progressbartype = {
+		name = "GFX_GRW_democratic_socialism_pie"
+		texturefile1 = "gfx/interface/faction/GRW_democratic_socialism.dds"
+		texturefile2 = "gfx/interface/CVA/faction_influence/empty_pie.dds"
+		size = { x = 140 y = 140 }
+		effectfile = "gfx/FX/progress_radial.lua"
+	}
+	spritetype = {
+		name = "GFX_GRW_syndicalism_pie"
+		texturefile = "gfx/interface/faction/GRW_syndicalism.dds"
+	}
+	spriteType = {
+		name = "GFX_GRW_faction_window_CPGC_policy_ag"
+		texturefile = "gfx/interface/faction/ag.png"
+	}
+	spriteType = {
+		name = "GFX_GRW_faction_window_CPGC_policy_int"
+		texturefile = "gfx/interface/faction/int.png"
+	}
+	spriteType = {
+		name = "GFX_GRW_faction_window_CPGC_policy_ind"
+		texturefile = "gfx/interface/faction/ind.png"
+	}
+	spriteType = {
+		name = "GFX_GRW_faction_window_CPGC_policy_sci"
+		texturefile = "gfx/interface/faction/sci.png"
+	}
+	spritetype = {
+		name = "GFX_mao_signature"
+		texturefile = "gfx/interface/faction/GFX_mao_signature.png"
+	}
+	spriteType = {
+		name = "GFX_GRW_faction_window_CPGC_focus_sci"
+		texturefile = "gfx/interface/faction/focus_sci.png"
+	}
+	spriteType = {
+		name = "GFX_GRW_faction_window_CPGC_focus_ind"
+		texturefile = "gfx/interface/faction/focus_ind.png"
+	}
+	spriteType = {
+		name = "GFX_GRW_faction_window_CPGC_focus_ag"
+		texturefile = "gfx/interface/faction/focus_ag.png"
+	}
+	spriteType = {
+		name = "GFX_GRW_CPGC_progress_bar_border"
+		texturefile = "gfx/interface/faction/GRW_CPGC_progress_bar_border.png"
+	}
+	progressbartype = {
+		name = "GFX_GRW_CPGC_progress_bar"
+		textureFile1 = "gfx/interface/faction/GRW_CPGC_progress_bar.png"
+		textureFile2 = "gfx/interface/faction/GRW_CPGC_progress_bar_frame.png"
+		size = {
+			x = 73
+			y = 282
+		}
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = no
+	}
+	spriteType = {
+		name = "GFX_GRW_CPGC_primitive_communism"
+		texturefile = "gfx/interface/faction/GRW_CPGC_primitive_communism.png"
+	}
+	spriteType = {
+		name = "GFX_GRW_CPGC_rozenkampism"
+		texturefile = "gfx/interface/faction/GRW_CPGC_rozenkampism.png"
+	}
+	spriteType = {
+		name = "GFX_GRW_CPGC_syndicalism"
+		texturefile = "gfx/interface/faction/GRW_CPGC_syndicalism.png"
+	}
+	spriteType = {
+		name = "GFX_GRW_CPGC_democratic_socialism"
+		texturefile = "gfx/interface/faction/GRW_CPGC_democratic_socialism.png"
+	}
+	progressbartype = {
+		name = "GFX_GRW_faction_progress_blue"
+		textureFile1 = "gfx/interface/faction/progress_blue.png"
+		textureFile2 = "gfx/interface/faction/progress_bar_frame.png"
+		size = {
+			x = 182
+			y = 35
+		}
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = yes
+	}
+	progressbartype = {
+		name = "GFX_GRW_faction_progress_red"
+		textureFile1 = "gfx/interface/faction/progress_red.png"
+		textureFile2 = "gfx/interface/faction/progress_bar_frame.png"
+		size = {
+			x = 160
+			y = 21
+		}
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = yes
+	}
+	#中央档案局
+	spriteType = {
+		name = "GFX_GRW_NAAP_Political_and_Legal_TAB"
+		texturefile = "gfx/interface/faction/NAAP/GRW_NAAP_Political_and_Legal_TAB.tga"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_GRW_NAAP_Economic_TAB"
+		texturefile = "gfx/interface/faction/NAAP/GRW_NAAP_Economic_TAB.tga"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_GRW_NAAP_Diplomatic_TAB"
+		texturefile = "gfx/interface/faction/NAAP/GRW_NAAP_Diplomatic_TAB.tga"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_GRW_NAAP_Cultural_and_Educational_TAB"
+		texturefile = "gfx/interface/faction/NAAP/GRW_NAAP_Cultural_and_Educational_TAB.tga"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_GRW_NAAP_Supervision_TAB"
+		texturefile = "gfx/interface/faction/NAAP/GRW_NAAP_Supervision_TAB.tga"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_GRW_NAAP_ENTRY"
+		texturefile = "gfx/interface/faction/NAAP/GRW_NAAP_ENTRY.tga"
+		noOfFrames = 2
+	}
+
+	#埃维地图
+	spriteType = {
+		name = "GFX_Evi_map_Evi_map"
+		texturefile = "gfx/interface/Evi_maps/Evi_map.png"
+	}
+	spriteType = {
+		name = "GFX_Evi_map_border_GRW"
+		texturefile = "gfx/interface/Evi_maps/border_GRW.png"
+	}
+	spriteType = {
+		name = "GFX_Evi_map_border_BAN"
+		texturefile = "gfx/interface/Evi_maps/border_BAN.png"
+	}
+	spriteType = {
+		name = "GFX_Evi_map_border_GRU"
+		texturefile = "gfx/interface/Evi_maps/border_GRU.png"
+	}
+	spriteType = {
+		name = "GFX_Evi_map_border_GRY"
+		texturefile = "gfx/interface/Evi_maps/border_GRY.png"
+	}
+	spriteType = {
+		name = "GFX_Evi_map_border_LUS"
+		texturefile = "gfx/interface/Evi_maps/border_LUS.png"
+	}
+	spriteType = {
+		name = "GFX_Evi_map_help_button"
+		texturefile = "gfx/interface/Evi_maps/help_button.png"
+	}
+	spriteType = {
+		name = "GFX_Evi_ui_BAN"
+		texturefile = "gfx/interface/Evi_maps/shield_BAN.png"
+	}
+	spriteType = {
+		name = "GFX_Evi_ui_GRU"
+		texturefile = "gfx/interface/Evi_maps/shield_GRU.png"
+	}
+	spriteType = {
+		name = "GFX_Evi_ui_GRW"
+		texturefile = "gfx/interface/Evi_maps/shield_GRW.png"
+	}
+	spriteType = {
+		name = "GFX_Evi_ui_GRY"
+		texturefile = "gfx/interface/Evi_maps/shield_GRY.png"
+	}
+	spriteType = {
+		name = "GFX_Evi_ui_LUS"
+		texturefile = "gfx/interface/Evi_maps/shield_LUS.png"
+	}
+	spriteType = {
+		name = "GFX_Evi_map_Whiteflower"
+		texturefile = "gfx/interface/Evi_maps/Whiteflower.png"
+	}
+	spriteType = {
+		name = "GFX_Evi_map_Acute_Forest"
+		texturefile = "gfx/interface/Evi_maps/Acute_Forest.png"
+	}
+	spriteType = {
+		name = "GFX_Evi_map_Griffonwill"
+		texturefile = "gfx/interface/Evi_maps/Griffonwill.png"
+	}
+	spriteType = {
+		name = "GFX_Evi_map_Brodfeld"
+		texturefile = "gfx/interface/Evi_maps/Brodfeld.png"
+	}
+	spriteType = {
+		name = "GFX_Evi_map_Terrible_Marsh"
+		texturefile = "gfx/interface/Evi_maps/Terrible_Marsh.png"
+	}
+	spriteType = {
+		name = "GFX_Evi_map_Kivessin"
+		texturefile = "gfx/interface/Evi_maps/Kivessin.png"
+	}
+	spriteType = {
+		name = "GFX_Evi_map_Lifov"
+		texturefile = "gfx/interface/Evi_maps/Lifov.png"
+	}
+	spriteType = {
+		name = "GFX_Evi_map_Consta"
+		texturefile = "gfx/interface/Evi_maps/Consta.png"
+	}
+	spriteType = {
+		name = "GFX_Evi_map_Sydia"
+		texturefile = "gfx/interface/Evi_maps/Sydia.png"
+	}
+	spriteType = {
+		name = "GFX_Evi_map_Salt_Island"
+		texturefile = "gfx/interface/Evi_maps/Salt_Island.png"
+	}
+
+	progressbartype = {
+		name = "GFX_GRW_Evi_map_diplomatic_preference"
+		textureFile1 = "gfx/interface/faction/left.dds"
+		textureFile2 = "gfx/interface/faction/right.dds"
+		size = {
+			x = 359
+			y = 45
+		}
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = yes
+		steps = 100
+	}
+
+	spriteType = {
+		name = "GFX_GRW_new_content_flag"
+		texturefile = "gfx/flags/GRW_Evi.tga"
+		noOfFrames = 1
+	}
+
+	spriteType = {
+		name = "GFX_intelligence_agency_logo_GRW"
+		texturefile = "gfx/interface/operatives/agencies/agency_logo_GRW.png"
+		noOfFrames = 2
+	}
+
+	#部队图标
+	spriteType = {
+		name = "GFX_unit_assault_battalion_icon_medium"
+		texturefile = "gfx/interface/counters/divisions_large/unit_assault_battalion_icon.dds"
+		legacy_lazy_load = no
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_assault_battalion_icon_small"
+		texturefile = "gfx/texticons/unit_assault_battalion_icon_small.dds"
+		legacy_lazy_load = no
+		noOfFrames = 2
+	}
+
+	#经互会
+	spriteType = {
+		name = "GFX_EMA_ui_open_button_window"
+		texturefile = "gfx/interface/EMA/EMA.dds"
+	}
+
+	#因为傻逼本体不写肖像本地化不得不加的内容
+	spriteType = {
+		name = "GFX_antonino_proletarino_portrait"
+		texturefile = "gfx/leaders/WNG/portrait_wingbardy_antonino_proletarino.dds"
+	}
+	spriteType = {
+		name = "GFX_giovanni_gacci_portrait"
+		texturefile = "gfx/leaders/WNG/Giovanni_Gacci.tga"
+	}
+	spriteType = {
+		name = "GFX_bernhardt_stappenbeld_portrait"
+		texturefile = "gfx/leaders/FEA/Bernhardt_Stappenbeld.tga"
+	}
+	spriteType = {
+		name = "GFX_starry_night_portrait"
+		texturefile = "gfx/leaders/LSC/Starry_Night.tga"
+	}
+	spriteType = {
+		name = "GFX_ernst_fischer_portrait"
+		texturefile = "gfx/leaders/HLQ/HLQ_Ernst.tga"
+	}
+	spriteType = {
+		name = "GFX_grand_cru_portrait"
+		texturefile = "gfx/leaders/JER/Grand_Cru.tga"
+	}
+	spriteType = {
+		name = "GFX_moe_sparrowsbane_portrait"
+		texturefile = "gfx/leaders/FAT/Moe_Sparrowsbane.tga"
+	}
+	spriteType = {
+		name = "GFX_rikard_astler_portrait"
+		texturefile = "gfx/leaders/FAT/Rikard_Astler.tga"
+	}
+	spriteType = {
+		name = "GFX_heinrich_redtail_portrait"
+		texturefile = "gfx/leaders/GRF/Heinrich.tga"
+	}
+}

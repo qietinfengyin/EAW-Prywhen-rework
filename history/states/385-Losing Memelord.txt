@@ -1,0 +1,31 @@
+state = {
+	id = 385
+	name = "STATE_385"
+
+	provinces = {
+		7572
+	}
+
+	manpower = 976005
+	state_category = city
+	buildings_max_level_factor = 1.00
+
+	history = {
+		owner = GRW
+		add_core_of = GRW
+		add_core_of = BRF
+
+		victory_points = { 7572 15 }
+
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 3
+			arms_factory = 1
+			dockyard = 1
+
+			7572 = {
+				naval_base = 1
+			}
+		}
+	}
+}

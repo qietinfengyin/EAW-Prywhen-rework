@@ -1,0 +1,31 @@
+add_namespace = experiment
+
+country_event = {
+	id = experiment.1
+	title = experiment.1.t
+	desc = experiment.1.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+
+	option = {
+		name = experiment.1.a
+		
+	}
+
+	option = {
+		name = experiment.1.b
+		load_focus_tree = GRW_reconstruct_the_country
+	}
+
+	option = {
+		name = experiment.1.c
+		load_focus_tree = GRW_unified_Evi
+		set_country_flag = GRW_chairman_filip_redglad
+		set_country_flag = GRW_choose_rozenkampism_1
+		set_country_flag = GRW_choose_syndicalism_1
+		set_country_flag = GRW_choose_democratic_socialism_1
+		set_country_flag = GRW_military_middle_road_flag
+		set_country_flag = GRW_people_congress_flag
+	}
+}

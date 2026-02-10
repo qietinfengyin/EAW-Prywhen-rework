@@ -1,0 +1,371 @@
+units = {
+	fleet = {
+		name = "Flota Permanenta a Marina Rosie a Uniunii"
+		naval_base = 7572
+		#主力舰队
+		task_force = {
+			name = "Flota Principala"
+			location = 7572
+			#1战列
+			ship = {
+				name = "Noul Evi"
+				definition = battleship
+				equipment = {
+					ship_hull_heavy_2 = {
+						amount = 1
+						owner = GRW
+						version_name = "New Evi Class"
+					}
+				}
+			}
+			#2重巡
+			ship = {
+				name = "Steagul Rosu"
+				definition = heavy_cruiser
+				equipment = {
+					ship_hull_cruiser_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			ship = {
+				name = "Steluta Rosie"
+				definition = heavy_cruiser
+				equipment = {
+					ship_hull_cruiser_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			#4轻巡
+			ship = {
+				name = "Priven"
+				definition = light_cruiser
+				equipment = {
+					ship_hull_cruiser_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			ship = {
+				name = "Gryphus"
+				definition = light_cruiser
+				equipment = {
+					ship_hull_cruiser_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			ship = {
+				name = "Lushi"
+				definition = light_cruiser
+				equipment = {
+					ship_hull_cruiser_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			ship = {
+				name = "Zaphzia"
+				definition = light_cruiser
+				equipment = {
+					ship_hull_cruiser_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			#8驱逐
+			ship = {
+				name = "Kivessin"
+				definition = destroyer
+				equipment = {
+					ship_hull_light_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			ship = {
+				name = "Sydia"
+				definition = destroyer
+				equipment = {
+					ship_hull_light_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			ship = {
+				name = "Kissau"
+				definition = destroyer
+				equipment = {
+					ship_hull_light_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			ship = {
+				name = "Qwoptia"
+				definition = destroyer
+				equipment = {
+					ship_hull_light_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			ship = {
+				name = "Crowoia"
+				definition = destroyer
+				equipment = {
+					ship_hull_light_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			ship = {
+				name = "Twelt"
+				definition = destroyer
+				equipment = {
+					ship_hull_light_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			ship = {
+				name = "Temsoar"
+				definition = destroyer
+				equipment = {
+					ship_hull_light_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			ship = {
+				name = "Floare Alba"
+				definition = destroyer
+				equipment = {
+					ship_hull_light_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+		}
+		#20潜艇
+		task_force = {
+			name = "Flota Submarina"
+			location = 7572
+			ship = {
+				name = "Anabasis-1"
+				definition = submarine
+				equipment = {
+					ship_hull_submarine_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			ship = {
+				name = "Anabasis-2"
+				definition = submarine
+				equipment = {
+					ship_hull_submarine_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			ship = {
+				name = "Anabasis-3"
+				definition = submarine
+				equipment = {
+					ship_hull_submarine_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			ship = {
+				name = "Anabasis-4"
+				definition = submarine
+				equipment = {
+					ship_hull_submarine_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			ship = {
+				name = "Anabasis-5"
+				definition = submarine
+				equipment = {
+					ship_hull_submarine_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			ship = {
+				name = "Anabasis-6"
+				definition = submarine
+				equipment = {
+					ship_hull_submarine_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			ship = {
+				name = "Anabasis-7"
+				definition = submarine
+				equipment = {
+					ship_hull_submarine_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			ship = {
+				name = "Anabasis-8"
+				definition = submarine
+				equipment = {
+					ship_hull_submarine_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			ship = {
+				name = "Anabasis-9"
+				definition = submarine
+				equipment = {
+					ship_hull_submarine_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			ship = {
+				name = "Anabasis-10"
+				definition = submarine
+				equipment = {
+					ship_hull_submarine_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			ship = {
+				name = "Anabasis-11"
+				definition = submarine
+				equipment = {
+					ship_hull_submarine_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			ship = {
+				name = "Anabasis-12"
+				definition = submarine
+				equipment = {
+					ship_hull_submarine_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			ship = {
+				name = "Anabasis-13"
+				definition = submarine
+				equipment = {
+					ship_hull_submarine_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			ship = {
+				name = "Anabasis-14"
+				definition = submarine
+				equipment = {
+					ship_hull_submarine_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			ship = {
+				name = "Anabasis-15"
+				definition = submarine
+				equipment = {
+					ship_hull_submarine_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			ship = {
+				name = "Anabasis-16"
+				definition = submarine
+				equipment = {
+					ship_hull_submarine_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			ship = {
+				name = "Anabasis-17"
+				definition = submarine
+				equipment = {
+					ship_hull_submarine_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			ship = {
+				name = "Anabasis-18"
+				definition = submarine
+				equipment = {
+					ship_hull_submarine_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			ship = {
+				name = "Anabasis-19"
+				definition = submarine
+				equipment = {
+					ship_hull_submarine_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+			ship = {
+				name = "Anabasis-20"
+				definition = submarine
+				equipment = {
+					ship_hull_submarine_2 = {
+						amount = 1
+						owner = GRW
+					}
+				}
+			}
+		}
+	}
+}

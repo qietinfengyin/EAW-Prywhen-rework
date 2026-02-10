@@ -1,0 +1,24 @@
+state = {
+	id = 559
+	name = "STATE_559"
+
+	provinces = {
+		934 3814 3881 3934 4514 6837 6852 6893 6898 9788 9835 9927 10252 11815 11855 11886
+	}
+
+	manpower = 293421
+	state_category = town
+	buildings_max_level_factor = 1
+
+	history={
+		owner = GRU
+		add_core_of = GRU
+
+		victory_points = { 3814 1 }
+
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+		}
+	}
+}

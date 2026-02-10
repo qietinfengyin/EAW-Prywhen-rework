@@ -1,0 +1,24 @@
+state = {
+	id = 1210
+	name = "STATE_1210"
+
+	provinces = {
+		1353 11764 9781 12191 12164 4359
+	}
+
+	manpower = 117368
+	state_category = rural
+	buildings_max_level_factor = 1
+
+	history = {
+		owner = GRU
+		add_core_of = GRU
+
+		victory_points = { 4359 5 }
+
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+		}
+	}
+}

@@ -1,0 +1,173 @@
+guiTypes = {
+	containerWindowType = {
+		name = "GRW_national_archives_administration_window"
+		position = {
+			x = 603
+			y = -357
+		}
+		size = {
+			width = 280
+			height = 618
+		}
+		orientation = center
+		clipping = no
+
+		show_sound = menu_open_window
+		hide_sound = menu_close_window
+
+		background = {
+			name = "GRW_national_archives_administration_bg"
+			quadTextureSprite = "GFX_tiled_plain_bg"
+		}
+
+		containerWindowType = {
+			name = "GRW_national_archives_administration_top"
+			position = {
+				x = 0
+				y = 0
+			}
+			size = {
+				width = 100%
+				height = 80
+			}
+
+			background = {
+				name = "GRW_national_archives_administration_top_bg"
+				spriteType = "console_background2"
+			}
+
+			instantTextBoxType = {
+				name = "GRW_national_archives_administration_title"
+				position = {
+					x = 90
+					y = 25
+				}
+				text = "GRW_national_archives_administration_tt"
+				font = "hoi_24header"
+				maxWidth = 105
+				format = center
+				alwaystransparent = yes
+			}
+		}
+
+		buttonType = {
+			name = "GRW_NAAP_department_1_button"
+			position = {
+				x = 268
+				y = 77
+			}
+			spriteType = "GFX_GRW_NAAP_Political_and_Legal_TAB"
+			pdx_tooltip = "GRW_NAAP_department_1_button_tt"
+		}
+		buttonType = {
+			name = "GRW_NAAP_department_2_button"
+			position = {
+				x = 268
+				y = 163
+			}
+			spriteType = "GFX_GRW_NAAP_Economic_TAB"
+			pdx_tooltip = "GRW_NAAP_department_2_button_tt"
+		}
+		buttonType = {
+			name = "GRW_NAAP_department_3_button"
+			position = {
+				x = 268
+				y = 249
+			}
+			spriteType = "GFX_GRW_NAAP_Diplomatic_TAB"
+			pdx_tooltip = "GRW_NAAP_department_3_button_tt"
+		}
+		buttonType = {
+			name = "GRW_NAAP_department_4_button"
+			position = {
+				x = 268
+				y = 335
+			}
+			spriteType = "GFX_GRW_NAAP_Cultural_and_Educational_TAB"
+			pdx_tooltip = "GRW_NAAP_department_4_button_tt"
+		}
+		buttonType = {
+			name = "GRW_NAAP_department_5_button"
+			position = {
+				x = 268
+				y = 421
+			}
+			spriteType = "GFX_GRW_NAAP_Supervision_TAB"
+			pdx_tooltip = "GRW_NAAP_department_5_button_tt"
+		}
+		
+		buttonType = {
+			name = "GRW_NAAP_ESC"
+			position = {
+				x = 290
+				y = 22
+			}
+			quadTextureSprite = "GFX_closebutton"
+			shortcut = "ESCAPE"
+			pdx_tooltip = "CLOSE"
+			clicksound = click_close
+		}
+	}
+
+	containerWindowType = {
+		name = "GRW_NAAP_department_window"
+		position = {
+			x = 0
+			y = 73
+		}
+		size = {
+			width = 280
+			height = 100%%
+		}
+
+		verticalScrollbar = "right_vertical_slider"
+		margin = {
+			top = 2
+			bottom = 2
+		}
+		smooth_scrolling = yes
+
+		background = {
+			name = "GRW_NAAP_department_bg"
+			quadTextureSprite = "console_background2"
+		}
+
+		gridBoxType = {
+			name = "GRW_NAAP_entry_button_gridbox"
+			position = {
+				x = -80
+				y = 20
+			}
+			size = {
+				width = 100%
+				height = 100%
+			}
+			slotsize = {
+				width = 90
+				height = 50
+			}
+			max_slots_horizontal = 3
+			add_horizontal = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "GRW_NAAP_entry_button_cell"
+		position = {
+			x = 0
+			y = 0
+		}
+		size = {
+			width = 144
+			height = 48
+		}
+		clipping = no
+
+		buttonType = {
+			name = "GRW_NAAP_entry_button"
+			spriteType = "GFX_GRW_NAAP_ENTRY"
+			buttonFont = "hoi_16mbs"
+			buttonText = "[?GRW_NAAP_value_button.GetTokenLocalizedKey]"
+		}
+	}
+}

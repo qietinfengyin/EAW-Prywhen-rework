@@ -1,0 +1,3434 @@
+ideas = {
+	#经济法案
+	economy = {
+		law = yes
+		use_list_view = yes
+
+		#计划经济
+		GRW_planned_economy = {
+			picture = new_economic_policy
+			cost = 150
+			default = no
+
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				has_completed_focus = GRW_three_major_transformations
+				NOT = {
+					has_idea = GRW_planned_economy_2
+				}
+			}
+
+			allowed_to_remove = {
+				always = no
+			}
+			cancel_if_invalid = no
+
+			modifier = {
+				consumer_goods_expected_value = 0.25
+				production_speed_industrial_complex_factor = 0.15
+				production_speed_arms_factory_factor = 0.15
+				production_factory_efficiency_gain_factor = -0.2
+				line_change_production_efficiency_factor = -0.1
+				production_factory_max_efficiency_factor = 0.1
+				production_factory_start_efficiency_factor = 0.05
+				conversion_cost_civ_to_mil_factor= -0.2
+			}
+		}
+		GRW_planned_economy_2 = {
+			name = GRW_planned_economy
+			picture = new_economic_policy
+			cost = 150
+			default = no
+
+			allowed = {
+				original_tag = GRW
+			}
+			visible = {
+				has_completed_focus = GRW_seize_means_of_production
+				NOT = {
+					has_idea = GRW_planned_economy
+				}
+			}
+
+			allowed_to_remove = {
+				always = no
+			}
+			cancel_if_invalid = no
+
+			modifier = {
+				consumer_goods_expected_value = 0.2
+				production_speed_industrial_complex_factor = 0.2
+				production_speed_arms_factory_factor = 0.2
+				production_factory_efficiency_gain_factor = -0.35
+				line_change_production_efficiency_factor = -0.2
+				production_factory_max_efficiency_factor = 0.15
+				production_factory_start_efficiency_factor = 0.1
+				conversion_cost_civ_to_mil_factor= -0.3
+			}
+		}
+	}
+
+	academy_spirit = {
+		GRW_higher_military_academy = {#鹫民解放军军事学院
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GRW_higher_military_academy" }
+			ledger = army
+			ai_will_do = {
+				base = 10
+			}
+			allowed = {
+				has_dlc = "No Step Back"
+			}
+			visible = {
+				original_tag = GRW
+				has_country_flag = GRW_establish_the_army_academy_flag
+			}
+			modifier = {
+				military_leader_cost_factor = -0.5
+				party_popularity_stability_factor = 0.05
+				custom_modifier_tooltip = GRW_higher_military_academy_tt
+			}
+		}
+	}
+
+	country = {###为了本体正常运转加的idea
+		GRW_risk_of_famine = {
+			picture = raj_risk_of_famine
+			allowed = {
+				always = no
+			}
+			available = {
+				is_subject = no
+				NOT = { 
+					has_completed_focus = GRW_reformation_of_agriculture
+					has_completed_focus = BRF_rice_fields
+				}
+			}
+			modifier = {
+			}
+		}
+		GRW_famine_start = {
+			picture = GRW_famine_start
+			allowed = {
+				always = no
+			}
+			modifier = {
+				training_time_army_factor = 0.1
+				army_morale_factor = -0.05
+				stability_factor = -0.05
+				industrial_capacity_factory = -0.1
+				industrial_capacity_dockyard = -0.1
+				production_factory_max_efficiency_factor = -0.1
+				production_speed_buildings_factor = -0.1
+				army_speed_factor = -0.1
+				MONTHLY_POPULATION = -0.15
+			}
+		}
+		GRW_famine = {
+			picture = GRW_famine
+			allowed = {
+				always = no
+			}
+			modifier = {
+				training_time_army_factor = 0.2
+				army_morale_factor = -0.15
+				stability_factor = -0.15
+				industrial_capacity_factory = -0.25
+				industrial_capacity_dockyard = -0.25
+				production_factory_max_efficiency_factor = -0.15
+				production_speed_buildings_factor = -0.35
+				army_speed_factor = -0.15
+				MONTHLY_POPULATION = -0.3
+			}
+		}
+		GRW_socialist_production_idea = {
+			picture = generic_goods_red_bonus
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				has_government = communism
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				production_factory_max_efficiency_factor = 0.07
+			}
+		}
+		GRW_victory_in_civil_war_bonus = {
+			picture = can_patriation
+			allowed = {
+				always = no
+			}
+			available = {
+				NOT = {
+					has_war_with = BRF
+				}
+			}
+			modifier = {
+				political_power_gain = 0.15
+				stability_factor = 0.2
+			}
+		}
+	}
+
+	country = {###测试用
+		GRW_debug_idea = {
+			picture = GRW_war_of_liberation
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_cost = 0.1
+				consumer_goods_factor = 0.1
+				max_planning = 0.1
+				planning_speed = 0.1
+				control_trade_mission_factor = 0.1
+				intel_network_gain_factor = 0.1
+				operative_slot = 0.1
+				operation_make_resistance_contacts_outcome = 0.1
+				operation_boost_resistance_outcome = 0.1
+				operation_infiltrate_outcome = 0.1
+				operation_coup_government_outcome = 0.1
+				boost_ideology_mission_factor = 0.1
+				operation_collaboration_government_outcome = 0.1
+				supply_node_range = 0.1
+			}
+		}
+	}
+
+	country = {
+
+		#引入马铃薯
+		GRW_adopt_potatos = {
+			picture = GRW_potato_farming
+			allowed = {
+				always = no
+			}
+			modifier = {
+				army_morale_factor = 0.05
+				stability_weekly = 0.01
+			}
+		}
+
+		#共和国中央
+		GRW_prywhen_interim_national_plan = {#普里文政治协商会议共同纲领
+			picture = TBK_dusk_faction_large
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = 0.05
+				stability_factor = 0.05
+				war_support_factor = 0.05
+				communism_drift = 0.05
+				democratic_drift = 0.01
+			}
+		}
+		GRW_constitution_for_workers_and_peasants = {#工农宪法
+			picture = TBK_dusk_faction_large
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = 0.05
+				stability_factor = 0.1
+				war_support_factor = 0.1
+				communism_drift = 0.1
+				democratic_drift = 0.03
+			}
+		}
+
+		#政府工作重心：聚焦科教
+		GRW_focus_sci_idea = {
+			picture = viirascience
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = 0.05
+				research_speed_factor = 0.05
+			}
+			on_add = {
+				if = {
+					limit = {
+						NOT = {
+							has_idea = GRW_national_kivessin_university_idea
+						}
+					}
+					country_event = {
+						id = GRW_earlygame.20
+						days = 180
+						random_days = 20
+					}
+				}
+			}
+		}
+		#政府工作重心：聚焦工商
+		GRW_focus_ind_idea = {
+			picture = TRO_zarza_ind
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				consumer_goods_factor = -0.1
+			}
+			on_add = {
+				GRW_reconstruction_cost_decrease = yes
+			}
+			on_remove = {
+				GRW_reconstruction_cost_increase = yes
+			}
+		}
+		#政府工作重心：聚焦农牧
+		GRW_focus_ag_idea = {
+			picture = CTL_hindia_agr
+			allowed = {
+				always = no
+			}
+			modifier = {
+				global_building_slots_factor = 0.15
+				monthly_population = 0.3
+			}
+			on_add = {
+				GRW_land_reform_cost_decrease = yes
+			}
+			on_remove = {
+				GRW_land_reform_cost_increase = yes
+			}
+		}
+
+		#鹫民骑士团
+		GRW_Saraci_knights_1 = {
+			picture = BRF_everyman_a_knight
+			allowed = {
+				always = no
+			}
+			modifier = {
+				conscription = 0.005
+				conscription_factor = 0.1
+				training_time_factor = -0.1
+			}
+		}
+		GRW_Saraci_knights_2 = {
+			name = GRW_Saraci_knights_1
+			picture = BRF_everyman_a_knight
+			allowed = {
+				always = no
+			}
+			modifier = {
+				conscription = 0.005
+				conscription_factor = 0.1
+				training_time_factor = -0.1
+				modifier_army_sub_unit_knights_attack_factor = 0.15
+				modifier_army_sub_unit_knights_defence_factor = 0.15
+				modifier_army_sub_unit_knights_speed_factor = 0.1
+			}
+		}
+		GRW_Saraci_knights_3 = {
+			name = GRW_Saraci_knights_1
+			picture = BRF_everyman_a_knight
+			allowed = {
+				always = no
+			}
+			modifier = {
+				conscription = 0.005
+				conscription_factor = 0.1
+				training_time_factor = -0.1
+				modifier_army_sub_unit_knights_attack_factor = 0.2
+				modifier_army_sub_unit_knights_defence_factor = 0.2
+				modifier_army_sub_unit_knights_speed_factor = 0.15
+				special_forces_cap = 0.1
+			}
+		}
+
+		#未竟之业
+		GRW_unfulfilled_promises_1 = {
+			picture = WNG_COM_const
+			allowed = {
+				always = no
+			}
+			modifier = {
+				compliance_gain = -0.02
+				political_power_factor = -0.2
+				stability_factor = 0.05
+				war_support_factor = 0.1
+				stability_weekly = -0.005
+			}
+		}
+		GRW_unfulfilled_promises_2 = {
+			name = GRW_unfulfilled_promises_1
+			picture = WNG_COM_const
+			allowed = {
+				always = no
+			}
+			modifier = {
+				compliance_gain = -0.01
+				political_power_factor = -0.15
+				stability_factor = 0.05
+				war_support_factor = 0.1
+				stability_weekly = -0.003
+			}
+		}
+		GRW_unfulfilled_promises_3 = {
+			name = GRW_unfulfilled_promises_1
+			picture = WNG_COM_const
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = -0.1
+				stability_factor = 0.05
+				war_support_factor = 0.1
+				stability_weekly = -0.001
+			}
+		}
+		GRW_unfulfilled_promises_4 = {
+			name = GRW_unfulfilled_promises_1
+			picture = WNG_COM_const
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = -0.05
+				stability_factor = 0.05
+				war_support_factor = 0.1
+			}
+		}
+		GRW_unfulfilled_promises_5 = {
+			name = GRW_unfulfilled_promises_1
+			picture = WNG_COM_const
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = 0.05
+				stability_factor = 0.05
+				war_support_factor = 0.1
+			}
+		}
+		GRW_unfulfilled_promises_6 = {
+			name = GRW_unfulfilled_promises_1
+			picture = WNG_COM_const
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = 0.1
+				stability_factor = 0.05
+				war_support_factor = 0.1
+				compliance_gain = 0.01
+			}
+		}
+		#已竟之业
+		GRW_accomplished_undertaking = {
+			picture = WNG_COM_const
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = 0.15
+				stability_factor = 0.1
+				war_support_factor = 0.15
+				compliance_gain = 0.03
+			}
+		}
+
+		#扫盲运动进行中
+		GRW_literacy_campaign = {
+			picture = BAR_science_party2
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = -0.05
+				consumer_goods_factor = 0.05
+			}
+		}
+
+		#六三学制
+		GRW_Six_Three_educational_system = {
+			picture = WNG_COM_school
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = 0.05
+				research_speed_factor = 0.05
+			}
+		}
+		#学院现代化
+		GRW_higher_education = {
+			picture = WNG_COM_school
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = 0.1
+				consumer_goods_factor = 0.05
+				research_speed_factor = 0.1
+			}
+		}
+
+		#临时权力真空
+		GRW_power_vacumn = {
+			picture = MIT_temporary_power_vacuum
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = -0.2
+				trade_laws_cost_factor = 0.25
+				economy_cost_factor = 0.25
+				mobilization_laws_cost_factor = 0.25
+			}
+		}
+		#普遍宽容
+		GRW_general_tolerance = {
+			picture = HUN_treaty_of_triannon
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = -0.15
+				stability_factor = 0.1
+				stability_weekly = 0.004
+				communism_drift = 0.05
+				democratic_drift = 0.02
+				neutrality_drift = 0.01
+			}
+		}
+		#辞旧迎新
+		GRW_farewell_old_welcome_new = {
+			picture = BRZ_long_road_to_communism
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = 0.05
+				stability_factor = 0.05
+				stability_weekly = 0.001
+				communism_drift = 0.04
+				democratic_drift = 0.01
+			}
+		}
+		#涤尽污垢
+		GRW_cleanse_the_system = {
+			picture = HEL_free_toilers_of_adelart
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = 0.2
+				stability_factor = -0.05
+				stability_weekly = -0.001
+				communism_drift = 0.03
+				democratic_drift = 0.01
+				neutrality_drift = -0.02
+				fascism_drift = -0.02
+			}
+		}
+
+		#治安问题
+		GRW_bandit_hibernation = {#匪徒蛰伏
+			picture = BAN_blackrocks_army
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = -0.05
+				conscription_factor = -0.05
+				fascism_drift = 0.01
+			}
+		}
+		GRW_threat_of_banditry_1 = {#治安问题: 癣疥之疾
+			picture = BAN_blackrocks_army
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.05
+				war_support_factor = -0.1
+				attrition = 0.05
+				conscription_factor = -0.05
+				local_resources_factor = -0.05
+				production_speed_infrastructure_factor = -0.05
+				fascism_drift = 0.02
+			}
+		}
+		GRW_threat_of_banditry_2 = {#治安问题：风波渐起
+			picture = BAN_blackrocks_army
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.1
+				war_support_factor = -0.15
+				attrition = 0.1
+				conscription_factor = -0.1
+				local_resources_factor = -0.1
+				production_speed_infrastructure_factor = -0.1
+				fascism_drift = 0.03
+			}
+		}
+		GRW_threat_of_banditry_3 = {#治安问题：心腹大患
+			picture = BAN_blackrocks_army
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.2
+				war_support_factor = -0.2
+				attrition = 0.2
+				conscription_factor = -0.15
+				local_resources_factor = -0.15
+				production_speed_infrastructure_factor = -0.2
+				fascism_drift = 0.05
+			}
+		}
+
+		#国家政治保卫局
+		GRW_state_bureau_of_political_defense_idea = {
+			picture = STG_secret_police
+			allowed = {
+				always = no
+			}
+			modifier = {
+				operative_slot = 1
+				enemy_operative_detection_chance_factor = 0.25
+				enemy_operative_capture_chance_factor = 0.25
+			}
+		}
+
+		#打破性别藩篱
+		GRW_women_emancipation_idea = {
+			picture = jap_the_unthinkable_option
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = -0.1
+				industrial_capacity_factory = 0.15
+			}
+			on_remove = {
+				add_ideas = GRW_women_emancipation_idea_1
+			}
+		}
+		#平等的两性权利
+		GRW_women_emancipation_idea_1 = {
+			picture = jap_the_unthinkable_option
+			allowed = {
+				always = no
+			}
+			modifier = {
+				industrial_capacity_factory = 0.05
+				conscription_factor = 0.1
+			}
+		}
+
+		GRW_BRF_postwar_1 = {#内战的创伤
+			picture = prywhen_civil_war_aftermath
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.3
+				production_factory_max_efficiency_factor = -0.2
+				production_factory_efficiency_gain_factor = -0.2
+				production_speed_buildings_factor = -0.4
+				industrial_capacity_factory = -0.2
+				industrial_capacity_dockyard = -0.2
+			}
+		}
+		GRW_BRF_postwar_2 = {#阴霾散去
+			picture = prywhen_civil_war_aftermath
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.2
+				production_factory_max_efficiency_factor = -0.15
+				production_factory_efficiency_gain_factor = -0.15
+				production_speed_buildings_factor = -0.3
+				industrial_capacity_factory = -0.1
+				industrial_capacity_dockyard = -0.1
+			}
+		}
+		GRW_BRF_postwar_3 = {#地平线尽头
+			picture = prywhen_civil_war_aftermath
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.1
+				production_factory_max_efficiency_factor = -0.1
+				production_factory_efficiency_gain_factor = -0.1
+				production_speed_buildings_factor = -0.2
+				industrial_capacity_factory = -0.05
+				industrial_capacity_dockyard = -0.05
+			}
+		}
+		#舔舐伤口
+		GRW_recover_from_civil_war = {
+			picture = EQS_UESR_sharing
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_weekly = 0.005
+				industry_repair_factor = 1
+			}
+		}
+
+		#农业现状
+		GRW_current_status_of_agriculture_1 = {#农业现状：饿殍载道
+			picture = severe_famine
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.3
+				conscription_factor = -0.5
+				monthly_population = -0.5
+				training_time_army_factor = 0.5
+				production_speed_infrastructure_factor = -0.5
+				stability_factor = -0.2
+				war_support_factor = -0.4
+			}
+		}
+		GRW_current_status_of_agriculture_2 = {#农业现状：比岁不登
+			picture = severe_famine2
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.2
+				conscription_factor = -0.3
+				monthly_population = -0.3
+				training_time_army_factor = 0.3
+				production_speed_infrastructure_factor = -0.3
+				stability_factor = -0.1
+				war_support_factor = -0.2
+			}
+		}
+		GRW_current_status_of_agriculture_3 = {#农业现状：渐入正轨
+			picture = severe_famine3
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.1
+				conscription_factor = -0.15
+				monthly_population = -0.15
+				training_time_army_factor = 0.2
+				production_speed_infrastructure_factor = -0.2
+				stability_factor = -0.05
+				war_support_factor = -0.15
+			}
+		}
+		GRW_current_status_of_agriculture_4 = {#农业现状：稳步发展
+			picture = severe_famine4
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.05
+				conscription_factor = -0.05
+				training_time_army_factor = 0.1
+				production_speed_infrastructure_factor = -0.1
+				war_support_factor = -0.1
+			}
+		}
+		GRW_current_status_of_agriculture_5 = {#农业现状：岁稔年丰
+			picture = severe_famine5
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = -0.1
+				conscription_factor = 0.1
+				monthly_population = 0.2
+			}
+		}
+
+		#国家无神论
+		GRW_controlled_unions = {
+			picture = generic_communism_drift_bonus
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = 0.05
+				industrial_capacity_factory = 0.05
+			}
+		}
+		#信仰自由
+		GRW_free_unions = {
+			picture = generic_religion
+			allowed = {
+				always = no
+			}
+			modifier = {
+				conscription_factor = 0.05
+				army_morale_factor = 0.05
+			}
+		}
+
+		#基层群众自治
+		GRW_grassroots_democracy_idea = {
+			picture = generic_democratic_drift_bonus
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = 0.05
+				local_building_slots_factor = 0.05
+			}
+		}
+
+		#从襁褓到坟墓
+		GRW_cradle_to_grave = {
+			picture = STG_workers_culture
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.1
+				monthly_population = 0.2
+				local_resources_factor = 0.1
+			}
+		}
+
+		#社会主义的进步灯塔
+		GRW_birthplace_of_revolution_in_southernGriffonia = {
+			picture = WNG_COM_home
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.15
+				monthly_population = 0.35
+				local_resources_factor = 0.15
+				political_power_factor = 0.1
+				industrial_capacity_factory = 0.1
+				stability_factor = 0.1
+				local_building_slots_factor = 0.1
+			}
+		}
+		GRW_birthplace_of_revolution_in_southernGriffonia2 = {
+			name = GRW_birthplace_of_revolution_in_southernGriffonia
+			picture = WNG_COM_home
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.15
+				monthly_population = 0.35
+				local_resources_factor = 0.15
+				conscription_factor = 0.1
+				army_morale_factor = 0.1
+				stability_factor = 0.1
+				local_building_slots_factor = 0.1
+			}
+		}
+
+		#反共条约
+		GRW_anti_Prywhen_pact = {
+			picture = anti_soviet_pact
+			allowed = {
+				always = no
+			}
+			available = {
+				NOT = {
+					has_government = communism
+				}
+			}
+			targeted_modifier = {
+				tag = GRW
+				attack_bonus_against = 0.05
+				defense_bonus_against = 0.1
+				communism_drift = -0.01
+			}
+		}
+
+		#与普里文合作
+		GRW_LUS_cooperation_1 = {
+			picture = generic_flexible_foreign_policy2
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = -0.1
+				communism_drift = 0.03
+			}
+		}
+		GRW_LUS_cooperation_2 = {
+			name = GRW_LUS_cooperation_1
+			picture = generic_flexible_foreign_policy2
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = -0.1
+				research_speed_factor = 0.05
+				communism_drift = 0.05
+			}
+		}
+
+		#支援翼巴第解放运动
+		GRW_support_WNG_idea = {
+			picture = STG_progressive_leader
+			allowed = {
+				always = no
+			}
+			available = {
+				has_global_flag = WNG_civil_war
+				NOT = {
+					has_global_flag = WNG_civil_war_over
+				}
+			}
+			modifier = {
+				custom_modifier_tooltip = GRW_support_WNG_idea_tt
+			}
+			on_add = {
+				add_relation_modifier = {
+					target = WNG
+					modifier = volunteer_limit_plus_two
+				}
+				WNG = {
+					add_to_array = {
+						array = GRW.internationalism_support
+						value = THIS
+					}
+					save_event_target_as = volunteer_target
+				}
+				send_volunteers_to_TARGET = yes
+			}
+			on_remove = {
+				remove_relation_modifier = {
+					target = WNG
+					modifier = volunteer_limit_plus_two
+				}
+				WNG = {
+					remove_from_array = {
+						array =  GRW.internationalism_support
+						value = THIS
+					}
+					save_event_target_as = volunteer_target
+				}
+				clear_volunteers_to_TARGET = yes
+			}
+		}
+
+		#支援长剑解放军
+		GRW_support_LSC_idea = {
+			picture = STG_progressive_leader
+			allowed = {
+				always = no
+			}
+			available = {
+				LSC = {
+					exists = yes
+				}
+				NOT = {
+					has_global_flag = LNS_civil_war_end_flag
+				}
+			}
+			modifier = {
+				custom_modifier_tooltip = GRW_support_LSC_idea_tt
+			}
+			on_add = {
+				add_relation_modifier = {
+					target = LSC
+					modifier = volunteer_limit_plus_one
+				}
+				LSC = {
+					add_to_array = {
+						array = GRW.internationalism_support
+						value = THIS
+					}
+					save_event_target_as = volunteer_target
+				}
+				send_volunteers_to_TARGET = yes
+			}
+			on_remove = {
+				remove_relation_modifier = {
+					target = LSC
+					modifier = volunteer_limit_plus_one
+				}
+				LSC = {
+					remove_from_array = {
+						array =  GRW.internationalism_support
+						value = THIS
+					}
+					save_event_target_as = volunteer_target
+				}
+				clear_volunteers_to_TARGET = yes
+			}
+		}
+		GRW_support_LSC_idea_1 = {
+			name = GRW_support_LSC_idea
+			picture = STG_progressive_leader
+			allowed = {
+				always = no
+			}
+			available = {
+				LSC = {
+					exists = yes
+				}
+				NOT = {
+					has_global_flag = LNS_civil_war_end_flag
+				}
+			}
+			modifier = {
+				custom_modifier_tooltip = GRW_support_LSC_idea_1_tt
+			}
+			on_add = {
+				add_relation_modifier = {
+					target = LSC
+					modifier = volunteer_limit_plus_two
+				}
+				LSC = {
+					add_to_array = {
+						array = GRW.internationalism_support
+						value = THIS
+					}
+					save_event_target_as = volunteer_target
+				}
+				send_volunteers_to_TARGET = yes
+			}
+			on_remove = {
+				remove_relation_modifier = {
+					target = LSC
+					modifier = volunteer_limit_plus_two
+				}
+				LSC = {
+					remove_from_array = {
+						array =  GRW.internationalism_support
+						value = THIS
+					}
+					save_event_target_as = volunteer_target
+				}
+				clear_volunteers_to_TARGET = yes
+			}
+		}
+
+		#支援格里富斯的同志
+		GRW_support_GRU_idea = {
+			picture = STG_progressive_leader
+			allowed = {
+				always = no
+			}
+			available = {
+				GRU = {
+					exists = yes
+					has_civil_war = yes
+				}
+			}
+			modifier = {
+				custom_modifier_tooltip = GRW_support_GRU_idea_tt
+			}
+			on_add = {
+				add_relation_modifier = {
+					target = GRU
+					modifier = volunteer_limit_plus_two
+				}
+				GRU = {
+					add_to_array = {
+						array = GRW.internationalism_support
+						value = THIS
+					}
+					save_event_target_as = volunteer_target
+				}
+				send_volunteers_to_TARGET = yes
+			}
+			on_remove = {
+				remove_relation_modifier = {
+					target = GRU
+					modifier = volunteer_limit_plus_two
+				}
+				GRU = {
+					remove_from_array = {
+						array =  GRW.internationalism_support
+						value = THIS
+					}
+					save_event_target_as = volunteer_target
+				}
+				clear_volunteers_to_TARGET = yes
+			}
+		}
+
+		#支援天际纳维亚
+		GRW_support_SRS_idea = {
+			picture = STG_progressive_leader
+			allowed = {
+				always = no
+			}
+			available = {
+				SRS = {
+					exists = yes
+					has_war = yes
+				}
+			}
+			modifier = {
+				custom_modifier_tooltip = GRW_support_SRS_idea_tt
+			}
+			on_add = {
+				add_relation_modifier = {
+					target = SRS
+					modifier = volunteer_limit_plus_two
+				}
+				SRS = {
+					add_to_array = {
+						array = GRW.internationalism_support
+						value = THIS
+					}
+					save_event_target_as = volunteer_target
+				}
+				send_volunteers_to_TARGET = yes
+			}
+			on_remove = {
+				remove_relation_modifier = {
+					target = SRS
+					modifier = volunteer_limit_plus_two
+				}
+				SRS = {
+					remove_from_array = {
+						array =  GRW.internationalism_support
+						value = THIS
+					}
+					save_event_target_as = volunteer_target
+				}
+				clear_volunteers_to_TARGET = yes
+			}
+		}
+
+		#支援骏鹰菲亚
+		GRW_support_HIP_idea = {
+			picture = STG_progressive_leader
+			allowed = {
+				always = no
+			}
+			available = {
+				HIP = {
+					exists = yes
+					has_war = yes
+					has_government = communism
+				}
+			}
+			modifier = {
+				custom_modifier_tooltip = GRW_support_HIP_idea_tt
+			}
+			on_add = {
+				add_relation_modifier = {
+					target = HIP
+					modifier = volunteer_limit_plus_two
+				}
+				HIP = {
+					add_to_array = {
+						array = GRW.internationalism_support
+						value = THIS
+					}
+					save_event_target_as = volunteer_target
+				}
+				send_volunteers_to_TARGET = yes
+			}
+			on_remove = {
+				remove_relation_modifier = {
+					target = HIP
+					modifier = volunteer_limit_plus_two
+				}
+				HIP = {
+					remove_from_array = {
+						array =  GRW.internationalism_support
+						value = THIS
+					}
+					save_event_target_as = volunteer_target
+				}
+				clear_volunteers_to_TARGET = yes
+			}
+		}
+
+		#支援新狮鹫尼亚共和派
+		GRW_support_GRA_idea = {
+			picture = STG_progressive_leader
+			allowed = {
+				always = no
+			}
+			available = {
+				has_global_flag = GRF_civil_war_begun
+				NOT = {
+					any_country = {
+						has_country_flag = GRF_civil_war_over
+					}
+				}
+			}
+			modifier = {
+				custom_modifier_tooltip = GRW_support_GRA_idea_tt
+			}
+			on_add = {
+				add_relation_modifier = {
+					target = GRA
+					modifier = volunteer_limit_plus_two
+				}
+				GRA = {
+					add_to_array = {
+						array = GRW.internationalism_support
+						value = THIS
+					}
+					save_event_target_as = volunteer_target
+				}
+				send_volunteers_to_TARGET = yes
+			}
+			on_remove = {
+				remove_relation_modifier = {
+					target = GRA
+					modifier = volunteer_limit_plus_two
+				}
+				GRA = {
+					remove_from_array = {
+						array =  GRW.internationalism_support
+						value = THIS
+					}
+					save_event_target_as = volunteer_target
+				}
+				clear_volunteers_to_TARGET = yes
+			}
+		}
+		GRW_support_GRA_idea_1 = {
+			name = GRW_support_GRA_idea
+			picture = STG_progressive_leader
+			allowed = {
+				always = no
+			}
+			available = {
+				has_global_flag = GRF_civil_war_begun
+				NOT = {
+					any_country = {
+						has_country_flag = GRF_civil_war_over
+					}
+				}
+			}
+			modifier = {
+				custom_modifier_tooltip = GRW_support_GRA_idea_1_tt
+			}
+			on_add = {
+				add_relation_modifier = {
+					target = GRA
+					modifier = volunteer_limit_plus_three
+				}
+				GRA = {
+					add_to_array = {
+						array = GRW.internationalism_support
+						value = THIS
+					}
+					save_event_target_as = volunteer_target
+				}
+				send_volunteers_to_TARGET = yes
+			}
+			on_remove = {
+				remove_relation_modifier = {
+					target = GRA
+					modifier = volunteer_limit_plus_three
+				}
+				GRA = {
+					remove_from_array = {
+						array =  GRW.internationalism_support
+						value = THIS
+					}
+					save_event_target_as = volunteer_target
+				}
+				clear_volunteers_to_TARGET = yes
+			}
+		}
+
+		#充足的后勤供应
+		GRW_sufficient_logistics_supply = {
+			picture = WNG_COM_lasagne
+			allowed = {
+				always = no
+			}
+			modifier = {
+				supply_node_range = 0.1
+				army_org_regain = 0.1
+				army_org_factor = 0.05
+				army_attack_factor = 0.05
+			}
+		}
+
+		#非常措施
+		GRW_extraordinary_measures = {
+			picture = WNG_COM_command
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_lack_of_resource_penalty_factor = -0.15
+				truck_attrition_factor = -0.1
+				convoy_escort_efficiency = 0.1
+				no_supply_grace = 120
+				weekly_convoys_war_support = 0.001
+			}
+		}
+
+		#国际纵队
+		GRW_international_brigades_idea = {
+			picture = EQS_UESR_banner
+			allowed = {
+				always = no
+			}
+			modifier = {
+				send_volunteer_size = 1
+				send_volunteer_divisions_required = -0.5
+				weekly_manpower = 300
+				communism_drift = 0.01
+			}
+		}
+
+		#来自普里文的军事顾问
+		GRW_military_advisors = {
+			picture = WNG_redwings
+			allowed = {
+				always = no
+			}
+			modifier = {
+				army_attack_factor = 0.05
+				army_org_factor = 0.05
+				max_planning = 0.05
+				planning_speed = 0.1
+			}
+		}
+		#来自普里文的工业援助
+		GRW_industry_aid = {
+			picture = TBK_sevcom
+			allowed = {
+				always = no
+			}
+			modifier = {
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+				production_factory_max_efficiency_factor = 0.05
+				consumer_goods_factor = -0.1
+			}
+		}
+
+		#混乱的货币政策
+		GRW_chaotic_monetary_policy_1 = {
+			picture = HIP_moneylock
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_cost = 0.15
+				consumer_goods_factor = 0.3
+				stability_factor = -0.05
+				trade_opinion_factor = -0.4
+				min_export = -0.25
+			}
+		}
+		GRW_chaotic_monetary_policy_2 = {
+			name = GRW_chaotic_monetary_policy_1
+			picture = HIP_moneylock
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_cost = 0.25
+				consumer_goods_factor = 0.4
+				stability_factor = -0.15
+				trade_opinion_factor = -0.5
+				min_export = -0.35
+			}
+		}
+		#对外贸易受限
+		GRW_foreign_trade_restricted_1 = {
+			picture = HIP_moneylock
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_cost = 0.15
+				consumer_goods_factor = 0.3
+				stability_factor = -0.1
+				trade_opinion_factor = -0.3
+				min_export = -0.25
+			}
+		}
+		GRW_foreign_trade_restricted_2 = {
+			name = GRW_foreign_trade_restricted_1
+			picture = HIP_moneylock
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_cost = 0.1
+				consumer_goods_factor = 0.25
+				stability_factor = -0.1
+				trade_opinion_factor = -0.2
+				min_export = -0.2
+			}
+		}
+		GRW_foreign_trade_restricted_3 = {
+			name = GRW_foreign_trade_restricted_1
+			picture = HIP_moneylock
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_cost = 0.1
+				consumer_goods_factor = 0.2
+				stability_factor = -0.05
+				trade_opinion_factor = -0.15
+				min_export = -0.15
+			}
+		}
+		GRW_foreign_trade_restricted_4 = {
+			name = GRW_foreign_trade_restricted_1
+			picture = HIP_moneylock
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_cost = 0.05
+				consumer_goods_factor = 0.15
+				stability_factor = -0.05
+				trade_opinion_factor = -0.1
+				min_export = -0.1
+			}
+		}
+		GRW_foreign_trade_restricted_5 = {
+			name = GRW_foreign_trade_restricted_1
+			picture = HIP_moneylock
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.1
+				trade_opinion_factor = -0.05
+				min_export = -0.05
+			}
+		}
+		#繁荣的出口贸易
+		GRW_booming_foreign_trade = {
+			picture = CVA_zarcrop
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = 0.1
+				consumer_goods_factor = -0.1
+				trade_opinion_factor = 0.25
+			}
+		}
+
+		#爱勒海条约
+		GRW_talk_with_MCW_idea1 = {
+			picture = HIRA_trade
+			allowed = {
+				always = no
+			}
+			available = {
+				country_exists = MCW
+				NOT = {
+					has_war_with = MCW
+				}
+			}
+			modifier = {
+				stability_factor = -0.05
+				production_factory_max_efficiency_factor = 0.05
+				production_speed_buildings_factor = 0.1
+			}
+			targeted_modifier = {
+				tag = MCW
+				cic_to_target_factor = 0.075
+			}
+		}
+		GRW_talk_with_MCW_idea2 = {
+			name = GRW_talk_with_MCW_idea1
+			picture = HIRA_trade
+			allowed = {
+				always = no
+			}
+			available = {
+				country_exists = MCW
+				NOT = {
+					has_war_with = MCW
+				}
+			}
+			modifier = {
+				production_factory_max_efficiency_factor = 0.075
+				production_speed_buildings_factor = 0.05
+			}
+		}
+		GRW_talk_with_MCW_idea3 = {
+			name = GRW_talk_with_MCW_idea1
+			picture = HIRA_trade
+			allowed = {
+				always = no
+			}
+			available = {
+				country_exists = MCW
+				NOT = {
+					has_war_with = MCW
+				}
+			}
+			modifier = {
+				production_factory_max_efficiency_factor = 0.1
+				production_speed_buildings_factor = 0.05
+				production_speed_synthetic_refinery_factor = 0.1
+				fuel_gain_factor = 0.1
+				country_resource_oil = -35
+				country_resource_rubber = 15
+			}
+		}
+		GRW_talk_with_MCW_idea4 = {
+			name = GRW_talk_with_MCW_idea1
+			picture = HIRA_trade
+			allowed = {
+				always = no
+			}
+			available = {
+				country_exists = MCW
+				NOT = {
+					has_war_with = MCW
+				}
+			}
+			modifier = {
+				production_factory_max_efficiency_factor = 0.075
+				production_speed_buildings_factor = 0.05
+				research_speed_factor = 0.1
+				drift_defence_factor = -0.1
+				democratic_drift = 0.01
+			}
+		}
+		GRW_talk_with_MCW_idea5 = {
+			name = GRW_talk_with_MCW_idea1
+			picture = HIRA_trade
+			allowed = {
+				always = no
+			}
+			available = {
+				country_exists = MCW
+				NOT = {
+					has_war_with = MCW
+				}
+			}
+			modifier = {
+				production_factory_max_efficiency_factor = 0.1
+				production_speed_buildings_factor = 0.05
+				production_speed_synthetic_refinery_factor = 0.1
+				fuel_gain_factor = 0.1
+				country_resource_oil = -35
+				country_resource_rubber = 15
+				research_speed_factor = 0.1
+				drift_defence_factor = -0.1
+				democratic_drift = 0.01
+			}
+		}
+		GRW_talk_with_MCW_idea_MCW_1 = {
+			name = GRW_talk_with_MCW_idea1
+			picture = HIRA_trade
+			allowed = {
+				always = no
+			}
+			available = {
+				country_exists = GRW
+				NOT = {
+					has_war_with = GRW
+				}
+			}
+			modifier = {
+				consumer_goods_factor = -0.1
+				monthly_population = 0.25
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+			}
+		}
+		GRW_talk_with_MCW_idea_MCW_2 = {
+			name = GRW_talk_with_MCW_idea1
+			picture = HIRA_trade
+			allowed = {
+				always = no
+			}
+			available = {
+				country_exists = GRW
+				NOT = {
+					has_war_with = GRW
+				}
+			}
+			modifier = {
+				consumer_goods_factor = -0.15
+				monthly_population = 0.25
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+				country_resource_oil = 35
+				country_resource_rubber = -15
+			}
+		}
+		GRW_talk_with_MCW_idea_MCW_3 = {
+			name = GRW_talk_with_MCW_idea1
+			picture = HIRA_trade
+			allowed = {
+				always = no
+			}
+			available = {
+				country_exists = GRW
+				NOT = {
+					has_war_with = GRW
+				}
+			}
+			modifier = {
+				consumer_goods_factor = -0.1
+				monthly_population = 0.25
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+				research_speed_factor = 0.1
+				drift_defence_factor = -0.1
+				communism_drift = 0.01
+			}
+		}
+		GRW_talk_with_MCW_idea_MCW_4 = {
+			name = GRW_talk_with_MCW_idea1
+			picture = HIRA_trade
+			allowed = {
+				always = no
+			}
+			available = {
+				country_exists = GRW
+				NOT = {
+					has_war_with = GRW
+				}
+			}
+			modifier = {
+				consumer_goods_factor = -0.15
+				monthly_population = 0.25
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+				country_resource_oil = 35
+				country_resource_rubber = -15
+				research_speed_factor = 0.1
+				drift_defence_factor = -0.1
+				communism_drift = 0.01
+			}
+		}
+
+		#有限干涉论
+		GRW_limited_interference_theory_idea = {
+			picture = HIRA_friend
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = 0.05
+				justify_war_goal_time = 0.15
+			}
+		}
+		#求同存异方针
+		GRW_common_ground_differences_policy_idea = {
+			picture = HIRA_friend
+			allowed = {
+				always = no
+			}
+			modifier = {
+				justify_war_goal_time = -0.05
+				opinion_gain_monthly_factor = 0.1
+				improve_relations_maintain_cost_factor = -0.15
+			}
+		}
+
+		#赤匪的破坏
+		GRW_red_bandits_destruction = {
+			picture = ANG_The_Free_State_Army
+			allowed = {
+				always = no
+			}
+			modifier = {
+				attrition_for_controller = 0.1
+				supply_consumption_factor = 0.1
+				army_core_attack_factor = -0.05
+				army_core_defence_factor = -0.05
+			}
+		}
+
+		#星空军工复合体的援助
+		GRW_MIT_military_industrial_complex_aid = {
+			picture = arty
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_factory_max_efficiency_factor = 0.025
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+				support_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+				artillery = {
+					instant = yes
+					build_cost_ic = -0.075
+				}
+				armor = {
+					instant = yes
+					build_cost_ic = -0.05
+				}
+			}
+		}
+
+		#为萨尔玛克付款
+		GRW_Salmarkt_payment = {
+			picture = ROM_king_carol_emptied_accounts
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.15
+			}
+		}
+		GRW_MIT_Salmarkt_payment = {
+			name = GRW_Salmarkt_payment
+			picture = ROM_king_carol_emptied_accounts
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = -0.15
+			}
+		}
+
+		#与普里文的贸易协定
+		GRW_trade_idea = {
+			picture = generic_flexible_foreign_policy2
+			allowed = {
+				always = no
+			}
+			available = {
+				country_exists = GRW
+				NOT = {
+					has_war_with = GRW
+				}
+			}
+			modifier = {
+				consumer_goods_factor = -0.05
+				production_speed_infrastructure_factor = 0.05
+				production_speed_industrial_complex_factor = 0.05
+			}
+		}
+
+		#国际局的影响
+		GRW_influence1 = {
+			picture = STG_progressive_leader
+			allowed = {
+				always = no
+			}
+			available = {
+				country_exists = GRW
+				GRW = {
+					has_government = communism
+				}
+				NOT = {
+					has_war_with = GRW
+				}
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				communism_drift = 0.1
+				drift_defence_factor = -0.1
+			}
+		}
+		GRW_influence2 = {
+			picture = STG_progressive_leader
+			name = GRW_influence1
+			allowed = {
+				always = no
+			}
+			available = {
+				country_exists = GRW
+				GRW = {
+					has_government = communism
+				}
+				NOT = {
+					has_war_with = GRW
+				}
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				communism_drift = 0.3
+				drift_defence_factor = -0.3
+			}
+		}
+		GRW_influence3 = {
+			picture = STG_progressive_leader
+			name = GRW_influence1
+			allowed = {
+				always = no
+			}
+			available = {
+				country_exists = GRW
+				GRW = {
+					has_government = communism
+				}
+				NOT = {
+					has_war_with = GRW
+				}
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				communism_drift = 0.5
+				drift_defence_factor = -0.5
+			}
+		}
+
+		#共和国的稳定
+		GRW_stability_idea = {
+			picture = GRW_national_divides
+			allowed = {
+				always = no
+			}
+			modifier = {
+				custom_modifier_tooltip = GRW_stability_idea_tt
+			}
+			on_add = {
+				add_dynamic_modifier = {
+					modifier = GRW_stability_dynamic_modifier
+				}
+			}
+		}
+
+		#得到承认的驳什尼亚小马
+		GRW_vartai_support_posniaks_idea = {
+			picture = pony_race
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = 0.1
+				conscription_factor = 0.05
+			}
+		}
+		#小马权利法案
+		GRW_vartai_ensure_two_races_equal_rights_idea = {
+			picture = HIP_mixed_constitution
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = 0.05
+				compliance_gain = 0.01
+			}
+		}
+
+		#新生的三民主义
+		GRW_Northern_Griffonia_revise_the_principles_idea = {
+			picture = STG_sinister_conscription_law
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = 0.1
+				production_factory_max_efficiency_factor = 0.075
+				consumer_goods_factor = -0.06
+				research_speed_factor = 0.05
+				communism_drift = 0.03
+				democratic_drift = 0.01
+			}
+		}
+		
+		#支援他国革命
+		GRW_rozenkampism_2_idea = {
+			picture = STG_progressive_leader
+			allowed = {
+				always = no
+			}
+			modifier = {
+				send_volunteer_size = 1
+				air_volunteer_cap = 1
+			}
+		}
+		#引进先进生产线
+		GRW_rozenkampism_3_idea = {
+			picture = STG_materialist_manifesto
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.15
+				production_factory_max_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.15
+			}
+		}
+		#与天际纳维亚的军事交流
+		GRW_rozenkampism_4_idea = {
+			picture = SRS_skynavian_egalitarianism
+			allowed = {
+				always = no
+			}
+			modifier = {
+				experience_gain_army = 0.05
+				experience_gain_army_factor = 0.1
+			}
+		}
+		#分配工业资金
+		GRW_syndicalism_3_idea = {
+			picture = SRS_skynavian_egalitarianism
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.2
+				production_speed_infrastructure_factor = -0.2
+				production_speed_industrial_complex_factor = 0.15
+				production_speed_arms_factory_factor = 0.15
+			}
+		}
+		#投资科研
+		GRW_democratic_socialism_2_idea = {
+			picture = BAR_science_party2
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.1
+				research_speed_factor = 0.1
+			}
+		}
+		#百花齐放
+		GRW_democratic_socialism_3_idea = {
+			picture = Generic_Harmonist_Constitution
+			allowed = {
+				always = no
+			}
+			modifier = {
+				drift_defence_factor = -0.1
+				communism_drift = 0.02
+				neutrality_drift = 0.01
+				democratic_drift = 0.01
+			}
+		}
+
+		#推广普通话
+		GRW_promote_mandarin_idea = {
+			picture = chaos_idea
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = -0.25
+				stability_weekly = -0.003
+			}
+			on_remove = {
+				if = {
+					limit = {
+						has_completed_focus = GRW_maintain_national_unity
+					}
+					add_ideas = GRW_maintain_national_unity_idea
+				}
+				else_if = {
+					limit = {
+						has_completed_focus = GRW_local_cultural_preservation
+					}
+					add_ideas = GRW_local_cultural_preservation_idea
+				}
+				else = {
+					add_ideas = GRW_speak_Griffish
+				}
+			}
+		}
+		#官方标准语
+		GRW_speak_Griffish = {
+			picture = generic_pp_unity_bonus
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = 0.05
+				industrial_capacity_factory = 0.05
+			}
+		}
+		#保护各地文化
+		GRW_local_cultural_preservation_idea = {
+			picture = generic_pp_unity_bonus
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = 0.05
+				industrial_capacity_factory = 0.05
+				compliance_gain = 0.01
+			}
+		}
+		#宽松的民族政策
+		GRW_maintain_national_unity_idea = {
+			picture = generic_pp_unity_bonus
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = 0.05
+				industrial_capacity_factory = 0.1
+				compliance_gain = 0.01
+				non_core_manpower = 0.08
+			}
+		}
+
+		#中央调查部
+		GRW_investigation_department_idea = {
+			picture = STG_secret_police
+			allowed = {
+				always = no
+			}
+			modifier = {
+				operative_slot = 2
+				enemy_operative_detection_chance_factor = 0.25
+				enemy_operative_capture_chance_factor = 0.25
+				intel_network_gain_factor = 0.15
+				decryption_power_factor = 0.2
+			}
+		}
+
+		#指令经济
+		GRW_command_ecomony = {
+			picture = WNG_COM_command
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = -0.33
+				industrial_capacity_factory = 0.25
+				industrial_capacity_dockyard = 0.25
+			}
+		}
+
+		#共和国工会法
+		GRW_trade_union_law_idea = {
+			picture = STG_workers_culture
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+			}
+		}
+		#国供住宅
+		GRW_national_housing_plan_idea = {
+			picture = STG_workers_culture
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.03
+				stability_factor = 0.07
+				production_factory_max_efficiency_factor = 0.05
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+				local_building_slots_factor = 0.1
+			}
+		}
+		#国家医疗补贴
+		GRW_free_medical_care_idea_1 = {
+			picture = STG_workers_culture
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.04
+				stability_factor = 0.08
+				production_factory_max_efficiency_factor = 0.05
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+				local_building_slots_factor = 0.1
+				monthly_population = 0.05
+			}
+		}
+		GRW_free_medical_care_idea_2 = {
+			name = GRW_free_medical_care_idea_1
+			picture = STG_workers_culture
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.05
+				stability_factor = 0.09
+				production_factory_max_efficiency_factor = 0.05
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+				local_building_slots_factor = 0.1
+				monthly_population = 0.075
+			}
+		}
+		GRW_free_medical_care_idea_3 = {
+			name = GRW_free_medical_care_idea_1
+			picture = STG_workers_culture
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.06
+				stability_factor = 0.1
+				production_factory_max_efficiency_factor = 0.05
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+				local_building_slots_factor = 0.1
+				monthly_population = 0.1
+			}
+		}
+		#工鹫天堂
+		GRW_workers_paradise_idea = {
+			picture = STG_workers_culture
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.1
+				stability_factor = 0.1
+				production_factory_max_efficiency_factor = 0.1
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+				local_building_slots_factor = 0.2
+				monthly_population = 0.15
+			}
+		}
+		#八字宪法
+		GRW_eightcharacter_constitution_idea = {
+			picture = HIP_traktor
+			allowed = {
+				always = no
+			}
+			modifier = {
+				monthly_population = 0.15
+				conscription_factor = 0.1
+				local_resources_factor = 0.05
+			}
+		}
+		#乡村电气化
+		GRW_rural_electrification_idea = {
+			picture = HIP_traktor
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = -0.05
+				monthly_population = 0.15
+				conscription_factor = 0.1
+				local_resources_factor = 0.05
+			}
+		}
+		#农民乐园
+		GRW_farmer_paradise_idea = {
+			picture = HIP_traktor
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = -0.1
+				monthly_population = 0.25
+				conscription_factor = 0.15
+				local_resources_factor = 0.1
+			}
+		}
+		#完美的工农联盟
+		GRW_perfect_workerpeasant_alliance_idea = {
+			picture = TBK_balanced_union
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = 0.15
+				production_factory_max_efficiency_factor = 0.15
+				industrial_capacity_factory = 0.15
+				industrial_capacity_dockyard = 0.15
+				local_building_slots_factor = 0.3
+				monthly_population = 0.4
+				conscription_factor = 0.2
+				local_resources_factor = 0.15
+			}
+		}
+
+		#东部大开发计划
+		GRW_eastern_development = {
+			picture = HIRA_hammer
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.2
+				political_power_cost = 0.15
+				local_resources_factor = 0.075
+				production_speed_buildings_factor = 0.075
+				production_speed_infrastructure_factor = 0.1
+			}
+		}
+		GRW_eastern_development_1 = {
+			name = GRW_eastern_development
+			picture = HIRA_hammer
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.1
+				political_power_cost = 0.05
+				local_resources_factor = 0.1
+				production_speed_buildings_factor = 0.1
+				production_speed_infrastructure_factor = 0.15
+			}
+		}
+
+		#威腾兰魔法应用
+		GRW_expert_magical_weapon = {
+			picture = CRY_magical_power
+			allowed = {
+				always = no
+			}
+			available = {
+				NOT = {
+					has_global_flag = GRW_RIV_relationship_breakdown_flag
+				}
+			}
+			research_bonus = {
+				magical_tech = 0.1
+			}
+			equipment_bonus = {
+				magical_equipment = {
+					build_cost_ic = -0.1
+					reliability = 0.1
+					instant = yes
+				}
+			}
+		}
+
+		#共产分子渗透
+		GRW_communist_infiltrators = {
+			picture = generic_communism_drift_bonus
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				NOT = {
+					has_government = communism
+				}
+			}
+			available = {
+				GRW = {
+					exists = yes
+					has_government = communism
+				}
+				NOT = {
+					has_government = communism
+				}
+			}
+			modifier = {
+				communism_drift = 0.1
+			}
+		}
+		GRW_communist_infiltrators_NIM = {
+			name = GRW_communist_infiltrators
+			picture = generic_communism_drift_bonus
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				NOT = {
+					has_government = communism
+				}
+			}
+			available = {
+				GRW = {
+					exists = yes
+					has_government = communism
+				}
+				NOT = {
+					has_government = communism
+				}
+			}
+			modifier = {
+				stability_factor = -0.1
+				stability_weekly = -0.005
+			}
+		}
+
+		#共党分子叛乱
+		GRW_RIV_militants1 = {
+			picture = pony_militarization
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				NOT = {
+					has_government = communism
+				}
+			}
+			available = {
+				GRW = {
+					exists = yes
+					has_government = communism
+				}
+				NOT = {
+					has_government = communism
+				}
+			}
+			modifier = {
+				army_attack_factor = -0.05
+				army_defence_factor = -0.05
+				attrition_for_controller = 0.1
+				supply_consumption_factor = 0.1
+			}
+		}
+		GRW_RIV_militants2 = {
+			name = GRW_RIV_militants1
+			picture = pony_militarization
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				NOT = {
+					has_government = communism
+				}
+			}
+			available = {
+				GRW = {
+					exists = yes
+					has_government = communism
+				}
+				NOT = {
+					has_government = communism
+				}
+			}
+			modifier = {
+				army_attack_factor = -0.1
+				army_defence_factor = -0.1
+				attrition_for_controller = 0.2
+				supply_consumption_factor = 0.2
+			}
+		}
+
+		#支援河间同志
+		GRW_support_RIV_idea = {
+			picture = STG_progressive_leader
+			allowed = {
+				always = no
+			}
+			available = {
+				has_global_flag = GRW_RIV_revolution_begin
+				NOT = {
+					has_global_flag = GRW_RIV_revolution_over
+				}
+			}
+			modifier = {
+				custom_modifier_tooltip = GRW_support_RIV_idea_tt
+			}
+			on_add = {
+				every_country = {
+					limit = {
+						exists = yes
+						is_subject = no
+						is_original_riv_fed_country_tag = yes
+						has_government = communism
+						OR = {
+							has_country_flag = GRW_not_say_we_have_nothing_we_will_rule_all_flag
+							has_country_flag = GRW_agree_to_join_RIV_revolution
+						}
+					}
+					ROOT = {
+						add_relation_modifier = {
+							target = PREV
+							modifier = volunteer_limit_plus_two
+						}
+					}
+					add_to_array = {
+						array = GRW.internationalism_support
+						value = THIS
+					}
+					save_event_target_as = volunteer_target
+					ROOT = {
+						send_volunteers_to_TARGET = yes
+					}
+				}
+			}
+			on_remove = {
+				every_country = {
+					limit = {
+						exists = yes
+						is_subject = no
+						is_original_riv_fed_country_tag = yes
+						has_government = communism
+						OR = {
+							has_country_flag = GRW_not_say_we_have_nothing_we_will_rule_all_flag
+							has_country_flag = GRW_agree_to_join_RIV_revolution
+						}
+					}
+					ROOT = {
+						remove_relation_modifier = {
+							target = PREV
+							modifier = volunteer_limit_plus_two
+						}
+					}
+					remove_from_array = {
+						array = GRW.internationalism_support
+						value = THIS
+					}
+					save_event_target_as = volunteer_target
+					ROOT = {
+						clear_volunteers_to_TARGET = yes
+					}
+				}
+			}
+		}
+
+
+		###军事buff
+		#民兵预备役
+		GRW_militia_reserves = {
+			picture = MEX_revolutionary_army
+			allowed = {
+				always = no
+			}
+			modifier = {
+				conscription = 0.01
+				army_core_defence_factor = 0.05
+			}
+		}
+		#动员鹫民
+		GRW_mobilise_the_people = {
+			picture = MEX_revolutionary_army
+			allowed = {
+				always = no
+			}
+			modifier = {
+				conscription = 0.01
+				army_core_defence_factor = 0.05
+				army_attack_against_major_factor = 0.1
+			}
+		}
+
+		#推广政委制度
+		GRW_promote_political_commissar_system = {
+			picture = generic_reserve_divisions
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = -0.05
+				land_reinforce_rate = -0.03
+			}
+
+			on_remove = {
+				add_ideas = GRW_political_commissar_system
+			}
+		}
+		#政委制度
+		GRW_political_commissar_system = {
+			picture = generic_reserve_divisions
+			allowed = {
+				always = no
+			}
+			modifier = {
+				army_org_factor = 0.05
+				land_reinforce_rate = 0.07
+			}
+		}
+
+		#统筹国防工业
+		GRW_integrate_defence_industry_1 = {
+			picture = PLB_mil_ind
+			allowed = {
+				always = no
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+				support_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+			}
+			modifier = {
+				production_factory_max_efficiency_factor = 0.025
+			}
+		}
+		GRW_integrate_defence_industry_2 = {
+			name = GRW_integrate_defence_industry_1
+			picture = PLB_mil_ind
+			allowed = {
+				always = no
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+				support_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+				armor = {
+					instant = yes
+					build_cost_ic = -0.05
+				}
+			}
+			modifier = {
+				production_factory_max_efficiency_factor = 0.05
+			}
+		}
+		GRW_integrate_defence_industry_3 = {
+			name = GRW_integrate_defence_industry_1
+			picture = PLB_mil_ind
+			allowed = {
+				always = no
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+				support_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+				armor = {
+					instant = yes
+					build_cost_ic = -0.05
+				}
+				artillery = {
+					instant = yes
+					build_cost_ic = -0.05
+				}
+			}
+			modifier = {
+				production_factory_max_efficiency_factor = 0.075
+			}
+		}
+		GRW_integrate_defence_industry_4 = {
+			name = GRW_integrate_defence_industry_1
+			picture = PLB_mil_ind
+			allowed = {
+				always = no
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+				support_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+				armor = {
+					instant = yes
+					build_cost_ic = -0.05
+				}
+				motorized_equipment = {
+					instant = yes
+					build_cost_ic = -0.05
+				}
+				mechanized_equipment = {
+					instant = yes
+					build_cost_ic = -0.05
+				}
+			}
+			modifier = {
+				production_factory_max_efficiency_factor = 0.075
+			}
+		}
+		GRW_integrate_defence_industry_5 = {
+			name = GRW_integrate_defence_industry_1
+			picture = PLB_mil_ind
+			allowed = {
+				always = no
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+				support_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+				armor = {
+					instant = yes
+					build_cost_ic = -0.05
+				}
+				artillery = {
+					instant = yes
+					build_cost_ic = -0.05
+				}
+				motorized_equipment = {
+					instant = yes
+					build_cost_ic = -0.05
+				}
+				mechanized_equipment = {
+					instant = yes
+					build_cost_ic = -0.05
+				}
+			}
+			modifier = {
+				production_factory_max_efficiency_factor = 0.1
+			}
+		}
+		GRW_integrate_defence_industry_6 = {
+			name = GRW_integrate_defence_industry_1
+			picture = PLB_mil_ind
+			allowed = {
+				always = no
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					build_cost_ic = -0.15
+				}
+				support_equipment = {
+					instant = yes
+					build_cost_ic = -0.15
+				}
+				armor = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+				artillery = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+				motorized_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+				mechanized_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+			}
+			modifier = {
+				production_factory_max_efficiency_factor = 0.125
+			}
+		}
+
+		#“军代表”制度
+		GRW_military_representatives_in_factories_idea = {
+			picture = generic_manpower_bonus
+			allowed = {
+				always = no
+			}
+			modifier = {
+				industrial_capacity_factory = 0.1
+			}
+		}
+
+		#拥抱现代战争
+		GRW_modern_warfare_1 = {
+			picture = EQS_UESR_onward
+			allowed = {
+				always = no
+			}
+			modifier = {
+				army_armor_attack_factor = 0.05
+				army_armor_defence_factor = 0.05
+			}
+		}
+		GRW_modern_warfare_2 = {
+			name = GRW_modern_warfare_1
+			picture = EQS_UESR_onward
+			allowed = {
+				always = no
+			}
+			modifier = {
+				army_armor_attack_factor = 0.05
+				army_armor_defence_factor = 0.05
+				army_artillery_attack_factor = 0.05
+				army_artillery_defence_factor = 0.05
+			}
+		}
+		GRW_modern_warfare_3 = {
+			name = GRW_modern_warfare_1
+			picture = EQS_UESR_onward
+			allowed = {
+				always = no
+			}
+			modifier = {
+				army_armor_attack_factor = 0.05
+				army_armor_defence_factor = 0.05
+				mechanized_attack_factor = 0.05
+				mechanized_defence_factor = 0.05
+			}
+		}
+		GRW_modern_warfare_4 = {
+			name = GRW_modern_warfare_1
+			picture = EQS_UESR_onward
+			allowed = {
+				always = no
+			}
+			modifier = {
+				army_armor_attack_factor = 0.05
+				army_armor_defence_factor = 0.05
+				army_artillery_attack_factor = 0.05
+				army_artillery_defence_factor = 0.05
+				mechanized_attack_factor = 0.05
+				mechanized_defence_factor = 0.05
+			}
+		}
+		GRW_modern_warfare_5 = {
+			name = GRW_modern_warfare_1
+			picture = EQS_UESR_onward
+			allowed = {
+				always = no
+			}
+			modifier = {
+				army_armor_attack_factor = 0.075
+				army_armor_defence_factor = 0.075
+				army_artillery_attack_factor = 0.1
+				army_artillery_defence_factor = 0.1
+				mechanized_attack_factor = 0.1
+				mechanized_defence_factor = 0.1
+				initiative_factor = 0.05
+			}
+		}
+
+		#白花精神
+		GRW_whiteflower_spirit_1 = {
+			picture = WNG_COM_army
+			allowed = {
+				always = no
+			}
+			modifier = {
+				army_infantry_attack_factor = 0.05
+				army_infantry_defence_factor = 0.05
+			}
+		}
+		GRW_whiteflower_spirit_2 = {
+			name = GRW_whiteflower_spirit_1
+			picture = WNG_COM_army
+			allowed = {
+				always = no
+			}
+			modifier = {
+				army_org_factor = 0.1
+				army_infantry_attack_factor = 0.05
+				army_infantry_defence_factor = 0.05
+			}
+		}
+		GRW_whiteflower_spirit_3 = {
+			name = GRW_whiteflower_spirit_1
+			picture = WNG_COM_army
+			allowed = {
+				always = no
+			}
+			modifier = {
+				land_reinforce_rate = 0.05
+				cas_damage_reduction = 0.1
+				army_infantry_attack_factor = 0.05
+				army_infantry_defence_factor = 0.05
+			}
+		}
+		GRW_whiteflower_spirit_4 = {
+			name = GRW_whiteflower_spirit_1
+			picture = WNG_COM_army
+			allowed = {
+				always = no
+			}
+			modifier = {
+				army_org_factor = 0.1
+				land_reinforce_rate = 0.05
+				cas_damage_reduction = 0.1
+				army_infantry_attack_factor = 0.05
+				army_infantry_defence_factor = 0.05
+			}
+		}
+		GRW_whiteflower_spirit_5 = {
+			name = GRW_whiteflower_spirit_1
+			picture = WNG_COM_army
+			allowed = {
+				always = no
+			}
+			modifier = {
+				army_org_factor = 0.1
+				land_reinforce_rate = 0.08
+				cas_damage_reduction = 0.15
+				army_infantry_attack_factor = 0.1
+				army_infantry_defence_factor = 0.1
+				combat_width_factor = -0.1
+			}
+		}
+
+		###海军
+		#褐水战略
+		GRW_brownwater_strategy = {
+			picture = generic_coastal_navy
+			allowed = {
+				always = no
+			}
+			equipment_bonus = {
+				convoy = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+				ship_hull_light = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				ship_hull_submarine = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+		}
+		#共和国造船计划
+		GRW_shipbuilding_programme = {
+			picture = generic_navy_bonus
+			allowed = {
+				always = no
+			}
+			equipment_bonus = {
+				convoy = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+				submarine = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				screen_ship = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				capital_ship = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				carrier = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+
+		#鹫民海军
+		GRW_GLA_Navy_1 = {
+			picture = shipwaves
+			allowed = {
+				always = no
+			}
+			modifier = {
+				experience_gain_navy = 0.1
+			}
+		}
+		GRW_GLA_Navy_2 = {
+			name = GRW_GLA_Navy_1
+			picture = shipwaves
+			allowed = {
+				always = no
+			}
+			modifier = {
+				experience_gain_navy = 0.1
+				naval_doctrine_cost_factor = -0.15
+			}
+		}
+		GRW_GLA_Navy_3 = {
+			name = GRW_GLA_Navy_1
+			picture = shipwaves
+			allowed = {
+				always = no
+			}
+			modifier = {
+				experience_gain_navy = 0.1
+				naval_doctrine_cost_factor = -0.15
+				naval_coordination = 0.05
+				positioning = 0.1
+			}
+		}
+		GRW_GLA_Navy_4 = {
+			name = GRW_GLA_Navy_1
+			picture = shipwaves
+			allowed = {
+				always = no
+			}
+			modifier = {
+				experience_gain_navy = 0.1
+				naval_doctrine_cost_factor = -0.15
+				naval_coordination = 0.05
+				positioning = 0.1
+				navy_submarine_attack_factor = 0.05
+				navy_submarine_defence_factor = 0.05
+				convoy_raiding_efficiency_factor = 0.05
+			}
+		}
+		GRW_GLA_Navy_5 = {
+			name = GRW_GLA_Navy_1
+			picture = shipwaves
+			allowed = {
+				always = no
+			}
+			modifier = {
+				experience_gain_navy = 0.1
+				naval_doctrine_cost_factor = -0.15
+				naval_coordination = 0.05
+				positioning = 0.1
+				navy_screen_attack_factor = 0.05
+				navy_screen_defence_factor = 0.05
+				screening_efficiency = 0.05
+				navy_submarine_attack_factor = 0.05
+				navy_submarine_defence_factor = 0.05
+				convoy_raiding_efficiency_factor = 0.05
+			}
+		}
+
+		#建立共和国海军
+		GRW_building_navy = {
+			picture = newport_news_shipbuilding
+			allowed = {
+				always = no
+			}
+			modifier = {
+				industrial_capacity_dockyard = -0.9
+				consumer_goods_factor = 0.25
+				production_speed_dockyard_factor = -0.25
+			}
+			on_remove = {
+				country_event = {
+					id = GRW_midgame.17
+				}
+			}
+		}
+
+		#清剿海盗
+		GRW_pirate_suppression_idea = {
+			picture = unhappy_army_3
+			allowed = {
+				always = no
+			}
+			modifier = {
+				command_power_gain = -0.25
+				political_power_cost = 0.2
+				naval_morale_factor = -0.25
+			}
+			on_remove = {
+				add_ideas = GRW_expanded_merchant_fleet
+			}
+		}
+		#扩大的商船队
+		GRW_expanded_merchant_fleet = {
+			picture = HIP_trade
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = -0.05
+				industrial_capacity_dockyard = 0.05
+				trade_opinion_factor = 0.5
+			}
+		}
+
+		###空军
+		#鹫民空军
+		GRW_GLA_Air_1 = {
+			picture = generic_air_bonus
+			allowed = {
+				always = no
+			}
+			modifier = {
+				experience_gain_air = 0.1
+			}
+		}
+		GRW_GLA_Air_2 = {
+			name = GRW_GLA_Air_1
+			picture = generic_air_bonus
+			allowed = {
+				always = no
+			}
+			modifier = {
+				experience_gain_air = 0.1
+				ace_effectiveness_factor = 0.05
+				air_mission_xp_gain_factor = 0.1
+				air_training_xp_gain_factor = 0.1
+			}
+		}
+		GRW_GLA_Air_3 = {
+			name = GRW_GLA_Air_1
+			picture = generic_air_bonus
+			allowed = {
+				always = no
+			}
+			modifier = {
+				experience_gain_air = 0.1
+				ace_effectiveness_factor = 0.05
+				air_mission_xp_gain_factor = 0.1
+				air_training_xp_gain_factor = 0.1
+				air_weather_penalty = -0.05
+				air_accidents_factor = -0.05
+				air_home_defence_factor = 0.05
+			}
+		}
+		GRW_GLA_Air_4 = {
+			name = GRW_GLA_Air_1
+			picture = generic_air_bonus
+			allowed = {
+				always = no
+			}
+			modifier = {
+				experience_gain_air = 0.1
+				ace_effectiveness_factor = 0.05
+				air_mission_xp_gain_factor = 0.1
+				air_training_xp_gain_factor = 0.1
+				air_weather_penalty = -0.05
+				air_accidents_factor = -0.05
+				air_home_defence_factor = 0.05
+				air_superiority_efficiency = 0.1
+				air_intercept_efficiency = 0.1
+			}
+		}
+		GRW_GLA_Air_5 = {
+			name = GRW_GLA_Air_1
+			picture = generic_air_bonus
+			allowed = {
+				always = no
+			}
+			modifier = {
+				experience_gain_air = 0.1
+				ace_effectiveness_factor = 0.05
+				air_mission_xp_gain_factor = 0.1
+				air_training_xp_gain_factor = 0.1
+				air_weather_penalty = -0.05
+				air_accidents_factor = -0.05
+				air_home_defence_factor = 0.05
+				air_superiority_efficiency = 0.1
+				air_intercept_efficiency = 0.1
+				air_cas_efficiency = 0.1
+			}
+		}
+		GRW_GLA_Air_6 = {
+			name = GRW_GLA_Air_1
+			picture = generic_air_bonus
+			allowed = {
+				always = no
+			}
+			modifier = {
+				experience_gain_air = 0.1
+				ace_effectiveness_factor = 0.05
+				air_mission_xp_gain_factor = 0.1
+				air_training_xp_gain_factor = 0.1
+				air_weather_penalty = -0.05
+				air_accidents_factor = -0.05
+				air_home_defence_factor = 0.05
+				air_superiority_efficiency = 0.1
+				air_intercept_efficiency = 0.1
+				air_cas_efficiency = 0.1
+				air_cas_present_factor = 0.1
+			}
+		}
+		GRW_GLA_Air_7 = {
+			name = GRW_GLA_Air_1
+			picture = generic_air_bonus
+			allowed = {
+				always = no
+			}
+			modifier = {
+				experience_gain_air = 0.1
+				ace_effectiveness_factor = 0.05
+				air_mission_xp_gain_factor = 0.1
+				air_training_xp_gain_factor = 0.1
+				air_weather_penalty = -0.05
+				air_accidents_factor = -0.05
+				air_home_defence_factor = 0.05
+				air_superiority_efficiency = 0.1
+				air_intercept_efficiency = 0.1
+				air_cas_efficiency = 0.1
+				air_strategic_bomber_bombing_factor = 0.05
+				air_bombing_targetting = 0.1
+			}
+		}
+		GRW_GLA_Air_8 = {
+			name = GRW_GLA_Air_1
+			picture = generic_air_bonus
+			allowed = {
+				always = no
+			}
+			modifier = {
+				experience_gain_air = 0.1
+				ace_effectiveness_factor = 0.1
+				air_mission_xp_gain_factor = 0.1
+				air_training_xp_gain_factor = 0.1
+				air_weather_penalty = -0.1
+				air_accidents_factor = -0.1
+				air_home_defence_factor = 0.1
+				air_superiority_efficiency = 0.1
+				air_intercept_efficiency = 0.1
+				air_cas_efficiency = 0.1
+				air_cas_present_factor = 0.1
+				air_strategic_bomber_bombing_factor = 0.1
+				air_bombing_targetting = 0.1
+			}
+		}
+
+		#战机逆向工程
+		GRW_reverse_engineering_idea = {
+			picture = man_five_year_plan_air
+			allowed = {
+				always = no
+			}
+			equipment_bonus = {
+				mio_cat_eq_only_light_fighter_no_cv = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				small_plane_cas_airframe = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				small_plane_naval_bomber_airframe = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				mio_cat_eq_only_tactical_bomber = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				medium_plane_fighter_airframe = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+	}
+
+	hidden_ideas = {
+		#联军编遣混乱
+		GRW_allied_force_reorganization_chaos = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				experience_gain_army = -0.2 #陆军每日经验获取
+				army_attack_factor = -0.05 #单位攻击
+				army_defence_factor = -0.05 #单位防御
+				army_org_factor = -0.1 #部队组织度
+				training_time_factor = 0.1 #训练时间
+				experience_loss_factor = 0.1 #有经验的士兵的损失
+				command_power_gain_mult = -0.3 #每日指挥点数增长乘数
+				custom_modifier_tooltip = SPR_military_disloyalty_tt
+			}
+			on_remove = {
+				country_lock_all_division_template = no
+			}
+		}
+		#革命军事委员会
+		GRW_revolutionary_military_council_1 = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				experience_gain_army = 0.1
+				command_power_gain = 0.1
+				army_leader_cost_factor = -0.33
+			}
+		}
+		GRW_revolutionary_military_council_2 = {
+			name = GRW_revolutionary_military_council_1
+			allowed = {
+				always = no
+			}
+			modifier = {
+				experience_gain_army = 0.1
+				command_power_gain = 0.1
+				army_leader_cost_factor = -0.33
+				resistance_target = -0.1
+				starting_compliance = 0.1
+			}
+		}
+		GRW_revolutionary_military_council_3 = {
+			name = GRW_revolutionary_military_council_1
+			allowed = {
+				always = no
+			}
+			modifier = {
+				experience_gain_army = 0.1
+				command_power_gain = 0.1
+				army_leader_cost_factor = -0.33
+				resistance_target = -0.1
+				starting_compliance = 0.1
+				land_doctrine_cost_factor = -0.1
+			}
+		}
+
+		#支持乡村农会
+		GRW_support_primitive_communism = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = -0.05
+				local_resources_factor = 0.15
+			}
+
+			on_remove = {
+				clr_country_flag = GRW_support_faction_flag
+			}
+		}
+		#宣传国际主义
+		GRW_support_rozenkampism = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_cost = 0.1
+				weekly_manpower = 200
+			}
+
+			on_remove = {
+				clr_country_flag = GRW_support_faction_flag
+			}
+		}
+		#赋权城市工会
+		GRW_support_syndicalism = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = -0.05
+				industrial_capacity_factory = 0.1
+			}
+
+			on_remove = {
+				clr_country_flag = GRW_support_faction_flag
+			}
+		}
+		#赞助文化教育
+		GRW_support_democratic_socialism = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.1
+				research_speed_factor = 0.1
+			}
+
+			on_remove = {
+				clr_country_flag = GRW_support_faction_flag
+			}
+		}
+
+		#国家副主席
+		GRW_vice_chairman = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = 0.05
+				political_advisor_cost_factor = -0.25
+			}
+		}
+		GRW_vice_chairman_1 = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = 0.1
+				opinion_gain_monthly_factor = 0.1
+				civilian_intel_factor = 0.1
+				army_intel_factor = 0.05
+			}
+		}
+		#国务院总理
+		GRW_state_council_premier = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = 0.1
+				military_industrial_organization_funds_gain = 0.15
+				military_industrial_organization_research_bonus = 0.15
+			}
+		}
+		GRW_state_council_premier_no_aat = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = 0.1
+				tank_manufacturer_cost_factor = -0.35
+				materiel_manufacturer_cost_factor = -0.35
+				aircraft_manufacturer_cost_factor = -0.35
+				naval_manufacturer_cost_factor = -0.35
+			}
+		}
+		GRW_state_council_premier_1 = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				industrial_capacity_factory = 0.05
+				military_industrial_organization_funds_gain = 0.1
+				military_industrial_organization_research_bonus = 0.1
+			}
+		}
+		GRW_state_council_premier_no_aat_1 = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				industrial_capacity_factory = 0.05
+				tank_manufacturer_cost_factor = -0.2
+				materiel_manufacturer_cost_factor = -0.2
+				aircraft_manufacturer_cost_factor = -0.2
+				naval_manufacturer_cost_factor = -0.2
+			}
+		}
+		#国大常委会委员长
+		GRW_NPC_standing_committee_chairman = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = 0.1
+				party_popularity_stability_factor = 0.05
+			}
+		}
+
+		#原材料出口收益
+		GRW_export_materials_idea = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		#土改花费
+		GRW_promote_land_reform_auto_cost = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.15
+			}
+		}
+		#农业合作化花费
+		GRW_promote_agri_cooperatives_auto_cost = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.15
+			}
+		}
+		#基建花费
+		GRW_development_infrastructure_auto_cost = {
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.15
+				production_speed_infrastructure_factor = -0.15
+			}
+		}
+
+
+		#token
+		GRW_NAAP_department_3_entry_1 = {
+		}
+		GRW_NAAP_department_3_entry_2 = {
+		}
+		GRW_NAAP_department_3_entry_3 = {
+		}
+		GRW_NAAP_department_3_entry_4 = {
+		}
+		GRW_NAAP_department_3_entry_5 = {
+		}
+		GRW_NAAP_department_3_entry_6 = {
+		}
+		GRW_NAAP_department_3_entry_7 = {
+		}
+		GRW_NAAP_department_3_entry_8 = {
+		}
+		GRW_NAAP_department_3_entry_9 = {
+		}
+		GRW_NAAP_department_3_entry_1_NAME = {
+		}
+		GRW_NAAP_department_3_entry_2_NAME = {
+		}
+		GRW_NAAP_department_3_entry_3_NAME = {
+		}
+		GRW_NAAP_department_3_entry_4_NAME = {
+		}
+		GRW_NAAP_department_3_entry_5_NAME = {
+		}
+		GRW_NAAP_department_3_entry_6_NAME = {
+		}
+		GRW_NAAP_department_3_entry_7_NAME = {
+		}
+		GRW_NAAP_department_3_entry_8_NAME = {
+		}
+		GRW_NAAP_department_3_entry_9_NAME = {
+		}
+		GRW_NAAP_department_3_entry_1_TITLE = {
+		}
+		GRW_NAAP_department_3_entry_2_TITLE = {
+		}
+		GRW_NAAP_department_3_entry_3_TITLE = {
+		}
+		GRW_NAAP_department_3_entry_4_TITLE = {
+		}
+		GRW_NAAP_department_3_entry_5_TITLE = {
+		}
+		GRW_NAAP_department_3_entry_6_TITLE = {
+		}
+		GRW_NAAP_department_3_entry_7_TITLE = {
+		}
+		GRW_NAAP_department_3_entry_8_TITLE = {
+		}
+		GRW_NAAP_department_3_entry_9_TITLE = {
+		}
+		GRW_NAAP_department_3_entry_1_CONTENT = {
+		}
+		GRW_NAAP_department_3_entry_2_CONTENT = {
+		}
+		GRW_NAAP_department_3_entry_3_CONTENT = {
+		}
+		GRW_NAAP_department_3_entry_4_CONTENT = {
+		}
+		GRW_NAAP_department_3_entry_5_CONTENT = {
+		}
+		GRW_NAAP_department_3_entry_6_CONTENT = {
+		}
+		GRW_NAAP_department_3_entry_7_CONTENT = {
+		}
+		GRW_NAAP_department_3_entry_8_CONTENT = {
+		}
+		GRW_NAAP_department_3_entry_9_CONTENT = {
+		}
+		GRW_NAAP_department_3_entry_1_EFFECT = {
+		}
+		GRW_NAAP_department_3_entry_2_EFFECT = {
+		}
+		GRW_NAAP_department_3_entry_3_EFFECT = {
+		}
+		GRW_NAAP_department_3_entry_4_EFFECT = {
+		}
+		GRW_NAAP_department_3_entry_5_EFFECT = {
+		}
+		GRW_NAAP_department_3_entry_6_EFFECT = {
+		}
+		GRW_NAAP_department_3_entry_7_EFFECT = {
+		}
+		GRW_NAAP_department_3_entry_8_EFFECT = {
+		}
+		GRW_NAAP_department_3_entry_9_EFFECT = {
+		}
+	}
+}

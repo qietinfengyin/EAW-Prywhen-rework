@@ -1,0 +1,30 @@
+opinion_modifiers = {
+	GRW_cooperation_MCW = {
+		value = 50
+	}
+
+	GRW_High_Mane_conference = {
+		value = 15
+	}
+
+	GRW_cooperation_RCT = {
+		value = 50
+	}
+
+	GRW_cooperation_STG = {
+		value = 75
+	}
+
+	GRW_support_WNG = {
+		value = 35
+	}
+
+	GRW_encourage_expatriates_return = {
+		value = -30
+		months = 6
+	}
+
+	GRW_racial_reconciliation = {
+		value = 30
+	}
+}

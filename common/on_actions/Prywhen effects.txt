@@ -1,0 +1,1210 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			#mod flag
+			set_global_flag = GRW_welcome_to_EPR
+
+			#控制线路
+			LUS = {
+				set_country_flag = LUS_AI_HARMONY_HISTORICAL
+			}
+			CYA = {
+				set_country_flag = CYA_AI_NEUTRAL_HISTORICAL
+			}
+			RCT = {
+				if = {
+					limit = {
+						OR = {
+							has_country_flag = RCT_AI_DEMOCRATIC_ALTERNATE
+							has_country_flag = RCT_AI_OHS
+						}
+					}
+					clr_country_flag = RCT_AI_DEMOCRATIC_ALTERNATE
+					clr_country_flag = RCT_AI_OHS
+					random_list = {
+						10 = {
+							set_country_flag = RCT_AI_DEMOCRATIC_HISTORICAL
+						}
+						10 = {
+							set_country_flag = RCT_AI_NOVAWHIRL
+						}
+						10 = {
+							set_country_flag = RCT_AI_CARAMEL
+						}
+					}
+				}
+			}
+
+			#设定各个自治共和国范围
+			every_state = {
+				if = {#普里文本土
+					limit = {
+						is_core_of = GRW
+					}
+					set_state_flag = GRW_cores
+				}
+				if = {#黑空平等主义自治区
+					limit = {
+						is_core_of = BAN
+					}
+					set_state_flag = BAN_cores
+				}
+				if = {#卢什
+					limit = {
+						is_core_of = LUS
+					}
+					set_state_flag = LUS_cores
+				}
+				if = {#格里菲亚
+					limit = {
+						is_core_of = GRY
+					}
+					set_state_flag = GRY_cores
+				}
+				if = {#格里富斯
+					limit = {
+						is_core_of = GRU
+					}
+					set_state_flag = GRU_cores
+				}
+				if = {#埃维区域
+					limit = {
+						OR = {
+							is_core_of = BAN
+							is_core_of = LUS
+							is_core_of = GRY
+							is_core_of = GRU
+						}
+					}
+					set_state_flag = GRW_Evi_cores
+				}
+				if = {#蓝百合牛头怪自治区
+					limit = {
+						is_core_of = CYA
+					}
+					set_state_flag = CYA_cores
+				}
+				if = {#翼巴第社会主义自治共和国
+					limit = {
+						is_core_of = WNG
+					}
+					set_state_flag = WNG_cores
+				}
+				if = {#隼尔科社会主义自治共和国
+					limit = {
+						is_owned_by = FAL
+						is_core_of = FAL
+					}
+					set_state_flag = FAL_cores
+				}
+				if = {#西卡梅翁社会主义自治教区
+					limit = {
+						is_core_of = SIC
+					}
+					set_state_flag = SIC_cores
+				}
+				if = {#塔卢兹社会主义自治共和国
+					limit = {
+						is_core_of = TAL
+					}
+					set_state_flag = TAL_cores
+				}
+				if = {#皮乌蒙特社会主义自治共和国
+					limit = {
+						is_core_of = FRN
+					}
+					set_state_flag = FRN_cores
+				}
+				if = {#阿兰蒂戈社会主义自治共和国
+					limit = {
+						is_core_of = ARA
+					}
+					set_state_flag = ARA_cores
+				}
+				if = {#门界东方小马自治区
+					limit = {
+						OR = {
+							is_core_of = HLQ
+							is_core_of = LNS
+						}
+					}
+					set_state_flag = HLQ_cores
+				}
+				if = {#中狮鹫尼亚行政委员会
+					limit = {
+						OR = {
+							is_core_of = GRI
+							is_core_of = EYR
+							is_core_of = ANG
+							is_core_of = YAL
+							is_core_of = KAT
+							is_core_of = ROU
+							is_core_of = PYT
+							is_core_of = FEA
+							is_core_of = STW
+							is_core_of = BRZ
+						}
+					}
+					set_state_flag = GRW_Central_Griffonia_cores
+				}
+				if = {#铜岭行政专区
+					limit = {
+						is_core_of = BRZ
+					}
+					set_state_flag = BRZ_cores
+				}
+				if = {#京畿地区
+					limit = {
+						OR = {
+							is_core_of = BOI
+							is_core_of = LAK
+						}
+					}
+					set_state_flag = BOI_cores
+				}
+				if = {#西狮鹫尼亚行政委员会
+					limit = {
+						OR = {
+							is_core_of = JER
+							is_core_of = JEB
+							is_core_of = JRR
+							is_core_of = JFT
+							is_core_of = VIN
+							is_core_of = JES
+							is_core_of = POM
+							is_core_of = FLO
+							is_core_of = AVI
+							is_core_of = ERI
+							is_core_of = AET
+							is_core_of = HEL
+							is_core_of = FEZ
+							is_core_of = TRD
+						}
+					}
+					set_state_flag = GRW_Western_Griffonia_cores
+				}
+				if = {#阿奎莱亚社会主义自治共和国
+					limit = {
+						OR = {
+							is_core_of = JER
+							is_core_of = JEB
+							is_core_of = JRR
+							is_core_of = JFT
+							is_core_of = VIN
+							is_core_of = JES
+							is_core_of = POM
+						}
+					}
+					set_state_flag = JER_cores
+				}
+				if = {#卢万泰诺自治州
+					limit = {
+						OR = {
+							is_core_of = AVI
+							is_core_of = ERI
+						}
+					}
+					set_state_flag = AVI_cores
+				}
+				if = {#格赖夫瓦尔德自治州
+					limit = {
+						OR = {
+							is_core_of = AET
+							is_core_of = HEL
+						}
+					}
+					set_state_flag = AET_cores
+				}
+				if = {#菲兹拉自治州
+					limit = {
+						is_core_of = FEZ
+					}
+					set_state_flag = FEZ_cores
+				}
+				if = {#鹫弗顿自治州
+					limit = {
+						is_core_of = TRD
+						NOT = {
+							state = 381
+						}
+					}
+					set_state_flag = TRD_cores
+				}
+				if = {#漫云社会主义自治共和国
+					limit = {
+						is_core_of = FAT
+					}
+					set_state_flag = FAT_cores
+				}
+				if = {#白尾社会主义自治共和国
+					limit = {
+						is_core_of = MNC
+					}
+					set_state_flag = MNC_cores
+				}
+				if = {#韦迪纳社会主义自治共和国
+					limit = {
+						is_core_of = VED
+					}
+					set_state_flag = VED_cores
+				}
+				if = {#天际纳维亚北方小马自治区
+					limit = {
+						OR = {
+							is_core_of = SRS
+							is_core_of = NTR
+						}
+					}
+					set_state_flag = SRS_cores
+				}
+				if = {#毫克兰行政专区
+					limit = {
+						is_core_of = HAU
+					}
+					set_state_flag = HAU_cores
+				}
+				if = {#新狮鹫尼亚社会主义自治共和国
+					limit = {
+						is_core_of = GRF
+					}
+					set_state_flag = GRF_cores
+				}
+				if = {#河间主体范围
+					limit = {
+						OR = {
+							is_core_of = BAR
+							is_core_of = WIT
+							is_core_of = FRE
+							is_core_of = NIM
+							is_core_of = RCT
+							is_core_of = LCT
+							is_core_of = DEP
+							is_core_of = DMT
+							is_core_of = BAK
+						}
+					}
+					set_state_flag = RCT_cores
+				}
+				if = {#河间北方范围
+					limit = {
+						OR = {
+							is_core_of = FBK
+							is_core_of = FIR
+							is_core_of = WAT
+							is_core_of = NCH
+						}
+					}
+					set_state_flag = FBK_cores
+				}
+				if = {#骑士团辖区
+					limit = {
+						OR = {
+							is_core_of = ZES
+							is_core_of = OLV
+						}
+					}
+					set_state_flag = ZES_cores
+				}
+
+				if = {#卡廷军区
+					limit = {
+						OR = {
+							is_core_of = SIC
+							is_core_of = FAL
+							is_core_of = WNG
+							is_core_of = TAL
+							is_core_of = FRN
+							is_core_of = ARA
+						}
+					}
+					set_state_flag = WNG_wehrdistrikte_cores
+				}
+				if = {#中狮鹫尼亚军区
+					limit = {
+						OR = {
+							is_core_of = BOI
+							is_core_of = LAK
+							is_core_of = AVI
+							is_core_of = ERI
+							is_core_of = EYR
+						}
+					}
+					set_state_flag = BOI_wehrdistrikte_cores
+				}
+				if = {#星空军事托管领
+					limit = {
+						is_core_of = MIT
+					}
+					set_state_flag = MIT_wehrdistrikte_cores
+				}
+			}
+
+			#国际主义援助对象
+			clear_array = GRW.internationalism_support
+
+			#确定河间领导
+			RCT = {
+				save_global_event_target_as = RIV_leader
+				set_variable = {
+					global.RIV_leader_var = THIS
+				}
+			}
+		}
+	}
+
+	on_daily_GRW = {
+		effect = {
+			GRW_recount_communism_power = yes
+
+			if = {#通用外交政策判定
+				limit = {
+					has_country_flag = GRW_Evi_revolution_end
+				}
+				clear_array = GRW.diplomacy_communism
+				clear_array = GRW.diplomacy_communism_enemies
+				clear_array = GRW.diplomacy_enemies
+				clear_array = GRW.diplomacy_democratic
+				for_each_scope_loop = {
+					array = GRW.revolution_diplomacy
+					if = {
+						limit = {
+							exists = yes
+							has_government = communism
+							has_country_flag = GRW_diplomacy_communism_enemies
+						}
+						add_to_array = {
+							array = GRW.diplomacy_communism_enemies
+							value = THIS
+						}
+					}
+					else_if = {
+						limit = {
+							exists = yes
+							has_government = communism
+						}
+						add_to_array = {
+							array = GRW.diplomacy_communism
+							value = THIS
+						}
+					}
+					else_if = {
+						limit = {
+							exists = yes
+							OR = {
+								has_government = neutrality
+								has_government = fascism
+								has_country_flag = GRW_diplomacy_democratic_enemies
+							}
+						}
+						add_to_array = {
+							array = GRW.diplomacy_enemies
+							value = THIS
+						}
+					}
+					else_if = {
+						limit = {
+							exists = yes
+							has_government = democratic
+						}
+						add_to_array = {
+							array = GRW.diplomacy_democratic
+							value = THIS
+						}
+					}
+				}
+			}
+
+			if = {#援助河间对象判定
+				limit = {
+					has_completed_focus = GRW_contact_RIV_comrades
+				}
+				every_country = {
+					limit = {
+						is_original_riv_fed_country_tag = yes
+					}
+					if = {
+						limit = {
+							OR = {
+								exists = no
+								is_subject = yes
+								NOT = {
+									has_government = communism
+								}
+								has_war = no
+								has_war_with = GRW
+							}
+						}
+						remove_from_array = {
+							array = GRW.internationalism_support
+							value = THIS
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								is_in_array = {
+									array = GRW.internationalism_support
+									value = THIS
+								}
+							}
+							exists = yes
+							is_subject = no
+							has_government = communism
+							has_war = yes
+							NOT = {
+								has_war_with = GRW
+							}
+						}
+						add_to_array = {
+							array = GRW.internationalism_support
+							value = THIS
+						}
+					}
+				}
+			}
+
+			if = {#河间革命对象
+				limit = {
+					has_completed_focus = GRW_contact_RIV_comrades
+				}
+				every_country = {
+					limit = {
+						is_original_riv_fed_country_tag = yes
+						is_in_array = {
+							array = GRW.RIV_revolution_diplomacy
+							value = THIS
+						}
+						OR = {
+							exists = no
+							has_government = communism
+						}
+					}
+					remove_from_array = {
+						array = GRW.RIV_revolution_diplomacy
+						value = THIS
+					}
+				}
+			}
+		}
+	}
+
+	on_weekly_GRW = {
+		effect = {
+			if = {
+				limit = {
+					has_country_flag = GRW_stabilize_coalition_flag
+				}
+				GRW = {
+					GRW_evaluate_stabillity_modifier_low = yes
+				}
+			}
+			else = {
+				GRW = {
+					GRW_evaluate_stabillity_modifier_high = yes
+				}
+			}
+
+			if = {
+				limit = {
+					check_variable = {
+						GRW_var_rozenkampism_influence > 45
+					}
+				}
+				country_event = {
+					id = GRW_earlygame.65
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						GRW_var_syndicalism_influence > 45
+					}
+				}
+				country_event = {
+					id = GRW_earlygame.66
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						GRW_var_democratic_socialism_influence > 45
+					}
+				}
+				country_event = {
+					id = GRW_earlygame.67
+				}
+			}
+
+			clr_country_flag = GRW_diplomatic_preference_International_Bureau_flag
+			clr_country_flag = GRW_diplomatic_preference_Foreign_Ministry_flag
+			if = {
+				limit = {
+					check_variable = {
+						GRW_diplomatic_preference > 0
+					}
+				}
+				set_country_flag = GRW_diplomatic_preference_International_Bureau_flag
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						GRW_diplomatic_preference < 0
+					}
+				}
+				set_country_flag = GRW_diplomatic_preference_Foreign_Ministry_flag
+			}
+		}
+	}
+
+	on_monthly = {
+		effect = {
+			if = {
+				limit = {
+					has_completed_focus = GRW_ministry_of_foreign_affairs
+					NOT = {
+						has_country_flag = GRW_Evi_revolution_start
+					}
+				}
+				GRW = {
+					add_to_variable = {
+						var = GRW_Evi_tension
+						value = GRW_Evi_tension_change
+					}
+					clamp_variable = {
+						var = GRW_Evi_tension
+						min = 0
+						max = 100
+					}
+				}
+			}
+
+			#确定河间领导
+			if = {
+				limit = {
+					any_country = {
+						exists = yes
+						is_river_fed_member = yes
+					}
+				}
+				GRW = {
+					GRW_confirm_RIV_leader = yes
+				}
+			}
+		}
+	}
+
+	on_declare_war = {
+		effect = {
+			if = {
+				limit = {
+					original_tag = LCT
+					FROM = {
+						original_tag = GRW
+					}
+				}
+				FROM = {
+					country_event = {
+						id = GRW_earlygame.58
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					ROOT = {
+						original_tag = GRW
+					}
+					FROM = {
+						has_idea = GRW_anti_Prywhen_pact
+					}
+				}
+				FROM = {
+					country_event = {
+						id = GRW_earlygame.63
+					}
+				}
+				GRW = {
+					add_to_variable = {
+						var = GRW_Evi_tension
+						value = 100
+					}
+					clamp_variable = {
+						var = GRW_Evi_tension
+						min = 0
+						max = 100
+					}
+					country_event = {
+						id = GRW_earlygame.69
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					original_tag = MIT
+					FROM = {
+						original_tag = CYA
+					}
+					GRW = {
+						has_country_flag = GRW_earlygame_88_flag
+						has_country_flag = GRW_earlygame_84_a_flag
+					}
+				}
+				GRW = {
+					country_event = {
+						id = GRW_earlygame.94
+						days = 4
+					}
+				}
+			}
+		}
+	}
+
+	on_war_relation_added = {
+		effect = {
+			if = {
+				limit = {
+					original_tag = GRW
+					FROM = {
+						exists = yes
+						is_original_riv_fed_country_tag = yes
+						NOT = {
+							has_government = communism
+						}
+					}
+				}
+				set_global_flag = GRW_attack_RIV
+				if = {
+					limit = {
+						FROM = {
+							has_country_flag = GRW_operation_contact_local_red_organization_flag
+						}
+					}
+					FROM = {
+						if = {
+							limit = {
+								NOT = {
+									original_tag = NIM
+								}
+								communism > 0.5
+							}
+							start_civil_war = {
+								ideology = communism
+								size = party_popularity@communism
+								navy_ratio = 0
+								air_ratio = 0
+								set_country_flag = GRW_not_say_we_have_nothing_we_will_rule_all_flag
+							}
+							add_popularity = {
+								ideology = communism
+								popularity = -1
+							}
+						}
+						else_if = {
+							limit = {
+								original_tag = NIM
+								NOT = {
+									has_global_flag = NIM_helots_rebelled
+								}
+								has_stability < 0.35
+							}
+							start_civil_war = {
+								ideology = communism
+								size = 0.35
+								navy_ratio = 0
+								air_ratio = 0
+								set_country_flag = GRW_not_say_we_have_nothing_we_will_rule_all_flag
+							}
+							add_popularity = {
+								ideology = communism
+								popularity = -1
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						GRW = {
+							has_completed_focus = GRW_smash_old_world_to_smithereens
+						}
+						FROM = {
+							has_country_flag = GRW_operation_contact_local_red_organization_flag
+						}
+					}
+					if = {
+						limit = {
+							FROM = {
+								NOT = {
+									original_tag = NIM
+								}
+								communism < 0.3
+								communism > 0.1
+							}
+						}
+						FROM = {
+							add_ideas = GRW_RIV_militants1
+						}
+					}
+					else_if = {
+						limit = {
+							FROM = {
+								NOT = {
+									original_tag = NIM
+								}
+								communism < 0.5
+								communism > 0.3
+							}
+						}
+						FROM = {
+							add_ideas = GRW_RIV_militants2
+						}
+					}
+					else_if = {
+						limit = {
+							FROM = {
+								original_tag = NIM
+								NOT = {
+									has_global_flag = NIM_helots_rebelled
+								}
+								has_stability < 0.6
+								has_stability > 0.5
+							}
+						}
+						add_ideas = GRW_RIV_militants1
+					}
+					else_if = {
+						limit = {
+							FROM = {
+								original_tag = NIM
+								NOT = {
+									has_global_flag = NIM_helots_rebelled
+								}
+								has_stability < 0.5
+								has_stability > 0.35
+							}
+						}
+						add_ideas = GRW_RIV_militants2
+					}
+				}
+			}
+		}
+	}
+
+	on_annex = {
+		effect = {
+			FROM = {
+				remove_from_global_arrays_on_annex = yes
+			}
+
+			if = {
+				limit = {
+					original_tag = GRW
+					FROM = {
+						original_tag = BRF
+					}
+				}
+				GRW = {
+					country_event = {
+						id = GRW_earlygame.1
+					}
+				}
+			}
+
+			if = {#河间大革命结束
+				limit = {
+					NOT = {
+						has_global_flag = GRW_attack_RIV
+					}
+					has_global_flag = GRW_RIV_revolution_begin
+					is_original_riv_fed_country_tag = yes
+					OR = {
+						AND = {
+							OR = {
+								has_country_flag = GRW_not_say_we_have_nothing_we_will_rule_all_flag
+								has_country_flag = GRW_agree_to_join_RIV_revolution
+							}
+							FROM = {
+								NOT = {
+									has_government = communism
+								}
+							}
+						}
+						AND = {
+							NOT = {
+								has_government = communism
+							}
+							FROM = {
+								OR = {
+									has_country_flag = GRW_not_say_we_have_nothing_we_will_rule_all_flag
+									has_country_flag = GRW_agree_to_join_RIV_revolution
+								}
+							}
+						}
+					}
+				}
+				if = {#革命胜利
+					limit = {
+						all_country = {
+							OR = {
+								is_original_riv_fed_country_tag = no
+								exists = no
+								has_government = communism
+							}
+						}
+					}
+					set_global_flag = GRW_RIV_revolution_over
+					RCT = {
+						country_event = {
+							id = GRW_midgame.41
+						}
+					}
+					GRW = {
+						country_event = {
+							id = GRW_midgame.39
+						}
+					}
+				}
+				if = {#革命失败
+					limit = {
+						all_country = {
+							OR = {
+								NOT = {
+									has_country_flag = GRW_not_say_we_have_nothing_we_will_rule_all_flag
+									has_country_flag = GRW_agree_to_join_RIV_revolution
+								}
+								exists = no
+								NOT = {
+									has_government = communism
+								}
+							}
+						}
+					}
+					set_global_flag = GRW_RIV_revolution_over
+					GRW = {
+						country_event = {
+							id = GRW_midgame.40
+						}
+					}
+				}
+			}
+		}
+	}
+
+	on_peaceconference_ended = {
+		effect = {
+			if = {#埃维解放战争胜利
+				limit = {
+					original_tag = GRW
+					NOT = {
+						has_country_flag = GRW_Evi_revolution_end
+					}
+					FROM = {
+						OR = {
+							original_tag = BAN
+							original_tag = GRY
+							original_tag = GRU
+						}
+					}
+					BAN = {
+						OR = {
+							exists = no
+							has_government = communism
+						}
+					}
+					GRY = {
+						OR = {
+							exists = no
+							has_government = communism
+						}
+					}
+					GRU = {
+						OR = {
+							exists = no
+							has_government = communism
+						}
+					}
+				}
+				country_event = {
+					id = GRW_earlygame.70
+				}
+			}
+			
+			if = {
+				limit = {
+					original_tag = MIT
+					FROM = {
+						original_tag = CYA
+					}
+					CYA = {
+						OR = {
+							exists = no
+							is_subject = yes
+						}
+					}
+				}
+				if = {
+					limit = {
+						GRW = {
+							has_country_flag = GRW_earlygame_81_flag
+						}
+					}
+					GRW = {
+						MIT = {
+							save_event_target_as = volunteer_target
+						}
+						clear_volunteers_to_TARGET = yes
+						MIT = {
+							GRW = {
+								save_event_target_as = volunteer_target
+							}
+							clear_volunteers_to_TARGET = yes
+						}
+					}
+				}
+				if = {
+					limit = {
+						GRW = {
+							has_country_flag = GRW_earlygame_88_flag
+						}
+					}
+					GRW = {
+						country_event = {
+							id = GRW_earlygame.95
+							days = 2
+						}
+					}
+				}
+			}
+		}
+	}
+
+	on_government_change = {
+		effect = {
+			if = {
+				limit = {
+					GRW = {
+						NOT = {
+							has_country_flag = GRW_Evi_revolution_start
+						}
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							original_tag = BAN
+							original_tag = LUS
+							original_tag = GRY
+						}
+						exists = yes
+						has_government = communism
+						has_country_flag = GRW_Evi_hostile_flag
+					}
+					clr_country_flag = GRW_Evi_hostile_flag
+					GRW = {
+						country_event = {
+							id = GRW_earlygame.60
+							days = 1
+						}
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					GRW = {
+						has_country_flag = GRW_earlygame_88_flag
+					}
+				}
+				if = {
+					limit = {
+						MIT = {
+							has_government = fascism
+							exists = yes
+							is_subject = no
+						}
+					}
+					GRW = {
+						country_event = {
+							id = GRW_international_bureau_events.4
+							days = 2
+						}
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					SRS = {
+						exists = yes
+						has_government = communism
+						is_subject = no
+					}
+				}
+				if = {
+					limit = {
+						FAT = {
+							has_government = communism
+							exists = yes
+							is_subject = no
+						}
+					}
+					GRW = {
+						country_event = {
+							id = GRW_international_bureau_events.6
+							days = 7
+						}
+					}
+				}
+			}
+		}
+	}
+
+	on_unit_leader_level_up = {
+		effect = {
+			if = { 
+				limit = { 
+					FROM = { 
+						has_idea = GRW_higher_military_academy 
+					} 
+				}
+				character = { 
+					IF = { 
+						limit = { is_army_leader = yes }
+					
+						random_list = { 
+							50 = {
+								add_attack = 1
+								add_logistics = 1
+							} 
+							50 = {} 
+						} 
+					}
+				}
+			}
+		}
+	}
+
+	on_send_volunteers = {
+		effect = {
+			if = {
+				limit = {
+					original_tag = GRW
+				}
+				if = {
+					limit = {
+						has_idea = GRW_support_WNG_idea
+						FROM = {
+							tag = WNG
+						}
+					}
+					country_event = {
+						id = GRW_earlygame.97
+						days = 3
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							has_idea = GRW_support_LSC_idea
+							has_idea = GRW_support_LSC_idea_1
+						}
+						FROM = {
+							tag = LSC
+						}
+					}
+					country_event = {
+						id = GRW_earlygame.98
+						days = 3
+					}
+				}
+				if = {
+					limit = {
+						has_idea = GRW_support_SRS_idea
+						FROM = {
+							tag = SRS
+						}
+					}
+					country_event = {
+						id = GRW_earlygame.107
+						days = 3
+					}
+				}
+				if = {
+					limit = {
+						has_idea = GRW_support_FAT_idea
+						FROM = {
+							tag = FAT
+						}
+					}
+					country_event = {
+						id = GRW_earlygame.108
+						days = 3
+					}
+				}
+				if = {
+					limit = {
+						has_idea = GRW_support_HIP_idea
+						FROM = {
+							tag = HIP
+						}
+					}
+					country_event = {
+						id = GRW_earlygame.111
+						days = 3
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							has_idea = GRW_support_GRA_idea
+							has_idea = GRW_support_GRA_idea_1
+						}
+						FROM = {
+							tag = GRA
+						}
+					}
+					country_event = {
+						id = GRW_earlygame.112
+						days = 3
+					}
+				}
+			}
+		}
+	}
+
+	on_puppet = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						original_tag = GRW
+					}
+				}
+				GRW = { 
+					set_autonomy = {
+						target = ROOT
+						autonomy_state = autonomy_sister_republics
+					}
+				}
+			}
+		}
+	}
+
+	on_release_as_puppet = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						original_tag = GRW
+					}
+				}
+				GRW = { 
+					set_autonomy = {
+						target = ROOT
+						autonomy_state = autonomy_sister_republics
+					}
+				}
+			}
+		}
+	}
+}

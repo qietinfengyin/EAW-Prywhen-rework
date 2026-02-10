@@ -1,0 +1,1731 @@
+#未竟之业
+GRW_unfulfilled_promises_improve = {
+	custom_effect_tooltip = GRW_unfulfilled_promises_improve_tt
+	if = {
+		limit = { 
+			has_idea = GRW_unfulfilled_promises_1
+		}
+		swap_ideas = {
+			remove_idea = GRW_unfulfilled_promises_1
+			add_idea = GRW_unfulfilled_promises_2
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = GRW_unfulfilled_promises_2
+		}
+		swap_ideas = {
+			remove_idea = GRW_unfulfilled_promises_2
+			add_idea = GRW_unfulfilled_promises_3
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = GRW_unfulfilled_promises_3
+		}
+		swap_ideas = {
+			remove_idea = GRW_unfulfilled_promises_3
+			add_idea = GRW_unfulfilled_promises_4
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = GRW_unfulfilled_promises_4
+		}
+		swap_ideas = {
+			remove_idea = GRW_unfulfilled_promises_4
+			add_idea = GRW_unfulfilled_promises_5
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = GRW_unfulfilled_promises_5
+		}
+		swap_ideas = {
+			remove_idea = GRW_unfulfilled_promises_5
+			add_idea = GRW_unfulfilled_promises_6
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = GRW_unfulfilled_promises_6
+		}
+		swap_ideas = {
+			remove_idea = GRW_unfulfilled_promises_6
+			add_idea = GRW_accomplished_undertaking
+		}
+	}
+}
+
+#匪患好转
+GRW_banditry_improves = {
+	if = {
+		limit = { 
+			has_idea = GRW_threat_of_banditry_3
+		}
+		swap_ideas = {
+			remove_idea = GRW_threat_of_banditry_3
+			add_idea = GRW_threat_of_banditry_2
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = GRW_threat_of_banditry_2
+		}
+		swap_ideas = {
+			remove_idea = GRW_threat_of_banditry_2
+			add_idea = GRW_threat_of_banditry_1
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = GRW_threat_of_banditry_1
+		}
+		swap_ideas = {
+			remove_idea = GRW_threat_of_banditry_2
+			add_idea = GRW_bandit_hibernation
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = GRW_bandit_hibernation
+		}
+		remove_ideas = GRW_bandit_hibernation
+		GRW_unfulfilled_promises_improve = yes
+		GRW_primitive_communism_influence_moderateincrease = yes
+	}
+}
+#匪患恶化
+GRW_banditry_worsens = {
+	if = {
+		limit = { 
+			has_idea = GRW_bandit_hibernation
+		}
+		swap_ideas = {
+			remove_idea = GRW_bandit_hibernation
+			add_idea = GRW_threat_of_banditry_1
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = GRW_threat_of_banditry_1
+		}
+		swap_ideas = {
+			remove_idea = GRW_threat_of_banditry_1
+			add_idea = GRW_threat_of_banditry_2
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = GRW_threat_of_banditry_2
+		}
+		swap_ideas = {
+			remove_idea = GRW_threat_of_banditry_2
+			add_idea = GRW_threat_of_banditry_3
+		}
+	}
+}
+
+#从内战中恢复
+GRW_recovery_from_civil_war = {
+	custom_effect_tooltip = GRW_recovery_from_civil_war_tt
+	if = {
+		limit = {
+			has_idea = GRW_BRF_postwar_1
+		}
+		swap_ideas = {
+			remove_idea = GRW_BRF_postwar_1
+			add_idea = GRW_BRF_postwar_2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GRW_BRF_postwar_2
+		}
+		swap_ideas = {
+			remove_idea = GRW_BRF_postwar_2
+			add_idea = GRW_BRF_postwar_3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GRW_BRF_postwar_3
+		}
+		remove_ideas = GRW_BRF_postwar_3
+	}
+}
+
+#工业决议花费减少
+GRW_reconstruction_cost_decrease = {
+	custom_effect_tooltip = GRW_reconstruction_cost_decrease_tt
+	add_to_variable = {
+		var = GRW_var_reconstruction_cost_low
+		value = -15
+	}
+	add_to_variable = {
+		var = GRW_var_reconstruction_cost_low_negative
+		value = 15
+	}
+	add_to_variable = {
+		var = GRW_var_reconstruction_cost
+		value = -15
+	}
+	add_to_variable = {
+		var = GRW_var_reconstruction_cost_negative
+		value = 15
+	}
+	add_to_variable = {
+		var = GRW_var_reconstruction_cost_high
+		value = -15
+	}
+	add_to_variable = {
+		var = GRW_var_reconstruction_cost_high_negative
+		value = 15
+	}
+}
+#工业决议花费增加
+GRW_reconstruction_cost_increase = {
+	custom_effect_tooltip = GRW_reconstruction_cost_increase_tt
+	add_to_variable = {
+		var = GRW_var_reconstruction_cost_low
+		value = 15
+	}
+	add_to_variable = {
+		var = GRW_var_reconstruction_cost_low_negative
+		value = -15
+	}
+	add_to_variable = {
+		var = GRW_var_reconstruction_cost
+		value = 15
+	}
+	add_to_variable = {
+		var = GRW_var_reconstruction_cost_negative
+		value = -15
+	}
+	add_to_variable = {
+		var = GRW_var_reconstruction_cost_high
+		value = 15
+	}
+	add_to_variable = {
+		var = GRW_var_reconstruction_cost_high_negative
+		value = -15
+	}
+}
+
+#农业决议花费减少
+GRW_land_reform_cost_decrease = {
+	custom_effect_tooltip = GRW_land_reform_cost_decrease_tt
+	add_to_variable = {
+		var = GRW_var_land_reform_cost_low
+		value = -15
+	}
+	add_to_variable = {
+		var = GRW_var_land_reform_cost_low_negative
+		value = 15
+	}
+	add_to_variable = {
+		var = GRW_var_land_reform_cost
+		value = -15
+	}
+	add_to_variable = {
+		var = GRW_var_land_reform_cost_negative
+		value = 15
+	}
+	add_to_variable = {
+		var = GRW_var_land_reform_cost_high
+		value = -15
+	}
+}
+#农业决议花费增加
+GRW_land_reform_cost_increase = {
+	custom_effect_tooltip = GRW_land_reform_cost_increase_tt
+	add_to_variable = {
+		var = GRW_var_land_reform_cost_low
+		value = 15
+	}
+	add_to_variable = {
+		var = GRW_var_land_reform_cost_low_negative
+		value = -15
+	}
+	add_to_variable = {
+		var = GRW_var_land_reform_cost
+		value = 15
+	}
+	add_to_variable = {
+		var = GRW_var_land_reform_cost_negative
+		value = -15
+	}
+	add_to_variable = {
+		var = GRW_var_land_reform_cost_high
+		value = 15
+	}
+}
+
+#工业企业升级
+GRW_industrial_enterprise_upgrade = {
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = GRW_national_construction_directorate_level2
+				has_country_flag = GRW_national_construction_directorate_level3
+				has_country_flag = GRW_national_construction_directorate_level4
+			}
+		}
+		set_country_flag = GRW_national_construction_directorate_level2
+		if = {
+			limit = {
+				has_idea = GRW_national_construction_directorate_1
+			}
+			swap_ideas = {
+				remove_idea = GRW_national_construction_directorate_1
+				add_idea = GRW_national_construction_directorate_2
+			}
+		}
+		else = {
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = GRW_national_construction_directorate_1
+					add_idea = GRW_national_construction_directorate_2
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			NOT = {
+				has_country_flag = GRW_national_construction_directorate_level3
+				has_country_flag = GRW_national_construction_directorate_level4
+			}
+			has_country_flag = GRW_national_construction_directorate_level2
+		}
+		set_country_flag = GRW_national_construction_directorate_level3
+		if = {
+			limit = {
+				has_idea = GRW_national_construction_directorate_2
+			}
+			swap_ideas = {
+				remove_idea = GRW_national_construction_directorate_2
+				add_idea = GRW_national_construction_directorate_3
+			}
+		}
+		else = {
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = GRW_national_construction_directorate_2
+					add_idea = GRW_national_construction_directorate_3
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_flag = GRW_national_construction_directorate_level4
+		}
+		set_country_flag = GRW_national_construction_directorate_level4
+		if = {
+			limit = {
+				has_idea = GRW_national_construction_directorate_3
+			}
+			swap_ideas = {
+				remove_idea = GRW_national_construction_directorate_3
+				add_idea = GRW_national_construction_directorate_4
+			}
+		}
+		else = {
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = GRW_national_construction_directorate_3
+					add_idea = GRW_national_construction_directorate_4
+				}
+			}
+		}
+	}
+	else = {
+		add_tech_bonus = {
+			name = GRW_invest_stateowned_company
+			bonus = 0.75
+			uses = 2
+			category = industry
+		}
+	}
+}
+
+#精炼企业升级
+GRW_refinery_upgrade = {
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = GRW_refinery_level2
+				has_country_flag = GRW_refinery_level3
+			}
+		}
+		set_country_flag = GRW_refinery_level2
+		if = {
+			limit = {
+				has_idea = GRW_refinery_1
+			}
+			swap_ideas = {
+				remove_idea = GRW_refinery_1
+				add_idea = GRW_refinery_2
+			}
+		}
+		else = {
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = GRW_refinery_1
+					add_idea = GRW_refinery_2
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			NOT = {
+				has_country_flag = GRW_refinery_level3
+			}
+			has_country_flag = GRW_refinery_level2
+		}
+		set_country_flag = GRW_refinery_level3
+		if = {
+			limit = {
+				has_idea = GRW_refinery_2
+			}
+			swap_ideas = {
+				remove_idea = GRW_refinery_2
+				add_idea = GRW_refinery_3
+			}
+		}
+		else = {
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = GRW_refinery_2
+					add_idea = GRW_refinery_3
+				}
+			}
+		}
+	}
+}
+
+#饥荒好转
+GRW_BRF_famine_gets_better = {
+	custom_effect_tooltip = GRW_BRF_famine_gets_better_tt
+	if = {
+		limit = { 
+			has_idea = GRW_current_status_of_agriculture_1
+		}
+		swap_ideas = {
+			remove_idea = GRW_current_status_of_agriculture_1
+			add_idea = GRW_current_status_of_agriculture_2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GRW_current_status_of_agriculture_2
+		}
+		swap_ideas = {
+			remove_idea = GRW_current_status_of_agriculture_2
+			add_idea = GRW_current_status_of_agriculture_3
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = GRW_current_status_of_agriculture_3
+		}
+		swap_ideas = {
+			remove_idea = GRW_current_status_of_agriculture_3
+			add_idea = GRW_current_status_of_agriculture_4
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = GRW_current_status_of_agriculture_4
+		}
+		swap_ideas = {
+			remove_idea = GRW_current_status_of_agriculture_4
+			add_idea = GRW_current_status_of_agriculture_5
+		}
+	}
+}
+#饥荒恶化
+GRW_BRF_famine_worsens = {
+	custom_effect_tooltip = GRW_BRF_famine_worsens_tt
+	if = {
+		limit = { 
+			has_idea = GRW_current_status_of_agriculture_5
+		}
+		swap_ideas = {
+			remove_idea = GRW_current_status_of_agriculture_5
+			add_idea = GRW_current_status_of_agriculture_4
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = GRW_current_status_of_agriculture_4
+		}
+		swap_ideas = {
+			remove_idea = GRW_current_status_of_agriculture_4
+			add_idea = GRW_current_status_of_agriculture_3
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = GRW_current_status_of_agriculture_3
+		}
+		swap_ideas = {
+			remove_idea = GRW_current_status_of_agriculture_3
+			add_idea = GRW_current_status_of_agriculture_2
+		}
+	}
+	else_if = {
+		limit = { 
+			has_idea = GRW_current_status_of_agriculture_2
+		}
+		swap_ideas = {
+			remove_idea = GRW_current_status_of_agriculture_2
+			add_idea = GRW_current_status_of_agriculture_1
+		}
+	}
+}
+
+#对外贸易好转
+GRW_foreign_trade_improves = {
+	if = {
+		limit = {
+			has_idea = GRW_foreign_trade_restricted_1
+		}
+		swap_ideas = {
+			remove_idea = GRW_foreign_trade_restricted_1
+			add_idea = GRW_foreign_trade_restricted_2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GRW_foreign_trade_restricted_2
+		}
+		swap_ideas = {
+			remove_idea = GRW_foreign_trade_restricted_2
+			add_idea = GRW_foreign_trade_restricted_3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GRW_foreign_trade_restricted_3
+		}
+		swap_ideas = {
+			remove_idea = GRW_foreign_trade_restricted_3
+			add_idea = GRW_foreign_trade_restricted_4
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GRW_foreign_trade_restricted_4
+		}
+		swap_ideas = {
+			remove_idea = GRW_foreign_trade_restricted_4
+			add_idea = GRW_foreign_trade_restricted_5
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GRW_foreign_trade_restricted_5
+		}
+		add_political_power = 40
+	}
+}
+GRW_foreign_trade_completely_improves = {
+	if = {
+		limit = {
+			has_idea = GRW_foreign_trade_restricted_1
+		}
+		custom_effect_tooltip = GRW_foreign_trade_completely_improves_tt
+		swap_ideas = {
+			remove_idea = GRW_foreign_trade_restricted_1
+			add_idea = GRW_booming_foreign_trade
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GRW_foreign_trade_restricted_2
+		}
+		custom_effect_tooltip = GRW_foreign_trade_completely_improves_tt
+		swap_ideas = {
+			remove_idea = GRW_foreign_trade_restricted_2
+			add_idea = GRW_booming_foreign_trade
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GRW_foreign_trade_restricted_3
+		}
+		custom_effect_tooltip = GRW_foreign_trade_completely_improves_tt
+		swap_ideas = {
+			remove_idea = GRW_foreign_trade_restricted_3
+			add_idea = GRW_booming_foreign_trade
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GRW_foreign_trade_restricted_4
+		}
+		custom_effect_tooltip = GRW_foreign_trade_completely_improves_tt
+		swap_ideas = {
+			remove_idea = GRW_foreign_trade_restricted_4
+			add_idea = GRW_booming_foreign_trade
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GRW_foreign_trade_restricted_5
+		}
+		custom_effect_tooltip = GRW_foreign_trade_completely_improves_tt
+		swap_ideas = {
+			remove_idea = GRW_foreign_trade_restricted_5
+			add_idea = GRW_booming_foreign_trade
+		}
+	}
+}
+
+#送出志愿军效果
+send_volunteers_to_TARGET = {
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = sent_volunteers_@event_target:volunteer_target
+			}
+		}
+		set_country_flag = sent_volunteers_@event_target:volunteer_target
+
+		add_ai_strategy = {
+			type = send_volunteers_desire
+			id = event_target:volunteer_target
+			value = 400
+		}
+		add_ai_strategy = {
+			type = send_lend_lease_desire
+			id = event_target:volunteer_target
+			value = 400
+		}
+		add_ai_strategy = {
+			type = support
+			id = event_target:volunteer_target
+			value = 200
+		}
+	}
+}
+#移除志愿军效果
+clear_volunteers_to_TARGET = {
+	if = {
+		limit = {
+			has_country_flag = sent_volunteers_@event_target:volunteer_target
+		}
+		clr_country_flag = sent_volunteers_@event_target:volunteer_target
+
+		add_ai_strategy = {
+			type = send_volunteers_desire
+			id = event_target:volunteer_target
+			value = -400
+		}
+		add_ai_strategy = {
+			type = send_lend_lease_desire
+			id = event_target:volunteer_target
+			value = -400
+		}
+		add_ai_strategy = {
+			type = support
+			id = event_target:volunteer_target
+			value = -200
+		}
+	}
+}
+
+#国际局的影响
+GRW_influence_improve = {
+	if = {
+		limit = {
+			NOT = {
+				has_idea = GRW_influence1
+				has_idea = GRW_influence2
+				has_idea = GRW_influence3
+			}
+		}
+		add_ideas = GRW_influence1
+	}
+	else_if = {
+		limit = {
+			has_idea = GRW_influence1
+		}
+		swap_ideas = {
+			remove_idea = GRW_influence1
+			add_idea = GRW_influence2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GRW_influence2
+		}
+		swap_ideas = {
+			remove_idea = GRW_influence2
+			add_idea = GRW_influence3
+		}
+	}
+}
+
+#计算共和国的稳定度
+GRW_evaluate_stabillity_modifier_high = {#非核心地-2
+	GRW = {
+		set_variable = {
+			var = GRW_var_stability_factor
+			value = 0
+		}
+		every_owned_state = {
+			limit = {
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
+			add_to_variable = {
+				var = GRW.GRW_var_stability_factor
+				value = -0.02
+			}
+		}
+		force_update_dynamic_modifier = yes
+	}
+}
+GRW_evaluate_stabillity_modifier_low = {#非核心地-2,宣称地-1
+	GRW = {
+		set_variable = {
+			var = GRW_var_stability_factor
+			value = 0
+		}
+		every_owned_state = {
+			limit = {
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+			}
+			add_to_variable = {
+				var = GRW.GRW_var_stability_factor
+				value = -0.02
+			}
+		}
+		every_owned_state = {
+			limit = {
+			NOT = {
+					is_core_of = ROOT
+				}
+				is_claimed_by = ROOT
+			}
+			add_to_variable = {
+				var = GRW.GRW_var_stability_factor
+				value = -0.01
+			}
+		}
+		force_update_dynamic_modifier = yes
+	}
+}
+
+#瑟拉齐骑士团强化
+GRW_Saraci_knights_improve = {
+	if = {
+		limit = {
+			NOT = {
+				has_idea = GRW_Saraci_knights_1
+				has_idea = GRW_Saraci_knights_2
+				has_idea = GRW_Saraci_knights_3
+			}
+		}
+		add_ideas = GRW_Saraci_knights_1
+	}
+	else_if = {
+		limit = {
+			has_idea = GRW_Saraci_knights_1
+		}
+		swap_ideas = {
+			remove_idea = GRW_Saraci_knights_1
+			add_idea = GRW_Saraci_knights_2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GRW_Saraci_knights_2
+		}
+		swap_ideas = {
+			remove_idea = GRW_Saraci_knights_2
+			add_idea = GRW_Saraci_knights_3
+		}
+	}
+}
+
+#革命激进度小幅上涨
+GRW_revolutionary_radicalisation_slightincrease = {
+	custom_effect_tooltip = GRW_revolutionary_radicalisation_slightincrease_tt
+	add_to_variable = {
+		var = GRW_var_revolutionary_radicalisation
+		value = 5
+	}
+	clamp_variable = {
+		var = GRW_var_revolutionary_radicalisation
+		min = 0
+		max = 100
+	}
+	GRW_update_revolutionary_radicalisation_effect = yes
+}
+#革命激进度中幅上涨
+GRW_revolutionary_radicalisation_moderateincrease = {
+	custom_effect_tooltip = GRW_revolutionary_radicalisation_moderateincrease_tt
+	add_to_variable = {
+		var = GRW_var_revolutionary_radicalisation
+		value = 10
+	}
+	clamp_variable = {
+		var = GRW_var_revolutionary_radicalisation
+		min = 0
+		max = 100
+	}
+	GRW_update_revolutionary_radicalisation_effect = yes
+}
+#革命激进度小幅下降
+GRW_revolutionary_radicalisation_slightdecrease = {
+	custom_effect_tooltip = GRW_revolutionary_radicalisation_slightdecrease_tt
+	add_to_variable = {
+		var = GRW_var_revolutionary_radicalisation
+		value = -5
+	}
+	clamp_variable = {
+		var = GRW_var_revolutionary_radicalisation
+		min = 0
+		max = 100
+	}
+	GRW_update_revolutionary_radicalisation_effect = yes
+}
+#革命激进度中幅下降
+GRW_revolutionary_radicalisation_moderatedecrease = {
+	custom_effect_tooltip = GRW_revolutionary_radicalisation_moderatedecrease_tt
+	add_to_variable = {
+		var = GRW_var_revolutionary_radicalisation
+		value = -10
+	}
+	clamp_variable = {
+		var = GRW_var_revolutionary_radicalisation
+		min = 0
+		max = 100
+	}
+	GRW_update_revolutionary_radicalisation_effect = yes
+}
+#革命激进度指针重新计算
+GRW_update_revolutionary_radicalisation_effect = {
+	if = {
+		limit = {
+			check_variable = { GRW_var_revolutionary_radicalisation = 0 }
+		}
+		set_variable = { GRW_var_revolutionary_radicalisation_meter = 1 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { GRW_var_revolutionary_radicalisation = 5 compare = less_than_or_equals }
+		}
+		set_variable = { GRW_var_revolutionary_radicalisation_meter = 2 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { GRW_var_revolutionary_radicalisation = 10 compare = less_than_or_equals }
+		}
+		set_variable = { GRW_var_revolutionary_radicalisation_meter = 3 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { GRW_var_revolutionary_radicalisation = 15 compare = less_than_or_equals }
+		}
+		set_variable = { GRW_var_revolutionary_radicalisation_meter = 4 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { GRW_var_revolutionary_radicalisation = 20 compare = less_than_or_equals }
+		}
+		set_variable = { GRW_var_revolutionary_radicalisation_meter = 5 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { GRW_var_revolutionary_radicalisation = 25 compare = less_than_or_equals }
+		}
+		set_variable = { GRW_var_revolutionary_radicalisation_meter = 6 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { GRW_var_revolutionary_radicalisation = 30 compare = less_than_or_equals }
+		}
+		set_variable = { GRW_var_revolutionary_radicalisation_meter = 7 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { GRW_var_revolutionary_radicalisation = 35 compare = less_than_or_equals }
+		}
+		set_variable = { GRW_var_revolutionary_radicalisation_meter = 8 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { GRW_var_revolutionary_radicalisation = 40 compare = less_than_or_equals }
+		}
+		set_variable = { GRW_var_revolutionary_radicalisation_meter = 9 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { GRW_var_revolutionary_radicalisation = 45 compare = less_than_or_equals }
+		}
+		set_variable = { GRW_var_revolutionary_radicalisation_meter = 10 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { GRW_var_revolutionary_radicalisation = 50 compare = less_than_or_equals }
+		}
+		set_variable = { GRW_var_revolutionary_radicalisation_meter = 11 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { GRW_var_revolutionary_radicalisation = 55 compare = less_than_or_equals }
+		}
+		set_variable = { GRW_var_revolutionary_radicalisation_meter = 12 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { GRW_var_revolutionary_radicalisation = 60 compare = less_than_or_equals }
+		}
+		set_variable = { GRW_var_revolutionary_radicalisation_meter = 13 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { GRW_var_revolutionary_radicalisation = 65 compare = less_than_or_equals }
+		}
+		set_variable = { GRW_var_revolutionary_radicalisation_meter = 14 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { GRW_var_revolutionary_radicalisation = 70 compare = less_than_or_equals }
+		}
+		set_variable = { GRW_var_revolutionary_radicalisation_meter = 15 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { GRW_var_revolutionary_radicalisation = 75 compare = less_than_or_equals }
+		}
+		set_variable = { GRW_var_revolutionary_radicalisation_meter = 16 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { GRW_var_revolutionary_radicalisation = 80 compare = less_than_or_equals }
+		}
+		set_variable = { GRW_var_revolutionary_radicalisation_meter = 17 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { GRW_var_revolutionary_radicalisation = 85 compare = less_than_or_equals }
+		}
+		set_variable = { GRW_var_revolutionary_radicalisation_meter = 18 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { GRW_var_revolutionary_radicalisation = 90 compare = less_than_or_equals }
+		}
+		set_variable = { GRW_var_revolutionary_radicalisation_meter = 19 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { GRW_var_revolutionary_radicalisation = 95 compare = less_than_or_equals }
+		}
+		set_variable = { GRW_var_revolutionary_radicalisation_meter = 20 }
+	}
+	else = {
+		set_variable = { GRW_var_revolutionary_radicalisation_meter = 21 }
+	}
+}
+
+###派系影响力变化
+#正统派影响力小幅增加
+GRW_primitive_communism_influence_slightincrease = {
+	custom_effect_tooltip = GRW_primitive_communism_influence_slightincrease_tt
+	add_to_variable = {
+		var = GRW_var_primitive_communism_influence
+		value = 5
+	}
+	GRW_recount_faction_influence = yes
+}
+#正统派影响力中幅增加
+GRW_primitive_communism_influence_moderateincrease = {
+	custom_effect_tooltip = GRW_primitive_communism_influence_moderateincrease_tt
+	add_to_variable = {
+		var = GRW_var_primitive_communism_influence
+		value = 10
+	}
+	GRW_recount_faction_influence = yes
+}
+#正统派影响力小幅减小
+GRW_primitive_communism_influence_slightdecrease = {
+	custom_effect_tooltip = GRW_primitive_communism_influence_slightdecrease_tt
+	add_to_variable = {
+		var = GRW_var_primitive_communism_influence
+		value = -5
+	}
+	GRW_recount_faction_influence = yes
+}
+#正统派影响力中幅减小
+GRW_primitive_communism_influence_moderatedecrease = {
+	custom_effect_tooltip = GRW_primitive_communism_influence_moderatedecrease_tt
+	add_to_variable = {
+		var = GRW_var_primitive_communism_influence
+		value = -10
+	}
+	GRW_recount_faction_influence = yes
+}
+#正统派满意度小幅增加
+GRW_primitive_communism_loyalty_slightincrease = {
+	custom_effect_tooltip = GRW_primitive_communism_loyalty_slightincrease_tt
+	add_to_variable = {
+		var = GRW_var_primitive_communism_loyalty
+		value = 5
+	}
+	GRW_recount_faction_influence = yes
+}
+#正统派满意度中幅增加
+GRW_primitive_communism_loyalty_moderateincrease = {
+	custom_effect_tooltip = GRW_primitive_communism_loyalty_moderateincrease_tt
+	add_to_variable = {
+		var = GRW_var_primitive_communism_loyalty
+		value = 10
+	}
+	GRW_recount_faction_influence = yes
+}
+#正统派满意度小幅减小
+GRW_primitive_communism_loyalty_slightdecrease = {
+	custom_effect_tooltip = GRW_primitive_communism_loyalty_slightdecrease_tt
+	add_to_variable = {
+		var = GRW_var_primitive_communism_loyalty
+		value = -5
+	}
+	GRW_recount_faction_influence = yes
+}
+#正统派满意度中幅减小
+GRW_primitive_communism_loyalty_moderatedecrease = {
+	custom_effect_tooltip = GRW_primitive_communism_loyalty_moderatedecrease_tt
+	add_to_variable = {
+		var = GRW_var_primitive_communism_loyalty
+		value = -10
+	}
+	GRW_recount_faction_influence = yes
+}
+
+#国际派影响力小幅增加
+GRW_rozenkampism_influence_slightincrease = {
+	custom_effect_tooltip = GRW_rozenkampism_influence_slightincrease_tt
+	add_to_variable = {
+		var = GRW_var_rozenkampism_influence
+		value = 5
+	}
+	GRW_recount_faction_influence = yes
+}
+#国际派影响力中幅增加
+GRW_rozenkampism_influence_moderateincrease = {
+	custom_effect_tooltip = GRW_rozenkampism_influence_moderateincrease_tt
+	add_to_variable = {
+		var = GRW_var_rozenkampism_influence
+		value = 10
+	}
+	GRW_recount_faction_influence = yes
+}
+#国际派影响力小幅减小
+GRW_rozenkampism_influence_slightdecrease = {
+	custom_effect_tooltip = GRW_rozenkampism_influence_slightdecrease_tt
+	add_to_variable = {
+		var = GRW_var_rozenkampism_influence
+		value = -5
+	}
+	GRW_recount_faction_influence = yes
+}
+#国际派影响力中幅减小
+GRW_rozenkampism_influence_moderatedecrease = {
+	custom_effect_tooltip = GRW_rozenkampism_influence_moderatedecrease_tt
+	add_to_variable = {
+		var = GRW_var_rozenkampism_influence
+		value = -10
+	}
+	GRW_recount_faction_influence = yes
+}
+#国际派满意度小幅增加
+GRW_rozenkampism_loyalty_slightincrease = {
+	custom_effect_tooltip = GRW_rozenkampism_loyalty_slightincrease_tt
+	add_to_variable = {
+		var = GRW_var_rozenkampism_loyalty
+		value = 5
+	}
+	GRW_recount_faction_influence = yes
+}
+#国际派满意度中幅增加
+GRW_rozenkampism_loyalty_moderateincrease = {
+	custom_effect_tooltip = GRW_rozenkampism_loyalty_moderateincrease_tt
+	add_to_variable = {
+		var = GRW_var_rozenkampism_loyalty
+		value = 10
+	}
+	GRW_recount_faction_influence = yes
+}
+#国际派满意度小幅减小
+GRW_rozenkampism_loyalty_slightdecrease = {
+	custom_effect_tooltip = GRW_rozenkampism_loyalty_slightdecrease_tt
+	add_to_variable = {
+		var = GRW_var_rozenkampism_loyalty
+		value = -5
+	}
+	GRW_recount_faction_influence = yes
+}
+#国际派满意度中幅减小
+GRW_rozenkampism_loyalty_moderatedecrease = {
+	custom_effect_tooltip = GRW_rozenkampism_loyalty_moderatedecrease_tt
+	add_to_variable = {
+		var = GRW_var_rozenkampism_loyalty
+		value = -10
+	}
+	GRW_recount_faction_influence = yes
+}
+
+#劳工派影响力小幅增加
+GRW_syndicalism_influence_slightincrease = {
+	custom_effect_tooltip = GRW_syndicalism_influence_slightincrease_tt
+	add_to_variable = {
+		var = GRW_var_syndicalism_influence
+		value = 5
+	}
+	GRW_recount_faction_influence = yes
+}
+#劳工派影响力中幅增加
+GRW_syndicalism_influence_moderateincrease = {
+	custom_effect_tooltip = GRW_syndicalism_influence_moderateincrease_tt
+	add_to_variable = {
+		var = GRW_var_syndicalism_influence
+		value = 10
+	}
+	GRW_recount_faction_influence = yes
+}
+#劳工派影响力小幅减小
+GRW_syndicalism_influence_slightdecrease = {
+	custom_effect_tooltip = GRW_syndicalism_influence_slightdecrease_tt
+	add_to_variable = {
+		var = GRW_var_syndicalism_influence
+		value = -5
+	}
+	GRW_recount_faction_influence = yes
+}
+#劳工派影响力中幅减小
+GRW_syndicalism_influence_moderatedecrease = {
+	custom_effect_tooltip = GRW_syndicalism_influence_moderatedecrease_tt
+	add_to_variable = {
+		var = GRW_var_syndicalism_influence
+		value = -10
+	}
+	GRW_recount_faction_influence = yes
+}
+#劳工派满意度小幅增加
+GRW_syndicalism_loyalty_slightincrease = {
+	custom_effect_tooltip = GRW_syndicalism_loyalty_slightincrease_tt
+	add_to_variable = {
+		var = GRW_var_syndicalism_loyalty
+		value = 5
+	}
+	GRW_recount_faction_influence = yes
+}
+#劳工派满意度中幅增加
+GRW_syndicalism_loyalty_moderateincrease = {
+	custom_effect_tooltip = GRW_syndicalism_loyalty_moderateincrease_tt
+	add_to_variable = {
+		var = GRW_var_syndicalism_loyalty
+		value = 10
+	}
+	GRW_recount_faction_influence = yes
+}
+#劳工派满意度小幅减小
+GRW_syndicalism_loyalty_slightdecrease = {
+	custom_effect_tooltip = GRW_syndicalism_loyalty_slightdecrease_tt
+	add_to_variable = {
+		var = GRW_var_syndicalism_loyalty
+		value = -5
+	}
+	GRW_recount_faction_influence = yes
+}
+#劳工派满意度中幅减小
+GRW_syndicalism_loyalty_moderatedecrease = {
+	custom_effect_tooltip = GRW_syndicalism_loyalty_moderatedecrease_tt
+	add_to_variable = {
+		var = GRW_var_syndicalism_loyalty
+		value = -10
+	}
+	GRW_recount_faction_influence = yes
+}
+
+#民主党派影响力小幅增加
+GRW_democratic_socialism_influence_slightincrease = {
+	custom_effect_tooltip = GRW_democratic_socialism_influence_slightincrease_tt
+	add_to_variable = {
+		var = GRW_var_democratic_socialism_influence
+		value = 5
+	}
+	GRW_recount_faction_influence = yes
+}
+#民主党派影响力中幅增加
+GRW_democratic_socialism_influence_moderateincrease = {
+	custom_effect_tooltip = GRW_democratic_socialism_influence_moderateincrease_tt
+	add_to_variable = {
+		var = GRW_var_democratic_socialism_influence
+		value = 10
+	}
+	GRW_recount_faction_influence = yes
+}
+#民主党派影响力小幅减小
+GRW_democratic_socialism_influence_slightdecrease = {
+	custom_effect_tooltip = GRW_democratic_socialism_influence_slightdecrease_tt
+	add_to_variable = {
+		var = GRW_var_democratic_socialism_influence
+		value = -5
+	}
+	GRW_recount_faction_influence = yes
+}
+#民主党派影响力中幅减小
+GRW_democratic_socialism_influence_moderatedecrease = {
+	custom_effect_tooltip = GRW_democratic_socialism_influence_moderatedecrease_tt
+	add_to_variable = {
+		var = GRW_var_democratic_socialism_influence
+		value = -10
+	}
+	GRW_recount_faction_influence = yes
+}
+#民主党派满意度小幅增加
+GRW_democratic_socialism_loyalty_slightincrease = {
+	custom_effect_tooltip = GRW_democratic_socialism_loyalty_slightincrease_tt
+	add_to_variable = {
+		var = GRW_var_democratic_socialism_loyalty
+		value = 5
+	}
+	GRW_recount_faction_influence = yes
+}
+#民主党派满意度中幅增加
+GRW_democratic_socialism_loyalty_moderateincrease = {
+	custom_effect_tooltip = GRW_democratic_socialism_loyalty_moderateincrease_tt
+	add_to_variable = {
+		var = GRW_var_democratic_socialism_loyalty
+		value = 10
+	}
+	GRW_recount_faction_influence = yes
+}
+#民主党派满意度小幅减小
+GRW_democratic_socialism_loyalty_slightdecrease = {
+	custom_effect_tooltip = GRW_democratic_socialism_loyalty_slightdecrease_tt
+	add_to_variable = {
+		var = GRW_var_democratic_socialism_loyalty
+		value = -5
+	}
+	GRW_recount_faction_influence = yes
+}
+#民主党派满意度中幅减小
+GRW_democratic_socialism_loyalty_moderatedecrease = {
+	custom_effect_tooltip = GRW_democratic_socialism_loyalty_moderatedecrease_tt
+	add_to_variable = {
+		var = GRW_var_democratic_socialism_loyalty
+		value = -10
+	}
+	GRW_recount_faction_influence = yes
+}
+
+#重新计算派系势力
+GRW_recount_faction_influence = {
+	set_variable = {total_influence = GRW_var_primitive_communism_influence}
+	add_to_variable = {total_influence = GRW_var_rozenkampism_influence}
+	add_to_variable = {total_influence = GRW_var_syndicalism_influence}
+	add_to_variable = {total_influence = GRW_var_democratic_socialism_influence}
+
+	divide_variable = {
+		var = GRW_var_primitive_communism_influence
+		value = total_influence
+	}
+	multiply_variable = {
+		var = GRW_var_primitive_communism_influence
+		value = 100
+	}
+	round_variable = GRW_var_primitive_communism_influence
+
+	divide_variable = {
+		var = GRW_var_rozenkampism_influence
+		value = total_influence
+	}
+	multiply_variable = {
+		var = GRW_var_rozenkampism_influence
+		value = 100
+	}
+	round_variable = GRW_var_rozenkampism_influence
+
+	divide_variable = {
+		var = GRW_var_syndicalism_influence
+		value = total_influence
+	}
+	multiply_variable = {
+		var = GRW_var_syndicalism_influence
+		value = 100
+	}
+	round_variable = GRW_var_syndicalism_influence
+
+	set_variable = {GRW_var_democratic_socialism_influence = 100}
+	subtract_from_variable = {GRW_var_democratic_socialism_influence = GRW_var_primitive_communism_influence}
+	subtract_from_variable = {GRW_var_democratic_socialism_influence = GRW_var_rozenkampism_influence}
+	subtract_from_variable = {GRW_var_democratic_socialism_influence = GRW_var_syndicalism_influence}
+
+	GRW_update_united_front_solidarity = yes
+	GRW_update_united_front_pie = yes
+}
+#饼图
+GRW_update_united_front_pie = {
+	set_variable = {
+		GRW_primitive_communism_frame = GRW_var_rozenkampism_influence
+	}
+	add_to_variable = {
+		GRW_primitive_communism_frame = GRW_var_primitive_communism_influence
+	}
+
+	set_variable = {
+		GRW_democratic_socialism_frame = GRW_primitive_communism_frame
+	}
+	add_to_variable = {
+		GRW_democratic_socialism_frame = GRW_var_democratic_socialism_influence
+	}
+}
+#统一战线团结度计算
+GRW_update_united_front_solidarity = {
+	clamp_variable = {
+		var = GRW_var_primitive_communism_influence
+		min = 0
+		max = 100
+	}
+	clamp_variable = {
+		var = GRW_var_primitive_communism_loyalty
+		min = 0
+		max = 100
+	}
+	clamp_variable = {
+		var = GRW_var_rozenkampism_influence
+		min = 0
+		max = 100
+	}
+	clamp_variable = {
+		var = GRW_var_rozenkampism_loyalty
+		min = 0
+		max = 100
+	}
+	clamp_variable = {
+		var = GRW_var_syndicalism_influence
+		min = 0
+		max = 100
+	}
+	clamp_variable = {
+		var = GRW_var_syndicalism_loyalty
+		min = 0
+		max = 100
+	}
+	clamp_variable = {
+		var = GRW_var_democratic_socialism_influence
+		min = 0
+		max = 100
+	}
+	clamp_variable = {
+		var = GRW_var_democratic_socialism_loyalty
+		min = 0
+		max = 100
+	}
+	#根据影响力计算5个派系的系数
+	set_variable = {GRW_primitive_communism_ratio = GRW_var_primitive_communism_influence}
+	set_variable = {GRW_rozenkampism_ratio = GRW_var_rozenkampism_influence}
+	set_variable = {GRW_syndicalism_ratio = GRW_var_syndicalism_influence}
+	set_variable = {GRW_democratic_socialism_ratio = GRW_var_democratic_socialism_influence}
+
+	multiply_variable = { GRW_primitive_communism_ratio = 0.01 }
+	multiply_variable = { GRW_rozenkampism_ratio = 0.01 }
+	multiply_variable = { GRW_syndicalism_ratio = 0.01 }
+	multiply_variable = { GRW_democratic_socialism_ratio = 0.01 }
+
+	#计算团结度
+	set_variable = {GRW_primitive_communism_solidarity = GRW_primitive_communism_ratio}
+	set_variable = {GRW_rozenkampism_solidarity = GRW_rozenkampism_ratio}
+	set_variable = {GRW_syndicalism_solidarity = GRW_syndicalism_ratio}
+	set_variable = {GRW_democratic_socialism_solidarity = GRW_democratic_socialism_ratio}
+
+	multiply_variable = { GRW_primitive_communism_solidarity = GRW_var_primitive_communism_loyalty }
+	multiply_variable = { GRW_rozenkampism_solidarity = GRW_var_rozenkampism_loyalty }
+	multiply_variable = { GRW_syndicalism_solidarity = GRW_var_syndicalism_loyalty }
+	multiply_variable = { GRW_democratic_socialism_solidarity = GRW_var_democratic_socialism_loyalty }
+
+	set_variable = {GRW_var_united_front_solidarity = GRW_primitive_communism_solidarity}
+	add_to_variable = {GRW_var_united_front_solidarity = GRW_rozenkampism_solidarity}
+	add_to_variable = {GRW_var_united_front_solidarity = GRW_syndicalism_solidarity}
+	add_to_variable = {GRW_var_united_front_solidarity = GRW_democratic_socialism_solidarity}
+
+	round_variable = GRW_var_united_front_solidarity
+
+	GRW_update_united_front_buff = yes
+}
+#计算统一战线提供的buff
+GRW_update_united_front_buff = {
+	#满意度影响
+	set_variable = {GRW_primitive_communism_loyalty_ratio = GRW_var_primitive_communism_loyalty}
+	set_variable = {GRW_rozenkampism_loyalty_ratio = GRW_var_rozenkampism_loyalty}
+	set_variable = {GRW_syndicalism_loyalty_ratio = GRW_var_syndicalism_loyalty}
+	set_variable = {GRW_democratic_socialism_loyalty_ratio = GRW_var_democratic_socialism_loyalty}
+	
+	multiply_variable = { GRW_primitive_communism_loyalty_ratio = 0.01 }
+	multiply_variable = { GRW_rozenkampism_loyalty_ratio = 0.01 }
+	multiply_variable = { GRW_syndicalism_loyalty_ratio = 0.01 }
+	multiply_variable = { GRW_democratic_socialism_loyalty_ratio = 0.01 }
+
+	#满意度系数
+	subtract_from_variable = {
+		var = GRW_primitive_communism_loyalty_ratio
+		value = 0.5
+	}
+	subtract_from_variable = {
+		var = GRW_rozenkampism_loyalty_ratio
+		value = 0.5
+	}
+	subtract_from_variable = {
+		var = GRW_syndicalism_loyalty_ratio
+		value = 0.5
+	}
+	subtract_from_variable = {
+		var = GRW_democratic_socialism_loyalty_ratio
+		value = 0.5
+	}
+	#法案特殊系数
+	if = {
+		limit = {
+			check_variable = {GRW_rozenkampism_loyalty_ratio > 0}
+		}
+		set_variable = {GRW_rozenkampism_loyalty_factor = -1}
+	}
+	else = {
+		set_variable = {GRW_rozenkampism_loyalty_factor = 1}
+	}
+	if = {
+		limit = {
+			check_variable = {GRW_democratic_socialism_loyalty_ratio > 0}
+		}
+		set_variable = {GRW_democratic_socialism_loyalty_factor = -1}
+	}
+	else = {
+		set_variable = {GRW_democratic_socialism_loyalty_factor = 1}
+	}
+	#满意度系数修正
+	multiply_variable = {GRW_primitive_communism_loyalty_ratio = 0.5}
+
+	#赋值
+	set_variable = {GRW_var_political_power_factor = GRW_primitive_communism_ratio}
+	set_variable = {GRW_var_local_resources_factor = GRW_primitive_communism_ratio}
+	set_variable = {GRW_var_mobilization_laws_cost_factor = GRW_rozenkampism_ratio}
+	set_variable = {GRW_var_conscription_total_factor = GRW_rozenkampism_ratio}
+	set_variable = {GRW_var_production_speed_buildings_factor = GRW_syndicalism_ratio}
+	set_variable = {GRW_var_production_factory_max_efficiency_factor = GRW_syndicalism_ratio}
+	set_variable = {GRW_var_research_speed_factor = GRW_democratic_socialism_ratio}
+	set_variable = {GRW_var_trade_laws_cost_factor = GRW_democratic_socialism_ratio}
+	set_variable = {GRW_var_economy_cost_factor = GRW_democratic_socialism_ratio}
+
+	#乘以满意度系数
+	multiply_variable = {GRW_var_political_power_factor = GRW_primitive_communism_loyalty_ratio}
+	multiply_variable = {GRW_var_local_resources_factor = GRW_primitive_communism_loyalty_ratio}
+	multiply_variable = {GRW_var_mobilization_laws_cost_factor = GRW_rozenkampism_loyalty_ratio}
+	multiply_variable = {GRW_var_conscription_total_factor = GRW_rozenkampism_loyalty_ratio}
+	multiply_variable = {GRW_var_production_speed_buildings_factor = GRW_syndicalism_loyalty_ratio}
+	multiply_variable = {GRW_var_production_factory_max_efficiency_factor = GRW_syndicalism_loyalty_ratio}
+	multiply_variable = {GRW_var_research_speed_factor = GRW_democratic_socialism_loyalty_ratio}
+	multiply_variable = {GRW_var_trade_laws_cost_factor = GRW_democratic_socialism_loyalty_ratio}
+	multiply_variable = {GRW_var_economy_cost_factor = GRW_democratic_socialism_loyalty_ratio}
+	#系数修正
+	multiply_variable = {GRW_var_political_power_factor = 0.5}
+	multiply_variable = {GRW_var_mobilization_laws_cost_factor = GRW_rozenkampism_loyalty_factor}
+	multiply_variable = {GRW_var_trade_laws_cost_factor = GRW_democratic_socialism_loyalty_factor}
+	multiply_variable = {GRW_var_economy_cost_factor = GRW_democratic_socialism_loyalty_factor}
+	#赋值
+	set_variable = {GRW_var_show_political_power_factor = GRW_var_political_power_factor}
+	set_variable = {GRW_var_show_local_resources_factor = GRW_var_local_resources_factor}
+	set_variable = {GRW_var_show_mobilization_laws_cost_factor = GRW_var_mobilization_laws_cost_factor}
+	set_variable = {GRW_var_show_conscription_total_factor = GRW_var_conscription_total_factor}
+	set_variable = {GRW_var_show_production_speed_buildings_factor = GRW_var_production_speed_buildings_factor}
+	set_variable = {GRW_var_show_production_factory_max_efficiency_factor = GRW_var_production_factory_max_efficiency_factor}
+	set_variable = {GRW_var_show_research_speed_factor = GRW_var_research_speed_factor}
+	set_variable = {GRW_var_show_trade_laws_cost_factor = GRW_var_trade_laws_cost_factor}
+	set_variable = {GRW_var_show_economy_cost_factor = GRW_var_economy_cost_factor}
+
+	#最终结果
+	multiply_variable = {GRW_var_show_political_power_factor = 100}
+	multiply_variable = {GRW_var_show_local_resources_factor = 100}
+	multiply_variable = {GRW_var_show_mobilization_laws_cost_factor = 100}
+	multiply_variable = {GRW_var_show_conscription_total_factor = 100}
+	multiply_variable = {GRW_var_show_production_speed_buildings_factor = 100}
+	multiply_variable = {GRW_var_show_production_factory_max_efficiency_factor = 100}
+	multiply_variable = {GRW_var_show_research_speed_factor = 100}
+	multiply_variable = {GRW_var_show_trade_laws_cost_factor = 100}
+	multiply_variable = {GRW_var_show_economy_cost_factor = 100}
+
+	force_update_dynamic_modifier = yes
+}
+
+#计算各地左翼实力
+GRW_recount_communism_power = {
+	set_variable = {
+		var = GRW_BAN_communism_power
+		value = BAN.party_popularity@communism
+	}
+	multiply_variable = {GRW_BAN_communism_power = 100}
+	set_variable = {
+		var = GRW_GRU_communism_power
+		value = GRU.party_popularity@communism
+	}
+	multiply_variable = {GRW_GRU_communism_power = 100}
+	set_variable = {
+		var = GRW_GRY_communism_power
+		value = GRY.party_popularity@communism
+	}
+	multiply_variable = {GRW_GRY_communism_power = 100}
+	set_variable = {
+		var = GRW_LUS_communism_power
+		value = LUS.party_popularity@communism
+	}
+	multiply_variable = {GRW_LUS_communism_power = 100}
+}
+
+#确定倾向
+GRW_recount_diplomatic_preference = {
+	set_variable = {
+		var = GRW_diplomatic_preference
+		value = GRW_Evi_map_diplomatic_International_Bureau
+	}
+	add_to_variable = {
+		var = GRW_diplomatic_preference
+		value = -50
+	}
+	if = {
+		limit = {
+			check_variable = {
+				GRW_diplomatic_preference < 0
+			}
+		}
+		set_variable = {
+			var = GRW_Evi_tension_change
+			value = -2
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				GRW_diplomatic_preference > 0
+			}
+		}
+		set_variable = {
+			var = GRW_Evi_tension_change
+			value = 0
+		}
+	}
+	else = {
+		set_variable = {
+			var = GRW_Evi_tension_change
+			value = -1
+		}
+	}
+}
+
+#偏向外交部
+GRW_Foreign_Ministry_var_increase = {
+	custom_effect_tooltip = GRW_Foreign_Ministry_var_increase_tt
+	add_to_variable = {
+		var = GRW_Evi_map_diplomatic_International_Bureau
+		value = -5
+	}
+	GRW_recount_diplomatic_preference = yes
+	add_to_variable = {
+		var = GRW_Foreign_Ministry_var
+		value = -5
+	}
+	add_to_variable = {
+		var = GRW_International_Bureau_var
+		value = 5
+	}
+}
+#偏向国际局
+GRW_International_Bureau_var_increase = {
+	custom_effect_tooltip = GRW_International_Bureau_var_increase_tt
+	add_to_variable = {
+		var = GRW_Evi_map_diplomatic_International_Bureau
+		value = 5
+	}
+	GRW_recount_diplomatic_preference = yes
+	add_to_variable = {
+		var = GRW_Foreign_Ministry_var
+		value = 5
+	}
+	add_to_variable = {
+		var = GRW_International_Bureau_var
+		value = -5
+	}
+}
+
+#确定河间同盟领导国
+GRW_confirm_RIV_leader = {
+	every_country = {
+		limit = {
+			exists = yes
+			is_river_fed_member = yes
+			is_faction_leader = yes
+		}
+		save_global_event_target_as = RIV_leader
+		set_variable = {
+			global.RIV_leader_var = THIS
+		}
+	}
+}
+
+#新增档案
+GRW_NAAP_add_entry_to_department = {
+	if = {
+		limit = {
+			check_variable = {
+				GRW_NAAP_active_department = temp_GRW_NAAP_department
+			}
+		}
+		meta_effect = {
+			text = {
+				add_to_array = {
+					GRW_NAAP_current_entries = token:GRW_NAAP_department_[ID_DEPARTMENT]_entry_[ID_ENTRY]
+				}
+			}
+
+			ID_DEPARTMENT = "[?temp_GRW_NAAP_department]"
+			ID_ENTRY = "[?temp_GRW_NAAP_entry]"
+		}
+	}
+
+	meta_effect = {
+		text = {
+			add_to_array = {
+				GRW_NAAP_department_[ID_DEPARTMENT]_entries = token:GRW_NAAP_department_[ID_DEPARTMENT]_entry_[ID_ENTRY]
+			}
+			set_variable = {
+				GRW_NAAP_current_entry = token:GRW_NAAP_department_[ID_DEPARTMENT]_entry_[ID_ENTRY]
+			}
+		}
+
+		ID_DEPARTMENT = "[?temp_GRW_NAAP_department]"
+		ID_ENTRY = "[?temp_GRW_NAAP_entry]"
+	}
+
+	add_to_variable = {
+		GRW_NAAP_dirty = 0.01
+	}
+}
+#加载选择的部门档案
+GRW_NAAP_set_active_department = {
+	set_variable = {
+		GRW_NAAP_active_department = temp_GRW_NAAP_department
+	}
+
+	clear_array = GRW_NAAP_current_entries
+	meta_effect = {
+		text = {
+			for_each_loop = {
+				array = GRW_NAAP_department_[ID_DEPARTMENT]_entries
+				index = entry_index
+				value = entry_value
+
+				add_to_array = {
+					array = GRW_NAAP_current_entries
+					index = entry_index
+					value = entry_value
+				}
+			}
+
+			if = {
+				limit = {
+					check_variable = {
+						temp_GRW_NAAP_entry > -1
+					}
+				}
+				set_variable = {
+					GRW_NAAP_active_entry = GRW_NAAP_department_[ID_DEPARTMENT]_entries^num
+				}
+				add_to_variable = {
+					GRW_NAAP_active_entry = -1
+				}
+			}
+			else = {
+				set_variable = {
+					GRW_NAAP_active_entry = -1
+				}
+			}
+		}
+
+		ID_DEPARTMENT = "[?temp_GRW_NAAP_department]"
+	}
+
+	if = {
+		limit = {
+			check_variable = {
+				temp_GRW_NAAP_entry > -1
+			}
+		}
+
+	}
+
+	set_temp_variable = {
+		temp_GRW_NAAP_department_to_activate = temp_GRW_NAAP_department
+	}
+	GRW_NAAP_set_active_department_frame = yes
+
+	add_to_variable = {
+		GRW_NAAP_dirty = 0.01
+	}
+}
+#设置激活部门的帧率
+GRW_NAAP_set_active_department_frame = {
+	clear_array = departments_frame
+	resize_array = {
+		array = departments_frame
+		size = 5
+		value = 1
+	}
+
+	add_to_temp_variable = {
+		temp_GRW_NAAP_department_to_activate = -1
+	}
+	if = {
+		limit = {
+			check_variable = {
+				temp_GRW_NAAP_department_to_activate > -1
+			}
+		}
+		set_variable = {
+			departments_frame^temp_GRW_NAAP_department_to_activate = 2
+		}
+	}
+}
+#激活事件
+GRW_NAAP_set_active_event = {
+	meta_effect = {
+		text = {
+			set_variable = {
+				GRW_NAAP_entry_name = token:GRW_NAAP_department_[ID_DEPARTMENT]_entry_[ID_ENTRY]_NAME
+			}
+			set_variable = {
+				GRW_NAAP_entry_title = token:GRW_NAAP_department_[ID_DEPARTMENT]_entry_[ID_ENTRY]_TITLE
+			}
+			set_variable = {
+				GRW_NAAP_entry_content = token:GRW_NAAP_department_[ID_DEPARTMENT]_entry_[ID_ENTRY]_CONTENT
+			}
+			set_variable = {
+				GRW_NAAP_entry_effect = token:GRW_NAAP_department_[ID_DEPARTMENT]_entry_[ID_ENTRY]_EFFECT
+			}
+		}
+
+		ID_DEPARTMENT = "[?temp_GRW_NAAP_department]"
+		ID_ENTRY = "[?temp_GRW_NAAP_entry]"
+	}
+}

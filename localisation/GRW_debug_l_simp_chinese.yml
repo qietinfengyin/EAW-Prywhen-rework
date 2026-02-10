@@ -1,0 +1,4 @@
+﻿l_simp_chinese:
+GRW_debug_desc: "[?GRW_NAAP_department_3_entries^0.GetTokenKey]\n[?GRW_NAAP_department_3_entries^1.GetTokenKey]\n[?GRW_NAAP_department_3_entries^2.GetTokenKey]\n[?GRW_NAAP_department_3_entries^3.GetTokenKey]\n[?GRW_NAAP_department_3_entries^4.GetTokenKey]\n[?GRW_NAAP_department_3_entries^5.GetTokenKey]\n[?GRW_NAAP_entry_name.GetTokenKey]"
+GRW_debug_1: "选择国策树"
+GRW_debug_2: "刷新国策树"

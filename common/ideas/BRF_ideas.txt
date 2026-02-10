@@ -1,0 +1,55 @@
+ideas = {
+	country = {
+		#普里文内战
+		Prywhen_civil_war_BRF = {
+			picture = prywhen_civil_war_brf
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.5
+				supply_consumption_factor = -0.15
+				production_factory_max_efficiency_factor = -0.25
+				production_factory_efficiency_gain_factor = -0.25
+				production_speed_buildings_factor = -0.5
+				industrial_capacity_factory = -0.3
+				industrial_capacity_dockyard = -0.3
+				ai_focus_aggressive_factor = 0.5
+			}
+		}
+		#合法的王国
+		BRF_legitimate_kingdom = {
+			picture = LIT_crown_4
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = 0.05
+				stability_factor = 0.1
+				war_support_factor = 0.05
+				neutrality_drift = 0.02
+				fascism_drift = 0.01
+			}
+		}
+		#皇家卫队
+		BRF_drained_royal_guard = {
+			picture = specops
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = -0.1
+				army_speed_factor = -0.1
+				training_time_army_factor = 0.1
+				army_org_factor = 0.1
+				army_morale_factor = -0.1
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				supply_consumption_factor = 0.1
+				max_planning = 0.05
+				planning_speed = -0.1
+				experience_loss_factor = -0.05
+			}
+		}
+	}
+}

@@ -1,0 +1,245 @@
+﻿#初始生产线
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = melee_equipment_1
+			creator = "GRW"
+		}
+		requested_factories = 1
+		progress = 0.3
+		efficiency = 10
+		industrial_manufacturer = mio:GRW_inf_manufacturer_organization
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "GRW"
+		}
+		requested_factories = 1
+		progress = 0.3
+		efficiency = 10
+	}
+}
+
+#编制
+division_template = {
+	name = "中央红军"
+	division_names_group = GRW_INF_01
+	template_counter = 118
+	priority = 2
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 0 y = 2 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+		militia = { x = 1 y = 2 }
+		militia = { x = 2 y = 0 }
+		artillery_brigade = { x = 3 y = 0 }
+		artillery_brigade = { x = 3 y = 1 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "地方红军"
+	division_names_group = GRW_INF_01
+	template_counter = 69
+	regiments = {
+		irregular_infantry = { x = 0 y = 0 }
+		irregular_infantry = { x = 0 y = 1 }
+		irregular_infantry = { x = 0 y = 2 }
+		irregular_infantry = { x = 1 y = 0 }
+		irregular_infantry = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "炮兵师"
+	division_names_group = GRW_INF_01
+	template_counter = 29
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		artillery_brigade = { x = 2 y = 0 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "步兵师"
+	division_names_group = GRW_INF_01
+	template_counter = 0
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+}
+
+division_template = {
+	name = "共和国骑士"
+	division_names_group = GRW_GRD_01
+	regiments = {
+		knights = { x = 0 y = 0 }
+		knights = { x = 0 y = 1 }
+		knights = { x = 0 y = 2 }
+		knights = { x = 0 y = 3 }
+		knights = { x = 1 y = 0 }
+		knights = { x = 1 y = 1 }
+		knights = { x = 1 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "山地部队"
+	division_names_group = GRW_MNT_01
+	regiments = {
+		mountaineers = { x = 0 y = 0 }
+		mountaineers = { x = 0 y = 1 }
+		mountaineers = { x = 1 y = 0 }
+		mountaineers = { x = 1 y = 1 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 4
+		}
+		location = 10377
+		division_template = "中央红军"
+		start_experience_factor = 0.9
+		start_equipment_factor = 0.9
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 6
+		}
+		location = 12310
+		division_template = "地方红军"
+		start_experience_factor = 0.55
+		start_equipment_factor = 0.75
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 1010
+		division_template = "地方红军"
+		start_experience_factor = 0.47
+		start_equipment_factor = 0.75
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 3
+		}
+		location = 7814
+		division_template = "地方红军"
+		start_experience_factor = 0.43
+		start_equipment_factor = 0.7
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 7
+		}
+		location = 3875
+		division_template = "地方红军"
+		start_experience_factor = 0.36
+		start_equipment_factor = 0.7
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 8
+		}
+		location = 4592
+		division_template = "地方红军"
+		start_experience_factor = 0.33
+		start_equipment_factor = 0.65
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 4341
+		division_template = "炮兵师"
+		start_experience_factor = 0.7
+		start_equipment_factor = 0.8
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 5
+		}
+		location = 4367
+		division_template = "步兵师"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.74
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 15
+		}
+		location = 7128
+		division_template = "步兵师"
+		start_experience_factor = 0.36
+		start_equipment_factor = 0.62
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 12
+		}
+		location = 12436
+		division_template = "步兵师"
+		start_experience_factor = 0.33
+		start_equipment_factor = 0.68
+	}
+
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 9
+		}
+		location = 7572
+		division_template = "共和国骑士"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.85
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 13
+		}
+		location = 4384
+		division_template = "山地部队"
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.85
+	}
+}

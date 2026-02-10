@@ -1,0 +1,13 @@
+soundeffect = {
+	name = "GRW_signature_soundeffect"
+	sounds = {
+		sound = GRW_signature_sound
+	}
+}
+
+sound = {
+	name = "GRW_signature_sound"
+	file = "journal_o.wav"
+	always_load = no
+	volume = 2
+}

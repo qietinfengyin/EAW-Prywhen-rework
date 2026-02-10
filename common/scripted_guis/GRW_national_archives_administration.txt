@@ -1,0 +1,161 @@
+scripted_gui = {
+	GRW_national_archives_administration_window = {
+		window_name = "GRW_national_archives_administration_window"
+		dirty = GRW_NAAP_dirty
+
+		visible = {
+			original_tag = GRW
+			has_country_flag = GRW_NAAP_visible_flag
+		}
+
+		properties = {
+			GRW_NAAP_department_1_button = {
+				frame = departments_frame^0
+			}
+			GRW_NAAP_department_2_button = {
+				frame = departments_frame^1
+			}
+			GRW_NAAP_department_3_button = {
+				frame = departments_frame^2
+			}
+			GRW_NAAP_department_4_button = {
+				frame = departments_frame^3
+			}
+			GRW_NAAP_department_5_button = {
+				frame = departments_frame^4
+			}
+		}
+
+		effects = {
+			GRW_NAAP_department_1_button_click = {
+				set_temp_variable = {
+					temp_GRW_NAAP_department = 1
+				}
+				set_temp_variable = {
+					temp_GRW_NAAP_entry = -1
+				}
+				GRW_NAAP_set_active_department = yes
+			}
+			GRW_NAAP_department_2_button_click = {
+				set_temp_variable = {
+					temp_GRW_NAAP_department = 2
+				}
+				set_temp_variable = {
+					temp_GRW_NAAP_entry = -1
+				}
+				GRW_NAAP_set_active_department = yes
+			}
+			GRW_NAAP_department_3_button_click = {
+				set_temp_variable = {
+					temp_GRW_NAAP_department = 3
+				}
+				set_temp_variable = {
+					temp_GRW_NAAP_entry = -1
+				}
+				GRW_NAAP_set_active_department = yes
+			}
+			GRW_NAAP_department_4_button_click = {
+				set_temp_variable = {
+					temp_GRW_NAAP_department = 4
+				}
+				set_temp_variable = {
+					temp_GRW_NAAP_entry = -1
+				}
+				GRW_NAAP_set_active_department = yes
+			}
+			GRW_NAAP_department_5_button_click = {
+				set_temp_variable = {
+					temp_GRW_NAAP_department = 5
+				}
+				set_temp_variable = {
+					temp_GRW_NAAP_entry = -1
+				}
+				GRW_NAAP_set_active_department = yes
+			}
+			GRW_NAAP_ESC_click = {
+				clr_country_flag = GRW_NAAP_visible_flag
+				add_to_variable = {
+					GRW_NAAP_dirty = 0.01
+				}
+			}
+		}
+	}
+
+	GRW_NAAP_department_window = {
+		window_name = "GRW_NAAP_department_window"
+		parent_window_name = "GRW_national_archives_administration_window"
+		dirty = GRW_NAAP_dirty
+
+		dynamic_lists = {
+			GRW_NAAP_entry_button_gridbox = {
+				array = GRW_NAAP_current_entries
+				change_scope = no
+				entry_container = GRW_NAAP_entry_button_cell
+				value = GRW_NAAP_value_button
+				index = GRW_NAAP_index_button
+			}
+		}
+
+		triggers = {
+			GRW_NAAP_entry_button_visible = {
+				if = {
+					limit = {
+						check_variable = {
+							GRW_NAAP_index_button = GRW_NAAP_active_entry
+						}
+					}
+					set_temp_variable = {
+						temp_GRW_NAAP_button_frame = 2
+					}
+				}
+				else = {
+					set_temp_variable = {
+						temp_GRW_NAAP_button_frame = 1
+					}
+				}
+			}
+		}
+
+		properties = {
+			GRW_NAAP_entry_button = {
+				frame = temp_GRW_NAAP_button_frame
+			}
+		}
+
+		effects = {
+			GRW_NAAP_entry_button_click = {
+				set_variable = {
+					GRW_NAAP_active_entry = GRW_NAAP_index_button
+				}
+
+				meta_effect = {
+					text = {
+						set_variable = {
+							GRW_NAAP_entry_name = token:[ENTRY_TOKEN]_NAME
+						}
+						set_variable = {
+							GRW_NAAP_entry_title = token:[ENTRY_TOKEN]_TITLE
+						}
+						set_variable = {
+							GRW_NAAP_entry_content = token:[ENTRY_TOKEN]_CONTENT
+						}
+						set_variable = {
+							GRW_NAAP_entry_effect = token:[ENTRY_TOKEN]_EFFECT
+						}
+						set_country_flag = [ENTRY_TOKEN]_flag
+					}
+
+					ENTRY_TOKEN = "[?GRW_NAAP_value_button.GetTokenKey]"
+				}
+				
+				set_variable = {
+					GRW_NAAP_current_entry = GRW_NAAP_value_button
+				}
+				
+				add_to_variable = {
+					GRW_NAAP_dirty = 0.01
+				}
+			}
+		}
+	}
+}

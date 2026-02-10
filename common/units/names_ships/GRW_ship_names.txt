@@ -1,0 +1,152 @@
+##### GRW NAME LISTS #####
+### REGULAR DESTROYER NAMES###
+GRW_DD_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_DESTROYERS
+
+	for_countries = { GRW }
+
+	type = ship
+	ship_types = { ship_hull_light destroyer }			
+
+	prefix = "PPN"
+	fallback_name = "Destroyer No.%d"					
+
+	unique = {
+		#Prywhen(including Salmarkt)
+		"Kivessin" "Getica" "Kissau" "Gemina" "Sydia" "Floare Alba" "Kihai" "Gobdan" "Garle" "Kloseu" "Tomado" "Qwoptia" "Twelt" "Larios" "Crowoia" "Beakau" "Temsoar" "Salmarkt" "Stithalassa" "Drakonea"
+		#Zaphzia
+		"Kaiv" "Kalintsk" "Chykchyryn" "Shklosha" "Voronaska" "Oreltsk" "Sovatsk" "Skopardovsky" "Holubaska" "Holdkrestov" "Vorobey" "Husaka"
+		#Lushi
+		"Talvona" "Gryphem" "Lumium" "Padurile" "Gurile" "Gurile Verzi" "Bații Carcuiașii" "Lordsclaw" "Korolla" "Saiburg" "Cessabit"
+		#Gryphus
+		"Camafeu" "Agradia" "Balisemont" "Rey Macaco" "Viartorré" "Pythagoros" "Colegio" "Grypsburg" "Aerieschloss" "Tiefbrunnen" "Loulé" "Riaportu"
+		#Blackhollow
+		"Murkbeak" "Naniwich" "Negrusan" 
+		#Griffonstone 
+		"Coalfall" "Griffonstone" "Solarspike"
+		#Others praise FAT developer
+		"Cloudbury" "Griffenheim" "Romau" "Greenback" "Oldwingburg" "De Vleugels" "Readewetter" "Bronzecross" "Katerinburg" "Griffing" "Skyfall" "Hellquill" "Spadalunga" "Rumare" "Verenia" "Erie" "Avian" "Flowena" "Pomovarra" "Eagleton" "Featherzne" "Brantbeak" "Aquila" "Karthin" "Matton" "Midoria" "Thymiastadt" "Rila" "Sparletto" "Talononte" "Francistra" "Turhamn" "Mirabelle" "Rottendedam" "Wrobert" "Falcor" "Queruscos" "Haukham" "Weter" "Nouvelle Aquila" "Winghagen" "Brenna" "Windford" "Lostgate" "Cavegrove" "Bleakspire" "New Skynavia" "Bluffhead" "Dinkhau"
+
+	}
+}
+
+### LIGHT CRUISER NAMES###
+GRW_CL_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CL
+
+	for_countries = { GRW }
+
+	type = ship
+	ship_types = { ship_hull_cruiser light_cruiser}
+	
+	prefix = "PPN"
+	fallback_name = "Cruiser No.%d"
+
+	unique = {
+		#FUCK I'M DONE WITH THIS DON'T BLAME ME OF REUSING FAT SHIP NAMES
+		"Consta" "Griffonwill" "Acute Padure" "Lifov" "Brodfeld" "Peccreto" "Navarro" "Lowing Gap" "Librarsia" "Taloncana" "Pridea" "Oldebeken" "Griffton" "Skyrim" "Wohnsitz" "Jezeragrad" "Luchihoot" "Fezera" "Talont" "Panthumbino" "Scarlet" "Vleugeland" "Helheim" "Thurwingen" "Eyrie" "Birthplace" "Söderbotten" "Sydvästland" "Interriver" "Manetua" "Orvalillo" "Soarleto" "Roameo" "Angriver" "Hjarthólar" "Seguro" "Magehold" "Neyhorn" "Skyaluzzo" "Southern Scheißwald" "Raven" "Lifelake" "Kungland" "Boråsland" "Östland" "Rottendestaat" "Twöchanerwald" "Crona" "Vetailje" "Yale" "Reitscheid" "Luxwingburg" "Osnabeak" "Nortfome" "Westkeep" "Pondwatch" "Oreinó Trópo" "Silverfalls" "Bonedrift" "Farbrook" "Lostfort" "Cloudguard" "Winterbell" "Dimpeak" "Valle del Tridente" "Kotailia" "Phocapetra" "Ketta" "Lillai" "Thermorion" "Coloe" "Orione" "Gelion" "Kekion" "Gale" "Pelis" "Littlebay" "Arrowpeaks" "Silkhorn" "Whitebearded" "Coldmouth" "Pinesshade" "Goldenfeather" "Snälland" "Kullbotten" "Tarrin" "Blackhollow" "Wolfrest" "Lissay" "Glensi" "Aiwle" "Buckmour" "Bucka" "Balefire" "Crimsonshore" "Alba Torre" "Sudfolc" "Longbowgriff" "Lingermill" "Eritrocefalia" "Auropallieta" "Cannabia" "Pythagorea" "Aetiea" "Chlropeia" "Vyzima" "Vinovia" "Arahno Ridge" "Illeagle" "Château Accueillant" "Skynavia" "Flowerino" "Meshorio" "Albion" "Eatela" "Leve" "Keowen" "Greybill" "Asbolus" "Jojo" "Bloodtalon" "Crownspike" "Panacea" "Coltsovo" "Despoina" "Deponya" "Dwarftail" "Starclaw" "Angelclaw" "Blåland" "Niemals" "Svetazemlja" "Shayrmia" "Swordsson" "Lone Domain" "Straßmark" "King's Realm" "Rotten Rift" "Døendejord" "Fireshore" "Guardian Field" "Coltubar" "Ostfloy" "Liftauf" "Vastmush" "Kristoff" "Norrbeak" "Chloeland" "Cubria" "Highhill" "Losthope" "Snowtops" "Furland" "Ochme" "Morker" "Elf Lake" "Högland" "Flodbotten" "Neighretva" "Bymnonia" "Hreinvellir" "Fearann-Pònaidh" "Squark" "Bredoland" "Fjärrland" "Little Griff Mountains" "Ptérygapolis" "Terrible Marsh" "Lifov" "Vorobeyko" "Ecole" "Pohryfynnja" "Soloboda" "Braunles" "Moonrise" "Moonshine" "Lushland" "Buzzovina" "Cropperclaws" "Hengestdelu" "Cemricia" "Wittenburgh" "Pònaidhean-Èibhinn" "Rijekograd" "Coltonia" "Dìthreabh" "Kataigída" "Modrzewiowa Dolina"
+	}
+}
+
+### LIGHT CRUISER / HEAVY CRUISER NAMES###
+GRW_CA_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CA
+
+	for_countries = { GRW }
+
+	type = ship
+	ship_types = { ship_hull_cruiser heavy_cruiser }
+	
+	prefix = "PPN"
+	fallback_name = "Cruiser No.%d"
+
+	unique = {
+		"Forta"
+		"Indignare"
+		"Lupta"
+		"Rezistenta"
+		"Sacrificiu"
+		"Solidaritate"
+		"Dedicatie"
+		"Intelegere"
+		"Furie"
+		"Aparare"
+		"Dreptate"
+		"Perseverenta"
+		"Imortalitate"
+		"Aspiratie"
+		"Colaborare"
+		"Glorie"
+		"Avangarda"
+	}
+}
+
+### BATTLESHIP / BATTLECRUISER NAMES ###
+GRW_BB_BC_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BB_BC
+
+	for_countries = { GRW }
+
+	type = ship
+	ship_types = { ship_hull_heavy battleship battle_cruiser}
+	
+	prefix = "PPN"
+	fallback_name = "Battleship No.%d"		
+
+	unique = {
+		"Republica"
+		"Revolutie"
+		"Socialism"
+		"Democratie"
+		"Egalitate"
+		"Libertate"
+		"Justitie"
+		"Constitutie"
+		"Uniune"
+		"Adunarea"
+		"Protectie"
+	}
+}
+
+### AIRCRAFT CARRIER NAMES ###
+GRW_CV_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CARRIERS
+
+	for_countries = { GRW }
+
+	type = ship
+	ship_types = { ship_hull_carrier carrier }
+	
+	prefix = "PPN"
+	fallback_name = "Carrier No.%d"	
+
+	unique = {
+		"Speranta"
+		"Optimisim"
+		"Vis"
+		"Viitor"
+		"Straduinta"
+		"Indrazneala"
+		"Dorinta"
+		"Victorie"
+		"Tinerete"
+		"Explorare"
+		"Inovatie"
+		"Progres"
+	}
+}
+
+### SUBMARINES ###
+GRW_SS_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_SUBMARINES
+
+	for_countries = { GRW }
+
+	type = ship
+	ship_types = { ship_hull_submarine submarine }
+	
+	prefix = "PPN"
+	fallback_name = "Anabasis-%d"
+	
+	unique = {}
+}

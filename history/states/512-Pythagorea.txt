@@ -1,0 +1,30 @@
+state = {
+	id = 512
+	name = "STATE_512"
+
+	provinces = {
+		1381 2176 5196 7238 7347 7376 7432 8205 12176 12260 12944 13173
+	}
+
+	manpower = 546801
+	state_category = large_city
+	buildings_max_level_factor = 1
+
+	history = {
+		owner = GRU
+		add_core_of = GRU	
+
+		victory_points = { 7347 10 }
+
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			arms_factory = 1
+			dockyard = 1
+
+			7347 = {
+				naval_base = 1
+			}
+		}
+	}
+}

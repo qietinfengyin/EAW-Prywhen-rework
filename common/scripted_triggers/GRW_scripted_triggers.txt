@@ -1,0 +1,165 @@
+#生产科技研究完成
+cat_production_has_been_fully_researched = {
+	has_tech = basic_machine_tools
+	has_tech = improved_equipment_conversion
+	has_tech = advanced_equipment_conversion
+	has_tech = improved_machine_tools
+	has_tech = advanced_machine_tools
+	has_tech = assembly_line_production
+	OR = {
+		AND = {
+			has_tech = flexible_line
+			has_tech = flexible_line_a
+		}
+		AND = {
+			has_tech = streamlined_line
+			has_tech = streamlined_line_a
+		}
+	}
+	has_tech = streamlined_line_b
+	has_tech = streamlined_line_c
+	has_tech = streamlined_line_d
+}
+#建筑科技研究完成
+construction_tech_has_been_fully_researched = {
+	has_tech = construction1
+	has_tech = construction2
+	has_tech = construction3
+	has_tech = construction4
+	has_tech = construction5
+	has_tech = construction_a
+	has_tech = construction_b
+	has_tech = construction_c
+	has_tech = construction_d
+	has_tech = excavation1
+	has_tech = excavation2
+	has_tech = excavation3
+	has_tech = excavation4
+	has_tech = excavation5
+	has_tech = excavation_a
+	has_tech = excavation_b
+	has_tech = excavation_c
+	has_tech = excavation_d
+}
+#合成资源研究完成
+synth_resources_has_been_fully_researched = {
+	has_tech = fuel_silos
+	has_tech = synth_oil_experiments
+	has_tech = oil_processing
+	has_tech = improved_oil_processing
+	has_tech = advanced_oil_processing
+	has_tech = modern_oil_processing
+	has_tech = modern_oil_processing_a
+	has_tech = modern_oil_processing_b
+	has_tech = modern_oil_processing_c
+	has_tech = modern_oil_processing_d
+	has_tech = rubber_processing
+	has_tech = improved_rubber_processing
+	has_tech = advanced_rubber_processing
+	has_tech = modern_rubber_processing
+	has_tech = modern_rubber_processing_a
+	has_tech = modern_rubber_processing_b
+	has_tech = modern_rubber_processing_c
+	has_tech = modern_rubber_processing_d
+	has_tech = fuel_refining
+	has_tech = fuel_refining2
+	has_tech = fuel_refining3
+	has_tech = fuel_refining4
+	has_tech = fuel_refining5
+	has_tech = fuel_refining_a
+	has_tech = fuel_refining_b
+	has_tech = fuel_refining_c
+	has_tech = fuel_refining_d
+}
+#雷达科技研究完成
+radar_tech_has_been_fully_researched = {
+	has_tech = radio_detection
+	has_tech = decimetric_radar
+	has_tech = improved_decimetric_radar
+	has_tech = centimetric_radar
+	has_tech = improved_centimetric_radar
+	has_tech = advanced_centimetric_radar
+	has_tech = future_radar
+	has_tech = future_radar_2
+	has_tech = future_radar_3
+	has_tech = future_radar_4
+}
+#计算机科技研究完成
+computing_tech_has_been_fully_researched = {
+	has_tech = basic_fire_control_system
+	has_tech = improved_fire_control_system
+	has_tech = advanced_fire_control_system
+	has_tech = semi_modern_fire_control_system
+	has_tech = modern_fire_control_system
+	has_tech = modern_fire_control_system_2
+	has_tech = mechanical_computing
+	has_tech = computing_machine
+	has_tech = improved_computing_machine
+	has_tech = advanced_computing_machine
+	has_tech = future_computing_machine
+	has_tech = future_computing_machine_2
+	has_tech = future_computing_machine_3
+	has_tech = future_computing_machine_4
+}
+
+#判定
+is_owned_or_subject_trigger = {
+	CONTROLLER = {
+		OR = {
+			original_tag = ROOT
+			is_subject_of = ROOT
+		}
+	}
+}
+
+#可进行土改
+land_reform_allow_up = {
+	any_owned_state = {
+		is_owned_and_controlled_by = ROOT
+		NOT = {
+			has_state_flag = GRW_promote_land_reform_flag
+			has_state_flag = GRW_cores
+			has_state_category = large_town
+			has_state_category = city
+			has_state_category = large_city
+			has_state_category = metropolis
+			has_state_category = megalopolis
+		}
+		OR = {
+			is_claimed_by = ROOT
+			is_core_of = ROOT
+		}
+	}
+}
+#可进行农业合作化
+agri_cooperatives_allow_up = {
+	any_owned_state = {
+		is_owned_and_controlled_by = ROOT
+		OR = {
+			has_state_flag = GRW_cores
+			has_state_flag = GRW_promote_land_reform_flag
+		}
+		NOT = {
+			has_state_flag = GRW_promote_agri_cooperatives_flag
+			has_state_category = large_town
+			has_state_category = city
+			has_state_category = large_city
+			has_state_category = metropolis
+			has_state_category = megalopolis
+		}
+	}
+}
+#可进行基建
+development_infrastructure_allow_up = {
+	any_owned_state = {
+		is_owned_and_controlled_by = ROOT
+		infrastructure < 2
+		OR = {
+			has_state_flag = GRW_cores
+			has_state_flag = GRW_promote_land_reform_flag
+		}
+		NOT = {
+			has_state_flag = GRW_development_infrastructure_flag
+		}
+	}
+}

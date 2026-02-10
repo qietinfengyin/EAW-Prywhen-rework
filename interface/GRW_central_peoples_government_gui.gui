@@ -1,0 +1,1074 @@
+guiTypes = {
+	containerWindowType = {
+		name = "GRW_central_peoples_government_gui_window"
+		position = {
+			x = 0
+			y = 0
+		}
+		orientation = center
+		size = {
+			width = 650
+			height = 930
+		}
+		clipping = no
+
+		background = {
+			name = "background1"
+			quadTextureSprite="GFX_tiled_bg"
+			alwaystransparent = yes
+		}
+
+		background = {
+			name = "background2"
+			quadTextureSprite="GFX_tiled_focus_bg"
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "GRW_central_peoples_government_title"
+			position = {
+				x = -300
+				y = 20
+			}
+			orientation = center_up
+			font = "hoi_36header"
+			text = GRW_central_peoples_government_title_text
+			format = center
+			maxWidth = 600
+			maxHeight = 30
+		}
+
+		#国家主席
+		containerWindowType = {
+			name = "GRW_central_peoples_government_leader_container"
+			position = {
+				x = -100
+				y = 70
+			}
+			orientation = center_up
+			size = {
+				width = 200
+				height = 161
+			}
+			clipping = no
+
+			containerWindowType = {
+				name = "GRW_central_peoples_government_leader_portrait_container"
+				position = {
+					x = -62
+					y = -5
+				}
+				orientation = center_up
+				size = {
+					width = 123
+					height = 161
+				}
+				clipping = no
+
+				iconType = {
+					name = "GRW_central_peoples_government_leader_portrait"
+					spriteType = "GFX_inner_circle_filip_redglad_portrait"
+					position = {
+						x = 2
+						y = 18
+					}
+					orientation = upper_left
+					alwaystransparent = yes
+				}
+				iconType = {
+					name = "GRW_central_peoples_government_leader_frame"
+					spriteType = "GFX_circular_frame_fuhrer"
+					position = {
+						x = 0
+						y = 0
+					}
+					orientation = center
+					centerposition = yes
+					context_aware_tooltip = GRW_central_peoples_government_leader_name_text
+				}
+			}
+
+			iconType = {
+				name = "GRW_central_peoples_government_leader_name_box"
+				spriteType = "GFX_fuhrer_name_ribbon"
+				position = {
+					x = -78
+					y = -10
+				}
+				orientation = center_down
+				context_aware_tooltip = GRW_central_peoples_government_leader_name_text
+			}
+			instantTextBoxType = {
+				name = "GRW_central_peoples_government_leader_name"
+				position = {
+					x = -100
+					y = -5
+				}
+				orientation = center_down
+				font = "hoi_20b"
+				context_aware_text = GRW_central_peoples_government_leader_name_text
+				format = center
+				maxWidth = 200
+				alwaystransparent = yes
+			}
+
+			iconType = {
+				name = "GRW_central_peoples_government_leader_title_box"
+				spriteType = "GFX_trait_box_fuhrer"
+				position = {
+					x = -56
+					y = 13
+				}
+				orientation = center_down
+				context_aware_tooltip = GRW_central_peoples_government_leaderr_title_text
+			}
+			instantTextBoxType = {
+				name = "GRW_central_peoples_government_leader_title"
+				position = {
+					x = -100
+					y = 15
+				}
+				orientation = center_down
+				font = "hoi_16mbs"
+				context_aware_text = GRW_central_peoples_government_leaderr_title_text
+				format = center
+				maxWidth = 200
+				alwaystransparent = yes
+			}
+		}
+
+		#国家副主席
+		containerWindowType = {
+			name = "GRW_central_peoples_government_advisor_1_container"
+			position = {
+				x = -72
+				y = 295
+			}
+			orientation = center_up
+			size = {
+				width = 150
+				height = 120
+			}
+			clipping = no
+
+			containerWindowType = {
+				name = "GRW_central_peoples_government_advisor_1_portrait_container"
+				position = {
+					x = -46
+					y = 0
+				}
+				orientation = center_up
+				size = {
+					width = 91
+					height = 119
+				}
+				clipping = no
+
+				iconType = {
+					name = "GRW_central_peoples_government_advisor_1_portrait"
+					spriteType = ""
+					position = {
+						x = 7
+						y = 6
+					}
+					orientation = upper_left
+					scale = 0.5
+					alwaystransparent = yes
+				}
+				iconType = {
+					name = "GRW_central_peoples_government_advisor_1_frame"
+					spriteType = "GFX_ascended_advisors_frame"
+					position = {
+						x = 0
+						y = -11
+					}
+					orientation = center
+					centerposition = yes
+					context_aware_tooltip = [GRWGetCPPCCAdvisorDesc1]
+				}
+			}
+
+			iconType = {
+				name = "GRW_central_peoples_government_advisor_1_name_box"
+				spriteType = "GFX_ascended_advisor_name_box"
+				position = {
+					x = 0
+					y = 71
+				}
+				orientation = center
+				centerposition = yes
+				context_aware_tooltip = [GRWGetCPPCCAdvisorDesc1]
+			}
+			instantTextBoxType = {
+				name = "GRW_central_peoples_government_advisor_1_name"
+				position = {
+					x = -75
+					y = 0
+				}
+				orientation = center_down
+				font = "hoi_20b"
+				context_aware_text = GRW_central_peoples_government_advisor_1_name_text
+				format = center
+				maxWidth = 150
+				alwaystransparent = yes
+			}
+
+			iconType = {
+				name = "GRW_central_peoples_government_advisor_1_trait_box"
+				spriteType = "GFX_ascended_advisor_trait_box"
+				position = {
+					x = 0
+					y = 102
+				}
+				orientation = center
+				centerposition = yes
+				context_aware_tooltip = [GRWGetCPPCCAdvisorDesc1]
+			}
+			instantTextBoxType = {
+				name = "GRW_central_peoples_government_advisor_1_trait"
+				position = {
+					x =  -75
+					y = 31
+				}
+				orientation = center_down
+				font = "hoi_18mbs"
+				context_aware_text = GRW_central_peoples_government_advisor_1_trait_text
+				format = center
+				maxWidth = 150
+				alwaystransparent = yes
+			}
+		}
+
+		#国务院总理
+		containerWindowType = {
+			name = "GRW_central_peoples_government_advisor_2_container"
+			position = {
+				x = -227
+				y = 295
+			}
+			orientation = center_up
+			size = {
+				width = 150
+				height = 120
+			}
+			clipping = no
+
+			containerWindowType = {
+				name = "GRW_central_peoples_government_advisor_2_portrait_container"
+				position = {
+					x = -46
+					y = 0
+				}
+				orientation = center_up
+				size = {
+					width = 91
+					height = 119
+				}
+				clipping = no
+
+				iconType = {
+					name = "GRW_central_peoples_government_advisor_2_portrait"
+					spriteType = ""
+					position = {
+						x = 7
+						y = 6
+					}
+					orientation = upper_left
+					scale = 0.5
+					alwaystransparent = yes
+				}
+				iconType = {
+					name = "GRW_central_peoples_government_advisor_2_frame"
+					spriteType = "GFX_ascended_advisors_frame"
+					position = {
+						x = 0
+						y = -11
+					}
+					orientation = center
+					centerposition = yes
+					context_aware_tooltip = [GRWGetCPPCCAdvisorDesc2]
+				}
+			}
+
+			iconType = {
+				name = "GRW_central_peoples_government_advisor_2_name_box"
+				spriteType = "GFX_ascended_advisor_name_box"
+				position = {
+					x = 0
+					y = 71
+				}
+				orientation = center
+				centerposition = yes
+				context_aware_tooltip = [GRWGetCPPCCAdvisorDesc2]
+			}
+			instantTextBoxType = {
+				name = "GRW_central_peoples_government_advisor_2_name"
+				position = {
+					x = -75
+					y = 0
+				}
+				orientation = center_down
+				font = "hoi_20b"
+				context_aware_text = GRW_central_peoples_government_advisor_2_name_text
+				format = center
+				maxWidth = 150
+				alwaystransparent = yes
+			}
+
+			iconType = {
+				name = "GRW_central_peoples_government_advisor_2_trait_box"
+				spriteType = "GFX_ascended_advisor_trait_box"
+				position = {
+					x = 0
+					y = 102
+				}
+				orientation = center
+				centerposition = yes
+				context_aware_tooltip = [GRWGetCPPCCAdvisorDesc2]
+			}
+			instantTextBoxType = {
+				name = "GRW_central_peoples_government_advisor_2_trait"
+				position = {
+					x =  -75
+					y = 31
+				}
+				orientation = center_down
+				font = "hoi_18mbs"
+				context_aware_text = GRW_central_peoples_government_advisor_2_trait_text
+				format = center
+				maxWidth = 150
+				alwaystransparent = yes
+			}
+		}
+
+		#常委会委员长
+		containerWindowType = {
+			name = "GRW_central_peoples_government_advisor_3_container"
+			position = {
+				x = 83
+				y = 295
+			}
+			orientation = center_up
+			size = {
+				width = 150
+				height = 120
+			}
+			clipping = no
+
+			containerWindowType = {
+				name = "GRW_central_peoples_government_advisor_3_portrait_container"
+				position = {
+					x = -46
+					y = 0
+				}
+				orientation = center_up
+				size = {
+					width = 91
+					height = 119
+				}
+				clipping = no
+
+				iconType = {
+					name = "GRW_central_peoples_government_advisor_3_portrait"
+					spriteType = "GFX_Sonia_Cialaina_portrait"
+					position = {
+						x = 7
+						y = 6
+					}
+					orientation = upper_left
+					scale = 0.5
+					alwaystransparent = yes
+				}
+				iconType = {
+					name = "GRW_central_peoples_government_advisor_3_frame"
+					spriteType = "GFX_ascended_advisors_frame"
+					position = {
+						x = 0
+						y = -11
+					}
+					orientation = center
+					centerposition = yes
+					context_aware_tooltip = [GRWGetCPPCCAdvisorDesc3]
+				}
+			}
+
+			iconType = {
+				name = "GRW_central_peoples_government_advisor_3_name_box"
+				spriteType = "GFX_ascended_advisor_name_box"
+				position = {
+					x = 0
+					y = 71
+				}
+				orientation = center
+				centerposition = yes
+				context_aware_tooltip = [GRWGetCPPCCAdvisorDesc3]
+			}
+			instantTextBoxType = {
+				name = "GRW_central_peoples_government_advisor_3_name"
+				position = {
+					x = -75
+					y = 0
+				}
+				orientation = center_down
+				font = "hoi_20b"
+				context_aware_text = GRW_central_peoples_government_advisor_3_name_text
+				format = center
+				maxWidth = 150
+				alwaystransparent = yes
+			}
+
+			iconType = {
+				name = "GRW_central_peoples_government_advisor_3_trait_box"
+				spriteType = "GFX_ascended_advisor_trait_box"
+				position = {
+					x = 0
+					y = 102
+				}
+				orientation = center
+				centerposition = yes
+				context_aware_tooltip = [GRWGetCPPCCAdvisorDesc3]
+			}
+			instantTextBoxType = {
+				name = "GRW_central_peoples_government_advisor_3_trait"
+				position = {
+					x =  -75
+					y = 31
+				}
+				orientation = center_down
+				font = "hoi_18mbs"
+				context_aware_text = GRW_central_peoples_government_advisor_3_trait_text
+				format = center
+				maxWidth = 150
+				alwaystransparent = yes
+			}
+		}
+
+
+		#地方大区行政委员会
+		instantTextBoxType = {
+			name = "GRW_major_administrative_region_committee_title"
+			position = {
+				x = -300
+				y = 500
+			}
+			orientation = center_up
+			font = "hoi_30header"
+			text = GRW_major_administrative_region_committee_title_text
+			format = center
+			maxWidth = 600
+			maxHeight = 30
+		}
+		#第一个
+		containerWindowType = {
+			name = "GRW_major_administrative_region_committee_advisor_1_container"
+			position = {
+				x = -305
+				y = 545
+			}
+			orientation = center_up
+			size = {
+				width = 150
+				height = 120
+			}
+			clipping = no
+
+			containerWindowType = {
+				name = "GRW_major_administrative_region_committee_advisor_1_portrait_container"
+				position = {
+					x = -46
+					y = 0
+				}
+				orientation = center_up
+				size = {
+					width = 91
+					height = 119
+				}
+				clipping = no
+
+				iconType = {
+					name = "GRW_major_administrative_region_committee_advisor_1_portrait"
+					spriteType = ""
+					position = {
+						x = 7
+						y = 6
+					}
+					orientation = upper_left
+					scale = 0.5
+					alwaystransparent = yes
+				}
+				iconType = {
+					name = "GRW_major_administrative_region_committee_advisor_1_frame"
+					spriteType = "GFX_MARC_portrait"
+					position = {
+						x = -1
+						y = -2
+					}
+					orientation = center
+					scale = 0.65
+					centerposition = yes
+					context_aware_tooltip = GRW_major_administrative_region_committee_advisor_1_name_text
+				}
+			}
+
+			iconType = {
+				name = "GRW_major_administrative_region_committee_advisor_1_name_box"
+				spriteType = "GFX_ascended_advisor_name_box"
+				position = {
+					x = 0
+					y = 57
+				}
+				orientation = center
+				centerposition = yes
+				context_aware_tooltip = GRW_major_administrative_region_committee_advisor_1_name_text
+			}
+			instantTextBoxType = {
+				name = "GRW_major_administrative_region_committee_advisor_1_name"
+				position = {
+					x = -100
+					y = -11
+				}
+				orientation = center_down
+				font = "hoi_16mbs"
+				context_aware_text = GRW_major_administrative_region_committee_advisor_1_name_text
+				format = center
+				maxWidth = 200
+				alwaystransparent = yes
+			}
+
+			iconType = {
+				name = "GRW_major_administrative_region_committee_advisor_1_trait_box"
+				spriteType = "GFX_ascended_advisor_trait_box"
+				position = {
+					x = 0
+					y = 88
+				}
+				orientation = center
+				centerposition = yes
+				context_aware_tooltip = GRW_major_administrative_region_committee_advisor_1_name_text
+			}
+			instantTextBoxType = {
+				name = "GRW_major_administrative_region_committee_advisor_1_trait"
+				position = {
+					x =  -60
+					y = 9
+				}
+				orientation = center_down
+				font = "hoi_18mbs"
+				context_aware_text = [GetGRWMARCAdvisorTraitName1]
+				format = center
+				maxWidth = 120
+				alwaystransparent = yes
+			}
+		}
+		#第二个
+		containerWindowType = {
+			name = "GRW_major_administrative_region_committee_advisor_2_container"
+			position = {
+				x = -150
+				y = 545
+			}
+			orientation = center_up
+			size = {
+				width = 150
+				height = 120
+			}
+			clipping = no
+
+			containerWindowType = {
+				name = "GRW_major_administrative_region_committee_advisor_2_portrait_container"
+				position = {
+					x = -46
+					y = 0
+				}
+				orientation = center_up
+				size = {
+					width = 91
+					height = 119
+				}
+				clipping = no
+
+				iconType = {
+					name = "GRW_major_administrative_region_committee_advisor_2_portrait"
+					spriteType = ""
+					position = {
+						x = 7
+						y = 6
+					}
+					orientation = upper_left
+					scale = 0.5
+					alwaystransparent = yes
+				}
+				iconType = {
+					name = "GRW_major_administrative_region_committee_advisor_2_frame"
+					spriteType = "GFX_MARC_portrait"
+					position = {
+						x = -1
+						y = -2
+					}
+					orientation = center
+					scale = 0.65
+					centerposition = yes
+					context_aware_tooltip = GRW_major_administrative_region_committee_advisor_2_name_text
+				}
+			}
+
+			iconType = {
+				name = "GRW_major_administrative_region_committee_advisor_2_name_box"
+				spriteType = "GFX_ascended_advisor_name_box"
+				position = {
+					x = 0
+					y = 57
+				}
+				orientation = center
+				centerposition = yes
+				context_aware_tooltip = GRW_major_administrative_region_committee_advisor_2_name_text
+			}
+			instantTextBoxType = {
+				name = "GRW_major_administrative_region_committee_advisor_2_name"
+				position = {
+					x = -100
+					y = -11
+				}
+				orientation = center_down
+				font = "hoi_16mbs"
+				context_aware_text = GRW_major_administrative_region_committee_advisor_2_name_text
+				format = center
+				maxWidth = 200
+				alwaystransparent = yes
+			}
+
+			iconType = {
+				name = "GRW_major_administrative_region_committee_advisor_2_trait_box"
+				spriteType = "GFX_ascended_advisor_trait_box"
+				position = {
+					x = 0
+					y = 88
+				}
+				orientation = center
+				centerposition = yes
+				context_aware_tooltip = GRW_major_administrative_region_committee_advisor_2_name_text
+			}
+			instantTextBoxType = {
+				name = "GRW_major_administrative_region_committee_advisor_2_trait"
+				position = {
+					x =  -60
+					y = 9
+				}
+				orientation = center_down
+				font = "hoi_18mbs"
+				context_aware_text = [GetGRWMARCAdvisorTraitName2]
+				format = center
+				maxWidth = 120
+				alwaystransparent = yes
+			}
+		}
+		#第三个
+		containerWindowType = {
+			name = "GRW_major_administrative_region_committee_advisor_3_container"
+			position = {
+				x = 5
+				y = 545
+			}
+			orientation = center_up
+			size = {
+				width = 150
+				height = 120
+			}
+			clipping = no
+
+			containerWindowType = {
+				name = "GRW_major_administrative_region_committee_advisor_3_portrait_container"
+				position = {
+					x = -46
+					y = 0
+				}
+				orientation = center_up
+				size = {
+					width = 91
+					height = 119
+				}
+				clipping = no
+
+				iconType = {
+					name = "GRW_major_administrative_region_committee_advisor_3_portrait"
+					spriteType = ""
+					position = {
+						x = 7
+						y = 6
+					}
+					orientation = upper_left
+					scale = 0.5
+					alwaystransparent = yes
+				}
+				iconType = {
+					name = "GRW_major_administrative_region_committee_advisor_3_frame"
+					spriteType = "GFX_MARC_portrait"
+					position = {
+						x = -1
+						y = -2
+					}
+					orientation = center
+					scale = 0.65
+					centerposition = yes
+					context_aware_tooltip = GRW_major_administrative_region_committee_advisor_3_name_text
+				}
+			}
+
+			iconType = {
+				name = "GRW_major_administrative_region_committee_advisor_3_name_box"
+				spriteType = "GFX_ascended_advisor_name_box"
+				position = {
+					x = 0
+					y = 57
+				}
+				orientation = center
+				centerposition = yes
+				context_aware_tooltip = GRW_major_administrative_region_committee_advisor_3_name_text
+			}
+			instantTextBoxType = {
+				name = "GRW_major_administrative_region_committee_advisor_3_name"
+				position = {
+					x = -100
+					y = -11
+				}
+				orientation = center_down
+				font = "hoi_16mbs"
+				context_aware_text = GRW_major_administrative_region_committee_advisor_3_name_text
+				format = center
+				maxWidth = 200
+				alwaystransparent = yes
+			}
+
+			iconType = {
+				name = "GRW_major_administrative_region_committee_advisor_3_trait_box"
+				spriteType = "GFX_ascended_advisor_trait_box"
+				position = {
+					x = 0
+					y = 88
+				}
+				orientation = center
+				centerposition = yes
+				context_aware_tooltip = GRW_major_administrative_region_committee_advisor_3_name_text
+			}
+			instantTextBoxType = {
+				name = "GRW_major_administrative_region_committee_advisor_3_trait"
+				position = {
+					x =  -60
+					y = 9
+				}
+				orientation = center_down
+				font = "hoi_18mbs"
+				context_aware_text = [GetGRWMARCAdvisorTraitName3]
+				format = center
+				maxWidth = 120
+				alwaystransparent = yes
+			}
+		}
+		#第四个
+		containerWindowType = {
+			name = "GRW_major_administrative_region_committee_advisor_4_container"
+			position = {
+				x = 160
+				y = 545
+			}
+			orientation = center_up
+			size = {
+				width = 150
+				height = 120
+			}
+			clipping = no
+
+			containerWindowType = {
+				name = "GRW_major_administrative_region_committee_advisor_4_portrait_container"
+				position = {
+					x = -46
+					y = 0
+				}
+				orientation = center_up
+				size = {
+					width = 91
+					height = 119
+				}
+				clipping = no
+
+				iconType = {
+					name = "GRW_major_administrative_region_committee_advisor_4_portrait"
+					spriteType = ""
+					position = {
+						x = 7
+						y = 6
+					}
+					orientation = upper_left
+					scale = 0.5
+					alwaystransparent = yes
+				}
+				iconType = {
+					name = "GRW_major_administrative_region_committee_advisor_4_frame"
+					spriteType = "GFX_MARC_portrait"
+					position = {
+						x = -1
+						y = -2
+					}
+					orientation = center
+					scale = 0.65
+					centerposition = yes
+					context_aware_tooltip = GRW_major_administrative_region_committee_advisor_4_name_text
+				}
+			}
+
+			iconType = {
+				name = "GRW_major_administrative_region_committee_advisor_4_name_box"
+				spriteType = "GFX_ascended_advisor_name_box"
+				position = {
+					x = 0
+					y = 57
+				}
+				orientation = center
+				centerposition = yes
+				context_aware_tooltip = GRW_major_administrative_region_committee_advisor_4_name_text
+			}
+			instantTextBoxType = {
+				name = "GRW_major_administrative_region_committee_advisor_4_name"
+				position = {
+					x = -100
+					y = -11
+				}
+				orientation = center_down
+				font = "hoi_16mbs"
+				context_aware_text = GRW_major_administrative_region_committee_advisor_4_name_text
+				format = center
+				maxWidth = 200
+				alwaystransparent = yes
+			}
+
+			iconType = {
+				name = "GRW_major_administrative_region_committee_advisor_4_trait_box"
+				spriteType = "GFX_ascended_advisor_trait_box"
+				position = {
+					x = 0
+					y = 88
+				}
+				orientation = center
+				centerposition = yes
+				context_aware_tooltip = GRW_major_administrative_region_committee_advisor_4_name_text
+			}
+			instantTextBoxType = {
+				name = "GRW_major_administrative_region_committee_advisor_4_trait"
+				position = {
+					x =  -60
+					y = 9
+				}
+				orientation = center_down
+				font = "hoi_18mbs"
+				context_aware_text = [GetGRWMARCAdvisorTraitName4]
+				format = center
+				maxWidth = 120
+				alwaystransparent = yes
+			}
+		}
+		#第五个
+		containerWindowType = {
+			name = "GRW_major_administrative_region_committee_advisor_5_container"
+			position = {
+				x = -200
+				y = 745
+			}
+			orientation = center_up
+			size = {
+				width = 150
+				height = 120
+			}
+			clipping = no
+
+			containerWindowType = {
+				name = "GRW_major_administrative_region_committee_advisor_5_portrait_container"
+				position = {
+					x = -46
+					y = 0
+				}
+				orientation = center_up
+				size = {
+					width = 91
+					height = 119
+				}
+				clipping = no
+
+				iconType = {
+					name = "GRW_major_administrative_region_committee_advisor_5_portrait"
+					spriteType = ""
+					position = {
+						x = 7
+						y = 6
+					}
+					orientation = upper_left
+					scale = 0.5
+					alwaystransparent = yes
+				}
+				iconType = {
+					name = "GRW_major_administrative_region_committee_advisor_5_frame"
+					spriteType = "GFX_MARC_portrait"
+					position = {
+						x = -1
+						y = -2
+					}
+					orientation = center
+					scale = 0.65
+					centerposition = yes
+					context_aware_tooltip = GRW_major_administrative_region_committee_advisor_5_name_text
+				}
+			}
+
+			iconType = {
+				name = "GRW_major_administrative_region_committee_advisor_5_name_box"
+				spriteType = "GFX_ascended_advisor_name_box"
+				position = {
+					x = 0
+					y = 57
+				}
+				orientation = center
+				centerposition = yes
+				context_aware_tooltip = GRW_major_administrative_region_committee_advisor_5_name_text
+			}
+			instantTextBoxType = {
+				name = "GRW_major_administrative_region_committee_advisor_5_name"
+				position = {
+					x = -100
+					y = -11
+				}
+				orientation = center_down
+				font = "hoi_16mbs"
+				context_aware_text = GRW_major_administrative_region_committee_advisor_5_name_text
+				format = center
+				maxWidth = 200
+				alwaystransparent = yes
+			}
+
+			iconType = {
+				name = "GRW_major_administrative_region_committee_advisor_5_trait_box"
+				spriteType = "GFX_ascended_advisor_trait_box"
+				position = {
+					x = 0
+					y = 88
+				}
+				orientation = center
+				centerposition = yes
+				context_aware_tooltip = GRW_major_administrative_region_committee_advisor_5_name_text
+			}
+			instantTextBoxType = {
+				name = "GRW_major_administrative_region_committee_advisor_5_trait"
+				position = {
+					x =  -60
+					y = 9
+				}
+				orientation = center_down
+				font = "hoi_18mbs"
+				context_aware_text = [GetGRWMARCAdvisorTraitName5]
+				format = center
+				maxWidth = 120
+				alwaystransparent = yes
+			}
+		}
+		#第六个
+		containerWindowType = {
+			name = "GRW_major_administrative_region_committee_advisor_6_container"
+			position = {
+				x = 55
+				y = 745
+			}
+			orientation = center_up
+			size = {
+				width = 150
+				height = 120
+			}
+			clipping = no
+
+			containerWindowType = {
+				name = "GRW_major_administrative_region_committee_advisor_6_portrait_container"
+				position = {
+					x = -46
+					y = 0
+				}
+				orientation = center_up
+				size = {
+					width = 91
+					height = 119
+				}
+				clipping = no
+
+				iconType = {
+					name = "GRW_major_administrative_region_committee_advisor_6_portrait"
+					spriteType = ""
+					position = {
+						x = 7
+						y = 6
+					}
+					orientation = upper_left
+					scale = 0.5
+					alwaystransparent = yes
+				}
+				iconType = {
+					name = "GRW_major_administrative_region_committee_advisor_6_frame"
+					spriteType = "GFX_MARC_portrait"
+					position = {
+						x = -1
+						y = -2
+					}
+					orientation = center
+					scale = 0.65
+					centerposition = yes
+					context_aware_tooltip = GRW_major_administrative_region_committee_advisor_6_name_text
+				}
+			}
+
+			iconType = {
+				name = "GRW_major_administrative_region_committee_advisor_6_name_box"
+				spriteType = "GFX_ascended_advisor_name_box"
+				position = {
+					x = 0
+					y = 57
+				}
+				orientation = center
+				centerposition = yes
+				context_aware_tooltip = GRW_major_administrative_region_committee_advisor_6_name_text
+			}
+			instantTextBoxType = {
+				name = "GRW_major_administrative_region_committee_advisor_6_name"
+				position = {
+					x = -100
+					y = -11
+				}
+				orientation = center_down
+				font = "hoi_16mbs"
+				context_aware_text = GRW_major_administrative_region_committee_advisor_6_name_text
+				format = center
+				maxWidth = 200
+				alwaystransparent = yes
+			}
+
+			iconType = {
+				name = "GRW_major_administrative_region_committee_advisor_6_trait_box"
+				spriteType = "GFX_ascended_advisor_trait_box"
+				position = {
+					x = 0
+					y = 88
+				}
+				orientation = center
+				centerposition = yes
+				context_aware_tooltip = GRW_major_administrative_region_committee_advisor_6_name_text
+			}
+			instantTextBoxType = {
+				name = "GRW_major_administrative_region_committee_advisor_6_trait"
+				position = {
+					x =  -60
+					y = 9
+				}
+				orientation = center_down
+				font = "hoi_18mbs"
+				context_aware_text = [GetGRWMARCAdvisorTraitName6]
+				format = center
+				maxWidth = 120
+				alwaystransparent = yes
+			}
+		}
+	}
+}
